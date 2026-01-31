@@ -1,9 +1,9 @@
 {
-  "title": "daily",
+  "title": "min",
   "lines": [
     {
       "start": 0.0,
-      "ja": "テスト",
+      "ja": "テストです",
       "ko_pron": "",
       "ko": "",
       "tag": "Verse 1"
