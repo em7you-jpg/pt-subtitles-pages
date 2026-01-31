@@ -57,9 +57,37 @@
 
   <script>
     // ===== 설정 =====
-    const TRACK_URL = "/track.json";   // Pages 같은 도메인
-    const POLL_MS = 1000;              // 1초마다 갱신
-    const USE_LANG = "ja";             // "ja" 또는 "ko"
+    const qs = new URLSearchParams(location.search);
+
+// 기본값(필요하면 URL로 덮어씀)
+const TRACK_URL = qs.get("track") || "/track.json";
+const POLL_MS   = Number(qs.get("poll") || "1000");
+const USE_LANG  = qs.get("lang") || "ja";     // ja | ko
+
+// 레이아웃 파라미터
+const LEFT   = Number(qs.get("left")   || "40");   // px
+const RIGHT  = Number(qs.get("right")  || "40");   // px
+const BOTTOM = Number(qs.get("bottom") || "80");   // px
+const FS     = Number(qs.get("fs")     || "44");   // px
+const PAD_Y  = Number(qs.get("py")     || "14");   // px
+const PAD_X  = Number(qs.get("px")     || "18");   // px
+const BG     = Number(qs.get("bg")     || "0.55"); // 0~1
+const DEBUG  = (qs.get("debug") || "1") !== "0";   // debug=0 이면 숨김
+
+// 적용
+const wrap = document.querySelector(".wrap");
+wrap.style.left = LEFT + "px";
+wrap.style.right = RIGHT + "px";
+wrap.style.bottom = BOTTOM + "px";
+
+const sub = document.getElementById("subtitle");
+sub.style.fontSize = FS + "px";
+sub.style.padding = `${PAD_Y}px ${PAD_X}px`;
+sub.style.background = `rgba(0,0,0,${BG})`;
+
+const dbg = document.getElementById("debug");
+dbg.style.display = DEBUG ? "block" : "none";
+
     // ===============
 
     let track = null;
