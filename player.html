@@ -1,158 +1,353 @@
 <!doctype html>
-<html lang="ja">
+<html lang="ko">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PT Subtitles</title>
+  <title>PT Player</title>
   <style>
-    /* OBS용: 배경 투명 + 가장 단순한 레이아웃 */
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: transparent;
-      overflow: hidden;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    :root{
+      --font: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", "Noto Sans JP", sans-serif;
+      --jaSize: 34px;
+      --koSize: 26px;
+      --lineGap: 10px;
+      --bg: rgba(0,0,0,0.0);
+      --fg: rgba(255,255,255,0.95);
+      --shadow: 0 2px 12px rgba(0,0,0,0.55);
+      --pad: 14px;
+      --radius: 14px;
+      --posX: 50%;
+      --posY: 82%;
+      --align: center; /* left|center|right */
+      --maxW: 92vw;
     }
-    .wrap {
-      position: absolute;
-      left: 40px;
-      right: 40px;
-      bottom: 30px;
-      display: flex;
-      justify-content: center;
-      pointer-events: none;
+    body{
+      margin:0; background: transparent; overflow:hidden;
+      font-family: var(--font);
     }
-    .subtitle {
-      display: inline-block;
-      padding: 14px 18px;
-      border-radius: 14px;
-      background: rgba(0,0,0,0.55);
-      color: #fff;
-      font-size: 16px;
-      line-height: 1.25;
-      text-align: center;
-      white-space: pre-wrap;
-      word-break: keep-all;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.55);
-      min-height: 1.25em;
+    #wrap{
+      position: fixed;
+      left: var(--posX);
+      top: var(--posY);
+      transform: translate(-50%,-50%);
+      width: var(--maxW);
+      color: var(--fg);
+      text-align: var(--align);
+      pointer-events: none; /* OBS에서 클릭 안 막기 */
     }
-    /* 디버그용(필요 없으면 숨겨도 됨) */
-    .debug {
-      position: absolute;
-      left: 12px;
-      top: 12px;
-      font-size: 14px;
-      color: rgba(255,255,255,0.85);
-      background: rgba(0,0,0,0.35);
-      padding: 6px 8px;
-      border-radius: 8px;
+    #box{
+      display:inline-block;
+      background: var(--bg);
+      padding: var(--pad);
+      border-radius: var(--radius);
+      filter: drop-shadow(var(--shadow));
+      pointer-events: auto; /* 컨트롤 영역만 클릭 */
     }
+    .ja{ font-size: var(--jaSize); font-weight: 700; line-height: 1.25; }
+    .ko{ font-size: var(--koSize); font-weight: 600; line-height: 1.25; opacity: 0.92; margin-top: var(--lineGap); }
+    #hud{
+      margin-top: 10px;
+      font-size: 13px;
+      opacity: 0.85;
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      flex-wrap: wrap;
+      user-select: none;
+    }
+    #hud button, #hud input{
+      pointer-events: auto;
+      font-size: 13px;
+    }
+    #hud button{
+      border: 0;
+      border-radius: 10px;
+      padding: 6px 10px;
+      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.95);
+      cursor:pointer;
+    }
+    #hud button:hover{ background: rgba(255,255,255,0.18); }
+    #hud .pill{
+      background: rgba(255,255,255,0.10);
+      padding: 6px 10px;
+      border-radius: 10px;
+    }
+    #audio{
+      width: min(720px, 86vw);
+    }
+    /* OBS에서 HUD 숨기고 싶으면 ?hud=0 */
+    .hud-off #hud{ display:none; }
   </style>
 </head>
 <body>
-  <div class="debug" id="debug">loading…</div>
-  <div class="wrap">
-    <div class="subtitle" id="subtitle"></div>
+  <div id="wrap">
+    <div id="box">
+      <div id="ja" class="ja"></div>
+      <div id="ko" class="ko" style="display:none;"></div>
+
+      <div id="hud">
+        <button id="btnPrev">Prev</button>
+        <button id="btnPlay">Play</button>
+        <button id="btnNext">Next</button>
+
+        <span class="pill">Track: <span id="trackLabel">-</span></span>
+        <span class="pill">Offset: <span id="offsetLabel">0.0</span>s</span>
+
+        <button id="btnOffM">-0.5s</button>
+        <button id="btnOffP">+0.5s</button>
+
+        <audio id="audio" controls preload="auto" crossorigin="anonymous"></audio>
+      </div>
+    </div>
   </div>
 
-  <script>
-    // ===== 설정 =====
-    const qs = new URLSearchParams(location.search);
+<script>
+(() => {
+  // ---------- helpers ----------
+  const $ = (id) => document.getElementById(id);
+  const params = new URLSearchParams(location.search);
 
-// 기본값(필요하면 URL로 덮어씀)
-const TRACK_URL = qs.get("track") || "/track.json";
-const POLL_MS   = Number(qs.get("poll") || "1000");
-const USE_LANG  = qs.get("lang") || "ja";     // ja | ko
+  const setId = params.get("set") || "default";
+  const lang = (params.get("lang") || "both").toLowerCase(); // both|ja
+  const hud = params.get("hud"); // 0 => hide
+  const cacheBust = params.get("cb") || ""; // optional external cache buster
 
-// 레이아웃 파라미터
-const LEFT   = Number(qs.get("left")   || "40");   // px
-const RIGHT  = Number(qs.get("right")  || "40");   // px
-const BOTTOM = Number(qs.get("bottom") || "30");   // px
-const FS     = Number(qs.get("fs")     || "16");   // px
-const PAD_Y  = Number(qs.get("py")     || "14");   // px
-const PAD_X  = Number(qs.get("px")     || "18");   // px
-const BG     = Number(qs.get("bg")     || "0.55"); // 0~1
-const DEBUG  = (qs.get("debug") || "1") !== "0";   // debug=0 이면 숨김
+  if (hud === "0") document.body.classList.add("hud-off");
 
-// 적용
-const wrap = document.querySelector(".wrap");
-wrap.style.left = LEFT + "px";
-wrap.style.right = RIGHT + "px";
-wrap.style.bottom = BOTTOM + "px";
+  function num(v, d){ const n = Number(v); return Number.isFinite(n) ? n : d; }
 
-const sub = document.getElementById("subtitle");
-sub.style.fontSize = FS + "px";
-sub.style.padding = `${PAD_Y}px ${PAD_X}px`;
-sub.style.background = `rgba(0,0,0,${BG})`;
+  // style params (기존 player의 URL 제어 감각 그대로 유지)
+  const cssVars = {
+    "--posX": params.get("x") ? params.get("x") + "%" : null,
+    "--posY": params.get("y") ? params.get("y") + "%" : null,
+    "--jaSize": params.get("jaSize") ? params.get("jaSize") + "px" : null,
+    "--koSize": params.get("koSize") ? params.get("koSize") + "px" : null,
+    "--align": params.get("align") || null,
+    "--maxW": params.get("maxW") ? params.get("maxW") + "vw" : null,
+  };
+  for (const [k,v] of Object.entries(cssVars)) if (v) document.documentElement.style.setProperty(k, v);
 
-const dbg = document.getElementById("debug");
-dbg.style.display = DEBUG ? "block" : "none";
+  const jaEl = $("ja");
+  const koEl = $("ko");
+  const audio = $("audio");
 
-    // ===============
+  const btnPrev = $("btnPrev");
+  const btnPlay = $("btnPlay");
+  const btnNext = $("btnNext");
+  const btnOffM = $("btnOffM");
+  const btnOffP = $("btnOffP");
+  const trackLabel = $("trackLabel");
+  const offsetLabel = $("offsetLabel");
 
-    let track = null;
-    let lastTrackText = "";
-    let lastShownIndex = -1;
+  // offset per set
+  const lsKey = `pt_offset_${setId}`;
+  let offsetSec = num(localStorage.getItem(lsKey), 0.0);
+  function setOffset(v){
+    offsetSec = Math.round(v * 10) / 10;
+    localStorage.setItem(lsKey, String(offsetSec));
+    offsetLabel.textContent = offsetSec.toFixed(1);
+  }
+  setOffset(offsetSec);
 
-    function nowSec() {
-      // OBS Browser Source는 실시간 스트림과 직접 동기화가 어려움.
-      // 1단계에서는 "track.json 업데이트가 잘 되는지" 확인 목적이라
-      // 일단 '마지막 라인'을 보여주는 방식(=가장 안정적인 가시성)으로 시작.
-      return Date.now() / 1000;
+  function withCB(url){
+    const u = new URL(url, location.origin);
+    // 항상 캐시 우회: set별 최신 반영
+    u.searchParams.set("v", cacheBust || Date.now().toString());
+    return u.toString();
+  }
+
+  async function fetchJSON(url){
+    const res = await fetch(withCB(url), {cache:"no-store"});
+    if (!res.ok) throw new Error(`fetch failed: ${res.status} ${url}`);
+    return await res.json();
+  }
+
+  // ---------- cue extraction (format-agnostic) ----------
+  // track json 포맷이 약간 달라도 start/end + text/ja/ko를 찾도록 "느슨하게" 처리
+  function extractCues(obj){
+    const cues = [];
+    const seen = new Set();
+
+    function pushCue(s,e,ja,ko){
+      s = Number(s); e = Number(e);
+      if (!Number.isFinite(s) || !Number.isFinite(e) || e <= s) return;
+      ja = (ja ?? "").toString().trim();
+      ko = (ko ?? "").toString().trim();
+      if (!ja) return;
+      const key = `${s.toFixed(3)}|${e.toFixed(3)}|${ja}`;
+      if (seen.has(key)) return;
+      seen.add(key);
+      cues.push({start:s, end:e, ja, ko});
     }
 
-    function pickText(line) {
-      if (!line) return "";
-      if (USE_LANG === "ko") return (line.ko && line.ko.trim()) ? line.ko : "";
-      return (line.ja && line.ja.trim()) ? line.ja : "";
-    }
-
-    function render() {
-      const el = document.getElementById("subtitle");
-      const dbg = document.getElementById("debug");
-
-      if (!track || !Array.isArray(track.lines)) {
-        el.textContent = "";
-        dbg.textContent = "track: none";
+    function walk(x){
+      if (!x) return;
+      if (Array.isArray(x)){
+        for (const it of x) walk(it);
         return;
       }
-
-      // (Stage-1 최우선) "정상 동작"이 보이게: 마지막 라인 표시
-      const lines = track.lines;
-      const idx = lines.length ? (lines.length - 1) : -1;
-
-      if (idx !== lastShownIndex) lastShownIndex = idx;
-
-      const text = idx >= 0 ? pickText(lines[idx]) : "";
-      el.textContent = text || "";
-
-      // 디버그 표시
-      const title = track.title || "";
-      const size = JSON.stringify(track).length;
-      dbg.textContent = `ok | title=${title} | lines=${lines.length} | bytes=${size} | updated=${new Date().toLocaleTimeString()}`;
-    }
-
-    async function fetchTrack() {
-      const dbg = document.getElementById("debug");
-      try {
-        const res = await fetch(TRACK_URL + "?t=" + Date.now(), { cache: "no-store" });
-        if (!res.ok) throw new Error("HTTP " + res.status);
-        const json = await res.json();
-
-        const text = JSON.stringify(json);
-        if (text !== lastTrackText) {
-          lastTrackText = text;
-          track = json;
-          render();
+      if (typeof x === "object"){
+        // common variants
+        if (("start" in x) && ("end" in x)){
+          const ja = x.ja ?? x.text ?? x.line ?? x.content ?? "";
+          const ko = x.ko ?? x.ko_text ?? "";
+          pushCue(x.start, x.end, ja, ko);
         }
-      } catch (e) {
-        dbg.textContent = "fetch error: " + (e && e.message ? e.message : String(e));
+        if (("t0" in x) && ("t1" in x)){
+          const ja = x.ja ?? x.text ?? x.s ?? "";
+          const ko = x.ko ?? "";
+          pushCue(x.t0, x.t1, ja, ko);
+        }
+        // sometimes segments array exists
+        for (const v of Object.values(x)) walk(v);
       }
     }
+    walk(obj);
 
-    // 시작
-    fetchTrack();
-    setInterval(fetchTrack, POLL_MS);
-  </script>
+    // sort by start
+    cues.sort((a,b)=>a.start-b.start);
+    return cues;
+  }
+
+  function cueAt(cues, t){
+    // simple linear scan with last index cache
+    // t is audio.currentTime + offsetSec
+    for (let i=0;i<cues.length;i++){
+      const c = cues[i];
+      if (t >= c.start && t < c.end) return c;
+    }
+    // fallback: nearest past cue
+    let last = null;
+    for (const c of cues){ if (c.start <= t) last = c; else break; }
+    return last;
+  }
+
+  // ---------- playlist handling ----------
+  const base = `${location.origin}/set/${encodeURIComponent(setId)}/`;
+  const playlistUrl = base + "playlist.json";
+
+  let playlist = null;
+  let idx = 0;
+  let cues = [];
+  let currentTrack = null;
+
+  function updateTrackLabel(){
+    if (!currentTrack){ trackLabel.textContent = "-"; return; }
+    trackLabel.textContent = `${currentTrack.id}${currentTrack.title ? " · " + currentTrack.title : ""}`;
+  }
+
+  async function loadTrack(i){
+    if (!playlist) return;
+    idx = Math.max(0, Math.min(i, playlist.tracks.length-1));
+    currentTrack = playlist.tracks[idx];
+    updateTrackLabel();
+
+    // set audio source
+    if (!currentTrack.audio_url) throw new Error("missing audio_url");
+    audio.src = currentTrack.audio_url;
+
+    // load track json cues
+    if (!currentTrack.track_url) throw new Error("missing track_url");
+    const trackJson = await fetchJSON(base + currentTrack.track_url);
+    cues = extractCues(trackJson);
+
+    // clear text immediately
+    jaEl.textContent = "";
+    koEl.textContent = "";
+    koEl.style.display = "none";
+  }
+
+  function render(){
+    if (!cues || cues.length === 0) return;
+    const t = audio.currentTime + offsetSec;
+    const c = cueAt(cues, t);
+    if (!c) return;
+
+    // JA always
+    if (jaEl.textContent !== c.ja) jaEl.textContent = c.ja;
+
+    // KO: only show if exists and lang=both
+    const hasKo = !!(c.ko && c.ko.trim());
+    if (lang === "both" && hasKo){
+      if (koEl.textContent !== c.ko) koEl.textContent = c.ko;
+      koEl.style.display = "";
+    } else {
+      koEl.textContent = "";
+      koEl.style.display = "none";
+    }
+  }
+
+  // ---------- controls ----------
+  btnPlay.addEventListener("click", async () => {
+    if (!playlist) return;
+    if (audio.paused) await audio.play();
+    else audio.pause();
+  });
+  audio.addEventListener("play", ()=> btnPlay.textContent = "Pause");
+  audio.addEventListener("pause", ()=> btnPlay.textContent = "Play");
+
+  btnPrev.addEventListener("click", async () => {
+    await loadTrack(idx - 1);
+    await audio.play();
+  });
+  btnNext.addEventListener("click", async () => {
+    await loadTrack(idx + 1);
+    await audio.play();
+  });
+
+  btnOffM.addEventListener("click", ()=> setOffset(offsetSec - 0.5));
+  btnOffP.addEventListener("click", ()=> setOffset(offsetSec + 0.5));
+
+  // hotkeys (OBS 상호작용 없이도 쓰고 싶으면 OBS에서 브라우저 포커스 필요)
+  window.addEventListener("keydown", (e)=>{
+    if (e.key === "ArrowLeft") btnPrev.click();
+    if (e.key === "ArrowRight") btnNext.click();
+    if (e.key === "ArrowDown") setOffset(offsetSec - 0.5);
+    if (e.key === "ArrowUp") setOffset(offsetSec + 0.5);
+    if (e.key === " "){ e.preventDefault(); btnPlay.click(); }
+  });
+
+  audio.addEventListener("timeupdate", render);
+  audio.addEventListener("seeked", render);
+
+  audio.addEventListener("ended", async () => {
+    // auto next
+    if (!playlist) return;
+    if (idx < playlist.tracks.length-1){
+      await loadTrack(idx + 1);
+      await audio.play();
+    }
+  });
+
+  // ---------- boot ----------
+  (async () => {
+    // playlist.json format:
+    // { "set_id":"...", "tracks":[{"id":"001","title":"..","audio_url":"..","track_url":"tracks/001.json","duration":180.0}, ...] }
+    playlist = await fetchJSON(playlistUrl);
+
+    if (!playlist || !Array.isArray(playlist.tracks) || playlist.tracks.length === 0){
+      throw new Error("playlist.json invalid or empty");
+    }
+
+    // optional start track: ?i=1 (1-based)
+    const startI = num(params.get("i"), 1);
+    await loadTrack(startI - 1);
+
+    // auto play: ?autoplay=1
+    if (params.get("autoplay") === "1"){
+      await audio.play();
+    }
+
+    updateTrackLabel();
+    offsetLabel.textContent = offsetSec.toFixed(1);
+  })().catch(err => {
+    jaEl.textContent = "PLAYER ERROR";
+    koEl.style.display = "";
+    koEl.textContent = String(err?.message || err);
+    console.error(err);
+  });
+
+})();
+</script>
 </body>
 </html>
