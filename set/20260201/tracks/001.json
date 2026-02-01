@@ -1,1 +1,1 @@
-{"title": "cb-test", "lines": [{"start": 20.26, "end": 86.12, "ja": "テストの歌詞です", "ko_pron": "", "ko": "", "tag": "Verse 1"}, {"start": 86.12, "end": 163.5, "ja": "コールバック確認", "ko_pron": "", "ko": "", "tag": "Chorus"}]}
+{"title": "cb-test", "lines": [{"start": 20.26, "end": 86.12, "ja": "テスト", "ko_pron": "", "ko": "", "tag": "Verse"}, {"start": 86.12, "end": 163.5, "ja": "成功", "ko_pron": "", "ko": "", "tag": "Chorus"}]}
