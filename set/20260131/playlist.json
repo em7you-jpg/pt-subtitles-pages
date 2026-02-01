@@ -1,14 +1,527 @@
 {
   "set_id": "20260131",
-  "built_at": "2026-02-01T17:33:47+0000",
+  "built_at": "2026-02-01T17:56:56+0000",
   "tracks": [
     {
       "id": "001",
-      "title": "t",
+      "title": "リセットの途中で紡ぐルール",
       "audio_url": "https://cdn1.suno.ai/04ffb578-4e06-4e95-8c4b-699edb19b14c.mp3",
       "track_url": "tracks/001.json",
       "duration": 180.0,
-      "created_at": "2026-02-01T06:03:46+09:00",
+      "created_at": "\"2026-02-01T06:03:46+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "002",
+      "title": "まっすぐな呼吸のまま歩く",
+      "audio_url": "https://cdn1.suno.ai/17783e1a-fdf3-4335-bb39-764196a76d64.mp3",
+      "track_url": "tracks/002.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T05:58:27+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "003",
+      "title": "早起きの日のリセットメモリー",
+      "audio_url": "https://cdn1.suno.ai/b76c03e1-f9f3-47c2-a95d-fa72fbb783cd.mp3",
+      "track_url": "tracks/003.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T05:53:25+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "004",
+      "title": "カラフルな選択肢は並んでる",
+      "audio_url": "https://cdn1.suno.ai/6d08e208-e9e8-4194-bc59-9a22f4a59118.mp3",
+      "track_url": "tracks/004.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T05:48:29+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "005",
+      "title": "スタートラインの向こうで待ってる",
+      "audio_url": "https://cdn1.suno.ai/3f625853-9995-473f-accf-08ab45f2e729.mp3",
+      "track_url": "tracks/005.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T05:43:26+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "006",
+      "title": "やわらかな決意は都市に溶けて",
+      "audio_url": "https://cdn1.suno.ai/6737b921-2b1f-4a12-a51c-4b015c30a98b.mp3",
+      "track_url": "tracks/006.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T05:38:22+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "007",
+      "title": "スローモーションで歩く午後",
+      "audio_url": "https://cdn1.suno.ai/502dd2ba-1808-47b3-841f-6d1a66b821ae.mp3",
+      "track_url": "tracks/007.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T05:33:27+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "008",
+      "title": "リセット・フォーカスの午後に",
+      "audio_url": "https://cdn1.suno.ai/5c7a6ae4-296e-4c29-bcb6-13d382f56a11.mp3",
+      "track_url": "tracks/008.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T05:28:26+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "009",
+      "title": "ペイントされた未来の進行形",
+      "audio_url": "https://cdn1.suno.ai/04e140c5-ef73-4c6c-945d-ab9214f18823.mp3",
+      "track_url": "tracks/009.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T05:23:34+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "010",
+      "title": "カップの跡と新しい手順",
+      "audio_url": "https://cdn1.suno.ai/c6cf01de-a798-4fba-b6ee-e1df65364283.mp3",
+      "track_url": "tracks/010.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T05:18:36+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "011",
+      "title": "ドアの外で息を整える午後",
+      "audio_url": "https://cdn1.suno.ai/c4037cdb-c1d5-4eb1-8c2d-a5d17b6045b8.mp3",
+      "track_url": "tracks/011.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T05:13:27+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "012",
+      "title": "リセットした日々のその先へ",
+      "audio_url": "https://cdn1.suno.ai/9556700c-767f-472a-8341-44bc28be1f74.mp3",
+      "track_url": "tracks/012.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T05:08:29+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "013",
+      "title": "ステップは揺るがないままで",
+      "audio_url": "https://cdn1.suno.ai/8f48e794-b19f-4350-886c-22bb6af65b80.mp3",
+      "track_url": "tracks/013.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T05:03:41+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "014",
+      "title": "まっすぐな今日の始まり方",
+      "audio_url": "https://cdn1.suno.ai/23b78a5e-19ba-40c8-8ee1-2533e8d62c2b.mp3",
+      "track_url": "tracks/014.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T04:58:32+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "015",
+      "title": "進んだ先にしかないもの",
+      "audio_url": "https://cdn1.suno.ai/18aa004f-89a0-4c33-a2b3-bb8f4c4abfb2.mp3",
+      "track_url": "tracks/015.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T04:53:23+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "016",
+      "title": "ソファの端っこで深呼吸して",
+      "audio_url": "https://cdn1.suno.ai/ced9cbec-a1a2-442e-8f45-4ef0034d8b22.mp3",
+      "track_url": "tracks/016.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T04:48:30+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "017",
+      "title": "手の届く距離で",
+      "audio_url": "https://cdn1.suno.ai/2d448e64-024b-4d67-a013-cf0cd609ba11.mp3",
+      "track_url": "tracks/017.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T04:43:27+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "018",
+      "title": "ゆっくり進む日々の先へ",
+      "audio_url": "https://cdn1.suno.ai/67a16ba1-a35e-40e3-aaea-c567c34bd2e5.mp3",
+      "track_url": "tracks/018.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T04:38:22+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "019",
+      "title": "午後の対話はミルクティーのように",
+      "audio_url": "https://cdn1.suno.ai/9efd2c86-310c-4a0b-9567-2d33fd6a3069.mp3",
+      "track_url": "tracks/019.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T04:33:31+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "020",
+      "title": "ひとつ残る白いタイルの上で",
+      "audio_url": "https://cdn1.suno.ai/c231f777-706c-44fd-b5b2-082ae1db7342.mp3",
+      "track_url": "tracks/020.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T04:28:28+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "021",
+      "title": "ひとりきりの昼下がりミッション",
+      "audio_url": "https://cdn1.suno.ai/3820601d-409b-4019-adb9-4fad91765301.mp3",
+      "track_url": "tracks/021.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T04:23:30+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "022",
+      "title": "みんなで転がる午後のままごと",
+      "audio_url": "https://cdn1.suno.ai/0a275e92-194f-44eb-8c73-36acdb679447.mp3",
+      "track_url": "tracks/022.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T04:18:22+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "023",
+      "title": "まどろみのリビングで交わす朝の合図",
+      "audio_url": "https://cdn1.suno.ai/051c0cdc-da21-42cb-9cfb-5070ebb9770c.mp3",
+      "track_url": "tracks/023.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T04:13:21+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "024",
+      "title": "夕焼けに染まる帰り道のセンテンス",
+      "audio_url": "https://cdn1.suno.ai/773d60c1-7798-4859-bf08-1fa57091aa1c.mp3",
+      "track_url": "tracks/024.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T04:08:25+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "025",
+      "title": "ひらいたノートの端で",
+      "audio_url": "https://cdn1.suno.ai/cefb4129-8e06-4477-b30a-5908d3bdae52.mp3",
+      "track_url": "tracks/025.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T04:03:40+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "026",
+      "title": "再出発の手ざわり",
+      "audio_url": "https://cdn1.suno.ai/33bd03a1-47b9-43d2-8611-c44664ed004c.mp3",
+      "track_url": "tracks/026.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T03:58:29+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "027",
+      "title": "選んだ足元で鳴る午後",
+      "audio_url": "https://cdn1.suno.ai/9e404a65-e960-4f47-9d3b-1f9bf13da2ca.mp3",
+      "track_url": "tracks/027.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T03:48:21+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "028",
+      "title": "曲がり角でリスタートする日",
+      "audio_url": "https://cdn1.suno.ai/5a87e122-7f07-43cf-bdb9-1178a64ac151.mp3",
+      "track_url": "tracks/028.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T03:43:30+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "029",
+      "title": "リセットした瞬間のスイッチ",
+      "audio_url": "https://cdn1.suno.ai/3be80f7a-6d83-4c50-9ff4-269b4a8c03ef.mp3",
+      "track_url": "tracks/029.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T03:38:29+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "030",
+      "title": "ワンルームの約束を守る日",
+      "audio_url": "https://cdn1.suno.ai/8430e633-3fa3-4640-8f4b-06d58a081abb.mp3",
+      "track_url": "tracks/030.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-01T03:33:30+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "031",
+      "title": "待つことだけが私の強さ",
+      "audio_url": "https://cdn1.suno.ai/a3d7472e-f6a2-4d4d-870f-440db37fb3de.mp3",
+      "track_url": "tracks/031.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T06:03:40+09:00\"",
+      "ko_filled": 9
+    },
+    {
+      "id": "032",
+      "title": "約束の階段を上る日",
+      "audio_url": "https://cdn1.suno.ai/a530d35d-6de9-40a8-915d-00ac14b8a0e2.mp3",
+      "track_url": "tracks/032.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T05:58:43+09:00\"",
+      "ko_filled": 23
+    },
+    {
+      "id": "033",
+      "title": "リファイン・ルールズ・イン・モーション",
+      "audio_url": "https://cdn1.suno.ai/02d8dbb2-e650-4510-8f05-261de2339082.mp3",
+      "track_url": "tracks/033.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T05:53:36+09:00\"",
+      "ko_filled": 9
+    },
+    {
+      "id": "034",
+      "title": "シャツの袖が揺れる日には",
+      "audio_url": "https://cdn1.suno.ai/101b2f70-c17f-4be7-a73c-e630a6b9b960.mp3",
+      "track_url": "tracks/034.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T05:48:28+09:00\"",
+      "ko_filled": 18
+    },
+    {
+      "id": "035",
+      "title": "足あとに変わるリズム",
+      "audio_url": "https://cdn1.suno.ai/530b3887-ea92-419a-babe-69c403270a9a.mp3",
+      "track_url": "tracks/035.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T05:43:28+09:00\"",
+      "ko_filled": 9
+    },
+    {
+      "id": "036",
+      "title": "サヨナラの残し方リスト",
+      "audio_url": "https://cdn1.suno.ai/6358258b-fad2-44db-ae94-d6fca851841e.mp3",
+      "track_url": "tracks/036.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T05:38:34+09:00\"",
+      "ko_filled": 11
+    },
+    {
+      "id": "037",
+      "title": "ステップひとつで変わる午後",
+      "audio_url": "https://cdn1.suno.ai/aea2e086-5f9d-440d-ae7b-aac611b63d21.mp3",
+      "track_url": "tracks/037.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T05:33:36+09:00\"",
+      "ko_filled": 16
+    },
+    {
+      "id": "038",
+      "title": "ひとりで歩むリズムの帰り道",
+      "audio_url": "https://cdn1.suno.ai/73f9bb88-2618-41d7-9dfc-8f0a13ca27ee.mp3",
+      "track_url": "tracks/038.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T05:28:28+09:00\"",
+      "ko_filled": 17
+    },
+    {
+      "id": "039",
+      "title": "まぶしい次のドアを開けるまで",
+      "audio_url": "https://cdn1.suno.ai/113db907-af6f-4e4f-8327-f002edc326d3.mp3",
+      "track_url": "tracks/039.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T05:23:24+09:00\"",
+      "ko_filled": 9
+    },
+    {
+      "id": "040",
+      "title": "静かな手と透明な思考",
+      "audio_url": "https://cdn1.suno.ai/70512caf-b5b3-47f9-8ecc-0cb56abf7b72.mp3",
+      "track_url": "tracks/040.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T05:18:28+09:00\"",
+      "ko_filled": 23
+    },
+    {
+      "id": "041",
+      "title": "手渡しの午後、手のひらに残るもの",
+      "audio_url": "https://cdn1.suno.ai/6cacacd5-f860-421b-bd18-55fd0b2a8b3c.mp3",
+      "track_url": "tracks/041.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T05:13:37+09:00\"",
+      "ko_filled": 18
+    },
+    {
+      "id": "042",
+      "title": "今日の先を踏み出すルール",
+      "audio_url": "https://cdn1.suno.ai/f5dcc6de-b918-4227-bc14-74678abed1de.mp3",
+      "track_url": "tracks/042.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T05:08:38+09:00\"",
+      "ko_filled": 9
+    },
+    {
+      "id": "043",
+      "title": "手放す瞬間、風になる",
+      "audio_url": "https://cdn1.suno.ai/3902b918-d9be-4948-9720-a0c22a9c4cc7.mp3",
+      "track_url": "tracks/043.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T05:03:43+09:00\"",
+      "ko_filled": 12
+    },
+    {
+      "id": "044",
+      "title": "次へそっと踏み出す午後",
+      "audio_url": "https://cdn1.suno.ai/58442a77-e91a-4c4b-a3ce-c41fa85f3f55.mp3",
+      "track_url": "tracks/044.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T04:58:34+09:00\"",
+      "ko_filled": 17
+    },
+    {
+      "id": "045",
+      "title": "きょうの小さなあかし",
+      "audio_url": "https://cdn1.suno.ai/cf999b01-4f27-4867-a500-7cb61b6c3bcc.mp3",
+      "track_url": "tracks/045.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T04:53:32+09:00\"",
+      "ko_filled": 18
+    },
+    {
+      "id": "046",
+      "title": "交差するビルの上で深呼吸",
+      "audio_url": "https://cdn1.suno.ai/1d64a204-6cc9-4422-a58c-d75be03e4d32.mp3",
+      "track_url": "tracks/046.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T04:48:43+09:00\"",
+      "ko_filled": 28
+    },
+    {
+      "id": "047",
+      "title": "リズムに寄り添う午下のまま",
+      "audio_url": "https://cdn1.suno.ai/73f1d140-e4c6-4080-9d09-36a5981c6f68.mp3",
+      "track_url": "tracks/047.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T04:43:30+09:00\"",
+      "ko_filled": 27
+    },
+    {
+      "id": "048",
+      "title": "ラズベリーサンドの午後",
+      "audio_url": "https://cdn1.suno.ai/02e492d8-194c-456d-8a0a-45031c7784b7.mp3",
+      "track_url": "tracks/048.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T04:38:25+09:00\"",
+      "ko_filled": 9
+    },
+    {
+      "id": "049",
+      "title": "昨日のざわめきは遠く",
+      "audio_url": "https://cdn1.suno.ai/8ee0bd34-06ab-4de9-86ae-7d44297974bf.mp3",
+      "track_url": "tracks/049.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T04:33:32+09:00\"",
+      "ko_filled": 9
+    },
+    {
+      "id": "050",
+      "title": "ゆっくりでも届く場所へ",
+      "audio_url": "https://cdn1.suno.ai/7ff0176f-d7d3-43b1-b185-264c2c9eab27.mp3",
+      "track_url": "tracks/050.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T04:28:35+09:00\"",
+      "ko_filled": 23
+    },
+    {
+      "id": "051",
+      "title": "確かなものだけ抱きしめて",
+      "audio_url": "https://cdn1.suno.ai/9118148a-50f8-4914-953c-6b60098c03ef.mp3",
+      "track_url": "tracks/051.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T04:23:57+09:00\"",
+      "ko_filled": 23
+    },
+    {
+      "id": "052",
+      "title": "夜の静けさに溶けていく日々",
+      "audio_url": "https://cdn1.suno.ai/232b0b0f-66b6-4eb0-8abc-fe29d95ce45a.mp3",
+      "track_url": "tracks/052.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T04:19:37+09:00\"",
+      "ko_filled": 22
+    },
+    {
+      "id": "053",
+      "title": "まあるい午後の小さなヒーロー",
+      "audio_url": "https://cdn1.suno.ai/67d98d3e-a5fd-4fbf-a86d-e1f0675dd4ea.mp3",
+      "track_url": "tracks/053.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T03:58:33+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "054",
+      "title": "ループする午後のエピローグ",
+      "audio_url": "https://cdn1.suno.ai/3b156bb6-ffc3-4614-aeeb-7144bd39d703.mp3",
+      "track_url": "tracks/054.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T03:53:34+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "055",
+      "title": "タスクの合間のやわらかな道を",
+      "audio_url": "https://cdn1.suno.ai/3e5fdb9f-3abd-4d1e-a2eb-a7bf37155489.mp3",
+      "track_url": "tracks/055.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T03:48:32+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "056",
+      "title": "ミルクの渦にとけた想い出",
+      "audio_url": "https://cdn1.suno.ai/bec7e1a7-3af2-4815-9613-d05865980664.mp3",
+      "track_url": "tracks/056.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T03:44:11+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "057",
+      "title": "サンドイッチショップの朝焼けグラデーション",
+      "audio_url": "https://cdn1.suno.ai/19aa5df0-f26d-41fa-8665-0899ce9d7960.mp3",
+      "track_url": "tracks/057.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T03:38:29+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "058",
+      "title": "ワンステップ・スマイルルール",
+      "audio_url": "https://cdn1.suno.ai/9598c378-f26d-412d-aaf0-7af88af26c86.mp3",
+      "track_url": "tracks/058.json",
+      "duration": 180.0,
+      "created_at": "\"2026-01-31T03:34:01+09:00\"",
       "ko_filled": 0
     }
   ]
