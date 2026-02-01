@@ -7,6 +7,10 @@
   <style>
     :root{
       --font: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", "Noto Sans JP", sans-serif;
+      --titleSize: 22px;
+      --titleGap: 10px;
+      --titleOpacity: 0.92;
+
       --jaSize: 34px;
       --koSize: 26px;
       --lineGap: 10px;
@@ -42,6 +46,19 @@
       filter: drop-shadow(var(--shadow));
       pointer-events: auto; /* 컨트롤 영역만 클릭 */
     }
+
+    /* ---------- title ---------- */
+    #title{
+      font-size: var(--titleSize);
+      font-weight: 800;
+      line-height: 1.2;
+      opacity: var(--titleOpacity);
+      margin: 0 0 var(--titleGap) 0;
+      letter-spacing: 0.2px;
+      word-break: keep-all;
+    }
+    .title-off #title{ display:none; }
+
     .ja{ font-size: var(--jaSize); font-weight: 700; line-height: 1.25; }
     .ko{ font-size: var(--koSize); font-weight: 600; line-height: 1.25; opacity: 0.92; margin-top: var(--lineGap); }
     #hud{
@@ -74,14 +91,15 @@
     }
     #audio{
       width: min(720px, 86vw);
-    }
-    /* OBS에서 HUD 숨기고 싶으면 ?hud=0 */
+    }/* OBS에서 HUD 숨기고 싶으면 ?hud=0 */
     .hud-off #hud{ display:none; }
   </style>
 </head>
 <body>
   <div id="wrap">
     <div id="box">
+      <div id="title"></div>
+
       <div id="ja" class="ja"></div>
       <div id="ko" class="ko" style="display:none;"></div>
 
@@ -112,6 +130,10 @@
   const hud = params.get("hud"); // 0 => hide
   const cacheBust = params.get("cb") || ""; // optional external cache buster
 
+  // title show/hide
+  const titleOn = (params.get("title") ?? "1") !== "0";
+  if (!titleOn) document.body.classList.add("title-off");
+
   if (hud === "0") document.body.classList.add("hud-off");
 
   function num(v, d){ const n = Number(v); return Number.isFinite(n) ? n : d; }
@@ -124,9 +146,15 @@
     "--koSize": params.get("koSize") ? params.get("koSize") + "px" : null,
     "--align": params.get("align") || null,
     "--maxW": params.get("maxW") ? params.get("maxW") + "vw" : null,
+
+    // title style params
+    "--titleSize": params.get("titleSize") ? params.get("titleSize") + "px" : null,
+    "--titleGap": params.get("titleGap") ? params.get("titleGap") + "px" : null,
+    "--titleOpacity": params.get("titleOpacity") ? params.get("titleOpacity") : null,
   };
   for (const [k,v] of Object.entries(cssVars)) if (v) document.documentElement.style.setProperty(k, v);
 
+  const titleEl = $("title");
   const jaEl = $("ja");
   const koEl = $("ko");
   const audio = $("audio");
@@ -163,9 +191,8 @@
   }
 
   // ---------- cue extraction (format-agnostic) ----------
-  // end가 없으면 다음 라인의 start를 end로 자동 생성
+  // track json 포맷이 약간 달라도 start/end + text/ja/ko를 찾도록 "느슨하게" 처리
   function extractCues(obj){
-    // 1) 표준 cues: start/end 또는 t0/t1
     const cues = [];
     const seen = new Set();
 
@@ -188,6 +215,7 @@
         return;
       }
       if (typeof x === "object"){
+        // common variants
         if (("start" in x) && ("end" in x)){
           const ja = x.ja ?? x.text ?? x.line ?? x.content ?? "";
           const ko = x.ko ?? x.ko_text ?? "";
@@ -198,66 +226,27 @@
           const ko = x.ko ?? "";
           pushCue(x.t0, x.t1, ja, ko);
         }
+        // sometimes segments array exists
         for (const v of Object.values(x)) walk(v);
       }
     }
     walk(obj);
 
-    // 2) ✅ start-only lines 지원 (대표님 track 포맷)
-    // obj.lines: [{start, ja, ko, ...}, ...] 만 있는 경우 end를 "다음 start"로 생성
-    if (cues.length === 0 && obj && Array.isArray(obj.lines)){
-      const arr = obj.lines
-        .map(l => ({
-          start: Number(l.start),
-          ja: (l.ja ?? "").toString().trim(),
-          ko: (l.ko ?? "").toString().trim()
-        }))
-        .filter(l => Number.isFinite(l.start) && l.ja);
-
-      arr.sort((a,b)=>a.start-b.start);
-
-      // 마지막 end는 임시로 null (나중에 loadTrack에서 채움)
-      for (let i=0;i<arr.length;i++){
-        const s = arr[i].start;
-        const e = (i < arr.length-1) ? arr[i+1].start : null;
-        cues.push({start:s, end:e, ja:arr[i].ja, ko:arr[i].ko});
-      }
-    }
-
+    // sort by start
     cues.sort((a,b)=>a.start-b.start);
     return cues;
   }
 
-  let lastCueIdx = 0;
-
   function cueAt(cues, t){
-    if (!cues || cues.length === 0) return null;
-
-    // end가 null/NaN이면 무한대로 취급
-    const endOf = (c) => (Number.isFinite(c.end) ? c.end : Infinity);
-
-    // 1) 캐시 인덱스부터 앞으로/뒤로 빠르게 찾기
-    let i = Math.min(Math.max(lastCueIdx, 0), cues.length - 1);
-
-    // t가 현재 cue보다 앞이면 뒤로
-    while (i > 0 && t < cues[i].start) i--;
-
-    // t가 현재 cue의 end를 넘으면 앞으로
-    while (i < cues.length - 1 && t >= endOf(cues[i])) i++;
-
-    const c = cues[i];
-    if (t >= c.start && t < endOf(c)){
-      lastCueIdx = i;
-      return c;
+    // simple linear scan with last index cache
+    // t is audio.currentTime + offsetSec
+    for (let i=0;i<cues.length;i++){
+      const c = cues[i];
+      if (t >= c.start && t < c.end) return c;
     }
-
-    // 2) 그래도 못 찾으면 "가장 가까운 과거 cue" (단, end 무한대 고려)
+    // fallback: nearest past cue
     let last = null;
-    for (const c2 of cues){
-      if (c2.start <= t) last = c2;
-      else break;
-    }
-    lastCueIdx = last ? cues.indexOf(last) : 0;
+    for (const c of cues){ if (c.start <= t) last = c; else break; }
     return last;
   }
 
@@ -275,6 +264,13 @@
     trackLabel.textContent = `${currentTrack.id}${currentTrack.title ? " · " + currentTrack.title : ""}`;
   }
 
+  function setHeaderTitle(text){
+    if (!titleEl) return;
+    const t = (text ?? "").toString().trim();
+    titleEl.textContent = t;
+    if (t) document.title = `PT Player — ${t}`;
+  }
+
   async function loadTrack(i){
     if (!playlist) return;
     idx = Math.max(0, Math.min(i, playlist.tracks.length-1));
@@ -285,60 +281,15 @@
     if (!currentTrack.audio_url) throw new Error("missing audio_url");
     audio.src = currentTrack.audio_url;
 
-    // duration을 쓰려면 메타데이터 로딩을 기다려야 함
-    if (!Number.isFinite(audio.duration) || audio.duration === 0){
-      await new Promise((resolve) => {
-        const onMeta = () => resolve();
-        audio.addEventListener("loadedmetadata", onMeta, { once: true });
-      });
-    }
-
     // load track json cues
     if (!currentTrack.track_url) throw new Error("missing track_url");
     const trackJson = await fetchJSON(base + currentTrack.track_url);
+
+    // title priority: track.title -> trackJson.title -> empty
+    const t = (currentTrack && currentTrack.title) ? currentTrack.title : (trackJson && trackJson.title) ? trackJson.title : "";
+    if (titleOn) setHeaderTitle(t);
+
     cues = extractCues(trackJson);
-
-    // ✅ 마지막 cue의 end가 null이면 duration으로 채우기
-    // 우선순위: playlist.duration -> audio.duration -> (start+8초 임시)
-    const trackDur =
-      Number(currentTrack?.duration) ||
-      Number(audio?.duration) ||
-      0;
-
-    const MIN_DUR = 1.6; // 너무 휙휙 지나가는 것 방지(원하면 1.2~2.0 조절)
-
-    if (cues.length){
-      // 1) end가 start-only로 생성되었는데, 다음 start가 같거나 더 작으면 최소 duration 부여
-      for (let i=0;i<cues.length;i++){
-        const s = Number(cues[i].start);
-        let e = Number(cues[i].end);
-
-        // end가 유효하지 않으면: 마지막은 duration, 나머지는 start+MIN_DUR
-        if (!Number.isFinite(e) || e <= s){
-          if (i < cues.length - 1){
-            const nextS = Number(cues[i+1].start);
-            if (Number.isFinite(nextS) && nextS > s){
-              e = nextS;
-            } else {
-              e = s + MIN_DUR;
-            }
-          } else {
-            e = (trackDur > 0) ? trackDur : (s + MIN_DUR);
-          }
-        }
-
-        // 최소 표시 시간 보정
-        if (e - s < MIN_DUR) e = s + MIN_DUR;
-
-        cues[i].start = s;
-        cues[i].end = e;
-      }
-
-      // 2) 혹시라도 전체가 duration을 넘으면 마지막만 duration에 맞추기
-      if (trackDur > 0){
-        cues[cues.length-1].end = Math.max(cues[cues.length-1].start + MIN_DUR, trackDur);
-      }
-    }
 
     // clear text immediately
     jaEl.textContent = "";
@@ -440,3 +391,4 @@
 </script>
 </body>
 </html>
+
