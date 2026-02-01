@@ -1,0 +1,15 @@
+{
+  "set_id": "20260114",
+  "built_at": "2026-02-01T16:22:10+0000",
+  "tracks": [
+    {
+      "id": "001",
+      "title": "test song",
+      "audio_url": "https://cdn1.suno.ai/7b4bb916-6e9f-4e2e-8870-ca76b91fa61f.mp3",
+      "track_url": "tracks/001.json",
+      "duration": 180.0,
+      "created_at": "2026-01-14T02:41:58Z",
+      "ko_filled": 0
+    }
+  ]
+}
