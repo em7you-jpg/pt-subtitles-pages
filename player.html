@@ -7,18 +7,13 @@
   <style>
     :root{
       --font: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", "Noto Sans JP", sans-serif;
-
-      /* ---------- title (TOP) ---------- */
       --titleSize: 22px;
       --titleGap: 10px;
       --titleOpacity: 0.92;
-      --titleTop: 4em; /* ✅ 상단 간격: "4줄 정도" */
 
-      /* ---------- subtitles (HALF SIZE DEFAULT) ---------- */
-      --jaSize: 17px;  /* ✅ 34 -> 17 */
-      --koSize: 13px;  /* ✅ 26 -> 13 */
+      --jaSize: 34px;
+      --koSize: 26px;
       --lineGap: 10px;
-
       --bg: rgba(0,0,0,0.0);
       --fg: rgba(255,255,255,0.95);
       --shadow: 0 2px 12px rgba(0,0,0,0.55);
@@ -33,31 +28,6 @@
       margin:0; background: transparent; overflow:hidden;
       font-family: var(--font);
     }
-
-    /* ---------- TOP TITLE WRAP ---------- */
-    #titleWrap{
-      position: fixed;
-      left: 50%;
-      top: var(--titleTop);
-      transform: translateX(-50%);
-      width: min(92vw, 980px);
-      color: var(--fg);
-      text-align: center;
-      pointer-events: none;
-      filter: drop-shadow(var(--shadow));
-    }
-    #title{
-      font-size: var(--titleSize);
-      font-weight: 800;
-      line-height: 1.2;
-      opacity: var(--titleOpacity);
-      margin: 0 0 var(--titleGap) 0;
-      letter-spacing: 0.2px;
-      word-break: keep-all;
-    }
-    .title-off #titleWrap{ display:none; }
-
-    /* ---------- SUBTITLE WRAP (BOTTOM) ---------- */
     #wrap{
       position: fixed;
       left: var(--posX);
@@ -77,9 +47,20 @@
       pointer-events: auto; /* 컨트롤 영역만 클릭 */
     }
 
+    /* ---------- title ---------- */
+    #title{
+      font-size: var(--titleSize);
+      font-weight: 800;
+      line-height: 1.2;
+      opacity: var(--titleOpacity);
+      margin: 0 0 var(--titleGap) 0;
+      letter-spacing: 0.2px;
+      word-break: keep-all;
+    }
+    .title-off #title{ display:none; }
+
     .ja{ font-size: var(--jaSize); font-weight: 700; line-height: 1.25; }
     .ko{ font-size: var(--koSize); font-weight: 600; line-height: 1.25; opacity: 0.92; margin-top: var(--lineGap); }
-
     #hud{
       margin-top: 10px;
       font-size: 13px;
@@ -110,21 +91,15 @@
     }
     #audio{
       width: min(720px, 86vw);
-    }
-    /* OBS에서 HUD 숨기고 싶으면 ?hud=0 */
+    }/* OBS에서 HUD 숨기고 싶으면 ?hud=0 */
     .hud-off #hud{ display:none; }
   </style>
 </head>
 <body>
-
-  <!-- ✅ Title fixed at TOP -->
-  <div id="titleWrap">
-    <div id="title"></div>
-  </div>
-
-  <!-- Subtitles + HUD -->
   <div id="wrap">
     <div id="box">
+      <div id="title"></div>
+
       <div id="ja" class="ja"></div>
       <div id="ko" class="ko" style="display:none;"></div>
 
@@ -151,7 +126,7 @@
   const params = new URLSearchParams(location.search);
 
   const setId = params.get("set") || "default";
-  const lang = (params.get("lang") || "both").toLowerCase(); // both|ja|ko
+  const lang = (params.get("lang") || "both").toLowerCase(); // both|ja
   const hud = params.get("hud"); // 0 => hide
   const cacheBust = params.get("cb") || ""; // optional external cache buster
 
@@ -176,7 +151,6 @@
     "--titleSize": params.get("titleSize") ? params.get("titleSize") + "px" : null,
     "--titleGap": params.get("titleGap") ? params.get("titleGap") + "px" : null,
     "--titleOpacity": params.get("titleOpacity") ? params.get("titleOpacity") : null,
-    "--titleTop": params.get("titleTop") ? params.get("titleTop") + "em" : null,
   };
   for (const [k,v] of Object.entries(cssVars)) if (v) document.documentElement.style.setProperty(k, v);
 
@@ -227,7 +201,7 @@
       if (!Number.isFinite(s) || !Number.isFinite(e) || e <= s) return;
       ja = (ja ?? "").toString().trim();
       ko = (ko ?? "").toString().trim();
-      if (!ja) return; // ✅ 빈 자막 라인은 cue로 취급하지 않음
+      if (!ja) return;
       const key = `${s.toFixed(3)}|${e.toFixed(3)}|${ja}`;
       if (seen.has(key)) return;
       seen.add(key);
@@ -252,45 +226,28 @@
           const ko = x.ko ?? "";
           pushCue(x.t0, x.t1, ja, ko);
         }
+        // sometimes segments array exists
         for (const v of Object.values(x)) walk(v);
       }
     }
     walk(obj);
 
+    // sort by start
     cues.sort((a,b)=>a.start-b.start);
     return cues;
   }
 
-  // ✅ end 범위 기반: start<=t<end 이면 표시, 아니면 null (간주에서 남는 문제 해결)
-  let lastCueIdx = 0;
   function cueAt(cues, t){
-    if (!cues || cues.length === 0) return null;
-
-    // try from last index forward
-    for (let i = lastCueIdx; i < cues.length; i++){
+    // simple linear scan with last index cache
+    // t is audio.currentTime + offsetSec
+    for (let i=0;i<cues.length;i++){
       const c = cues[i];
-      if (t < c.start) break;
-      if (t >= c.start && t < c.end){
-        lastCueIdx = i;
-        return c;
-      }
+      if (t >= c.start && t < c.end) return c;
     }
-    // try backward (when seeked)
-    for (let i = Math.min(lastCueIdx, cues.length - 1); i >= 0; i--){
-      const c = cues[i];
-      if (t >= c.start && t < c.end){
-        lastCueIdx = i;
-        return c;
-      }
-      if (t > c.end && i === cues.length - 1) break;
-    }
-    return null;
-  }
-
-  function clearSubtitle(){
-    if (jaEl.textContent !== "") jaEl.textContent = "";
-    if (koEl.textContent !== "") koEl.textContent = "";
-    koEl.style.display = "none";
+    // fallback: nearest past cue
+    let last = null;
+    for (const c of cues){ if (c.start <= t) last = c; else break; }
+    return last;
   }
 
   // ---------- playlist handling ----------
@@ -333,35 +290,26 @@
     if (titleOn) setHeaderTitle(t);
 
     cues = extractCues(trackJson);
-    lastCueIdx = 0;
 
     // clear text immediately
-    clearSubtitle();
+    jaEl.textContent = "";
+    koEl.textContent = "";
+    koEl.style.display = "none";
   }
 
   function render(){
-    if (!cues || cues.length === 0){
-      clearSubtitle();
-      return;
-    }
-
+    if (!cues || cues.length === 0) return;
     const t = audio.currentTime + offsetSec;
     const c = cueAt(cues, t);
-
-    // ✅ active cue 없으면 완전 공백 (간주/무음 구간)
-    if (!c){
-      clearSubtitle();
-      return;
-    }
+    if (!c) return;
 
     // JA always
     if (jaEl.textContent !== c.ja) jaEl.textContent = c.ja;
 
-    // KO: only show if exists and lang=both|ko
+    // KO: only show if exists and lang=both
     const hasKo = !!(c.ko && c.ko.trim());
-    if ((lang === "both" || lang === "ko") && hasKo){
-      const target = (lang === "ko") ? c.ko : c.ko;
-      if (koEl.textContent !== target) koEl.textContent = target;
+    if (lang === "both" && hasKo){
+      if (koEl.textContent !== c.ko) koEl.textContent = c.ko;
       koEl.style.display = "";
     } else {
       koEl.textContent = "";
@@ -390,7 +338,7 @@
   btnOffM.addEventListener("click", ()=> setOffset(offsetSec - 0.5));
   btnOffP.addEventListener("click", ()=> setOffset(offsetSec + 0.5));
 
-  // hotkeys
+  // hotkeys (OBS 상호작용 없이도 쓰고 싶으면 OBS에서 브라우저 포커스 필요)
   window.addEventListener("keydown", (e)=>{
     if (e.key === "ArrowLeft") btnPrev.click();
     if (e.key === "ArrowRight") btnNext.click();
@@ -408,14 +356,13 @@
     if (idx < playlist.tracks.length-1){
       await loadTrack(idx + 1);
       await audio.play();
-    } else {
-      // 마지막 트랙 끝나면 자막 비우기
-      clearSubtitle();
     }
   });
 
   // ---------- boot ----------
   (async () => {
+    // playlist.json format:
+    // { "set_id":"...", "tracks":[{"id":"001","title":"..","audio_url":"..","track_url":"tracks/001.json","duration":180.0}, ...] }
     playlist = await fetchJSON(playlistUrl);
 
     if (!playlist || !Array.isArray(playlist.tracks) || playlist.tracks.length === 0){
@@ -444,3 +391,4 @@
 </script>
 </body>
 </html>
+
