@@ -7,17 +7,13 @@
   <style>
     :root{
       --font: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", "Noto Sans JP", sans-serif;
-
-      /* title (TOP) */
       --titleSize: 22px;
+      --titleGap: 10px;
       --titleOpacity: 0.92;
-      --titleTop: 6vh;        /* 대략 4줄 느낌(원하면 URL로 조절 가능) */
-      --titleMaxW: 92vw;
 
-      /* subtitles (BOTTOM) */
-      --jaSize: 17px;         /* 기존 34px -> 절반 */
-      --koSize: 13px;         /* 기존 26px -> 절반 */
-      --lineGap: 8px;         /* 약간만 줄임 */
+      --jaSize: 34px;
+      --koSize: 26px;
+      --lineGap: 10px;
       --bg: rgba(0,0,0,0.0);
       --fg: rgba(255,255,255,0.95);
       --shadow: 0 2px 12px rgba(0,0,0,0.55);
@@ -32,32 +28,6 @@
       margin:0; background: transparent; overflow:hidden;
       font-family: var(--font);
     }
-
-    /* ---------- title fixed at top ---------- */
-    #titleWrap{
-      position: fixed;
-      left: 50%;
-      top: var(--titleTop);
-      transform: translateX(-50%);
-      width: var(--titleMaxW);
-      text-align: center;
-      color: var(--fg);
-      pointer-events: none;
-      filter: drop-shadow(var(--shadow));
-    }
-    #title{
-      font-size: var(--titleSize);
-      font-weight: 900;
-      line-height: 1.2;
-      opacity: var(--titleOpacity);
-      letter-spacing: 0.2px;
-      word-break: keep-all;
-      margin: 0;
-      padding: 0;
-    }
-    .title-off #titleWrap{ display:none; }
-
-    /* ---------- subtitles block ---------- */
     #wrap{
       position: fixed;
       left: var(--posX);
@@ -77,9 +47,20 @@
       pointer-events: auto; /* 컨트롤 영역만 클릭 */
     }
 
-    .ja{ font-size: var(--jaSize); font-weight: 800; line-height: 1.28; }
-    .ko{ font-size: var(--koSize); font-weight: 700; line-height: 1.28; opacity: 0.92; margin-top: var(--lineGap); }
+    /* ---------- title ---------- */
+    #title{
+      font-size: var(--titleSize);
+      font-weight: 800;
+      line-height: 1.2;
+      opacity: var(--titleOpacity);
+      margin: 0 0 var(--titleGap) 0;
+      letter-spacing: 0.2px;
+      word-break: keep-all;
+    }
+    .title-off #title{ display:none; }
 
+    .ja{ font-size: var(--jaSize); font-weight: 700; line-height: 1.25; }
+    .ko{ font-size: var(--koSize); font-weight: 600; line-height: 1.25; opacity: 0.92; margin-top: var(--lineGap); }
     #hud{
       margin-top: 10px;
       font-size: 13px;
@@ -90,7 +71,10 @@
       flex-wrap: wrap;
       user-select: none;
     }
-    #hud button, #hud input{ pointer-events: auto; font-size: 13px; }
+    #hud button, #hud input{
+      pointer-events: auto;
+      font-size: 13px;
+    }
     #hud button{
       border: 0;
       border-radius: 10px;
@@ -105,22 +89,17 @@
       padding: 6px 10px;
       border-radius: 10px;
     }
-    #audio{ width: min(720px, 86vw); }
-
-    /* OBS에서 HUD 숨기고 싶으면 ?hud=0 */
+    #audio{
+      width: min(720px, 86vw);
+    }/* OBS에서 HUD 숨기고 싶으면 ?hud=0 */
     .hud-off #hud{ display:none; }
   </style>
 </head>
 <body>
-
-  <!-- TOP title -->
-  <div id="titleWrap">
-    <div id="title"></div>
-  </div>
-
-  <!-- BOTTOM subtitles + HUD -->
   <div id="wrap">
     <div id="box">
+      <div id="title"></div>
+
       <div id="ja" class="ja"></div>
       <div id="ko" class="ko" style="display:none;"></div>
 
@@ -142,6 +121,7 @@
 
 <script>
 (() => {
+  // ---------- helpers ----------
   const $ = (id) => document.getElementById(id);
   const params = new URLSearchParams(location.search);
 
@@ -153,11 +133,12 @@
   // title show/hide
   const titleOn = (params.get("title") ?? "1") !== "0";
   if (!titleOn) document.body.classList.add("title-off");
+
   if (hud === "0") document.body.classList.add("hud-off");
 
   function num(v, d){ const n = Number(v); return Number.isFinite(n) ? n : d; }
 
-  // style params (기존 URL 제어 유지 + titleTop 추가)
+  // style params (기존 player의 URL 제어 감각 그대로 유지)
   const cssVars = {
     "--posX": params.get("x") ? params.get("x") + "%" : null,
     "--posY": params.get("y") ? params.get("y") + "%" : null,
@@ -166,10 +147,10 @@
     "--align": params.get("align") || null,
     "--maxW": params.get("maxW") ? params.get("maxW") + "vw" : null,
 
+    // title style params
     "--titleSize": params.get("titleSize") ? params.get("titleSize") + "px" : null,
+    "--titleGap": params.get("titleGap") ? params.get("titleGap") + "px" : null,
     "--titleOpacity": params.get("titleOpacity") ? params.get("titleOpacity") : null,
-    "--titleTop": params.get("titleTop") ? params.get("titleTop") : null, // e.g. 6vh or 60px
-    "--titleMaxW": params.get("titleMaxW") ? params.get("titleMaxW") + "vw" : null,
   };
   for (const [k,v] of Object.entries(cssVars)) if (v) document.documentElement.style.setProperty(k, v);
 
@@ -186,6 +167,7 @@
   const trackLabel = $("trackLabel");
   const offsetLabel = $("offsetLabel");
 
+  // offset per set
   const lsKey = `pt_offset_${setId}`;
   let offsetSec = num(localStorage.getItem(lsKey), 0.0);
   function setOffset(v){
@@ -197,6 +179,7 @@
 
   function withCB(url){
     const u = new URL(url, location.origin);
+    // 항상 캐시 우회: set별 최신 반영
     u.searchParams.set("v", cacheBust || Date.now().toString());
     return u.toString();
   }
@@ -207,6 +190,8 @@
     return await res.json();
   }
 
+  // ---------- cue extraction (format-agnostic) ----------
+  // track json 포맷이 약간 달라도 start/end + text/ja/ko를 찾도록 "느슨하게" 처리
   function extractCues(obj){
     const cues = [];
     const seen = new Set();
@@ -225,8 +210,12 @@
 
     function walk(x){
       if (!x) return;
-      if (Array.isArray(x)){ for (const it of x) walk(it); return; }
+      if (Array.isArray(x)){
+        for (const it of x) walk(it);
+        return;
+      }
       if (typeof x === "object"){
+        // common variants
         if (("start" in x) && ("end" in x)){
           const ja = x.ja ?? x.text ?? x.line ?? x.content ?? "";
           const ko = x.ko ?? x.ko_text ?? "";
@@ -237,25 +226,31 @@
           const ko = x.ko ?? "";
           pushCue(x.t0, x.t1, ja, ko);
         }
+        // sometimes segments array exists
         for (const v of Object.values(x)) walk(v);
       }
     }
     walk(obj);
 
+    // sort by start
     cues.sort((a,b)=>a.start-b.start);
     return cues;
   }
 
   function cueAt(cues, t){
+    // simple linear scan with last index cache
+    // t is audio.currentTime + offsetSec
     for (let i=0;i<cues.length;i++){
       const c = cues[i];
       if (t >= c.start && t < c.end) return c;
     }
+    // fallback: nearest past cue
     let last = null;
     for (const c of cues){ if (c.start <= t) last = c; else break; }
     return last;
   }
 
+  // ---------- playlist handling ----------
   const base = `${location.origin}/set/${encodeURIComponent(setId)}/`;
   const playlistUrl = base + "playlist.json";
 
@@ -282,17 +277,21 @@
     currentTrack = playlist.tracks[idx];
     updateTrackLabel();
 
+    // set audio source
     if (!currentTrack.audio_url) throw new Error("missing audio_url");
     audio.src = currentTrack.audio_url;
 
+    // load track json cues
     if (!currentTrack.track_url) throw new Error("missing track_url");
     const trackJson = await fetchJSON(base + currentTrack.track_url);
 
+    // title priority: track.title -> trackJson.title -> empty
     const t = (currentTrack && currentTrack.title) ? currentTrack.title : (trackJson && trackJson.title) ? trackJson.title : "";
     if (titleOn) setHeaderTitle(t);
 
     cues = extractCues(trackJson);
 
+    // clear text immediately
     jaEl.textContent = "";
     koEl.textContent = "";
     koEl.style.display = "none";
@@ -304,8 +303,10 @@
     const c = cueAt(cues, t);
     if (!c) return;
 
+    // JA always
     if (jaEl.textContent !== c.ja) jaEl.textContent = c.ja;
 
+    // KO: only show if exists and lang=both
     const hasKo = !!(c.ko && c.ko.trim());
     if (lang === "both" && hasKo){
       if (koEl.textContent !== c.ko) koEl.textContent = c.ko;
@@ -316,6 +317,7 @@
     }
   }
 
+  // ---------- controls ----------
   btnPlay.addEventListener("click", async () => {
     if (!playlist) return;
     if (audio.paused) await audio.play();
@@ -324,12 +326,19 @@
   audio.addEventListener("play", ()=> btnPlay.textContent = "Pause");
   audio.addEventListener("pause", ()=> btnPlay.textContent = "Play");
 
-  btnPrev.addEventListener("click", async () => { await loadTrack(idx - 1); await audio.play(); });
-  btnNext.addEventListener("click", async () => { await loadTrack(idx + 1); await audio.play(); });
+  btnPrev.addEventListener("click", async () => {
+    await loadTrack(idx - 1);
+    await audio.play();
+  });
+  btnNext.addEventListener("click", async () => {
+    await loadTrack(idx + 1);
+    await audio.play();
+  });
 
   btnOffM.addEventListener("click", ()=> setOffset(offsetSec - 0.5));
   btnOffP.addEventListener("click", ()=> setOffset(offsetSec + 0.5));
 
+  // hotkeys (OBS 상호작용 없이도 쓰고 싶으면 OBS에서 브라우저 포커스 필요)
   window.addEventListener("keydown", (e)=>{
     if (e.key === "ArrowLeft") btnPrev.click();
     if (e.key === "ArrowRight") btnNext.click();
@@ -342,6 +351,7 @@
   audio.addEventListener("seeked", render);
 
   audio.addEventListener("ended", async () => {
+    // auto next
     if (!playlist) return;
     if (idx < playlist.tracks.length-1){
       await loadTrack(idx + 1);
@@ -349,15 +359,21 @@
     }
   });
 
+  // ---------- boot ----------
   (async () => {
+    // playlist.json format:
+    // { "set_id":"...", "tracks":[{"id":"001","title":"..","audio_url":"..","track_url":"tracks/001.json","duration":180.0}, ...] }
     playlist = await fetchJSON(playlistUrl);
+
     if (!playlist || !Array.isArray(playlist.tracks) || playlist.tracks.length === 0){
       throw new Error("playlist.json invalid or empty");
     }
 
+    // optional start track: ?i=1 (1-based)
     const startI = num(params.get("i"), 1);
     await loadTrack(startI - 1);
 
+    // auto play: ?autoplay=1
     if (params.get("autoplay") === "1"){
       await audio.play();
     }
@@ -375,3 +391,4 @@
 </script>
 </body>
 </html>
+
