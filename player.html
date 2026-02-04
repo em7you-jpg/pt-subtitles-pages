@@ -146,6 +146,9 @@
 
 <script>
 (() => {
+  console.log("PATCH_MARKER_V20260205"); // ✅ PATCH MARKER
+  try { document.title = "PT Player (PATCH_MARKER_V20260205)"; } catch {} // ✅ PATCH MARKER
+  
   // ---------- helpers ----------
   const $ = (id) => document.getElementById(id);
   const params = new URLSearchParams(location.search);
