@@ -12,11 +12,11 @@
       --titleSize: 22px;
       --titleGap: 10px;
       --titleOpacity: 0.92;
-      --titleTop: 4em;
+      --titleTop: 4em; /* ✅ 상단 간격: "4줄 정도" */
 
       /* ---------- subtitles (HALF SIZE DEFAULT) ---------- */
-      --jaSize: 26px;
-      --koSize: 20px;
+      --jaSize: 26px;  /* ✅ 34 -> 24 */
+      --koSize: 20px;  /* ✅ 26 -> 18 */
       --lineGap: 14px;
 
       --bg: rgba(0,0,0,0.0);
@@ -26,7 +26,7 @@
       --radius: 14px;
       --posX: 50%;
       --posY: 82%;
-      --align: center;
+      --align: center; /* left|center|right */
       --maxW: 92vw;
     }
     body{
@@ -34,6 +34,7 @@
       font-family: var(--font);
     }
 
+    /* ---------- TOP TITLE WRAP ---------- */
     #titleWrap{
       position: fixed;
       left: 50%;
@@ -56,6 +57,7 @@
     }
     .title-off #titleWrap{ display:none; }
 
+    /* ---------- SUBTITLE WRAP (BOTTOM) ---------- */
     #wrap{
       position: fixed;
       left: var(--posX);
@@ -64,7 +66,7 @@
       width: var(--maxW);
       color: var(--fg);
       text-align: var(--align);
-      pointer-events: none;
+      pointer-events: none; /* OBS에서 클릭 안 막기 */
     }
     #box{
       display:inline-block;
@@ -72,7 +74,7 @@
       padding: var(--pad);
       border-radius: var(--radius);
       filter: drop-shadow(var(--shadow));
-      pointer-events: auto;
+      pointer-events: auto; /* 컨트롤 영역만 클릭 */
     }
 
     .ja{ font-size: var(--jaSize); font-weight: 700; line-height: 1.25; }
@@ -109,15 +111,18 @@
     #audio{
       width: min(720px, 86vw);
     }
+    /* OBS에서 HUD 숨기고 싶으면 ?hud=0 */
     .hud-off #hud{ display:none; }
   </style>
 </head>
 <body>
 
+  <!-- ✅ Title fixed at TOP -->
   <div id="titleWrap">
     <div id="title"></div>
   </div>
 
+  <!-- Subtitles + HUD -->
   <div id="wrap">
     <div id="box">
       <div id="ja" class="ja"></div>
@@ -130,7 +135,6 @@
 
         <span class="pill">Track: <span id="trackLabel">-</span></span>
         <span class="pill">Offset: <span id="offsetLabel">0.0</span>s</span>
-        <span class="pill">Scale: <span id="scaleLabel">1.000</span></span>
 
         <button id="btnOffM">-0.5s</button>
         <button id="btnOffP">+0.5s</button>
@@ -142,20 +146,24 @@
 
 <script>
 (() => {
+  // ---------- helpers ----------
   const $ = (id) => document.getElementById(id);
   const params = new URLSearchParams(location.search);
 
   const setId = params.get("set") || "default";
   const lang = (params.get("lang") || "both").toLowerCase(); // both|ja|ko
-  const hud = params.get("hud");
-  const cacheBust = params.get("cb") || "";
+  const hud = params.get("hud"); // 0 => hide
+  const cacheBust = params.get("cb") || ""; // optional external cache buster
 
+  // title show/hide
   const titleOn = (params.get("title") ?? "1") !== "0";
   if (!titleOn) document.body.classList.add("title-off");
+
   if (hud === "0") document.body.classList.add("hud-off");
 
   function num(v, d){ const n = Number(v); return Number.isFinite(n) ? n : d; }
 
+  // style params (기존 player의 URL 제어 감각 그대로 유지)
   const cssVars = {
     "--posX": params.get("x") ? params.get("x") + "%" : null,
     "--posY": params.get("y") ? params.get("y") + "%" : null,
@@ -163,6 +171,8 @@
     "--koSize": params.get("koSize") ? params.get("koSize") + "px" : null,
     "--align": params.get("align") || null,
     "--maxW": params.get("maxW") ? params.get("maxW") + "vw" : null,
+
+    // title style params
     "--titleSize": params.get("titleSize") ? params.get("titleSize") + "px" : null,
     "--titleGap": params.get("titleGap") ? params.get("titleGap") + "px" : null,
     "--titleOpacity": params.get("titleOpacity") ? params.get("titleOpacity") : null,
@@ -182,9 +192,8 @@
   const btnOffP = $("btnOffP");
   const trackLabel = $("trackLabel");
   const offsetLabel = $("offsetLabel");
-  const scaleLabel = $("scaleLabel");
 
-  // offset per set (timeline 기준으로 사용)
+  // offset per set
   const lsKey = `pt_offset_${setId}`;
   let offsetSec = num(localStorage.getItem(lsKey), 0.0);
   function setOffset(v){
@@ -196,15 +205,19 @@
 
   function withCB(url){
     const u = new URL(url, location.origin);
+    // 항상 캐시 우회: set별 최신 반영
     u.searchParams.set("v", cacheBust || Date.now().toString());
     return u.toString();
   }
+
   async function fetchJSON(url){
     const res = await fetch(withCB(url), {cache:"no-store"});
     if (!res.ok) throw new Error(`fetch failed: ${res.status} ${url}`);
     return await res.json();
   }
 
+  // ---------- cue extraction (format-agnostic) ----------
+  // track json 포맷이 약간 달라도 start/end + text/ja/ko를 찾도록 "느슨하게" 처리
   function extractCues(obj){
     const cues = [];
     const seen = new Set();
@@ -214,7 +227,7 @@
       if (!Number.isFinite(s) || !Number.isFinite(e) || e <= s) return;
       ja = (ja ?? "").toString().trim();
       ko = (ko ?? "").toString().trim();
-      if (!ja) return;
+      if (!ja) return; // ✅ 빈 자막 라인은 cue로 취급하지 않음
       const key = `${s.toFixed(3)}|${e.toFixed(3)}|${ja}`;
       if (seen.has(key)) return;
       seen.add(key);
@@ -228,6 +241,7 @@
         return;
       }
       if (typeof x === "object"){
+        // common variants
         if (("start" in x) && ("end" in x)){
           const ja = x.ja ?? x.text ?? x.line ?? x.content ?? "";
           const ko = x.ko ?? x.ko_text ?? "";
@@ -247,10 +261,12 @@
     return cues;
   }
 
+  // ✅ end 범위 기반: start<=t<end 이면 표시, 아니면 null (간주에서 남는 문제 해결)
   let lastCueIdx = 0;
   function cueAt(cues, t){
     if (!cues || cues.length === 0) return null;
 
+    // try from last index forward
     for (let i = lastCueIdx; i < cues.length; i++){
       const c = cues[i];
       if (t < c.start) break;
@@ -259,12 +275,14 @@
         return c;
       }
     }
+    // try backward (when seeked)
     for (let i = Math.min(lastCueIdx, cues.length - 1); i >= 0; i--){
       const c = cues[i];
       if (t >= c.start && t < c.end){
         lastCueIdx = i;
         return c;
       }
+      if (t > c.end && i === cues.length - 1) break;
     }
     return null;
   }
@@ -275,6 +293,7 @@
     koEl.style.display = "none";
   }
 
+  // ---------- playlist handling ----------
   const base = `${location.origin}/set/${encodeURIComponent(setId)}/`;
   const playlistUrl = base + "playlist.json";
 
@@ -282,16 +301,6 @@
   let idx = 0;
   let cues = [];
   let currentTrack = null;
-
-  // drift scaling
-  let timelineMaxEnd = 0;   // track json end max
-  let audioDuration = 0;    // audio.duration
-  let timeScale = 1.0;      // audioDuration / timelineMaxEnd
-
-  function updateScaleLabel(){
-    if (!scaleLabel) return;
-    scaleLabel.textContent = Number.isFinite(timeScale) ? timeScale.toFixed(3) : "1.000";
-  }
 
   function updateTrackLabel(){
     if (!currentTrack){ trackLabel.textContent = "-"; return; }
@@ -305,64 +314,29 @@
     if (t) document.title = `PT Player — ${t}`;
   }
 
-  function computeTimelineMaxEndFromCues(cues){
-    if (!cues || cues.length === 0) return 0;
-    return cues[cues.length - 1].end || 0;
-  }
-
-  function waitLoadedMetadata(){
-    return new Promise((resolve) => {
-      if (Number.isFinite(audio.duration) && audio.duration > 0) return resolve();
-      const on = () => { audio.removeEventListener("loadedmetadata", on); resolve(); };
-      audio.addEventListener("loadedmetadata", on);
-    });
-  }
-
   async function loadTrack(i){
     if (!playlist) return;
     idx = Math.max(0, Math.min(i, playlist.tracks.length-1));
     currentTrack = playlist.tracks[idx];
     updateTrackLabel();
 
+    // set audio source
     if (!currentTrack.audio_url) throw new Error("missing audio_url");
     audio.src = currentTrack.audio_url;
 
+    // load track json cues
     if (!currentTrack.track_url) throw new Error("missing track_url");
     const trackJson = await fetchJSON(base + currentTrack.track_url);
 
+    // title priority: track.title -> trackJson.title -> empty
     const t = (currentTrack && currentTrack.title) ? currentTrack.title : (trackJson && trackJson.title) ? trackJson.title : "";
     if (titleOn) setHeaderTitle(t);
 
     cues = extractCues(trackJson);
     lastCueIdx = 0;
 
-    // timeline max end: cues 기반이 제일 안전
-    timelineMaxEnd = computeTimelineMaxEndFromCues(cues);
-
-    await waitLoadedMetadata();
-    audioDuration = audio.duration || 0;
-
-    // ✅ scale 정의: audio / timeline
-    if (timelineMaxEnd > 0 && audioDuration > 0){
-      timeScale = audioDuration / timelineMaxEnd;
-
-      // guard: 너무 비정상 값은 무효화
-      if (!Number.isFinite(timeScale) || timeScale < 0.8 || timeScale > 1.25){
-        timeScale = 1.0;
-      }
-    } else {
-      timeScale = 1.0;
-    }
-    updateScaleLabel();
-
+    // clear text immediately
     clearSubtitle();
-    render(); // 즉시 1회 반영
-  }
-
-  // ✅ 핵심: audio_time -> timeline_time 변환은 "나누기"
-  function mapToTimelineTime(audioTime){
-    // offsetSec은 "timeline 기준"으로 더하는 게 일관적
-    return (audioTime / (timeScale || 1.0)) + offsetSec;
   }
 
   function render(){
@@ -371,19 +345,22 @@
       return;
     }
 
-    const t = mapToTimelineTime(audio.currentTime);
+    const t = audio.currentTime + offsetSec;
     const c = cueAt(cues, t);
 
+    // ✅ active cue 없으면 완전 공백 (간주/무음 구간)
     if (!c){
       clearSubtitle();
       return;
     }
 
+    // JA always
     if (jaEl.textContent !== c.ja) jaEl.textContent = c.ja;
 
+    // KO: only show if exists and lang=both|ko
     const hasKo = !!(c.ko && c.ko.trim());
     if ((lang === "both" || lang === "ko") && hasKo){
-      const target = c.ko;
+      const target = (lang === "ko") ? c.ko : c.ko;
       if (koEl.textContent !== target) koEl.textContent = target;
       koEl.style.display = "";
     } else {
@@ -392,29 +369,14 @@
     }
   }
 
-  // ✅ timeupdate만으로는 경계 놓칠 수 있어서 rAF 루프 추가
-  let rafId = 0;
-  function startLoop(){
-    if (rafId) return;
-    const tick = () => {
-      render();
-      if (!audio.paused && !audio.ended) rafId = requestAnimationFrame(tick);
-      else rafId = 0;
-    };
-    rafId = requestAnimationFrame(tick);
-  }
-  function stopLoop(){
-    if (rafId) cancelAnimationFrame(rafId);
-    rafId = 0;
-  }
-
+  // ---------- controls ----------
   btnPlay.addEventListener("click", async () => {
     if (!playlist) return;
     if (audio.paused) await audio.play();
     else audio.pause();
   });
-  audio.addEventListener("play", ()=> { btnPlay.textContent = "Pause"; startLoop(); });
-  audio.addEventListener("pause", ()=> { btnPlay.textContent = "Play"; render(); stopLoop(); });
+  audio.addEventListener("play", ()=> btnPlay.textContent = "Pause");
+  audio.addEventListener("pause", ()=> btnPlay.textContent = "Play");
 
   btnPrev.addEventListener("click", async () => {
     await loadTrack(idx - 1);
@@ -425,32 +387,34 @@
     await audio.play();
   });
 
-  btnOffM.addEventListener("click", ()=> { setOffset(offsetSec - 0.5); render(); });
-  btnOffP.addEventListener("click", ()=> { setOffset(offsetSec + 0.5); render(); });
+  btnOffM.addEventListener("click", ()=> setOffset(offsetSec - 0.5));
+  btnOffP.addEventListener("click", ()=> setOffset(offsetSec + 0.5));
 
+  // hotkeys
   window.addEventListener("keydown", (e)=>{
     if (e.key === "ArrowLeft") btnPrev.click();
     if (e.key === "ArrowRight") btnNext.click();
-    if (e.key === "ArrowDown") { setOffset(offsetSec - 0.5); render(); }
-    if (e.key === "ArrowUp") { setOffset(offsetSec + 0.5); render(); }
+    if (e.key === "ArrowDown") setOffset(offsetSec - 0.5);
+    if (e.key === "ArrowUp") setOffset(offsetSec + 0.5);
     if (e.key === " "){ e.preventDefault(); btnPlay.click(); }
   });
 
-  // (보조) seek/ended/loadedmetadata에서도 한 번 더
+  audio.addEventListener("timeupdate", render);
   audio.addEventListener("seeked", render);
-  audio.addEventListener("loadedmetadata", render);
 
   audio.addEventListener("ended", async () => {
-    stopLoop();
+    // auto next
     if (!playlist) return;
     if (idx < playlist.tracks.length-1){
       await loadTrack(idx + 1);
       await audio.play();
     } else {
+      // 마지막 트랙 끝나면 자막 비우기
       clearSubtitle();
     }
   });
 
+  // ---------- boot ----------
   (async () => {
     playlist = await fetchJSON(playlistUrl);
 
@@ -458,16 +422,17 @@
       throw new Error("playlist.json invalid or empty");
     }
 
+    // optional start track: ?i=1 (1-based)
     const startI = num(params.get("i"), 1);
     await loadTrack(startI - 1);
 
+    // auto play: ?autoplay=1
     if (params.get("autoplay") === "1"){
       await audio.play();
     }
 
     updateTrackLabel();
     offsetLabel.textContent = offsetSec.toFixed(1);
-    updateScaleLabel();
   })().catch(err => {
     jaEl.textContent = "PLAYER ERROR";
     koEl.style.display = "";
