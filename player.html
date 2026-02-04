@@ -155,6 +155,16 @@
   const hud = params.get("hud"); // 0 => hide
   const cacheBust = params.get("cb") || ""; // optional external cache buster
 
+  // ✅ 간주/무가사 구간에서 "마지막 가사 잔상" 제거용 hold (초)
+  // - hold=0 이면 즉시 공백
+  // - 기본 1.2초 (너무 딱 끊기지 않게)
+  const maxHold = (() => {
+    const v = params.get("hold");
+    const n = Number(v);
+    if (v === null) return 1.2;
+    return Number.isFinite(n) ? Math.max(0, n) : 1.2;
+  })();
+
   // title show/hide
   const titleOn = (params.get("title") ?? "1") !== "0";
   if (!titleOn) document.body.classList.add("title-off");
@@ -261,7 +271,7 @@
     return cues;
   }
 
-  // ✅ end 범위 기반: start<=t<end 이면 표시, 아니면 null (간주에서 남는 문제 해결)
+  // ✅ end 범위 기반: start<=t<end 이면 표시, 아니면 null
   let lastCueIdx = 0;
   function cueAt(cues, t){
     if (!cues || cues.length === 0) return null;
@@ -314,8 +324,59 @@
     if (t) document.title = `PT Player — ${t}`;
   }
 
+  // ✅ PATCH: rAF render loop (단 1개만 유지)
+  let rafId = null;
+  function startRenderLoop(){
+    stopRenderLoop();
+    const loop = () => {
+      // 재생 중에만 도는 루프
+      if (!audio.paused && !audio.ended) {
+        render();
+        rafId = requestAnimationFrame(loop);
+      } else {
+        rafId = null;
+      }
+    };
+    rafId = requestAnimationFrame(loop);
+  }
+  function stopRenderLoop(){
+    if (rafId !== null){
+      cancelAnimationFrame(rafId);
+      rafId = null;
+    }
+  }
+
+  // ✅ PATCH: 트랙 로드 경쟁 방지 토큰
+  let loadSeq = 0;
+  let isLoading = false;
+
+  function setLoading(on){
+    isLoading = on;
+    btnPrev.disabled = on;
+    btnNext.disabled = on;
+    // Play는 누를 수 있게 두되, 로딩 중엔 무의미하니 UX상 막고 싶으면 아래 주석 해제
+    // btnPlay.disabled = on;
+  }
+
+  // ✅ PATCH: 간주 잔상 제거용 상태
+  let lastCueEnd = 0;
+
   async function loadTrack(i){
     if (!playlist) return;
+    const mySeq = ++loadSeq;
+
+    setLoading(true);
+
+    // 루프/자막/상태를 "확정적으로" 초기화
+    stopRenderLoop();
+    lastCueEnd = 0;
+    lastCueIdx = 0;
+    cues = [];
+    clearSubtitle();
+
+    // 오디오를 멈추고 교체(트랙 전환 중 timeupdate/렌더로 꼬이는 것 방지)
+    try { audio.pause(); } catch {}
+
     idx = Math.max(0, Math.min(i, playlist.tracks.length-1));
     currentTrack = playlist.tracks[idx];
     updateTrackLabel();
@@ -328,15 +389,26 @@
     if (!currentTrack.track_url) throw new Error("missing track_url");
     const trackJson = await fetchJSON(base + currentTrack.track_url);
 
+    // ✅ 경쟁 방지: 내가 최신 요청이 아니면 여기서 중단
+    if (mySeq !== loadSeq) return;
+
     // title priority: track.title -> trackJson.title -> empty
     const t = (currentTrack && currentTrack.title) ? currentTrack.title : (trackJson && trackJson.title) ? trackJson.title : "";
     if (titleOn) setHeaderTitle(t);
 
     cues = extractCues(trackJson);
     lastCueIdx = 0;
+    lastCueEnd = 0;
 
     // clear text immediately
     clearSubtitle();
+
+    // 로딩 종료
+    setLoading(false);
+
+    // 플레이 중이면 루프는 play 이벤트에서 시작되지만,
+    // 로딩 완료 직후 render 1회 실행은 즉시 반영에 도움
+    render();
   }
 
   function render(){
@@ -348,11 +420,16 @@
     const t = audio.currentTime + offsetSec;
     const c = cueAt(cues, t);
 
-    // ✅ active cue 없으면 완전 공백 (간주/무음 구간)
+    // ✅ active cue 없으면:
+    // - hold=0 이면 즉시 공백
+    // - 아니면 lastCueEnd 이후 maxHold 지나면 공백 (간주 잔상 제거)
     if (!c){
-      clearSubtitle();
+      if (t > (lastCueEnd + maxHold)) clearSubtitle();
       return;
     }
+
+    // cue가 있으면 lastCueEnd 갱신
+    lastCueEnd = c.end;
 
     // JA always
     if (jaEl.textContent !== c.ja) jaEl.textContent = c.ja;
@@ -371,18 +448,28 @@
 
   // ---------- controls ----------
   btnPlay.addEventListener("click", async () => {
-    if (!playlist) return;
+    if (!playlist || isLoading) return;
     if (audio.paused) await audio.play();
     else audio.pause();
   });
-  audio.addEventListener("play", ()=> btnPlay.textContent = "Pause");
-  audio.addEventListener("pause", ()=> btnPlay.textContent = "Play");
+  audio.addEventListener("play", ()=> {
+    btnPlay.textContent = "Pause";
+    startRenderLoop(); // ✅ PATCH: 재생 시작 시 rAF 루프 시작
+  });
+  audio.addEventListener("pause", ()=> {
+    btnPlay.textContent = "Play";
+    stopRenderLoop();  // ✅ PATCH: 일시정지 시 루프 정지
+    render();          // 정지 상태에서도 최종 프레임 반영
+  });
 
   btnPrev.addEventListener("click", async () => {
+    if (isLoading) return;
     await loadTrack(idx - 1);
+    // 최신 로드가 아니면 play 하지 않음
     await audio.play();
   });
   btnNext.addEventListener("click", async () => {
+    if (isLoading) return;
     await loadTrack(idx + 1);
     await audio.play();
   });
@@ -399,10 +486,13 @@
     if (e.key === " "){ e.preventDefault(); btnPlay.click(); }
   });
 
-  audio.addEventListener("timeupdate", render);
+  // ✅ PATCH: timeupdate 의존도 낮추기 (rAF가 주력)
+  // seeked/loadedmetadata에서는 즉시 1회 render
   audio.addEventListener("seeked", render);
+  audio.addEventListener("loadedmetadata", render);
 
   audio.addEventListener("ended", async () => {
+    stopRenderLoop();
     // auto next
     if (!playlist) return;
     if (idx < playlist.tracks.length-1){
@@ -434,6 +524,7 @@
     updateTrackLabel();
     offsetLabel.textContent = offsetSec.toFixed(1);
   })().catch(err => {
+    clearSubtitle();
     jaEl.textContent = "PLAYER ERROR";
     koEl.style.display = "";
     koEl.textContent = String(err?.message || err);
