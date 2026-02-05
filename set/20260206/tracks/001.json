@@ -1,0 +1,1 @@
+{"title": "callback-test", "lines": [{"start": 0.0, "end": 7.0, "ja": "静かな午後", "ko_pron": "", "ko": "", "tag": "L1"}, {"start": 58.06, "end": 65.06, "ja": "風が揺れる", "ko_pron": "", "ko": "", "tag": "L2"}], "meta": {"timing_clamped": true, "max_line_dur_sec": 7.0, "gap_sec": 0.12, "min_dur_sec": 0.06, "changed_items": 2, "clipped_by_next": 0, "clipped_by_maxdur": 2}}
