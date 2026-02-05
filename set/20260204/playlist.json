@@ -1,0 +1,474 @@
+{
+  "set_id": "20260204",
+  "built_at": "2026-02-05T22:27:29+0000",
+  "tracks": [
+    {
+      "id": "001",
+      "title": "Soft Start, Still Going",
+      "audio_url": "https://cdn1.suno.ai/21693071-7807-4b95-a4f8-9a9195b0f4c5.mp3",
+      "track_url": "tracks/001.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T06:04:17+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "002",
+      "title": "Waiting for the Moment",
+      "audio_url": "https://cdn1.suno.ai/c082c060-7fa4-42d1-ab30-42810f9fc230.mp3",
+      "track_url": "tracks/002.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T05:58:29+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "003",
+      "title": "Slow Fade, New Steps",
+      "audio_url": "https://cdn1.suno.ai/e2737952-f29f-49e3-b215-b90ac9c1b3ae.mp3",
+      "track_url": "tracks/003.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T05:53:40+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "004",
+      "title": "Habit Rebuild",
+      "audio_url": "https://cdn1.suno.ai/7a33fd5a-0b00-49f3-8ce3-ce0388db3dcf.mp3",
+      "track_url": "tracks/004.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T05:48:46+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "005",
+      "title": "Back in My Hands",
+      "audio_url": "https://cdn1.suno.ai/dab3899b-9df1-40d6-ad6a-0ae6a6af9fd5.mp3",
+      "track_url": "tracks/005.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T05:29:00+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "006",
+      "title": "Step Forward, Slow Glow",
+      "audio_url": "https://cdn1.suno.ai/9221454f-9acc-4336-99ab-b949fc06366b.mp3",
+      "track_url": "tracks/006.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T05:23:54+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "007",
+      "title": "Show Up, Anyway",
+      "audio_url": "https://cdn1.suno.ai/301f10ec-9fb2-4f15-92cc-a6191b5a0e8f.mp3",
+      "track_url": "tracks/007.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T05:18:55+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "008",
+      "title": "リセットの合図で",
+      "audio_url": "https://cdn1.suno.ai/382f1ea0-538a-4f8d-98d5-46b628d312fe.mp3",
+      "track_url": "tracks/008.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T05:13:54+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "009",
+      "title": "Morning Checklist",
+      "audio_url": "https://cdn1.suno.ai/38871f73-113e-4a0f-b161-cf8684dbcbc3.mp3",
+      "track_url": "tracks/009.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T05:08:50+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "010",
+      "title": "パレット変化主義",
+      "audio_url": "https://cdn1.suno.ai/5cf625e5-c78b-4152-bfef-b25233da7df1.mp3",
+      "track_url": "tracks/010.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T05:04:18+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "011",
+      "title": "Shared Table, Warmth in the Afternoon",
+      "audio_url": "https://cdn1.suno.ai/be689952-9203-4a01-a0f9-174b4f382e9c.mp3",
+      "track_url": "tracks/011.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T04:58:27+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "012",
+      "title": "Gentle Tomorrow",
+      "audio_url": "https://cdn1.suno.ai/3ae1d838-8bb6-4ff7-88f8-87837e1dc548.mp3",
+      "track_url": "tracks/012.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T04:53:40+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "013",
+      "title": "今この瞬間のメモリー",
+      "audio_url": "https://cdn1.suno.ai/a582d405-e9be-4b28-bd08-d2c2e13c73e4.mp3",
+      "track_url": "tracks/013.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T04:48:36+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "014",
+      "title": "Everyday, Step Forward",
+      "audio_url": "https://cdn1.suno.ai/31f3e77b-dffd-4c68-96b4-6015ce506a07.mp3",
+      "track_url": "tracks/014.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T04:43:39+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "015",
+      "title": "Everyday Radiance",
+      "audio_url": "https://cdn1.suno.ai/dbf8723c-d132-4286-ba96-645267be0b55.mp3",
+      "track_url": "tracks/015.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T04:38:36+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "016",
+      "title": "Soft Lamp Shadows",
+      "audio_url": "https://cdn1.suno.ai/4100ff9e-4217-42cc-8b52-4ebb52dc2e71.mp3",
+      "track_url": "tracks/016.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T04:33:49+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "017",
+      "title": "Small Thanks, Everyday Signs",
+      "audio_url": "https://cdn1.suno.ai/c56c3434-fa9b-47af-aac4-9c1f5bc4ae8b.mp3",
+      "track_url": "tracks/017.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T04:28:33+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "018",
+      "title": "Side Street Film",
+      "audio_url": "https://cdn1.suno.ai/30823de7-204c-4c61-810b-9f5e1a56e250.mp3",
+      "track_url": "tracks/018.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T04:23:46+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "019",
+      "title": "となりのリズムで進もう",
+      "audio_url": "https://cdn1.suno.ai/cb753adf-1ec5-4169-b5ea-da64f29d3c04.mp3",
+      "track_url": "tracks/019.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T04:18:29+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "020",
+      "title": "Blank Slate, Tiny Steps",
+      "audio_url": "https://cdn1.suno.ai/49be83f5-1ed2-44b1-98d3-973f449777c0.mp3",
+      "track_url": "tracks/020.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T04:13:34+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "021",
+      "title": "Startline Reminder",
+      "audio_url": "https://cdn1.suno.ai/6c6013bd-d34d-495b-be75-cb50bce26008.mp3",
+      "track_url": "tracks/021.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T04:08:32+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "022",
+      "title": "Sunday Tabletop",
+      "audio_url": "https://cdn1.suno.ai/6fc2261a-5e41-45fe-aca4-382de712b2f5.mp3",
+      "track_url": "tracks/022.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T04:04:09+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "023",
+      "title": "やわらかな午後のまま",
+      "audio_url": "https://cdn1.suno.ai/4011983a-9a81-47cc-8ef9-7e9d46def306.mp3",
+      "track_url": "tracks/023.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T03:58:30+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "024",
+      "title": "Candlelight Slow Motion",
+      "audio_url": "https://cdn1.suno.ai/49d2b160-c89f-478f-bda4-6c0d88a49f4d.mp3",
+      "track_url": "tracks/024.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T03:53:41+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "025",
+      "title": "Pocketful of Tiny Wins",
+      "audio_url": "https://cdn1.suno.ai/8ab885f1-72cd-4c37-8c0b-a249db97aa25.mp3",
+      "track_url": "tracks/025.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T03:48:38+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "026",
+      "title": "Daylight Pause",
+      "audio_url": "https://cdn1.suno.ai/8b28bc17-d526-4d4b-bcc8-941dae1000c3.mp3",
+      "track_url": "tracks/026.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T03:43:25+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "027",
+      "title": "Soft Light Keeps Moving",
+      "audio_url": "https://cdn1.suno.ai/7fb81bb7-c8a7-4899-b97b-66677d06d4af.mp3",
+      "track_url": "tracks/027.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T03:38:31+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "028",
+      "title": "Turning Pages, Changing Shoes",
+      "audio_url": "https://cdn1.suno.ai/7b7495f7-cae2-47f9-995a-aa1280ef43c2.mp3",
+      "track_url": "tracks/028.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T03:33:30+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "029",
+      "title": "次の角を曲がるリズムで",
+      "audio_url": "https://cdn1.suno.ai/32dda3c1-76cc-4f74-8eb3-58796c132a16.mp3",
+      "track_url": "tracks/029.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-04T06:04:15+09:00\"",
+      "ko_filled": 28
+    },
+    {
+      "id": "030",
+      "title": "しなやかさで歩く日々",
+      "audio_url": "https://cdn1.suno.ai/5384be98-2368-426d-8c91-ee5278ac3f1f.mp3",
+      "track_url": "tracks/030.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-04T05:58:37+09:00\"",
+      "ko_filled": 22
+    },
+    {
+      "id": "031",
+      "title": "ひと区切りからのスタートライン",
+      "audio_url": "https://cdn1.suno.ai/5dbb958d-c87e-46d7-8c84-5604163ae75d.mp3",
+      "track_url": "tracks/031.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-04T05:53:31+09:00\"",
+      "ko_filled": 9
+    },
+    {
+      "id": "032",
+      "title": "アクセルは静かな決意のまま",
+      "audio_url": "https://cdn1.suno.ai/8ced8798-6e78-4977-9da4-70f4df0e726d.mp3",
+      "track_url": "tracks/032.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-04T05:48:23+09:00\"",
+      "ko_filled": 17
+    },
+    {
+      "id": "033",
+      "title": "止まらない静かな歩み",
+      "audio_url": "https://cdn1.suno.ai/248b2036-7dc4-45ea-bd5f-b96b8eb36e52.mp3",
+      "track_url": "tracks/033.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-04T05:43:45+09:00\"",
+      "ko_filled": 19
+    },
+    {
+      "id": "034",
+      "title": "スニーカーのまま強くなる朝",
+      "audio_url": "https://cdn1.suno.ai/d16a88b4-d417-4feb-b9f9-f6f7efa4015b.mp3",
+      "track_url": "tracks/034.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-04T05:33:48+09:00\"",
+      "ko_filled": 28
+    },
+    {
+      "id": "035",
+      "title": "もう一度、静かな始まりへ",
+      "audio_url": "https://cdn1.suno.ai/fd49219f-4f0d-4d51-8076-f26ef94f40bf.mp3",
+      "track_url": "tracks/035.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-04T05:28:35+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "036",
+      "title": "タイルの上に立つルール",
+      "audio_url": "https://cdn1.suno.ai/481ae0fa-473a-438e-bd7d-8770d6100102.mp3",
+      "track_url": "tracks/036.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-04T05:23:42+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "037",
+      "title": "アクセルの先にあるもの",
+      "audio_url": "https://cdn1.suno.ai/d780664e-2ef1-4fc0-b3ec-23a5e30b5f36.mp3",
+      "track_url": "tracks/037.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-04T05:18:44+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "038",
+      "title": "歩道橋から見下ろす午後のルール",
+      "audio_url": "https://cdn1.suno.ai/ffa65ad2-6dc0-42d8-a0c5-5fc3f43faba7.mp3",
+      "track_url": "tracks/038.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-04T05:13:34+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "039",
+      "title": "やさしい輪郭のまま夜が降りる",
+      "audio_url": "https://cdn1.suno.ai/b2063720-7bfe-4a9e-9531-fcb51d8e37f4.mp3",
+      "track_url": "tracks/039.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-04T05:09:08+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "040",
+      "title": "やわらかな変化の途中で",
+      "audio_url": "https://cdn1.suno.ai/9592fe86-6823-425f-9c2a-87c50108ed7f.mp3",
+      "track_url": "tracks/040.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-04T05:04:21+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "041",
+      "title": "やわらかな午後に息をして",
+      "audio_url": "https://cdn1.suno.ai/3ab09d24-a90c-4c74-aee9-d84a5611342a.mp3",
+      "track_url": "tracks/041.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-04T04:58:29+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "042",
+      "title": "静かにエールを送る午後のフィルム",
+      "audio_url": "https://cdn1.suno.ai/b910a746-eb7d-48ec-8e31-8a0cfbbb2fdd.mp3",
+      "track_url": "tracks/042.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-04T04:53:58+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "043",
+      "title": "静かなルールのなかで",
+      "audio_url": "https://cdn1.suno.ai/246e60a3-6a01-4a5f-bbf1-cf061ce903c1.mp3",
+      "track_url": "tracks/043.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-04T04:48:55+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "044",
+      "title": "ゆっくり伸びる手のひらが知ってること",
+      "audio_url": "https://cdn1.suno.ai/7ff91ed3-7c83-45a6-ab86-f7d6688b9a26.mp3",
+      "track_url": "tracks/044.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-04T04:43:55+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "045",
+      "title": "スローモーションの午後三時",
+      "audio_url": "https://cdn1.suno.ai/a560306a-91a5-45b7-b3a6-4240eb3621ee.mp3",
+      "track_url": "tracks/045.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-04T04:38:35+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "046",
+      "title": "ソーダ色の午後三時ミッション",
+      "audio_url": "https://cdn1.suno.ai/c7f142f8-ab22-482e-b900-92a84ddbab5a.mp3",
+      "track_url": "tracks/046.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-04T04:34:09+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "047",
+      "title": "ほころぶ午後のまま",
+      "audio_url": "https://cdn1.suno.ai/a112cb9c-0b2f-41d4-9a4a-08af6023517a.mp3",
+      "track_url": "tracks/047.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-04T04:28:34+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "048",
+      "title": "誰にも見せないノートの端っこ",
+      "audio_url": "https://cdn1.suno.ai/b2dabf8a-0409-4664-9afe-8d9104811b4d.mp3",
+      "track_url": "tracks/048.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-04T04:23:46+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "049",
+      "title": "グラス越しのゆるやかなリズム",
+      "audio_url": "https://cdn1.suno.ai/429a399d-dbcb-4294-ae2d-1a6d699ac084.mp3",
+      "track_url": "tracks/049.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-04T03:48:30+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "050",
+      "title": "ゆっくりな朝の約束",
+      "audio_url": "https://cdn1.suno.ai/72928b5d-9753-4f8a-9ee5-c3e3366ed9e5.mp3",
+      "track_url": "tracks/050.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-04T03:43:33+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "051",
+      "title": "ぬくもりの場所でまた会おう",
+      "audio_url": "https://cdn1.suno.ai/f72440f3-4e09-4829-b476-b3694c71adb7.mp3",
+      "track_url": "tracks/051.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-04T03:38:33+09:00\"",
+      "ko_filled": 0
+    },
+    {
+      "id": "052",
+      "title": "とろける午後の会話レシピ",
+      "audio_url": "https://cdn1.suno.ai/2e9068a3-60ea-470a-95e4-a8263a809ef5.mp3",
+      "track_url": "tracks/052.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-04T03:34:24+09:00\"",
+      "ko_filled": 0
+    }
+  ]
+}
