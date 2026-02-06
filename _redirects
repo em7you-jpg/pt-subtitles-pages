@@ -1,3 +1,4 @@
-/player.html  /player.html  200
-/index.html    /index.html   200
-/*.html        /*.html       200
+/track.json /track.json 200
+/set/*/playlist.json /set/:splat/playlist.json 200
+/set/*/tracks/*.json /set/:splat 200
+/* /index.html 200
