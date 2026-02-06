@@ -1,0 +1,1067 @@
+{
+  "set_id": "20260205",
+  "built_at": "2026-02-06T21:29:26+0000",
+  "tracks": [
+    {
+      "id": "001",
+      "title": "Step Out, Unafraid",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/44f5b717f46541cf9849b589014aba19.mp3",
+      "track_url": "tracks/001.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T06:03:55+09:00\"",
+      "ko_filled": 22,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=432 SECTIONS_TOTAL=23",
+        "[INFO] SEG0 start=0.70 end=1.10 text_head='L'",
+        "[INFO] SECTIONS_TIMED=22 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=0.70 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=20.74s"
+      ]
+    },
+    {
+      "id": "002",
+      "title": "Finish Line Colors",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/4e8bc37aa167416a82724682b7fccc23.mp3",
+      "track_url": "tracks/002.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T05:58:33+09:00\"",
+      "ko_filled": 16,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=318 SECTIONS_TOTAL=17",
+        "[INFO] SEG0 start=1.34 end=2.98 text_head='いつ'",
+        "[INFO] SECTIONS_TIMED=16 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=1.34 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=9.60s"
+      ]
+    },
+    {
+      "id": "003",
+      "title": "Fading Glow, Gentle Forward",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/246388ab478b4d488b0c6a2594d4bc2f.mp3",
+      "track_url": "tracks/003.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T05:53:46+09:00\"",
+      "ko_filled": 9,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=242 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=0.80 end=1.36 text_head='たい'",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=0.80 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=9.22s"
+      ]
+    },
+    {
+      "id": "004",
+      "title": "Small Steps, Sweet Parade",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/08be61462f964d5da7966d58664f29cd.mp3",
+      "track_url": "tracks/004.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T05:48:29+09:00\"",
+      "ko_filled": 9,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=173 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=1.34 end=2.22 text_head='今日は'",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=1.34 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=6.84s"
+      ]
+    },
+    {
+      "id": "005",
+      "title": "Rebalancing Steps",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/59008939095f4aec889f4dd44998e616.mp3",
+      "track_url": "tracks/005.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T05:43:28+09:00\"",
+      "ko_filled": 9,
+      "align_info_count": 7,
+      "align_info_head": [
+        "[INFO] SEGMENTS=363 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=9.96 end=10.84 text_head='傘'",
+        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=9.96s",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=9.96 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=10.55s"
+      ]
+    },
+    {
+      "id": "006",
+      "title": "Leaving the Old Shoes Behind",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/92f425b49510439facd6b1378183718b.mp3",
+      "track_url": "tracks/006.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T05:38:39+09:00\"",
+      "ko_filled": 9,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=203 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=1.82 end=2.04 text_head='日'",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=1.82 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=6.32s"
+      ]
+    },
+    {
+      "id": "007",
+      "title": "Refine the Horizon",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/ec8bd911b2bf4c65ac843628ddb74ab4.mp3",
+      "track_url": "tracks/007.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T05:33:34+09:00\"",
+      "ko_filled": 17,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=381 SECTIONS_TOTAL=18",
+        "[INFO] SEG0 start=0.86 end=8.94 text_head='Wow'",
+        "[INFO] SECTIONS_TIMED=17 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=0.86 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=15.97s"
+      ]
+    },
+    {
+      "id": "008",
+      "title": "Back to the Rhythm of Days",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/bac1f90f740e4dcbb815a10bb0e1086a.mp3",
+      "track_url": "tracks/008.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T05:28:36+09:00\"",
+      "ko_filled": 17,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=287 SECTIONS_TOTAL=18",
+        "[INFO] SEG0 start=0.98 end=1.58 text_head='音'",
+        "[INFO] SECTIONS_TIMED=17 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=0.98 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=7.16s"
+      ]
+    },
+    {
+      "id": "009",
+      "title": "Quiet Reset",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/d260ab6fcf8b4264af5a6a922805203c.mp3",
+      "track_url": "tracks/009.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T05:23:31+09:00\"",
+      "ko_filled": 17,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=305 SECTIONS_TOTAL=18",
+        "[INFO] SEG0 start=0.32 end=0.44 text_head='ways'",
+        "[INFO] SECTIONS_TIMED=17 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=0.32 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=8.71s"
+      ]
+    },
+    {
+      "id": "010",
+      "title": "Steady Tomorrow",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/7d8d45d0e41d4612bf887b86f01ceba9.mp3",
+      "track_url": "tracks/010.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T05:18:30+09:00\"",
+      "ko_filled": 9,
+      "align_info_count": 7,
+      "align_info_head": [
+        "[INFO] SEGMENTS=355 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=10.10 end=10.78 text_head='明'",
+        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=10.10s",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=10.10 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=10.17s"
+      ]
+    },
+    {
+      "id": "011",
+      "title": "Keep Balance, Stay Here",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/4d101dc29de74de888b86937f314eb5b.mp3",
+      "track_url": "tracks/011.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T05:13:37+09:00\"",
+      "ko_filled": 9,
+      "align_info_count": 7,
+      "align_info_head": [
+        "[INFO] SEGMENTS=213 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=18.98 end=19.84 text_head='作'",
+        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=18.98s",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=18.98 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=12.46s"
+      ]
+    },
+    {
+      "id": "012",
+      "title": "What I Keep Close",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/b4945aff4dc344ab86a5c63c665711ad.mp3",
+      "track_url": "tracks/012.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T05:08:39+09:00\"",
+      "ko_filled": 9,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=270 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=0.86 end=1.76 text_head='日'",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=0.86 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=9.39s"
+      ]
+    },
+    {
+      "id": "013",
+      "title": "Sunlight Shuffle",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/3eb9d1be706f42d19424ae30cd54ea10.mp3",
+      "track_url": "tracks/013.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T05:04:24+09:00\"",
+      "ko_filled": 9,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=265 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=0.74 end=1.54 text_head='人'",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=0.74 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=8.84s"
+      ]
+    },
+    {
+      "id": "014",
+      "title": "Open Ended Logic",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/de0dc0f8e2e64c4ea989ca11b26c3841.mp3",
+      "track_url": "tracks/014.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T04:58:32+09:00\"",
+      "ko_filled": 9,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=202 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=0.54 end=1.54 text_head='ぁ'",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=0.54 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=6.87s"
+      ]
+    },
+    {
+      "id": "015",
+      "title": "My Own Pace Diary",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/ee3bbcef003140609849880ff3f71b94.mp3",
+      "track_url": "tracks/015.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T04:53:28+09:00\"",
+      "ko_filled": 9,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=310 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=0.76 end=0.90 text_head='覚'",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=0.76 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=8.85s"
+      ]
+    },
+    {
+      "id": "016",
+      "title": "Before the Lights Fade",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/f5fce425975a446580b369842e3be9b4.mp3",
+      "track_url": "tracks/016.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T04:43:37+09:00\"",
+      "ko_filled": 9,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=262 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=1.48 end=1.56 text_head='屋'",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=1.48 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=11.05s"
+      ]
+    },
+    {
+      "id": "017",
+      "title": "Blurred Progress",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/478b4994ecfe455ca8a4bace659fd734.mp3",
+      "track_url": "tracks/017.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T04:38:36+09:00\"",
+      "ko_filled": 9,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=260 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=1.36 end=2.22 text_head='ア'",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=1.36 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=8.47s"
+      ]
+    },
+    {
+      "id": "018",
+      "title": "Homebound Glimmer",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/779dabeb520b4f73933ec1feac60bfea.mp3",
+      "track_url": "tracks/018.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T04:33:42+09:00\"",
+      "ko_filled": 11,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=302 SECTIONS_TOTAL=12",
+        "[INFO] SEG0 start=1.42 end=1.54 text_head='ッ'",
+        "[INFO] SECTIONS_TIMED=11 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=1.42 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=11.61s"
+      ]
+    },
+    {
+      "id": "019",
+      "title": "ひとつのままで",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/bca1410c572e40f0bef21def8a05b962.mp3",
+      "track_url": "tracks/019.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T04:28:35+09:00\"",
+      "ko_filled": 11,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=318 SECTIONS_TOTAL=12",
+        "[INFO] SEG0 start=0.74 end=1.02 text_head='も'",
+        "[INFO] SECTIONS_TIMED=11 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=0.74 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=9.42s"
+      ]
+    },
+    {
+      "id": "020",
+      "title": "Five Minutes To Myself",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/a2aaa3d3a04a456289328dbfff96b8ff.mp3",
+      "track_url": "tracks/020.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T04:23:33+09:00\"",
+      "ko_filled": 9,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=202 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=1.20 end=1.60 text_head='室'",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=1.20 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=6.05s"
+      ]
+    },
+    {
+      "id": "021",
+      "title": "Fresh Palette",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/65aa6ddcf0af4ab2aaec85437b0f69df.mp3",
+      "track_url": "tracks/021.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T04:18:40+09:00\"",
+      "ko_filled": 9,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=229 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=1.00 end=1.62 text_head='しい'",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=1.00 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=8.16s"
+      ]
+    },
+    {
+      "id": "022",
+      "title": "Step by Step in the Sun",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/03acd58d700d471396e3f6f553a978e4.mp3",
+      "track_url": "tracks/022.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T04:13:53+09:00\"",
+      "ko_filled": 9,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=252 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=1.00 end=1.70 text_head='もの'",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=1.00 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=8.21s"
+      ]
+    },
+    {
+      "id": "023",
+      "title": "Coffee Table Fragments",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/f5181fc58a524255aedf50f649f49742.mp3",
+      "track_url": "tracks/023.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T04:08:46+09:00\"",
+      "ko_filled": 15,
+      "align_info_count": 7,
+      "align_info_head": [
+        "[INFO] SEGMENTS=254 SECTIONS_TOTAL=16",
+        "[INFO] SEG0 start=10.88 end=11.52 text_head='マ'",
+        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=10.88s",
+        "[INFO] SECTIONS_TIMED=15 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=10.88 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=9.12s"
+      ]
+    },
+    {
+      "id": "024",
+      "title": "Everyday Traces",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/a8443a5c5420419c982dc70f2e3c4f9f.mp3",
+      "track_url": "tracks/024.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T04:03:45+09:00\"",
+      "ko_filled": 27,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=402 SECTIONS_TOTAL=27",
+        "[INFO] SEG0 start=1.04 end=1.28 text_head='つ'",
+        "[INFO] SECTIONS_TIMED=27 SECTIONS_EMPTY=0",
+        "[INFO] FIRST_TIMED start=1.04 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=8.88s"
+      ]
+    },
+    {
+      "id": "025",
+      "title": "Slowly Turning Side Streets",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/072a0c44a38f4cbf981bf76bd34ece71.mp3",
+      "track_url": "tracks/025.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T03:59:17+09:00\"",
+      "ko_filled": 9,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=245 SECTIONS_TOTAL=9",
+        "[INFO] SEG0 start=1.78 end=2.10 text_head='暮'",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=0",
+        "[INFO] FIRST_TIMED start=1.78 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=7.07s"
+      ]
+    },
+    {
+      "id": "026",
+      "title": "Where My Heart Settles",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/fc5cbcb52f23470ca2a921b35c740b24.mp3",
+      "track_url": "tracks/026.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T03:53:42+09:00\"",
+      "ko_filled": 30,
+      "align_info_count": 7,
+      "align_info_head": [
+        "[INFO] SEGMENTS=436 SECTIONS_TOTAL=30",
+        "[INFO] SEG0 start=11.12 end=11.82 text_head='シ'",
+        "[INFO] lead-shift applied: seg0.start was 11.12s → shifted by -11.12s",
+        "[INFO] SECTIONS_TIMED=30 SECTIONS_EMPTY=0",
+        "[INFO] FIRST_TIMED start=0.00 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=11.33s"
+      ]
+    },
+    {
+      "id": "027",
+      "title": "Checklists in the Headlights",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/c2fe113477e04288b40ef8554e2d1ffd.mp3",
+      "track_url": "tracks/027.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T03:48:45+09:00\"",
+      "ko_filled": 9,
+      "align_info_count": 7,
+      "align_info_head": [
+        "[INFO] SEGMENTS=367 SECTIONS_TOTAL=9",
+        "[INFO] SEG0 start=11.72 end=12.56 text_head='作'",
+        "[INFO] lead-shift applied: seg0.start was 11.72s → shifted by -11.72s",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=0",
+        "[INFO] FIRST_TIMED start=0.00 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=9.46s"
+      ]
+    },
+    {
+      "id": "028",
+      "title": "Next Days On My Notebook",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/3552728c9d2d4f358bb54701959a506e.mp3",
+      "track_url": "tracks/028.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T03:43:43+09:00\"",
+      "ko_filled": 27,
+      "align_info_count": 7,
+      "align_info_head": [
+        "[INFO] SEGMENTS=409 SECTIONS_TOTAL=27",
+        "[INFO] SEG0 start=15.84 end=16.40 text_head='U'",
+        "[INFO] lead-shift applied: seg0.start was 15.84s → shifted by -15.84s",
+        "[INFO] SECTIONS_TIMED=27 SECTIONS_EMPTY=0",
+        "[INFO] FIRST_TIMED start=0.00 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=20.42s"
+      ]
+    },
+    {
+      "id": "029",
+      "title": "Everyday Gentle Proof",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/1a9910d9ad2545a4b101cd633d48e8d4.mp3",
+      "track_url": "tracks/029.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T03:38:36+09:00\"",
+      "ko_filled": 9,
+      "align_info_count": 7,
+      "align_info_head": [
+        "[INFO] SEGMENTS=161 SECTIONS_TOTAL=9",
+        "[INFO] SEG0 start=11.24 end=12.64 text_head='静'",
+        "[INFO] lead-shift applied: seg0.start was 11.24s → shifted by -11.24s",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=0",
+        "[INFO] FIRST_TIMED start=0.00 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=6.67s"
+      ]
+    },
+    {
+      "id": "030",
+      "title": "Shifting Equilibrium",
+      "audio_url": "https://tempfile.aiquickdraw.com/r/d915ff2a2dc9421da3735e0aea1a5bf1.mp3",
+      "track_url": "tracks/030.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-06T03:33:36+09:00\"",
+      "ko_filled": 9,
+      "align_info_count": 7,
+      "align_info_head": [
+        "[INFO] SEGMENTS=172 SECTIONS_TOTAL=9",
+        "[INFO] SEG0 start=16.48 end=17.32 text_head='🐯'",
+        "[INFO] lead-shift applied: seg0.start was 16.48s → shifted by -16.48s",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=0",
+        "[INFO] FIRST_TIMED start=0.00 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=9.09s"
+      ]
+    },
+    {
+      "id": "031",
+      "title": "Soft Start, Still Going",
+      "audio_url": "https://cdn1.suno.ai/21693071-7807-4b95-a4f8-9a9195b0f4c5.mp3",
+      "track_url": "tracks/031.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T06:04:17+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 7,
+      "align_info_head": [
+        "[INFO] SEGMENTS=237 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=21.78 end=22.50 text_head='ま'",
+        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=21.78s",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=21.78 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=13.02s"
+      ]
+    },
+    {
+      "id": "032",
+      "title": "Waiting for the Moment",
+      "audio_url": "https://cdn1.suno.ai/c082c060-7fa4-42d1-ab30-42810f9fc230.mp3",
+      "track_url": "tracks/032.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T05:58:29+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=455 SECTIONS_TOTAL=30",
+        "[INFO] SEG0 start=0.64 end=0.70 text_head='と'",
+        "[INFO] SECTIONS_TIMED=29 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=0.64 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=10.53s"
+      ]
+    },
+    {
+      "id": "033",
+      "title": "Slow Fade, New Steps",
+      "audio_url": "https://cdn1.suno.ai/e2737952-f29f-49e3-b215-b90ac9c1b3ae.mp3",
+      "track_url": "tracks/033.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T05:53:40+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=205 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=5.72 end=6.66 text_head='昨'",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=5.72 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=7.75s"
+      ]
+    },
+    {
+      "id": "034",
+      "title": "Habit Rebuild",
+      "audio_url": "https://cdn1.suno.ai/7a33fd5a-0b00-49f3-8ce3-ce0388db3dcf.mp3",
+      "track_url": "tracks/034.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T05:48:46+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=287 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=5.30 end=6.30 text_head='ラ'",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=5.30 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=7.40s"
+      ]
+    },
+    {
+      "id": "035",
+      "title": "Back in My Hands",
+      "audio_url": "https://cdn1.suno.ai/dab3899b-9df1-40d6-ad6a-0ae6a6af9fd5.mp3",
+      "track_url": "tracks/035.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T05:29:00+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 7,
+      "align_info_head": [
+        "[INFO] SEGMENTS=461 SECTIONS_TOTAL=25",
+        "[INFO] SEG0 start=9.96 end=10.58 text_head='古'",
+        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=9.96s",
+        "[INFO] SECTIONS_TIMED=24 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=9.96 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=11.38s"
+      ]
+    },
+    {
+      "id": "036",
+      "title": "Step Forward, Slow Glow",
+      "audio_url": "https://cdn1.suno.ai/9221454f-9acc-4336-99ab-b949fc06366b.mp3",
+      "track_url": "tracks/036.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T05:23:54+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=317 SECTIONS_TOTAL=19",
+        "[INFO] SEG0 start=1.02 end=1.32 text_head='慣'",
+        "[INFO] SECTIONS_TIMED=18 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=1.02 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=7.61s"
+      ]
+    },
+    {
+      "id": "037",
+      "title": "Show Up, Anyway",
+      "audio_url": "https://cdn1.suno.ai/301f10ec-9fb2-4f15-92cc-a6191b5a0e8f.mp3",
+      "track_url": "tracks/037.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T05:18:55+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 7,
+      "align_info_head": [
+        "[INFO] SEGMENTS=235 SECTIONS_TOTAL=11",
+        "[INFO] SEG0 start=19.44 end=20.24 text_head='目'",
+        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=19.44s",
+        "[INFO] SECTIONS_TIMED=10 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=19.44 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=8.07s"
+      ]
+    },
+    {
+      "id": "038",
+      "title": "リセットの合図で",
+      "audio_url": "https://cdn1.suno.ai/382f1ea0-538a-4f8d-98d5-46b628d312fe.mp3",
+      "track_url": "tracks/038.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T05:13:54+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=425 SECTIONS_TOTAL=31",
+        "[INFO] SEG0 start=0.84 end=1.04 text_head='覚'",
+        "[INFO] SECTIONS_TIMED=30 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=0.84 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=10.10s"
+      ]
+    },
+    {
+      "id": "039",
+      "title": "Morning Checklist",
+      "audio_url": "https://cdn1.suno.ai/38871f73-113e-4a0f-b161-cf8684dbcbc3.mp3",
+      "track_url": "tracks/039.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T05:08:50+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=261 SECTIONS_TOTAL=13",
+        "[INFO] SEG0 start=0.98 end=1.90 text_head='ら'",
+        "[INFO] SECTIONS_TIMED=12 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=0.98 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=6.81s"
+      ]
+    },
+    {
+      "id": "040",
+      "title": "パレット変化主義",
+      "audio_url": "https://cdn1.suno.ai/5cf625e5-c78b-4152-bfef-b25233da7df1.mp3",
+      "track_url": "tracks/040.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T05:04:18+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=361 SECTIONS_TOTAL=23",
+        "[INFO] SEG0 start=0.88 end=1.60 text_head='しい'",
+        "[INFO] SECTIONS_TIMED=22 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=0.88 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=11.25s"
+      ]
+    },
+    {
+      "id": "041",
+      "title": "Shared Table, Warmth in the Afternoon",
+      "audio_url": "https://cdn1.suno.ai/be689952-9203-4a01-a0f9-174b4f382e9c.mp3",
+      "track_url": "tracks/041.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T04:58:27+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=253 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=0.68 end=1.26 text_head='かな'",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=0.68 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=8.92s"
+      ]
+    },
+    {
+      "id": "042",
+      "title": "Gentle Tomorrow",
+      "audio_url": "https://cdn1.suno.ai/3ae1d838-8bb6-4ff7-88f8-87837e1dc548.mp3",
+      "track_url": "tracks/042.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T04:53:40+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 7,
+      "align_info_head": [
+        "[INFO] SEGMENTS=387 SECTIONS_TOTAL=18",
+        "[INFO] SEG0 start=15.72 end=16.80 text_head='静'",
+        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=15.72s",
+        "[INFO] SECTIONS_TIMED=17 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=15.72 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=10.76s"
+      ]
+    },
+    {
+      "id": "043",
+      "title": "今この瞬間のメモリー",
+      "audio_url": "https://cdn1.suno.ai/a582d405-e9be-4b28-bd08-d2c2e13c73e4.mp3",
+      "track_url": "tracks/043.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T04:48:36+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=254 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=0.98 end=1.64 text_head='の'",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=0.98 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=9.33s"
+      ]
+    },
+    {
+      "id": "044",
+      "title": "Everyday, Step Forward",
+      "audio_url": "https://cdn1.suno.ai/31f3e77b-dffd-4c68-96b4-6015ce506a07.mp3",
+      "track_url": "tracks/044.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T04:43:39+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=364 SECTIONS_TOTAL=23",
+        "[INFO] SEG0 start=0.90 end=1.66 text_head='しい'",
+        "[INFO] SECTIONS_TIMED=22 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=0.90 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=10.01s"
+      ]
+    },
+    {
+      "id": "045",
+      "title": "Everyday Radiance",
+      "audio_url": "https://cdn1.suno.ai/dbf8723c-d132-4286-ba96-645267be0b55.mp3",
+      "track_url": "tracks/045.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T04:38:36+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=370 SECTIONS_TOTAL=23",
+        "[INFO] SEG0 start=0.68 end=1.08 text_head='の'",
+        "[INFO] SECTIONS_TIMED=22 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=0.68 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=10.31s"
+      ]
+    },
+    {
+      "id": "046",
+      "title": "Soft Lamp Shadows",
+      "audio_url": "https://cdn1.suno.ai/4100ff9e-4217-42cc-8b52-4ebb52dc2e71.mp3",
+      "track_url": "tracks/046.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T04:33:49+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=334 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=0.94 end=1.28 text_head='ら'",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=0.94 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=9.14s"
+      ]
+    },
+    {
+      "id": "047",
+      "title": "Small Thanks, Everyday Signs",
+      "audio_url": "https://cdn1.suno.ai/c56c3434-fa9b-47af-aac4-9c1f5bc4ae8b.mp3",
+      "track_url": "tracks/047.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T04:28:33+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 7,
+      "align_info_head": [
+        "[INFO] SEGMENTS=227 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=9.88 end=10.82 text_head='ふ'",
+        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=9.88s",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=9.88 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=8.86s"
+      ]
+    },
+    {
+      "id": "048",
+      "title": "Side Street Film",
+      "audio_url": "https://cdn1.suno.ai/30823de7-204c-4c61-810b-9f5e1a56e250.mp3",
+      "track_url": "tracks/048.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T04:23:46+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=254 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=0.76 end=1.06 text_head='パ'",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=0.76 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=9.21s"
+      ]
+    },
+    {
+      "id": "049",
+      "title": "となりのリズムで進もう",
+      "audio_url": "https://cdn1.suno.ai/cb753adf-1ec5-4169-b5ea-da64f29d3c04.mp3",
+      "track_url": "tracks/049.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T04:18:29+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=284 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=0.90 end=1.24 text_head='ッ'",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=0.90 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=9.93s"
+      ]
+    },
+    {
+      "id": "050",
+      "title": "Blank Slate, Tiny Steps",
+      "audio_url": "https://cdn1.suno.ai/49be83f5-1ed2-44b1-98d3-973f449777c0.mp3",
+      "track_url": "tracks/050.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T04:13:34+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=210 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=0.78 end=2.28 text_head='ー'",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=0.78 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=8.08s"
+      ]
+    },
+    {
+      "id": "051",
+      "title": "Startline Reminder",
+      "audio_url": "https://cdn1.suno.ai/6c6013bd-d34d-495b-be75-cb50bce26008.mp3",
+      "track_url": "tracks/051.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T04:08:32+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=233 SECTIONS_TOTAL=16",
+        "[INFO] SEG0 start=0.64 end=1.28 text_head='れ'",
+        "[INFO] SECTIONS_TIMED=15 SECTIONS_EMPTY=1",
+        "[INFO] FIRST_TIMED start=0.64 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=7.72s"
+      ]
+    },
+    {
+      "id": "052",
+      "title": "Sunday Tabletop",
+      "audio_url": "https://cdn1.suno.ai/6fc2261a-5e41-45fe-aca4-382de712b2f5.mp3",
+      "track_url": "tracks/052.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T04:04:09+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=434 SECTIONS_TOTAL=30",
+        "[INFO] SEG0 start=1.24 end=1.30 text_head='っ'",
+        "[INFO] SECTIONS_TIMED=30 SECTIONS_EMPTY=0",
+        "[INFO] FIRST_TIMED start=1.24 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=9.12s"
+      ]
+    },
+    {
+      "id": "053",
+      "title": "やわらかな午後のまま",
+      "audio_url": "https://cdn1.suno.ai/4011983a-9a81-47cc-8ef9-7e9d46def306.mp3",
+      "track_url": "tracks/053.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T03:58:30+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 7,
+      "align_info_head": [
+        "[INFO] SEGMENTS=353 SECTIONS_TOTAL=22",
+        "[INFO] SEG0 start=24.64 end=25.20 text_head='作'",
+        "[INFO] lead-shift applied: seg0.start was 24.64s → shifted by -24.64s",
+        "[INFO] SECTIONS_TIMED=22 SECTIONS_EMPTY=0",
+        "[INFO] FIRST_TIMED start=0.00 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=10.02s"
+      ]
+    },
+    {
+      "id": "054",
+      "title": "Candlelight Slow Motion",
+      "audio_url": "https://cdn1.suno.ai/49d2b160-c89f-478f-bda4-6c0d88a49f4d.mp3",
+      "track_url": "tracks/054.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T03:53:41+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=401 SECTIONS_TOTAL=27",
+        "[INFO] SEG0 start=1.40 end=1.64 text_head='ア'",
+        "[INFO] SECTIONS_TIMED=27 SECTIONS_EMPTY=0",
+        "[INFO] FIRST_TIMED start=1.40 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=9.76s"
+      ]
+    },
+    {
+      "id": "055",
+      "title": "Pocketful of Tiny Wins",
+      "audio_url": "https://cdn1.suno.ai/8ab885f1-72cd-4c37-8c0b-a249db97aa25.mp3",
+      "track_url": "tracks/055.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T03:48:38+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=223 SECTIONS_TOTAL=9",
+        "[INFO] SEG0 start=1.02 end=1.46 text_head='の'",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=0",
+        "[INFO] FIRST_TIMED start=1.02 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=8.59s"
+      ]
+    },
+    {
+      "id": "056",
+      "title": "Daylight Pause",
+      "audio_url": "https://cdn1.suno.ai/8b28bc17-d526-4d4b-bcc8-941dae1000c3.mp3",
+      "track_url": "tracks/056.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T03:43:25+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=209 SECTIONS_TOTAL=9",
+        "[INFO] SEG0 start=0.16 end=2.00 text_head='う'",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=0",
+        "[INFO] FIRST_TIMED start=0.16 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=9.44s"
+      ]
+    },
+    {
+      "id": "057",
+      "title": "Soft Light Keeps Moving",
+      "audio_url": "https://cdn1.suno.ai/7fb81bb7-c8a7-4899-b97b-66677d06d4af.mp3",
+      "track_url": "tracks/057.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T03:38:31+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 7,
+      "align_info_head": [
+        "[INFO] SEGMENTS=411 SECTIONS_TOTAL=31",
+        "[INFO] SEG0 start=18.56 end=19.12 text_head='目'",
+        "[INFO] lead-shift applied: seg0.start was 18.56s → shifted by -18.56s",
+        "[INFO] SECTIONS_TIMED=31 SECTIONS_EMPTY=0",
+        "[INFO] FIRST_TIMED start=0.00 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=12.50s"
+      ]
+    },
+    {
+      "id": "058",
+      "title": "Turning Pages, Changing Shoes",
+      "audio_url": "https://cdn1.suno.ai/7b7495f7-cae2-47f9-995a-aa1280ef43c2.mp3",
+      "track_url": "tracks/058.json",
+      "duration": 180.0,
+      "created_at": "\"2026-02-05T03:33:30+09:00\"",
+      "ko_filled": 0,
+      "align_info_count": 7,
+      "align_info_head": [
+        "[INFO] SEGMENTS=214 SECTIONS_TOTAL=9",
+        "[INFO] SEG0 start=20.46 end=21.54 text_head='静'",
+        "[INFO] lead-shift applied: seg0.start was 20.46s → shifted by -20.46s",
+        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=0",
+        "[INFO] FIRST_TIMED start=0.00 tag='Verse 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=6.73s"
+      ]
+    }
+  ]
+}
