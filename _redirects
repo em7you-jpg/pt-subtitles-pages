@@ -1,2 +1,4 @@
 /track.json /track.json 200
-/player /player.html 200
+/set/*/playlist.json /set/:splat/playlist.json 200
+/set/*/tracks/*.json /set/:splat 200
+/player.html /player.html 200
