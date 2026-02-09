@@ -216,6 +216,60 @@
     return await res.json();
   }
 
+  // ---------- CUES SAFETY LAYER ----------
+  // 1) track.cues 가 있으면 그대로 사용
+  // 2) 없으면 track.lines(start/end)로 cues 생성 (서버에서 cues 누락되어도 플레이어가 자동 복구)
+  // 3) 그래도 없으면 기존 extractCues(느슨한 walk)로 마지막 시도
+  function cuesFromTimedLines(lines){
+    const cues=[];
+    const seen=new Set();
+    for (const ln of (lines || [])){
+      if (!ln || typeof ln !== "object") continue;
+      const st = ln.start ?? ln.t0;
+      const ed = ln.end ?? ln.t1;
+      const s = Number(st), e = Number(ed);
+      if (!Number.isFinite(s) || !Number.isFinite(e) || e <= s) continue;
+
+      const ja = (ln.ja ?? "").toString().trim();
+      const ko = (ln.ko ?? "").toString().trim();
+      const text = (ln.text ?? ln.line ?? ln.content ?? "").toString().trim();
+
+      // 대표님 정책: 최소 JA는 있어야 cue로 인정 (빈 자막 방지)
+      const jaOrText = ja || text;
+      if (!jaOrText) continue;
+
+      const key = `${s.toFixed(3)}|${e.toFixed(3)}|${jaOrText}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+
+      cues.push({start:s, end:e, ja: jaOrText, ko});
+    }
+    cues.sort((a,b)=>a.start-b.start);
+    return cues;
+  }
+
+  function ensureCues(trackJson){
+    if (!trackJson || typeof trackJson !== "object") return [];
+    // 가장 선호: cues 배열
+    if (Array.isArray(trackJson.cues) && trackJson.cues.length > 0){
+      // cues가 {text}만 있는 경우도 있으니 ja/ko를 최대한 채움
+      return trackJson.cues.map(c => {
+        const s = Number(c.start ?? c.t0);
+        const e = Number(c.end ?? c.t1);
+        const ja = (c.ja ?? c.text ?? "").toString().trim();
+        const ko = (c.ko ?? "").toString().trim();
+        return {start:s, end:e, ja, ko};
+      }).filter(c => Number.isFinite(c.start) && Number.isFinite(c.end) && c.end > c.start && c.ja);
+    }
+    // 두번째: lines(start/end) -> cues
+    if (Array.isArray(trackJson.lines) && trackJson.lines.length > 0){
+      const c = cuesFromTimedLines(trackJson.lines);
+      if (c.length > 0) return c;
+    }
+    // 마지막: 기존 포맷-무관 추출
+    return extractCues(trackJson);
+  }
+
   // ---------- cue extraction (format-agnostic) ----------
   // track json 포맷이 약간 달라도 start/end + text/ja/ko를 찾도록 "느슨하게" 처리
   function extractCues(obj){
@@ -332,7 +386,8 @@
     const t = (currentTrack && currentTrack.title) ? currentTrack.title : (trackJson && trackJson.title) ? trackJson.title : "";
     if (titleOn) setHeaderTitle(t);
 
-    cues = extractCues(trackJson);
+    // ✅ 핵심: cues가 없으면 lines로 자동 생성해서 사용
+    cues = ensureCues(trackJson);
     lastCueIdx = 0;
 
     // clear text immediately
