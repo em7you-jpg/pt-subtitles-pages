@@ -1,0 +1,24 @@
+{
+  "set_id": "20260206",
+  "built_at": "2026-02-09T02:59:43+0000",
+  "tracks": [
+    {
+      "id": "001",
+      "title": "cues_set_test_1",
+      "audio_url": "https://cdn1.suno.ai/b608f2d7-be74-40d0-a243-ae59340f43d7.mp3",
+      "track_url": "tracks/001.json",
+      "duration": 180.0,
+      "created_at": "2026-02-07T06:03:38+09:00",
+      "ko_filled": 0,
+      "align_info_count": 6,
+      "align_info_head": [
+        "[INFO] SEGMENTS=470 SECTIONS_TOTAL=1",
+        "[INFO] SEG0 start=0.76 end=1.10 text_head='や'",
+        "[INFO] SECTIONS_TIMED=1 SECTIONS_EMPTY=0",
+        "[INFO] FIRST_TIMED start=0.76 tag='Line 1'",
+        "[INFO] LEAD_APPLIED=1.20s",
+        "[INFO] CORE_OK elapsed=10.05s"
+      ]
+    }
+  ]
+}

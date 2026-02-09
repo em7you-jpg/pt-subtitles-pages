@@ -1,0 +1,1 @@
+{"title": "cues_set_test_1", "lines": [{"start": 0.0, "end": 223.58, "ja": "テスト", "ko_pron": "", "ko": "", "tag": "Line 1"}], "cues": [{"start": 0.0, "end": 7.0, "text": "テスト", "ja": "テスト", "ko": ""}], "meta": {"timing_clamped": true, "max_line_dur_sec": 7.0, "gap_sec": 0.12, "min_dur_sec": 0.06, "changed_items": 1, "clipped_by_next": 0, "clipped_by_maxdur": 1}}
