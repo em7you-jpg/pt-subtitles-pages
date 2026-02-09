@@ -1,6 +1,6 @@
 {
   "set_id": "20260207",
-  "built_at": "2026-02-09T13:24:13+0000",
+  "built_at": "2026-02-09T14:22:03+0000",
   "tracks": [
     {
       "id": "001",
@@ -10,13 +10,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T06:03:35+09:00\"",
       "ko_filled": 16,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=1.23 avg=8.49 max=10.98",
-        "[INFO] CUES_BUILT=16 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=9.34s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=16 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=188.760 applied",
+        "[INFO] CORE_OK elapsed=8.72s"
       ],
       "timing_clamped": false
     },
@@ -28,13 +27,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T05:58:29+09:00\"",
       "ko_filled": 9,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.18 max=5.61",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=8.99s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.596 applied",
+        "[INFO] CORE_OK elapsed=9.49s"
       ],
       "timing_clamped": false
     },
@@ -46,13 +44,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T05:53:31+09:00\"",
       "ko_filled": 9,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=1.91 avg=3.54 max=4.00",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=6.99s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.496 applied",
+        "[INFO] CORE_OK elapsed=8.10s"
       ],
       "timing_clamped": false
     },
@@ -64,13 +61,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T05:38:20+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.15 max=5.35",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=8.23s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.663 applied",
+        "[INFO] CORE_OK elapsed=6.93s"
       ],
       "timing_clamped": false
     },
@@ -82,13 +78,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T05:33:31+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.03 max=4.25",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=5.98s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=135.840 applied",
+        "[INFO] CORE_OK elapsed=5.78s"
       ],
       "timing_clamped": false
     },
@@ -100,13 +95,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T05:28:32+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.33 max=6.97",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=11.69s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=206.160 applied",
+        "[INFO] CORE_OK elapsed=10.72s"
       ],
       "timing_clamped": false
     },
@@ -118,13 +112,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T05:23:22+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.02 max=4.17",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=6.68s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.474 applied",
+        "[INFO] CORE_OK elapsed=8.75s"
       ],
       "timing_clamped": false
     },
@@ -136,13 +129,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T05:18:37+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=1.84 avg=3.93 max=11.84",
-        "[INFO] CUES_BUILT=16 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=10.64s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=16 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=2.168 applied",
+        "[INFO] CORE_OK elapsed=12.04s"
       ],
       "timing_clamped": false
     },
@@ -154,13 +146,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T05:13:32+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=1.20 avg=4.63 max=8.25",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=5.51s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=129.880 applied",
+        "[INFO] CORE_OK elapsed=6.48s"
       ],
       "timing_clamped": false
     },
@@ -172,13 +163,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T05:03:44+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.22 max=5.95",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=10.66s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.315 applied",
+        "[INFO] CORE_OK elapsed=9.95s"
       ],
       "timing_clamped": false
     },
@@ -190,13 +180,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T04:58:27+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.00 max=4.00",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=11.13s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.629 applied",
+        "[INFO] CORE_OK elapsed=8.07s"
       ],
       "timing_clamped": false
     },
@@ -208,13 +197,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T04:53:31+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.63 max=8.92",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=6.07s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.537 applied",
+        "[INFO] CORE_OK elapsed=8.30s"
       ],
       "timing_clamped": false
     },
@@ -226,13 +214,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T04:43:25+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=10.61 max=11.05",
-        "[INFO] CUES_BUILT=16 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=8.21s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=16 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.728 applied",
+        "[INFO] CORE_OK elapsed=10.05s"
       ],
       "timing_clamped": false
     },
@@ -244,13 +231,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T04:38:21+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=6.20 max=8.39",
-        "[INFO] CUES_BUILT=17 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=6.12s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=17 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=134.760 applied",
+        "[INFO] CORE_OK elapsed=6.53s"
       ],
       "timing_clamped": false
     },
@@ -262,13 +248,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T04:33:40+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.34 max=7.06",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=12.72s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.662 applied",
+        "[INFO] CORE_OK elapsed=16.78s"
       ],
       "timing_clamped": false
     },
@@ -280,13 +265,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T04:28:23+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.00 max=4.00",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=5.60s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.537 applied",
+        "[INFO] CORE_OK elapsed=7.62s"
       ],
       "timing_clamped": false
     },
@@ -298,13 +282,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T04:23:41+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.18 max=5.44",
-        "[INFO] CUES_BUILT=11 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=10.84s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=11 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=223.360 applied",
+        "[INFO] CORE_OK elapsed=11.88s"
       ],
       "timing_clamped": false
     },
@@ -316,13 +299,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T04:18:35+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=3.11 avg=4.05 max=5.69",
-        "[INFO] CUES_BUILT=16 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=9.69s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=16 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.594 applied",
+        "[INFO] CORE_OK elapsed=13.13s"
       ],
       "timing_clamped": false
     },
@@ -334,13 +316,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T04:13:34+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=5.06 max=7.95",
-        "[INFO] CUES_BUILT=28 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=10.79s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=28 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=189.960 applied",
+        "[INFO] CORE_OK elapsed=10.66s"
       ],
       "timing_clamped": false
     },
@@ -352,13 +333,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T04:08:21+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=0.84 avg=4.11 max=6.06",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=7.64s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.287 applied",
+        "[INFO] CORE_OK elapsed=10.96s"
       ],
       "timing_clamped": false
     },
@@ -370,13 +350,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T04:03:19+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.84 max=11.08",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=4.37s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=132.800 applied",
+        "[INFO] CORE_OK elapsed=5.99s"
       ],
       "timing_clamped": false
     },
@@ -388,13 +367,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T03:58:27+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.00 max=4.00",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=7.88s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.587 applied",
+        "[INFO] CORE_OK elapsed=9.41s"
       ],
       "timing_clamped": false
     },
@@ -406,13 +384,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T03:53:32+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.04 max=4.33",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=6.82s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.474 applied",
+        "[INFO] CORE_OK elapsed=8.87s"
       ],
       "timing_clamped": false
     },
@@ -424,13 +401,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T03:48:24+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.06 max=4.50",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=6.21s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=1.067 applied",
+        "[INFO] CORE_OK elapsed=8.10s"
       ],
       "timing_clamped": false
     },
@@ -442,13 +418,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T03:43:20+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=1.72 avg=3.79 max=4.00",
-        "[INFO] CUES_BUILT=11 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=8.32s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=11 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.497 applied",
+        "[INFO] CORE_OK elapsed=12.17s"
       ],
       "timing_clamped": false
     },
@@ -460,13 +435,11 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T03:38:17+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 3,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=2.34 avg=3.98 max=8.41",
-        "[INFO] CUES_BUILT=29 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=10.15s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=29 (tight, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=10.90s"
       ],
       "timing_clamped": false
     },
@@ -478,13 +451,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T03:33:48+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=7.10 max=7.27",
-        "[INFO] CUES_BUILT=23 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=9.90s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=23 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=187.560 applied",
+        "[INFO] CORE_OK elapsed=10.59s"
       ],
       "timing_clamped": false
     },
@@ -496,13 +468,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T06:03:38+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=2.03 avg=6.11 max=7.76",
-        "[INFO] CUES_BUILT=30 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=11.55s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=30 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=9.055 applied",
+        "[INFO] CORE_OK elapsed=12.43s"
       ],
       "timing_clamped": false
     },
@@ -514,13 +485,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T05:58:29+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.18 max=5.61",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=9.92s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.316 applied",
+        "[INFO] CORE_OK elapsed=8.68s"
       ],
       "timing_clamped": false
     },
@@ -532,13 +502,11 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T05:53:32+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 3,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.30 max=6.71",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=6.08s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=6.71s"
       ],
       "timing_clamped": false
     },
@@ -550,13 +518,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T05:48:39+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=7.41 max=11.44",
-        "[INFO] CUES_BUILT=12 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=7.73s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=12 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.664 applied",
+        "[INFO] CORE_OK elapsed=8.70s"
       ],
       "timing_clamped": false
     },
@@ -568,13 +535,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T05:43:37+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=8.81 max=10.98",
-        "[INFO] CUES_BUILT=17 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=9.62s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=17 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.400 applied",
+        "[INFO] CORE_OK elapsed=10.98s"
       ],
       "timing_clamped": false
     },
@@ -586,13 +552,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T05:38:37+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=2.65 avg=7.58 max=11.82",
-        "[INFO] CUES_BUILT=18 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=10.53s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=18 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.611 applied",
+        "[INFO] CORE_OK elapsed=10.18s"
       ],
       "timing_clamped": false
     },
@@ -604,13 +569,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T05:33:43+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.24 max=5.27",
-        "[INFO] CUES_BUILT=11 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=9.62s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=11 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.628 applied",
+        "[INFO] CORE_OK elapsed=10.26s"
       ],
       "timing_clamped": false
     },
@@ -622,13 +586,11 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T05:28:40+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 3,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=5.97 max=8.20",
-        "[INFO] CUES_BUILT=26 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=10.63s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=26 (tight, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=11.81s"
       ],
       "timing_clamped": false
     },
@@ -640,13 +602,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T05:23:47+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=1.09 avg=6.51 max=11.03",
-        "[INFO] CUES_BUILT=23 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=9.99s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=23 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=209.760 applied",
+        "[INFO] CORE_OK elapsed=12.15s"
       ],
       "timing_clamped": false
     },
@@ -658,13 +619,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T05:18:36+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=5.32 max=11.62",
-        "[INFO] CUES_BUILT=11 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=9.82s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=11 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.647 applied",
+        "[INFO] CORE_OK elapsed=11.37s"
       ],
       "timing_clamped": false
     },
@@ -676,13 +636,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T05:13:33+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.49 max=8.13",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=12.28s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=164.720 applied",
+        "[INFO] CORE_OK elapsed=13.11s"
       ],
       "timing_clamped": false
     },
@@ -694,13 +653,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T05:08:37+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.16 max=5.44",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=7.15s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.750 applied",
+        "[INFO] CORE_OK elapsed=10.39s"
       ],
       "timing_clamped": false
     },
@@ -712,13 +670,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T05:03:44+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=2.78 avg=4.32 max=6.38",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=7.37s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.734 applied",
+        "[INFO] CORE_OK elapsed=8.18s"
       ],
       "timing_clamped": false
     },
@@ -730,13 +687,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T04:58:39+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=8.79 max=9.14",
-        "[INFO] CUES_BUILT=15 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=10.03s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=15 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=107.419 applied",
+        "[INFO] CORE_OK elapsed=8.38s"
       ],
       "timing_clamped": false
     },
@@ -748,13 +704,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T04:53:38+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=1.84 avg=8.03 max=10.98",
-        "[INFO] CUES_BUILT=17 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=8.96s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=17 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=199.880 applied",
+        "[INFO] CORE_OK elapsed=10.85s"
       ],
       "timing_clamped": false
     },
@@ -766,13 +721,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T04:48:36+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.00 max=4.00",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=8.20s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.698 applied",
+        "[INFO] CORE_OK elapsed=7.88s"
       ],
       "timing_clamped": false
     },
@@ -784,13 +738,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T04:43:25+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=1.65 avg=7.08 max=9.19",
-        "[INFO] CUES_BUILT=18 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=9.48s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=18 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=184.760 applied",
+        "[INFO] CORE_OK elapsed=7.92s"
       ],
       "timing_clamped": false
     },
@@ -802,13 +755,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T04:38:30+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=0.48 avg=3.95 max=9.90",
-        "[INFO] CUES_BUILT=18 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=7.90s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=18 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=151.960 applied",
+        "[INFO] CORE_OK elapsed=9.21s"
       ],
       "timing_clamped": false
     },
@@ -820,13 +772,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T04:33:40+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=1.45 avg=7.99 max=11.35",
-        "[INFO] CUES_BUILT=17 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=7.60s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=17 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.833 applied",
+        "[INFO] CORE_OK elapsed=7.33s"
       ],
       "timing_clamped": false
     },
@@ -838,13 +789,11 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T04:28:35+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 3,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.05 max=4.42",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=14.31s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=13.15s"
       ],
       "timing_clamped": false
     },
@@ -856,13 +805,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T04:23:29+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.00 max=4.00",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=6.18s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=142.720 applied",
+        "[INFO] CORE_OK elapsed=5.94s"
       ],
       "timing_clamped": false
     },
@@ -874,13 +822,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T04:03:22+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.00 max=4.00",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=7.38s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.656 applied",
+        "[INFO] CORE_OK elapsed=10.37s"
       ],
       "timing_clamped": false
     },
@@ -892,13 +839,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T03:58:55+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=5.12 max=6.12",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=10.97s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=219.760 applied",
+        "[INFO] CORE_OK elapsed=10.67s"
       ],
       "timing_clamped": false
     },
@@ -910,13 +856,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T03:53:43+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.10 max=4.93",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=7.91s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=132.411 applied",
+        "[INFO] CORE_OK elapsed=7.17s"
       ],
       "timing_clamped": false
     },
@@ -928,13 +873,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T03:48:43+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=5.39 max=10.28",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=5.17s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=134.880 applied",
+        "[INFO] CORE_OK elapsed=6.93s"
       ],
       "timing_clamped": false
     },
@@ -946,13 +890,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T03:43:35+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=0.67 avg=5.09 max=9.65",
-        "[INFO] CUES_BUILT=28 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=8.49s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=28 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=154.920 applied",
+        "[INFO] CORE_OK elapsed=10.22s"
       ],
       "timing_clamped": false
     },
@@ -964,13 +907,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T03:38:30+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=0.24 avg=4.43 max=8.38",
-        "[INFO] CUES_BUILT=28 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=7.54s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=28 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=199.920 applied",
+        "[INFO] CORE_OK elapsed=10.77s"
       ],
       "timing_clamped": false
     },
@@ -982,13 +924,12 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T03:33:48+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 5,
+      "align_info_count": 4,
       "align_info_head": [
-        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
-        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
-        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.00 max=4.00",
-        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
-        "[INFO] CORE_OK elapsed=8.74s"
+        "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
+        "[INFO] CUES_BUILT=9 (tight, placeholders skipped)",
+        "[INFO] LEADING_SILENCE_SEC=0.676 applied",
+        "[INFO] CORE_OK elapsed=8.47s"
       ],
       "timing_clamped": false
     }
