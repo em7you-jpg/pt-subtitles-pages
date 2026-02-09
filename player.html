@@ -31,6 +31,11 @@
 
       /* KO color */
       --koColor: #ffd54a;
+
+      /* start overlay */
+      --startBg: rgba(0,0,0,0.38);
+      --startBtnBg: rgba(255,255,255,0.14);
+      --startBtnBgHover: rgba(255,255,255,0.20);
     }
     body{
       margin:0; background: transparent; overflow:hidden;
@@ -79,7 +84,7 @@
       filter: drop-shadow(var(--shadow));
       pointer-events: auto; /* HUD 켰을 때만 클릭 */
     }
-    .hud-off #box{ pointer-events:none; } /* ✅ 방송용(hud=0)일 때 클릭 완전 통과 */
+    .hud-off #box{ pointer-events:none; } /* 방송용(hud=0)일 때 클릭 완전 통과 */
 
     .ja{ font-size: var(--jaSize); font-weight: 700; line-height: 1.25; }
     .ko{
@@ -129,6 +134,33 @@
     #audio{
       width: min(720px, 86vw);
     }
+
+    /* ---------- START OVERLAY (for autoplay blocked) ---------- */
+    #startOverlay{
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: var(--startBg);
+      pointer-events: auto;
+    }
+    #startOverlay.on{ display:flex; }
+    #startBtn{
+      border: 0;
+      border-radius: 18px;
+      padding: 16px 22px;
+      background: var(--startBtnBg);
+      color: rgba(255,255,255,0.96);
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: .5px;
+      cursor:pointer;
+      backdrop-filter: blur(6px);
+      filter: drop-shadow(var(--shadow));
+    }
+    #startBtn:hover{ background: var(--startBtnBgHover); }
+    .hud-off #startOverlay{ pointer-events:auto; } /* hud=0이어도 overlay 클릭은 가능 */
   </style>
 </head>
 <body>
@@ -164,6 +196,11 @@
     </div>
   </div>
 
+  <!-- Start overlay -->
+  <div id="startOverlay">
+    <button id="startBtn">START</button>
+  </div>
+
 <script>
 (() => {
   const $ = (id) => document.getElementById(id);
@@ -172,30 +209,44 @@
   const setId = params.get("set") || "default";
   const lang = (params.get("lang") || "both").toLowerCase(); // both|ja|ko
   const hud = params.get("hud"); // 0 => hide
-  const cacheBust = params.get("cb") || "";
+  const cacheBust = params.get("cb") || ""; // optional external cache buster
 
+  // 기본 랜덤 재생
   const shuffleOn = (params.get("shuffle") ?? "1") !== "0";
+
+  // 마지막까지 가도 계속 반복
   const loopOn = (params.get("loop") ?? "1") !== "0";
 
-  // ✅ 더 길게 유지
+  // 자막 hold (끝난 직후에도 유지)
   const HOLD_GAP = (() => {
     const v = Number(params.get("holdGap"));
-    return Number.isFinite(v) ? v : 2.4;   // default 2.4s
-  })();
-  const MIN_CUE_DUR = (() => {
-    const v = Number(params.get("minCueDur"));
-    return Number.isFinite(v) ? v : 1.6;   // default 1.6s
+    return Number.isFinite(v) ? v : 1.20; // ✅ 기본 1.20s
   })();
 
-  const autoplayRetryOn = (params.get("autoplayRetry") ?? "1") !== "0";
-  const AUTOPLAY_RETRY_MS = 8000;
+  // 너무 짧은 cue는 최소 표시시간 보장(화면 표시만)
+  const MIN_CUE_SEC = (() => {
+    const v = Number(params.get("minCue"));
+    return Number.isFinite(v) ? v : 2.20; // ✅ 기본 2.20s
+  })();
 
+  // title show/hide
   const titleOn = (params.get("title") ?? "1") !== "0";
   if (!titleOn) document.body.classList.add("title-off");
+
   if (hud === "0") document.body.classList.add("hud-off");
+
+  // hud 자동 숨김 (재생 시작 후 N초 뒤)
+  const hudAutoHideSec = (() => {
+    const v = Number(params.get("hudAutoHide"));
+    return Number.isFinite(v) ? v : 0;
+  })();
+
+  // autoplay 막혔을 때 overlay로 시작 (hud=0에서도 가능)
+  const startOverlayOn = (params.get("startOverlay") ?? "0") === "1";
 
   function num(v, d){ const n = Number(v); return Number.isFinite(n) ? n : d; }
 
+  // style params
   const cssVars = {
     "--posX": params.get("x") ? params.get("x") + "%" : null,
     "--posY": params.get("y") ? params.get("y") + "%" : null,
@@ -203,10 +254,12 @@
     "--koSize": params.get("koSize") ? params.get("koSize") + "px" : null,
     "--align": params.get("align") || null,
     "--maxW": params.get("maxW") ? params.get("maxW") + "vw" : null,
+
     "--titleSize": params.get("titleSize") ? params.get("titleSize") + "px" : null,
     "--titleGap": params.get("titleGap") ? params.get("titleGap") + "px" : null,
     "--titleOpacity": params.get("titleOpacity") ? params.get("titleOpacity") : null,
     "--titleTop": params.get("titleTop") ? params.get("titleTop") + "em" : null,
+
     "--koColor": params.get("koColor") ? params.get("koColor") : null,
   };
   for (const [k,v] of Object.entries(cssVars)) if (v) document.documentElement.style.setProperty(k, v);
@@ -224,6 +277,10 @@
   const trackLabel = $("trackLabel");
   const offsetLabel = $("offsetLabel");
 
+  const startOverlay = $("startOverlay");
+  const startBtn = $("startBtn");
+
+  // offset per set
   const lsKey = `pt_offset_${setId}`;
   let offsetSec = num(localStorage.getItem(lsKey), 0.0);
   function setOffset(v){
@@ -245,78 +302,109 @@
     return await res.json();
   }
 
-  function normalizeText(s){
-    return (s ?? "").toString().replace(/\r/g, "").trim();
-  }
-  function firstLineOnly(s){
-    s = normalizeText(s);
-    if (!s) return "";
-    const byNL = s.split("\n").map(x=>x.trim()).filter(Boolean);
-    if (byNL.length) s = byNL[0];
-    const bySlash = s.split(" / ").map(x=>x.trim()).filter(Boolean);
-    if (bySlash.length) s = bySlash[0];
-    return s;
-  }
-
-  // ✅ 핵심: KO 복원은 text뿐 아니라 ja 안의 "\n"도 분해
+  // ---------- cue extraction (KO 복구 핵심) ----------
+  // 1) cues가 있으면 cues를 우선 사용
+  // 2) BUT cues.ko가 비어있으면 -> lines에서 같은 타임스탬프(오차 허용) ko를 찾아 보강
+  // 3) cue.text가 "JA\nKO"면 2번째 줄도 ko 후보로 사용
   function extractCues(obj){
     const cues = [];
     const seen = new Set();
 
-    function pushCue(s,e,ja,ko){
+    const norm = (s) => (s ?? "").toString().replace(/\r/g,"").trim();
+    const firstLine = (s) => {
+      s = norm(s);
+      if (!s) return "";
+      const byNL = s.split("\n").map(x=>x.trim()).filter(Boolean);
+      if (byNL.length) return byNL[0];
+      const bySlash = s.split(" / ").map(x=>x.trim()).filter(Boolean);
+      if (bySlash.length) return bySlash[0];
+      return s;
+    };
+    const secondLine = (s) => {
+      s = norm(s);
+      if (!s) return "";
+      const byNL = s.split("\n").map(x=>x.trim()).filter(Boolean);
+      return (byNL.length >= 2) ? byNL[1] : "";
+    };
+
+    // lines 인덱스 (start/end 근접 매칭)
+    const timedLines = Array.isArray(obj?.lines) ? obj.lines.filter(x=>x && typeof x==="object") : [];
+    function findKoFromLines(st, ed){
+      if (!timedLines.length) return "";
+      const EPS = 0.25; // 250ms 허용
+      let best = null;
+      let bestScore = 1e9;
+      for (const ln of timedLines){
+        const ls = Number(ln.start), le = Number(ln.end);
+        if (!Number.isFinite(ls) || !Number.isFinite(le)) continue;
+        const ds = Math.abs(ls - st);
+        const de = Math.abs(le - ed);
+        const score = ds + de;
+        if (ds <= EPS && de <= EPS && score < bestScore){
+          bestScore = score;
+          best = ln;
+        }
+      }
+      const ko = best ? norm(best.ko) : "";
+      return ko;
+    }
+
+    function pushCue(s,e,ja,ko,text){
       s = Number(s); e = Number(e);
       if (!Number.isFinite(s) || !Number.isFinite(e) || e <= s) return;
 
-      // 최소 표시 시간
-      if (e < s + MIN_CUE_DUR) e = s + MIN_CUE_DUR;
+      // 표시 최소 시간 보장
+      const minEnd = s + MIN_CUE_SEC;
+      if (e < minEnd) e = minEnd;
 
-      ja = firstLineOnly(ja);
-      ko = firstLineOnly(ko);
+      // 2단락 동시표시 방지: ja/ko는 1줄만
+      const ja1 = firstLine(ja ?? text ?? "");
+      if (!ja1) return;
 
-      if (!ja) return;
-      const key = `${s.toFixed(3)}|${e.toFixed(3)}|${ja}`;
+      let ko1 = firstLine(ko ?? "");
+
+      // cues.ko 비었으면 text의 2줄(있으면) or lines에서 보강
+      if (!ko1){
+        const ko2 = secondLine(text ?? "");
+        if (ko2) ko1 = firstLine(ko2);
+      }
+      if (!ko1){
+        const lk = findKoFromLines(s, e);
+        if (lk) ko1 = firstLine(lk);
+      }
+
+      const key = `${s.toFixed(3)}|${e.toFixed(3)}|${ja1}`;
       if (seen.has(key)) return;
       seen.add(key);
 
-      cues.push({start:s, end:e, ja, ko});
+      cues.push({start:s, end:e, ja:ja1, ko:ko1});
     }
 
+    // cues 우선
     if (obj && typeof obj === "object" && Array.isArray(obj.cues) && obj.cues.length){
       for (const c of obj.cues){
         if (!c || typeof c !== "object") continue;
-
-        const rawText = normalizeText(c.text ?? "");
-        let jaRaw = normalizeText(c.ja ?? rawText ?? "");
-        let koRaw = normalizeText(c.ko ?? "");
-
-        // 1) ko 비었으면 text의 2번째 줄로 복원
-        if (!koRaw && rawText.includes("\n")){
-          const parts = rawText.split("\n").map(x=>x.trim()).filter(Boolean);
-          if (parts.length >= 2){
-            if (!jaRaw) jaRaw = parts[0];
-            koRaw = parts[1];
-          }
-        }
-
-        // 2) (중요) ko 비었는데 ja 자체에 "JA\nKO"가 들어있는 케이스 복원
-        if (!koRaw && jaRaw.includes("\n")){
-          const parts = jaRaw.split("\n").map(x=>x.trim()).filter(Boolean);
-          if (parts.length >= 2){
-            jaRaw = parts[0];
-            koRaw = parts[1];
-          }
-        }
-
-        pushCue(c.start, c.end, jaRaw, koRaw);
+        pushCue(
+          c.start, c.end,
+          c.ja ?? c.text ?? "",
+          c.ko ?? "",
+          c.text ?? ""
+        );
       }
       cues.sort((a,b)=>a.start-b.start);
       return cues;
     }
 
+    // fallback: lines
     if (obj && typeof obj === "object" && Array.isArray(obj.lines) && obj.lines.length){
       for (const ln of obj.lines){
         if (!ln || typeof ln !== "object") continue;
-        pushCue(ln.start, ln.end, ln.ja ?? ln.text ?? "", ln.ko ?? "");
+        pushCue(
+          ln.start, ln.end,
+          ln.ja ?? ln.text ?? "",
+          ln.ko ?? "",
+          ln.text ?? ""
+        );
       }
       cues.sort((a,b)=>a.start-b.start);
       return cues;
@@ -325,10 +413,12 @@
     return cues;
   }
 
+  // ---------- cue pick ----------
   let lastCueIdx = 0;
   function cueAt(cues, t){
     if (!cues || cues.length === 0) return null;
 
+    // forward
     for (let i = lastCueIdx; i < cues.length; i++){
       const c = cues[i];
       if (t < c.start) break;
@@ -337,6 +427,7 @@
         return c;
       }
     }
+    // backward (seek)
     for (let i = Math.min(lastCueIdx, cues.length - 1); i >= 0; i--){
       const c = cues[i];
       if (t >= c.start && t < (c.end + HOLD_GAP)){
@@ -353,6 +444,7 @@
     koEl.style.display = "none";
   }
 
+  // ---------- playlist ----------
   const base = `${location.origin}/set/${encodeURIComponent(setId)}/`;
   const playlistUrl = base + "playlist.json";
 
@@ -367,7 +459,7 @@
   }
 
   function setHeaderTitle(text){
-    const t = normalizeText(text);
+    const t = (text ?? "").toString().trim();
     titleEl.textContent = t;
     if (t) document.title = `PT Player — ${t}`;
   }
@@ -380,9 +472,14 @@
     return arr;
   }
 
+  function reshuffleIfNeeded(){
+    if (!playlist || !Array.isArray(playlist.tracks)) return;
+    if (shuffleOn) playlist.tracks = shuffleArray(playlist.tracks.slice());
+    idx = 0;
+  }
+
   async function loadTrack(i){
     if (!playlist) return;
-
     idx = Math.max(0, Math.min(i, playlist.tracks.length-1));
     currentTrack = playlist.tracks[idx];
     updateTrackLabel();
@@ -393,7 +490,8 @@
     if (!currentTrack.track_url) throw new Error("missing track_url");
     const trackJson = await fetchJSON(base + currentTrack.track_url);
 
-    const t = (currentTrack && currentTrack.title) ? currentTrack.title : (trackJson && trackJson.title) ? trackJson.title : "";
+    const t = (currentTrack && currentTrack.title) ? currentTrack.title
+            : (trackJson && trackJson.title) ? trackJson.title : "";
     if (titleOn) setHeaderTitle(t);
 
     cues = extractCues(trackJson);
@@ -415,9 +513,11 @@
       return;
     }
 
+    // JA always
     if (jaEl.textContent !== c.ja) jaEl.textContent = c.ja;
 
-    const hasKo = !!normalizeText(c.ko);
+    // KO
+    const hasKo = !!(c.ko && c.ko.trim());
     if ((lang === "both" || lang === "ko") && hasKo){
       if (koEl.textContent !== c.ko) koEl.textContent = c.ko;
       koEl.style.display = "";
@@ -427,21 +527,22 @@
     }
   }
 
+  // ---------- controls ----------
   btnPlay.addEventListener("click", async () => {
     if (!playlist) return;
-    if (audio.paused) await audio.play();
+    if (audio.paused) await safePlay();
     else audio.pause();
   });
   audio.addEventListener("play", ()=> btnPlay.textContent = "Pause");
   audio.addEventListener("pause", ()=> btnPlay.textContent = "Play");
 
   btnPrev.addEventListener("click", async () => {
-    await loadTrack(idx - 1);
-    await audio.play();
+    await loadTrack(Math.max(0, idx - 1));
+    await safePlay();
   });
   btnNext.addEventListener("click", async () => {
-    await loadTrack(idx + 1);
-    await audio.play();
+    await loadTrack(Math.min(playlist.tracks.length-1, idx + 1));
+    await safePlay();
   });
 
   btnOffM.addEventListener("click", ()=> setOffset(offsetSec - 0.5));
@@ -458,68 +559,80 @@
   audio.addEventListener("timeupdate", render);
   audio.addEventListener("seeked", render);
 
-  async function restartPlaylistFromTop(){
-    if (!playlist) return;
-    if (shuffleOn){
-      playlist.tracks = shuffleArray(playlist.tracks.slice());
-    }
-    idx = 0;
-    await loadTrack(0);
-    await audio.play();
-  }
-
   audio.addEventListener("ended", async () => {
     if (!playlist) return;
 
     if (idx < playlist.tracks.length-1){
       await loadTrack(idx + 1);
-      await audio.play();
+      await safePlay();
       return;
     }
 
+    // ✅ 끝까지 가면: loopOn이면 다시 셔플하고 계속
     if (loopOn){
-      await restartPlaylistFromTop();
+      reshuffleIfNeeded();
+      await loadTrack(0);
+      await safePlay();
     } else {
       clearSubtitle();
     }
   });
 
-  async function tryAutoplayWithRetry(){
-    const want = params.get("autoplay") === "1";
-    if (!want) return;
+  // ---------- autoplay / overlay ----------
+  let hudAutoHideTimer = null;
 
-    const start = Date.now();
-    while (true){
-      try{
-        await audio.play();
-        return;
-      }catch(e){
-        if (!autoplayRetryOn) throw e;
-        if (Date.now() - start > AUTOPLAY_RETRY_MS) throw e;
-        await new Promise(r => setTimeout(r, 450));
+  async function safePlay(){
+    try{
+      await audio.play();
+      // 재생 성공 시 overlay 끄기
+      if (startOverlay) startOverlay.classList.remove("on");
+
+      // hud 자동 숨김
+      if (hudAutoHideSec > 0){
+        clearTimeout(hudAutoHideTimer);
+        hudAutoHideTimer = setTimeout(()=>{
+          document.body.classList.add("hud-off");
+        }, Math.max(0, hudAutoHideSec) * 1000);
       }
+      return true;
+    }catch(e){
+      // autoplay blocked
+      if (startOverlayOn){
+        startOverlay.classList.add("on");
+      }
+      throw e;
     }
   }
 
+  startBtn.addEventListener("click", async ()=>{
+    try{ await safePlay(); } catch(e){ /* keep overlay */ }
+  });
+
+  // ---------- boot ----------
   (async () => {
     playlist = await fetchJSON(playlistUrl);
+
     if (!playlist || !Array.isArray(playlist.tracks) || playlist.tracks.length === 0){
       throw new Error("playlist.json invalid or empty");
     }
 
-    let startI = num(params.get("i"), 1);
-
     if (shuffleOn){
       playlist.tracks = shuffleArray(playlist.tracks.slice());
-      startI = 1;
     }
 
+    const startI = num(params.get("i"), 1);
     await loadTrack(startI - 1);
+
+    if (params.get("autoplay") === "1"){
+      try{
+        await safePlay();
+      }catch(e){
+        // overlay는 safePlay 내부에서 켜짐 (startOverlay=1일 때)
+      }
+    }
 
     updateTrackLabel();
     offsetLabel.textContent = offsetSec.toFixed(1);
-
-    await tryAutoplayWithRetry();
   })().catch(err => {
     jaEl.textContent = "PLAYER ERROR";
     koEl.style.display = "";
