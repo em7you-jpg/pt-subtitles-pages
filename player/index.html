@@ -359,14 +359,24 @@
 
     // KO: only show if exists and lang=both|ko
     const hasKo = !!(c.ko && c.ko.trim());
-    if ((lang === "both" || lang === "ko") && hasKo){
-      const target = (lang === "ko") ? c.ko : c.ko;
-      if (koEl.textContent !== target) koEl.textContent = target;
+
+    if (lang === "ko") {
+      // ko-only 모드: ko 없으면 그냥 비움
       koEl.style.display = "";
+      koEl.style.visibility = "visible";
+      koEl.textContent = hasKo ? c.ko : "";
+    } else if (lang === "both") {
+      // both 모드: ko가 없어도 "줄"은 유지 (HUD 레이아웃 붕괴 방지)
+      koEl.style.display = "";
+      koEl.textContent = hasKo ? c.ko : "";
+      koEl.style.visibility = hasKo ? "visible" : "hidden";
     } else {
+      // ja 모드
       koEl.textContent = "";
       koEl.style.display = "none";
+      koEl.style.visibility = "visible";
     }
+
   }
 
   // ---------- controls ----------
