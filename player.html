@@ -1,562 +1,623 @@
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PT Player</title>
-  <style>
-    :root{
-      --font: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", "Noto Sans JP", sans-serif;
+#!/usr/bin/env python3
+"""
+Perfect-sync generator (Whisper-1 timestamps → track.json)
 
-      /* ---------- title (TOP) ---------- */
-      --titleSize: 30px;
-      --titleGap: 10px;
-      --titleOpacity: 0.92;
-      --titleTop: 4em;
+GOAL (대표님 요구사항 반영):
+- "버킷팅(resample) 기반" 싱크 깨짐을 제거한다.
+- 타임라인(start/end)은 Whisper word timestamp + 섹션 텍스트 매칭(align_sections)으로 만든다.
+- 표시 텍스트는 sections_payload의 원문 JA/KO를 그대로 사용한다.
+- "너무 빨리 사라짐", "두 줄이 한 번에 나오고 이후 엇나감", "초반에 몰림"을 구조적으로 줄인다.
 
-      /* ---------- subtitles ---------- */
-      --jaSize: 36px;
-      --koSize: 30px;
-      --lineGap: 14px;
+핵심 변경:
+- segments → resample → n개 버킷 방식(드리프트 원인)을 기본 경로에서 배제.
+- word-timestamp 기반으로 섹션 start를 직접 매칭.
+- end는 다음 start + read-time 모델 + 짧은 gap 병합(깜빡임 방지)로 결정.
+- cues는 player가 우선 사용할 수 있으므로, lines에서 안정적으로 생성(ja/ko 필드 포함).
+"""
 
-      --bg: rgba(0,0,0,0.0);
-      --fg: rgba(255,255,255,0.95);
-      --shadow: 0 2px 12px rgba(0,0,0,0.55);
-      --pad: 14px;
-      --radius: 14px;
-      --posX: 50%;
-      --posY: 82%;
-      --align: center; /* left|center|right */
-      --maxW: 92vw;
+import argparse
+import json
+import os
+import re
+import sys
+from dataclasses import dataclass
+from datetime import datetime
+from pathlib import Path
+from typing import List, Optional, Tuple
 
-      /* KO color */
-      --koColor: #ffd54a;
+from openai import OpenAI
+
+# ===============================
+# Debug dump
+# ===============================
+DEBUG_DIR = Path("/opt/pt_whisper/site/debug")
+
+
+def dump_debug(name: str, payload):
+    """
+    Write debug JSON safely.
+    - Never raises.
+    - If payload is not JSON-serializable, falls back to string representation.
+    """
+    try:
+        os.makedirs(DEBUG_DIR, exist_ok=True)
+        ts = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
+        path = os.path.join(DEBUG_DIR, f"{ts}_{name}.json")
+
+        # helpful for journalctl inspection
+        print(f"[DEBUG_WRITE] {path}", flush=True)
+
+        def _default(o):
+            try:
+                if hasattr(o, "model_dump"):
+                    return o.model_dump()
+            except Exception:
+                pass
+            try:
+                if hasattr(o, "dict"):
+                    return o.dict()
+            except Exception:
+                pass
+            try:
+                return str(o)
+            except Exception:
+                return "<unserializable>"
+
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False, indent=2, default=_default)
+
+    except Exception:
+        return
+
+
+# ===============================
+# Normalization helpers
+# ===============================
+def norm(s: str) -> str:
+    # remove spaces and common punctuation; keep JP chars
+    s = s.replace(" ", "")
+    s = re.sub(r'[、。・「」『』（）()\[\]{}"“”’\'\n\r\t]', "", s)
+    s = s.replace("／", "/")
+    return s
+
+
+# ===============================
+# Data models
+# ===============================
+@dataclass
+class Word:
+    w: str
+    start: float
+    end: float
+
+
+@dataclass
+class Segment:
+    start: float
+    end: float
+    text: str
+
+
+# ===============================
+# Whisper transcription
+# ===============================
+def transcribe_words(client: OpenAI, audio_path: str, language: Optional[str]) -> List[Word]:
+    """
+    Whisper word timestamps.
+    """
+    with open(audio_path, "rb") as f:
+        params = {
+            "file": f,
+            "model": "whisper-1",
+            "response_format": "verbose_json",
+            "timestamp_granularities": ["word"],
+        }
+        if language:
+            params["language"] = language
+        vt = client.audio.transcriptions.create(**params)
+
+    # Debug: raw vt (best effort)
+    try:
+        raw_json = vt.model_dump_json()
+        dump_debug("whisper_raw", {"params": params, "vt_raw_json": raw_json})
+    except Exception:
+        try:
+            dump_debug("whisper_raw", {
+                "params": params,
+                "has_words": bool(getattr(vt, "words", None)),
+                "words_len": len(getattr(vt, "words", []) or []),
+                "text_head": (getattr(vt, "text", "") or "")[:200],
+            })
+        except Exception:
+            pass
+
+    words: List[Word] = []
+    for item in getattr(vt, "words", []) or []:
+        w = getattr(item, "word", None) or (item.get("word") if isinstance(item, dict) else None)
+        st = getattr(item, "start", None) or (item.get("start") if isinstance(item, dict) else None)
+        en = getattr(item, "end", None) or (item.get("end") if isinstance(item, dict) else None)
+
+        if st is None or en is None:
+            continue
+
+        try:
+            st_f = float(st)
+            en_f = float(en)
+        except Exception:
+            continue
+
+        if en_f <= st_f:
+            continue
+
+        words.append(Word(str(w or ""), st_f, en_f))
+
+    if not words:
+        raise RuntimeError(
+            "No word timestamps returned. Ensure response_format=verbose_json and "
+            "timestamp_granularities=['word']."
+        )
+
+    # Debug: word summary
+    try:
+        head = [{"i": i, "w": words[i].w, "st": round(words[i].start, 3), "en": round(words[i].end, 3)}
+                for i in range(min(60, len(words)))]
+        dump_debug("words_head", {"count": len(words), "head": head})
+    except Exception:
+        pass
+
+    return words
+
+
+def transcribe_segments(client: OpenAI, audio_path: str, language: Optional[str]) -> List[Segment]:
+    """
+    Kept only for debugging/inspection.
+    Not used as primary alignment due to drift risk (버킷팅 원인).
+    """
+    with open(audio_path, "rb") as f:
+        params = {
+            "file": f,
+            "model": "whisper-1",
+            "response_format": "verbose_json",
+            "timestamp_granularities": ["word"],
+        }
+        if language:
+            params["language"] = language
+        vt = client.audio.transcriptions.create(**params)
+
+    segs: List[Segment] = []
+
+    for s in getattr(vt, "segments", []) or []:
+        st = getattr(s, "start", None) or (s.get("start") if isinstance(s, dict) else None)
+        en = getattr(s, "end", None) or (s.get("end") if isinstance(s, dict) else None)
+        tx = getattr(s, "text", None) or (s.get("text") if isinstance(s, dict) else "")
+        if st is None or en is None:
+            continue
+        try:
+            st_f = float(st)
+            en_f = float(en)
+        except Exception:
+            continue
+        if en_f <= st_f:
+            continue
+        segs.append(Segment(st_f, en_f, str(tx or "")))
+
+    if not segs:
+        # fallback: words as "segments"
+        for wobj in getattr(vt, "words", []) or []:
+            w = getattr(wobj, "word", None) or (wobj.get("word") if isinstance(wobj, dict) else "")
+            st = getattr(wobj, "start", None) or (wobj.get("start") if isinstance(wobj, dict) else None)
+            en = getattr(wobj, "end", None) or (wobj.get("end") if isinstance(wobj, dict) else None)
+            if st is None or en is None:
+                continue
+            try:
+                st_f = float(st)
+                en_f = float(en)
+            except Exception:
+                continue
+            if en_f <= st_f:
+                continue
+            segs.append(Segment(st_f, en_f, str(w or "")))
+
+    if not segs:
+        raise RuntimeError("No usable timestamps returned: both segments and words are empty.")
+
+    try:
+        seg_summary = [
+            {"i": i, "start": round(s.start, 3), "end": round(s.end, 3), "dur": round(s.end - s.start, 3),
+             "text_head": (s.text or "")[:40]}
+            for i, s in enumerate(segs[:60])
+        ]
+        dump_debug("segments_summary", {"count": len(segs), "head": seg_summary})
+    except Exception:
+        pass
+
+    return segs
+
+
+# ===============================
+# Alignment (word-based)
+# ===============================
+def build_index(words: List[Word]) -> Tuple[str, List[int]]:
+    """
+    Build concatenated string (no spaces/punct) and map char position -> word index.
+    """
+    s = []
+    pos_to_word: List[int] = []
+    for i, wd in enumerate(words):
+        token = norm(wd.w)
+        if not token:
+            continue
+        for _ in token:
+            pos_to_word.append(i)
+        s.append(token)
+    return "".join(s), pos_to_word
+
+
+def align_sections(words: List[Word], sections: List[dict]) -> Tuple[List[dict], List[str]]:
+    """
+    Find each section.ja inside concatenated whisper words → section.start.
+    This is the "precision" path (no resample bucket drift).
+    """
+    concat, pos_to_word = build_index(words)
+    cursor = 0
+    issues: List[str] = []
+
+    if not words:
+        raise ValueError("No timed words from whisper result (all timestamps missing)")
+
+    total_dur = max(w.end for w in words)
+
+    out_lines: List[dict] = []
+    last_start = 0.0
+
+    for idx, sec in enumerate(sections):
+        target = norm(sec.get("ja") or "")
+        if not target:
+            # empty lyric placeholder: keep it, but start will be filled later by end-builder
+            out_lines.append({**sec, "start": last_start, "_match": "empty"})
+            continue
+
+        found_at = concat.find(target, cursor)
+        if found_at == -1:
+            # estimated start (fallback)
+            est = total_dur * (idx / max(1, len(sections)))
+            issues.append(
+                f"[WARN] Section {idx} not matched; using estimated start {est:.2f}s: "
+                f"{sec.get('tag')} {(sec.get('ja') or '')[:24]}..."
+            )
+            out_lines.append({**sec, "start": round(est, 3), "_match": "estimated"})
+            continue
+
+        start_char = found_at
+        end_char = found_at + len(target) - 1
+
+        w_start_i = pos_to_word[start_char]
+        start_t = words[w_start_i].start
+
+        out_lines.append({**sec, "start": round(start_t, 3), "_match": "ok"})
+        last_start = start_t
+
+        cursor = end_char + 1
+
+    # monotonic clamp
+    prev = -1.0
+    for l in out_lines:
+        st = float(l.get("start") or 0.0)
+        if st < prev:
+            l["start"] = round(prev, 3)
+            l["_match"] = "clamped"
+        prev = float(l["start"])
+
+    return out_lines, issues
+
+
+# ===============================
+# Read-time end / cue builder (stable)
+# ===============================
+def _has_text_line(ln: dict) -> bool:
+    ja = (ln.get("ja") or "").strip()
+    ko = (ln.get("ko") or "").strip()
+    txt = (ln.get("text") or "").strip()
+    return bool(ja or ko or txt)
+
+
+def build_end_and_merge_lines(
+    lines: List[dict],
+    issues: List[str],
+    *,
+    lead_start_sec: float = 0.7,
+    sec_per_char: float = 0.065,
+    min_show_sec: float = 2.2,
+    max_show_sec: float = 18.0,
+    full_gap_sec: float = 8.0,
+    max_last_sec: float = 18.0,
+    pad_end: float = 0.12,
+) -> List[dict]:
+    """
+    - Apply small global lead on START only (avoid ending too early).
+    - Compute END using next START and read-time.
+    - If next start is too soon (causes 0.x sec cues), merge adjacent lines to avoid flicker.
+    """
+    # Apply lead to starts (non-empty lyrics only)
+    for l in lines:
+        ja_txt = str(l.get("ja") or "").strip()
+        if not ja_txt:
+            continue
+        st = float(l.get("start") or 0.0) - float(lead_start_sec)
+        if st < 0.0:
+            st = 0.0
+        l["start"] = round(st, 3)
+
+    # Sort by time
+    tmp: List[Tuple[float, dict]] = []
+    for l in lines:
+        try:
+            st = float(l.get("start") or 0.0)
+        except Exception:
+            st = 0.0
+        tmp.append((st, l))
+    tmp.sort(key=lambda x: x[0])
+
+    merged_out: List[dict] = []
+    i = 0
+
+    while i < len(tmp):
+        st = tmp[i][0]
+        l = dict(tmp[i][1])  # copy
+
+        # find next start
+        next_st = tmp[i + 1][0] if (i + 1) < len(tmp) else None
+
+        ja = (l.get("ja") or "").strip()
+        ko = (l.get("ko") or "").strip()
+        txt_src = ja or ko or (l.get("text") or "").strip()
+        char_len = len(txt_src)
+
+        show_sec = max(min_show_sec, min(char_len * sec_per_char, max_show_sec))
+
+        # merge condition: next comes too soon -> current would be unreadable
+        # merge only if both lines have any text; keep empties as separators
+        if next_st is not None:
+            gap = next_st - st
+            if gap < (min_show_sec + 0.25):
+                # merge with next non-empty if possible
+                l2 = dict(tmp[i + 1][1])
+                if _has_text_line(l) and _has_text_line(l2):
+                    ja2 = (l2.get("ja") or "").strip()
+                    ko2 = (l2.get("ko") or "").strip()
+
+                    ja_merged = "\n".join([x for x in [ja, ja2] if x])
+                    ko_merged = "\n".join([x for x in [ko, ko2] if x])
+
+                    l["ja"] = ja_merged
+                    l["ko"] = ko_merged
+                    l["_match"] = "merged_short_gap"
+
+                    # use next2 for end
+                    next2 = tmp[i + 2][0] if (i + 2) < len(tmp) else None
+                    if next2 is None:
+                        ed = st + min(show_sec, max_last_sec)
+                    else:
+                        gap2 = next2 - st
+                        if gap2 <= full_gap_sec:
+                            ed = max(st, next2 - pad_end)
+                        else:
+                            ed = min(st + show_sec, max(st, next2 - pad_end))
+
+                    l["start"] = round(st, 3)
+                    l["end"] = round(ed, 3)
+                    merged_out.append(l)
+                    i += 2
+                    continue
+
+        # normal end
+        if next_st is None:
+            ed = st + min(show_sec, max_last_sec)
+        else:
+            gap = next_st - st
+            if gap <= full_gap_sec:
+                ed = max(st, next_st - pad_end)
+            else:
+                ed = min(st + show_sec, max(st, next_st - pad_end))
+
+        l["start"] = round(st, 3)
+        l["end"] = round(ed, 3)
+        if "_match" not in l:
+            l["_match"] = "ok_words"
+        merged_out.append(l)
+        i += 1
+
+    issues.append(
+        f"[INFO] WORD_ALIGN lead_start={lead_start_sec:.2f}s sec_per_char={sec_per_char:.3f} "
+        f"min_show={min_show_sec:.2f} full_gap={full_gap_sec:.2f} pad_end={pad_end:.2f}"
+    )
+
+    # Debug: duration stats
+    try:
+        durs = []
+        for l in merged_out:
+            try:
+                d = float(l.get("end") or 0.0) - float(l.get("start") or 0.0)
+                if d > 0:
+                    durs.append(d)
+            except Exception:
+                pass
+        if durs:
+            issues.append(f"[INFO] DUR_STATS min={min(durs):.2f} avg={(sum(durs)/len(durs)):.2f} max={max(durs):.2f}")
+    except Exception:
+        pass
+
+    return merged_out
+
+
+def build_cues_from_lines(lines: List[dict], issues: List[str]) -> List[dict]:
+    """
+    Player가 cues를 우선 사용할 수 있으므로, lines로부터 안정적인 cues 생성.
+    - 절대 7.0 / 3.6 같은 하드캡을 두지 않는다.
+    - ja/ko 필드를 반드시 채운다.
+    """
+    cues: List[dict] = []
+    for l in lines:
+        try:
+            st = float(l.get("start") or 0.0)
+            ed = float(l.get("end") or 0.0)
+        except Exception:
+            continue
+        if ed <= st:
+            continue
+
+        ja = (l.get("ja") or "").strip()
+        ko = (l.get("ko") or "").strip()
+
+        if not (ja or ko or (l.get("text") or "").strip()):
+            continue
+
+        if ja and ko:
+            txt = ja + "\n" + ko
+        else:
+            txt = ja or ko or (l.get("text") or "").strip()
+
+        cues.append({
+            "start": round(st, 2),
+            "end": round(ed, 2),
+            "text": txt,
+            "ja": ja,
+            "ko": ko,
+        })
+
+    issues.append(f"[INFO] CUES_BUILT={len(cues)}")
+    return cues
+
+
+# ===============================
+# CLI main
+# ===============================
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--audio", required=True, help="mp3/wav path")
+    ap.add_argument("--sections", required=True, help="lyrics_sections.json")
+    ap.add_argument("--out", default="track.json", help="output track json")
+    ap.add_argument("--language", default="ja", help="language hint (e.g., ja)")
+    ap.add_argument("--title", default=None, help="override title in output")
+    args = ap.parse_args()
+
+    if not os.getenv("OPENAI_API_KEY"):
+        print("ERROR: OPENAI_API_KEY env var not set.", file=sys.stderr)
+        sys.exit(2)
+
+    client = OpenAI()
+
+    with open(args.sections, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    sections = data.get("sections") or []
+    title = args.title or data.get("title") or "(set title later)"
+
+    words = transcribe_words(client, args.audio, args.language)
+    raw_lines, issues = align_sections(words, sections)
+
+    # end + merge + cues
+    tuned_lines = build_end_and_merge_lines(raw_lines, issues)
+    cues = build_cues_from_lines(tuned_lines, issues)
+
+    out = {
+        "title": title,
+        "lines": [
+            {
+                "start": l.get("start"),
+                "end": l.get("end"),
+                "ja": l.get("ja", ""),
+                "ko_pron": l.get("ko_pron", ""),
+                "ko": l.get("ko", ""),
+                "tag": l.get("tag"),
+                "_match": l.get("_match", ""),
+            } for l in tuned_lines
+        ],
+        "cues": cues,
+        "meta": {
+            "engine": "word_align_v3",
+            "generated_at": datetime.utcnow().isoformat() + "Z",
+        }
     }
-    body{
-      margin:0; background: transparent; overflow:hidden;
-      font-family: var(--font);
-    }
 
-    /* ---------- TOP TITLE WRAP ---------- */
-    #titleWrap{
-      position: fixed;
-      left: 50%;
-      top: var(--titleTop);
-      transform: translateX(-50%);
-      width: min(92vw, 980px);
-      color: var(--fg);
-      text-align: center;
-      pointer-events: none;
-      filter: drop-shadow(var(--shadow));
-    }
-    #title{
-      font-size: var(--titleSize);
-      font-weight: 800;
-      line-height: 1.2;
-      opacity: var(--titleOpacity);
-      margin: 0 0 var(--titleGap) 0;
-      letter-spacing: 0.2px;
-      word-break: keep-all;
-    }
-    .title-off #titleWrap{ display:none; }
+    # Debug snapshots
+    try:
+        dump_debug("final_lines", {"title": title, "lines_len": len(out["lines"]), "head": out["lines"][:40]})
+        dump_debug("final_cues", {"cues_len": len(out["cues"]), "head": out["cues"][:20]})
+    except Exception:
+        pass
 
-    /* ---------- SUBTITLE WRAP (BOTTOM) ---------- */
-    #wrap{
-      position: fixed;
-      left: var(--posX);
-      top: var(--posY);
-      transform: translate(-50%,-50%);
-      width: var(--maxW);
-      color: var(--fg);
-      text-align: var(--align);
-      pointer-events: none; /* OBS에서 클릭 안 막기 */
-    }
-    #box{
-      display:inline-block;
-      background: var(--bg);
-      padding: var(--pad);
-      border-radius: var(--radius);
-      filter: drop-shadow(var(--shadow));
-      pointer-events: auto; /* HUD 켰을 때만 클릭 */
-    }
-    .hud-off #box{ pointer-events:none; } /* ✅ 방송용(hud=0)일 때 클릭 완전 통과 */
+    with open(args.out, "w", encoding="utf-8") as f:
+        json.dump(out, f, ensure_ascii=False, indent=2)
 
-    .ja{ font-size: var(--jaSize); font-weight: 700; line-height: 1.25; }
-    .ko{
-      font-size: var(--koSize);
-      font-weight: 700;
-      line-height: 1.25;
-      margin-top: var(--lineGap);
-      color: var(--koColor);
-      text-shadow: 0 2px 12px rgba(0,0,0,0.55);
-    }
+    print(f"OK: wrote {args.out} with {len(out['lines'])} lines, {len(out.get('cues', []))} cues.")
+    if issues:
+        print("\n".join(issues))
 
-    /* ---------- HUD ---------- */
-    #hud{
-      margin-top: 10px;
-      font-size: 13px;
-      opacity: 0.85;
-      user-select: none;
-    }
-    .hud-off #hud{ display:none; }
 
-    #hudTop, #hudBottom{
-      display:flex;
-      gap:10px;
-      justify-content:center;
-      align-items:center;
-      flex-wrap: wrap;
-      margin-top: 6px;
-    }
-    #hud button, #hud input, #hud audio{
-      pointer-events: auto;
-      font-size: 13px;
-    }
-    #hud button{
-      border: 0;
-      border-radius: 10px;
-      padding: 6px 10px;
-      background: rgba(255,255,255,0.12);
-      color: rgba(255,255,255,0.95);
-      cursor:pointer;
-    }
-    #hud button:hover{ background: rgba(255,255,255,0.18); }
-    #hud .pill{
-      background: rgba(255,255,255,0.10);
-      padding: 6px 10px;
-      border-radius: 10px;
-    }
-    #audio{
-      width: min(720px, 86vw);
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Title fixed at TOP -->
-  <div id="titleWrap">
-    <div id="title"></div>
-  </div>
-
-  <!-- Subtitles + HUD -->
-  <div id="wrap">
-    <div id="box">
-      <div id="ja" class="ja"></div>
-      <div id="ko" class="ko" style="display:none;"></div>
-
-      <div id="hud">
-        <div id="hudTop">
-          <button id="btnPrev">Prev</button>
-          <button id="btnPlay">Play</button>
-          <button id="btnNext">Next</button>
-
-          <span class="pill">Track: <span id="trackLabel">-</span></span>
-          <span class="pill">Offset: <span id="offsetLabel">0.0</span>s</span>
-
-          <button id="btnOffM">-0.5s</button>
-          <button id="btnOffP">+0.5s</button>
-        </div>
-
-        <div id="hudBottom">
-          <audio id="audio" controls preload="auto" crossorigin="anonymous"></audio>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<script>
-(() => {
-  const $ = (id) => document.getElementById(id);
-  const params = new URLSearchParams(location.search);
-
-  const setId = params.get("set") || "default";
-  const lang = (params.get("lang") || "both").toLowerCase(); // both|ja|ko
-  const hud = params.get("hud"); // 0 => hide
-  const cacheBust = params.get("cb") || "";
-
-  // ✅ 기본 랜덤 재생
-  const shuffleOn = (params.get("shuffle") ?? "1") !== "0";
-  // ✅ 끝까지 가도 계속(방송 중지 전까지)
-  const loopOn = (params.get("loop") ?? "1") !== "0";
-
-  // ✅ 자막 유지(더 길게) - URL로 오버라이드 가능
-  const HOLD_GAP = (() => {
-    const v = Number(params.get("holdGap"));
-    return Number.isFinite(v) ? v : 0.75;   // ✅ default: 0.75s
-  })();
-  const MIN_CUE_SEC = (() => {
-    const v = Number(params.get("minCue"));
-    return Number.isFinite(v) ? v : 1.25;   // ✅ default: 1.25s
-  })();
-
-  // ✅ "긴 문장"은 더 오래 보여야 읽힘 (체감 개선 핵심)
-  const MIN_SHOW_SEC = (() => {
-    const v = Number(params.get("minShow"));
-    return Number.isFinite(v) ? v : 1.4;    // ✅ default: 1.4s
-  })();
-  const EXTRA_PER_CHAR = (() => {
-    const v = Number(params.get("secPerChar"));
-    return Number.isFinite(v) ? v : 0.03;   // ✅ 30 chars => +0.9s
-  })();
-  const EXTRA_MAX = (() => {
-    const v = Number(params.get("maxExtra"));
-    return Number.isFinite(v) ? v : 2.2;    // ✅ cap extra
-  })();
-
-  const titleOn = (params.get("title") ?? "1") !== "0";
-  if (!titleOn) document.body.classList.add("title-off");
-  if (hud === "0") document.body.classList.add("hud-off");
-
-  function num(v, d){ const n = Number(v); return Number.isFinite(n) ? n : d; }
-
-  // style params
-  const cssVars = {
-    "--posX": params.get("x") ? params.get("x") + "%" : null,
-    "--posY": params.get("y") ? params.get("y") + "%" : null,
-    "--jaSize": params.get("jaSize") ? params.get("jaSize") + "px" : null,
-    "--koSize": params.get("koSize") ? params.get("koSize") + "px" : null,
-    "--align": params.get("align") || null,
-    "--maxW": params.get("maxW") ? params.get("maxW") + "vw" : null,
-    "--titleSize": params.get("titleSize") ? params.get("titleSize") + "px" : null,
-    "--titleGap": params.get("titleGap") ? params.get("titleGap") + "px" : null,
-    "--titleOpacity": params.get("titleOpacity") ? params.get("titleOpacity") : null,
-    "--titleTop": params.get("titleTop") ? params.get("titleTop") + "em" : null,
-    "--koColor": params.get("koColor") ? params.get("koColor") : null,
-  };
-  for (const [k,v] of Object.entries(cssVars)) if (v) document.documentElement.style.setProperty(k, v);
-
-  const titleEl = $("title");
-  const jaEl = $("ja");
-  const koEl = $("ko");
-  const audio = $("audio");
-
-  const btnPrev = $("btnPrev");
-  const btnPlay = $("btnPlay");
-  const btnNext = $("btnNext");
-  const btnOffM = $("btnOffM");
-  const btnOffP = $("btnOffP");
-  const trackLabel = $("trackLabel");
-  const offsetLabel = $("offsetLabel");
-
-  // offset per set
-  const lsKey = `pt_offset_${setId}`;
-  let offsetSec = num(localStorage.getItem(lsKey), 0.0);
-  function setOffset(v){
-    offsetSec = Math.round(v * 10) / 10;
-    localStorage.setItem(lsKey, String(offsetSec));
-    offsetLabel.textContent = offsetSec.toFixed(1);
-  }
-  setOffset(offsetSec);
-
-  function withCB(url){
-    const u = new URL(url, location.origin);
-    u.searchParams.set("v", cacheBust || Date.now().toString());
-    return u.toString();
-  }
-
-  async function fetchJSON(url){
-    const res = await fetch(withCB(url), {cache:"no-store"});
-    if (!res.ok) throw new Error(`fetch failed: ${res.status} ${url}`);
-    return await res.json();
-  }
-
-  // ===== 핵심: lines 시간대에서 KO 찾기 (렌더링 타임 기반) =====
-  let timedLines = [];
-  function lineAtTime(t){
-    if (!timedLines.length) return null;
-    for (let i=0;i<timedLines.length;i++){
-      const ln = timedLines[i];
-      const st = Number(ln.start), ed = Number(ln.end);
-      if (!Number.isFinite(st) || !Number.isFinite(ed)) continue;
-      if (t >= st && t < ed) return ln;
-    }
-    return null;
-  }
-
-  // ===== cues 추출: JA/KO는 1줄만, KO는 보강 가능 =====
-  function extractCues(obj){
-    const cues = [];
-    const seen = new Set();
-
-    const norm = (s) => (s ?? "").toString().replace(/\r/g,"").trim();
-    const firstLine = (s) => {
-      s = norm(s);
-      if (!s) return "";
-      const byNL = s.split("\n").map(x=>x.trim()).filter(Boolean);
-      return byNL.length ? byNL[0] : s;
-    };
-    const secondLine = (s) => {
-      s = norm(s);
-      if (!s) return "";
-      const byNL = s.split("\n").map(x=>x.trim()).filter(Boolean);
-      return (byNL.length >= 2) ? byNL[1] : "";
-    };
-
-    function pushCue(s,e,ja,ko,text){
-      s = Number(s); e = Number(e);
-      if (!Number.isFinite(s) || !Number.isFinite(e) || e <= s) return;
-
-      // 최소 표시 시간 보장(표시만)
-      if ((e - s) < MIN_CUE_SEC) e = s + MIN_CUE_SEC;
-
-      const ja1 = firstLine(ja ?? text ?? "");
-      if (!ja1) return;
-
-      // ✅ KO 복구 루트 1: cues.ko
-      let ko1 = firstLine(ko ?? "");
-
-      // ✅ KO 복구 루트 2: cues.text가 JA\nKO면 2번째 줄 사용
-      if (!ko1){
-        const ko2 = secondLine(text ?? "");
-        if (ko2) ko1 = firstLine(ko2);
+# ===============================
+# API helper (importable function)
+# ===============================
+def generate_track_json(audio_path: str, sections_payload: dict, language: str = "ja", title_override: str = None):
+    """
+    audio_path: local mp3/wav path on server
+    sections_payload: dict like:
+      {
+        "title": "...",
+        "sections": [
+          {"tag":"Verse 1","ja":"...", "ko":"", "ko_pron":""},
+          ...
+        ]
       }
+    returns: (out, issues_list)
+    """
+    if not os.getenv("OPENAI_API_KEY"):
+        raise RuntimeError("OPENAI_API_KEY env var not set.")
 
-      const key = `${s.toFixed(3)}|${e.toFixed(3)}|${ja1}`;
-      if (seen.has(key)) return;
-      seen.add(key);
+    client = OpenAI()
 
-      cues.push({start:s, end:e, ja:ja1, ko:ko1});
+    sections = sections_payload.get("sections") or []
+    if not isinstance(sections, list) or not sections:
+        raise RuntimeError("sections_payload.sections is missing or empty.")
+
+    title = title_override or sections_payload.get("title") or "(set title later)"
+
+    # Primary path: WORD alignment (precision)
+    words = transcribe_words(client, audio_path, language)
+    raw_lines, issues = align_sections(words, sections)
+
+    tuned_lines = build_end_and_merge_lines(raw_lines, issues)
+    cues = build_cues_from_lines(tuned_lines, issues)
+
+    out = {
+        "title": title,
+        "lines": [
+            {
+                "start": l.get("start"),
+                "end": l.get("end"),
+                "ja": l.get("ja", ""),
+                "ko_pron": l.get("ko_pron", ""),
+                "ko": l.get("ko", ""),
+                "tag": l.get("tag"),
+                "_match": l.get("_match", ""),
+            } for l in tuned_lines
+        ],
+        "cues": cues,
+        "meta": {
+            "engine": "word_align_v3",
+            "generated_at": datetime.utcnow().isoformat() + "Z",
+        }
     }
 
-    // timedLines 저장(렌더링 타임에서 ko 보강)
-    timedLines = Array.isArray(obj?.lines) ? obj.lines.filter(x=>x && typeof x==="object") : [];
+    # Debug snapshots
+    try:
+        dump_debug("api_final_lines", {"title": title, "lines_len": len(out["lines"]), "head": out["lines"][:40]})
+        dump_debug("api_final_cues", {"cues_len": len(out["cues"]), "head": out["cues"][:20]})
+    except Exception:
+        pass
 
-    // cues 우선
-    if (obj && Array.isArray(obj.cues) && obj.cues.length){
-      for (const c of obj.cues){
-        if (!c || typeof c !== "object") continue;
-        pushCue(
-          c.start, c.end,
-          c.ja ?? c.text ?? "",
-          c.ko ?? "",
-          c.text ?? ""
-        );
-      }
-      cues.sort((a,b)=>a.start-b.start);
-      return cues;
-    }
+    return out, issues
 
-    // fallback: lines
-    if (obj && Array.isArray(obj.lines) && obj.lines.length){
-      for (const ln of obj.lines){
-        if (!ln || typeof ln !== "object") continue;
-        pushCue(
-          ln.start, ln.end,
-          ln.ja ?? ln.text ?? "",
-          ln.ko ?? "",
-          ln.text ?? ""
-        );
-      }
-      cues.sort((a,b)=>a.start-b.start);
-      return cues;
-    }
 
-    return cues;
-  }
-
-  // ✅ 표시 종료시간 계산(긴 문장일수록 더 오래 표시)
-  function calcShowUntil(c){
-    const s = Number(c?.start);
-    const e = Number(c?.end);
-    if (!Number.isFinite(s)) return -Infinity;
-    const end = Number.isFinite(e) ? e : s;
-
-    const txt = String((c?.ko || c?.ja || "")).replace(/\s+/g, " ").trim();
-    const extra = Math.min(EXTRA_MAX, Math.max(0, txt.length * EXTRA_PER_CHAR));
-
-    return Math.max(end + HOLD_GAP, s + MIN_SHOW_SEC, s + MIN_SHOW_SEC + extra);
-  }
-
-  // cue pick
-  let lastCueIdx = 0;
-  function cueAt(cues, t){
-    if (!cues || cues.length === 0) return null;
-
-    for (let i = lastCueIdx; i < cues.length; i++){
-      const c = cues[i];
-      if (t < c.start) break;
-      if (t >= c.start && t < calcShowUntil(c)){
-        lastCueIdx = i;
-        return c;
-      }
-    }
-    for (let i = Math.min(lastCueIdx, cues.length - 1); i >= 0; i--){
-      const c = cues[i];
-      if (t >= c.start && t < calcShowUntil(c)){
-        lastCueIdx = i;
-        return c;
-      }
-    }
-    return null;
-  }
-
-  function clearSubtitle(){
-    if (jaEl.textContent !== "") jaEl.textContent = "";
-    if (koEl.textContent !== "") koEl.textContent = "";
-    koEl.style.display = "none";
-  }
-
-  // playlist
-  const base = `${location.origin}/set/${encodeURIComponent(setId)}/`;
-  const playlistUrl = base + "playlist.json";
-
-  let playlist = null;
-  let idx = 0;
-  let cues = [];
-  let currentTrack = null;
-
-  function updateTrackLabel(){
-    if (!currentTrack){ trackLabel.textContent = "-"; return; }
-    trackLabel.textContent = `${currentTrack.id}${currentTrack.title ? " · " + currentTrack.title : ""}`;
-  }
-
-  function setHeaderTitle(text){
-    const t = (text ?? "").toString().trim();
-    titleEl.textContent = t;
-    if (t) document.title = `PT Player — ${t}`;
-  }
-
-  function shuffleArray(arr){
-    for (let i = arr.length - 1; i > 0; i--){
-      const j = Math.floor(Math.random() * (i + 1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-    return arr;
-  }
-
-  async function loadTrack(i){
-    if (!playlist) return;
-    idx = Math.max(0, Math.min(i, playlist.tracks.length-1));
-    currentTrack = playlist.tracks[idx];
-    updateTrackLabel();
-
-    if (!currentTrack.audio_url) throw new Error("missing audio_url");
-    audio.src = currentTrack.audio_url;
-
-    if (!currentTrack.track_url) throw new Error("missing track_url");
-    const trackJson = await fetchJSON(base + currentTrack.track_url);
-
-    const t = currentTrack.title || trackJson.title || "";
-    if (titleOn) setHeaderTitle(t);
-
-    cues = extractCues(trackJson);
-    lastCueIdx = 0;
-    clearSubtitle();
-  }
-
-  function render(){
-    if (!cues || cues.length === 0){
-      clearSubtitle();
-      return;
-    }
-
-    const t = audio.currentTime + offsetSec;
-    const c = cueAt(cues, t);
-    if (!c){
-      clearSubtitle();
-      return;
-    }
-
-    if (jaEl.textContent !== c.ja) jaEl.textContent = c.ja;
-
-    // ✅ KO 표시 로직(복구 핵심)
-    let koText = (c.ko ?? "").toString().trim();
-
-    // cues.ko가 비면, 현재 시간대의 lines.ko로 보강
-    if (!koText){
-      const ln = lineAtTime(t);
-      if (ln && ln.ko) koText = String(ln.ko).trim();
-    }
-
-    const hasKo = !!koText;
-    if ((lang === "both" || lang === "ko") && hasKo){
-      if (koEl.textContent !== koText) koEl.textContent = koText;
-      koEl.style.display = "";
-    } else {
-      koEl.textContent = "";
-      koEl.style.display = "none";
-    }
-  }
-
-  // controls
-  btnPlay.addEventListener("click", async () => {
-    if (!playlist) return;
-    if (audio.paused) await audio.play();
-    else audio.pause();
-  });
-  audio.addEventListener("play", ()=> btnPlay.textContent = "Pause");
-  audio.addEventListener("pause", ()=> btnPlay.textContent = "Play");
-
-  btnPrev.addEventListener("click", async () => {
-    await loadTrack(idx - 1);
-    await audio.play();
-  });
-  btnNext.addEventListener("click", async () => {
-    await loadTrack(idx + 1);
-    await audio.play();
-  });
-
-  btnOffM.addEventListener("click", ()=> setOffset(offsetSec - 0.5));
-  btnOffP.addEventListener("click", ()=> setOffset(offsetSec + 0.5));
-
-  window.addEventListener("keydown", (e)=>{
-    if (e.key === "ArrowLeft") btnPrev.click();
-    if (e.key === "ArrowRight") btnNext.click();
-    if (e.key === "ArrowDown") setOffset(offsetSec - 0.5);
-    if (e.key === "ArrowUp") setOffset(offsetSec + 0.5);
-    if (e.key === " "){ e.preventDefault(); btnPlay.click(); }
-  });
-
-  audio.addEventListener("timeupdate", render);
-  audio.addEventListener("seeked", render);
-
-  audio.addEventListener("ended", async () => {
-    if (!playlist) return;
-
-    if (idx < playlist.tracks.length-1){
-      await loadTrack(idx + 1);
-      await audio.play();
-      return;
-    }
-
-    // ✅ 끝까지 가면 계속 반복(기본 랜덤 유지)
-    if (loopOn){
-      if (shuffleOn) playlist.tracks = shuffleArray(playlist.tracks.slice());
-      await loadTrack(0);
-      await audio.play();
-    } else {
-      clearSubtitle();
-    }
-  });
-
-  // boot
-  (async () => {
-    playlist = await fetchJSON(playlistUrl);
-    if (!playlist || !Array.isArray(playlist.tracks) || playlist.tracks.length === 0){
-      throw new Error("playlist.json invalid or empty");
-    }
-
-    if (shuffleOn){
-      playlist.tracks = shuffleArray(playlist.tracks.slice());
-    }
-
-    const startI = num(params.get("i"), 1);
-    await loadTrack(startI - 1);
-
-    if (params.get("autoplay") === "1"){
-      await audio.play();
-    }
-
-    updateTrackLabel();
-    offsetLabel.textContent = offsetSec.toFixed(1);
-  })().catch(err => {
-    jaEl.textContent = "PLAYER ERROR";
-    koEl.style.display = "";
-    koEl.textContent = String(err?.message || err);
-    console.error(err);
-  });
-
-})();
-</script>
-</body>
-</html>
+if __name__ == "__main__":
+    main()
