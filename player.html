@@ -9,26 +9,28 @@
       --font: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", "Noto Sans JP", sans-serif;
 
       /* ---------- title (TOP) ---------- */
-      --titleSize: 22px;
+      --titleSize: 30px;
       --titleGap: 10px;
       --titleOpacity: 0.92;
       --titleTop: 4em;
 
       /* ---------- subtitles ---------- */
-      --jaSize: 26px;
-      --koSize: 20px;
+      --jaSize: 36px;
+      --koSize: 30px;
       --lineGap: 14px;
 
       --bg: rgba(0,0,0,0.0);
       --fg: rgba(255,255,255,0.95);
-      --koFg: rgba(255,235,59,0.98); /* ✅ KO 노란색 기본 (원하면 URL로 변경) */
       --shadow: 0 2px 12px rgba(0,0,0,0.55);
       --pad: 14px;
       --radius: 14px;
       --posX: 50%;
-      --posY: 78%;
+      --posY: 82%;
       --align: center; /* left|center|right */
       --maxW: 92vw;
+
+      /* KO color */
+      --koColor: #ffd54a;
     }
     body{
       margin:0; background: transparent; overflow:hidden;
@@ -67,7 +69,7 @@
       width: var(--maxW);
       color: var(--fg);
       text-align: var(--align);
-      pointer-events: none;
+      pointer-events: none; /* OBS에서 클릭 안 막기 */
     }
     #box{
       display:inline-block;
@@ -75,41 +77,38 @@
       padding: var(--pad);
       border-radius: var(--radius);
       filter: drop-shadow(var(--shadow));
-      pointer-events: auto; /* 컨트롤 클릭 가능 */
+      pointer-events: auto; /* HUD 켰을 때만 클릭 */
     }
+    .hud-off #box{ pointer-events:none; } /* ✅ 방송용(hud=0)일 때 클릭 완전 통과 */
 
     .ja{ font-size: var(--jaSize); font-weight: 700; line-height: 1.25; }
     .ko{
       font-size: var(--koSize);
       font-weight: 700;
       line-height: 1.25;
-      opacity: 0.96;
       margin-top: var(--lineGap);
-      color: var(--koFg); /* ✅ KO만 노란색 */
+      color: var(--koColor);
+      text-shadow: 0 2px 12px rgba(0,0,0,0.55);
     }
 
-    /* ---------- HUD (2 rows fixed) ---------- */
+    /* ---------- HUD ---------- */
     #hud{
-      margin-top: 18px;
+      margin-top: 10px;
       font-size: 13px;
-      opacity: 0.88;
+      opacity: 0.85;
       user-select: none;
-      display: flex;
-      flex-direction: column;      /* ✅ 세로로 쌓기 */
-      align-items: center;
-      gap: 10px;
-      width: min(760px, 88vw);
-      margin-left: auto;
-      margin-right: auto;
     }
-    #hudRow{
+    .hud-off #hud{ display:none; }
+
+    #hudTop, #hudBottom{
       display:flex;
       gap:10px;
       justify-content:center;
-      flex-wrap: wrap;             /* ✅ 버튼들만 wrap */
-      width: 100%;
+      align-items:center;
+      flex-wrap: wrap;
+      margin-top: 6px;
     }
-    #hud button, #hud input{
+    #hud button, #hud input, #hud audio{
       pointer-events: auto;
       font-size: 13px;
     }
@@ -120,38 +119,33 @@
       background: rgba(255,255,255,0.12);
       color: rgba(255,255,255,0.95);
       cursor:pointer;
-      white-space: nowrap;
     }
     #hud button:hover{ background: rgba(255,255,255,0.18); }
     #hud .pill{
       background: rgba(255,255,255,0.10);
       padding: 6px 10px;
       border-radius: 10px;
-      white-space: nowrap;
     }
     #audio{
-      width: 100%;
-      pointer-events: auto;
+      width: min(720px, 86vw);
     }
-
-    /* OBS에서 HUD 숨기고 싶으면 ?hud=0 */
-    .hud-off #hud{ display:none; }
   </style>
 </head>
 <body>
 
+  <!-- Title fixed at TOP -->
   <div id="titleWrap">
     <div id="title"></div>
   </div>
 
+  <!-- Subtitles + HUD -->
   <div id="wrap">
     <div id="box">
       <div id="ja" class="ja"></div>
       <div id="ko" class="ko" style="display:none;"></div>
 
       <div id="hud">
-        <!-- ✅ Row 1: controls -->
-        <div id="hudRow">
+        <div id="hudTop">
           <button id="btnPrev">Prev</button>
           <button id="btnPlay">Play</button>
           <button id="btnNext">Next</button>
@@ -163,8 +157,9 @@
           <button id="btnOffP">+0.5s</button>
         </div>
 
-        <!-- ✅ Row 2: audio bar -->
-        <audio id="audio" controls preload="auto" crossorigin="anonymous"></audio>
+        <div id="hudBottom">
+          <audio id="audio" controls preload="auto" crossorigin="anonymous"></audio>
+        </div>
       </div>
     </div>
   </div>
@@ -175,24 +170,30 @@
   const params = new URLSearchParams(location.search);
 
   const setId = params.get("set") || "default";
-  const lang = (params.get("lang") || "both").toLowerCase();
-  const hud = params.get("hud");
+  const lang = (params.get("lang") || "both").toLowerCase(); // both|ja|ko
+  const hud = params.get("hud"); // 0 => hide
   const cacheBust = params.get("cb") || "";
+
+  // ✅ 기본 랜덤 재생
+  const shuffleOn = (params.get("shuffle") ?? "1") !== "0";
+
+  // ✅ 자막 hold gap: 기본 더 길게
+  const HOLD_GAP = (() => {
+    const v = Number(params.get("holdGap"));
+    return Number.isFinite(v) ? v : 2.2; // default 2.2s (방송 안정)
+  })();
+
+  // ✅ autoplay 안정화 재시도 (HUD 없어도 시작되게)
+  const AUTOPLAY_RETRY_SEC = (() => {
+    const v = Number(params.get("autoRetry"));
+    return Number.isFinite(v) ? v : 8.0; // default 8s
+  })();
 
   const titleOn = (params.get("title") ?? "1") !== "0";
   if (!titleOn) document.body.classList.add("title-off");
   if (hud === "0") document.body.classList.add("hud-off");
 
   function num(v, d){ const n = Number(v); return Number.isFinite(n) ? n : d; }
-
-  // ✅ URL에서 koColor 지원: ?koColor=ffd54f (hex)
-  const koColor = params.get("koColor");
-  if (koColor){
-    const hex = koColor.replace("#","").trim();
-    if (/^[0-9a-fA-F]{6}$/.test(hex)){
-      document.documentElement.style.setProperty("--koFg", `#${hex}`);
-    }
-  }
 
   const cssVars = {
     "--posX": params.get("x") ? params.get("x") + "%" : null,
@@ -206,6 +207,8 @@
     "--titleGap": params.get("titleGap") ? params.get("titleGap") + "px" : null,
     "--titleOpacity": params.get("titleOpacity") ? params.get("titleOpacity") : null,
     "--titleTop": params.get("titleTop") ? params.get("titleTop") + "em" : null,
+
+    "--koColor": params.get("koColor") ? params.get("koColor") : null,
   };
   for (const [k,v] of Object.entries(cssVars)) if (v) document.documentElement.style.setProperty(k, v);
 
@@ -236,59 +239,130 @@
     u.searchParams.set("v", cacheBust || Date.now().toString());
     return u.toString();
   }
+
   async function fetchJSON(url){
     const res = await fetch(withCB(url), {cache:"no-store"});
     if (!res.ok) throw new Error(`fetch failed: ${res.status} ${url}`);
     return await res.json();
   }
 
+  // ---------- cue extraction ----------
   function extractCues(obj){
-    const cues = [];
-    const seen = new Set();
-    function pushCue(s,e,ja,ko){
-      s = Number(s); e = Number(e);
-      if (!Number.isFinite(s) || !Number.isFinite(e) || e <= s) return;
-      ja = (ja ?? "").toString().trim();
-      ko = (ko ?? "").toString().trim();
-      if (!ja) return;
-      const key = `${s.toFixed(3)}|${e.toFixed(3)}|${ja}`;
-      if (seen.has(key)) return;
-      seen.add(key);
-      cues.push({start:s, end:e, ja, ko});
-    }
-    function walk(x){
-      if (!x) return;
-      if (Array.isArray(x)){ for (const it of x) walk(it); return; }
-      if (typeof x === "object"){
-        if (("start" in x) && ("end" in x)){
-          const ja = x.ja ?? x.text ?? x.line ?? x.content ?? "";
-          const ko = x.ko ?? x.ko_text ?? "";
-          pushCue(x.start, x.end, ja, ko);
-        }
-        if (("t0" in x) && ("t1" in x)){
-          const ja = x.ja ?? x.text ?? x.s ?? "";
-          const ko = x.ko ?? "";
-          pushCue(x.t0, x.t1, ja, ko);
-        }
-        for (const v of Object.values(x)) walk(v);
+  const cues = [];
+  const seen = new Set();
+
+  const norm = (s) => (s ?? "").toString().replace(/\r/g,"").trim();
+
+  // "일본어\n한국어" 형태면 2줄로 분리
+  function splitBilingual(text){
+    text = norm(text);
+    if (!text) return {ja:"", ko:""};
+    const lines = text.split("\n").map(x=>x.trim()).filter(Boolean);
+    return {
+      ja: lines[0] || "",
+      ko: lines[1] || ""
+    };
+  }
+
+  // lines에서 (start,end)가 거의 같은 걸 찾아 KO 보강
+  function koFromLinesByTime(lines, s, e){
+    if (!Array.isArray(lines) || !lines.length) return "";
+    const sf = Number(s), ef = Number(e);
+    if (!Number.isFinite(sf) || !Number.isFinite(ef)) return "";
+    // 약간의 오차 허용
+    const EPS = 0.08;
+    for (const ln of lines){
+      if (!ln || typeof ln !== "object") continue;
+      const ls = Number(ln.start), le = Number(ln.end);
+      if (!Number.isFinite(ls) || !Number.isFinite(le)) continue;
+      if (Math.abs(ls - sf) <= EPS && Math.abs(le - ef) <= EPS){
+        return norm(ln.ko);
       }
     }
-    walk(obj);
+    return "";
+  }
+
+  function pushCue(s,e,ja,ko){
+    s = Number(s); e = Number(e);
+    if (!Number.isFinite(s) || !Number.isFinite(e) || e <= s) return;
+
+    ja = norm(ja);
+    ko = norm(ko);
+
+    if (!ja) return;
+    const key = `${s.toFixed(3)}|${e.toFixed(3)}|${ja}`;
+    if (seen.has(key)) return;
+    seen.add(key);
+
+    cues.push({start:s, end:e, ja, ko});
+  }
+
+  const lines = (obj && Array.isArray(obj.lines)) ? obj.lines : null;
+
+  // 1) cues 우선
+  if (obj && typeof obj === "object" && Array.isArray(obj.cues) && obj.cues.length){
+    for (const c of obj.cues){
+      if (!c || typeof c !== "object") continue;
+
+      // ✅ 케이스 A: ko가 있으면 그대로
+      let ja = norm(c.ja);
+      let ko = norm(c.ko);
+
+      // ✅ 케이스 B: ko가 없으면 text에서 "JA\nKO" 파싱
+      if (!ko){
+        const bi = splitBilingual(c.text);
+        if (!ja) ja = norm(bi.ja) || norm(c.text); // text가 한 줄이면 그걸 ja로
+        ko = norm(bi.ko);
+      }
+
+      // ✅ 케이스 C: 여전히 ko가 없으면 lines에서 시간 매칭으로 보강
+      if (!ko){
+        ko = koFromLinesByTime(lines, c.start, c.end);
+      }
+
+      // ja가 비어있으면 text를 ja로 사용(원래대로 복구)
+      if (!ja) ja = norm(c.text);
+
+      pushCue(c.start, c.end, ja, ko);
+    }
     cues.sort((a,b)=>a.start-b.start);
     return cues;
   }
 
+  // 2) fallback: lines
+  if (lines && lines.length){
+    for (const ln of lines){
+      if (!ln || typeof ln !== "object") continue;
+      const ja = norm(ln.ja ?? ln.text);
+      const ko = norm(ln.ko);
+      pushCue(ln.start, ln.end, ja, ko);
+    }
+    cues.sort((a,b)=>a.start-b.start);
+    return cues;
+  }
+
+  return cues;
+}
+
+  // ---------- cue pick ----------
   let lastCueIdx = 0;
   function cueAt(cues, t){
     if (!cues || cues.length === 0) return null;
+
     for (let i = lastCueIdx; i < cues.length; i++){
       const c = cues[i];
       if (t < c.start) break;
-      if (t >= c.start && t < c.end){ lastCueIdx = i; return c; }
+      if (t >= c.start && t < (c.end + HOLD_GAP)){
+        lastCueIdx = i;
+        return c;
+      }
     }
     for (let i = Math.min(lastCueIdx, cues.length - 1); i >= 0; i--){
       const c = cues[i];
-      if (t >= c.start && t < c.end){ lastCueIdx = i; return c; }
+      if (t >= c.start && t < (c.end + HOLD_GAP)){
+        lastCueIdx = i;
+        return c;
+      }
     }
     return null;
   }
@@ -311,11 +385,26 @@
     if (!currentTrack){ trackLabel.textContent = "-"; return; }
     trackLabel.textContent = `${currentTrack.id}${currentTrack.title ? " · " + currentTrack.title : ""}`;
   }
+
   function setHeaderTitle(text){
-    if (!titleEl) return;
     const t = (text ?? "").toString().trim();
     titleEl.textContent = t;
     if (t) document.title = `PT Player — ${t}`;
+  }
+
+  function shuffleArray(arr){
+    for (let i = arr.length - 1; i > 0; i--){
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
+  function reshufflePlaylist(){
+    if (!playlist || !Array.isArray(playlist.tracks)) return;
+    if (shuffleOn){
+      playlist.tracks = shuffleArray(playlist.tracks.slice());
+    }
   }
 
   async function loadTrack(i){
@@ -330,8 +419,7 @@
     if (!currentTrack.track_url) throw new Error("missing track_url");
     const trackJson = await fetchJSON(base + currentTrack.track_url);
 
-    const t = (currentTrack && currentTrack.title) ? currentTrack.title
-            : (trackJson && trackJson.title) ? trackJson.title : "";
+    const t = (currentTrack && currentTrack.title) ? currentTrack.title : (trackJson && trackJson.title) ? trackJson.title : "";
     if (titleOn) setHeaderTitle(t);
 
     cues = extractCues(trackJson);
@@ -340,14 +428,15 @@
   }
 
   function render(){
-    if (!cues || cues.length === 0){ clearSubtitle(); return; }
+    if (!cues || cues.length === 0){
+      clearSubtitle();
+      return;
+    }
+
     const t = audio.currentTime + offsetSec;
     const c = cueAt(cues, t);
 
-    const HOLD_GAP = 0.45;
     if (!c){
-      const prev = cues[lastCueIdx];
-      if (prev && (t - prev.end) < HOLD_GAP) return;
       clearSubtitle();
       return;
     }
@@ -356,8 +445,7 @@
 
     const hasKo = !!(c.ko && c.ko.trim());
     if ((lang === "both" || lang === "ko") && hasKo){
-      const target = c.ko;
-      if (koEl.textContent !== target) koEl.textContent = target;
+      if (koEl.textContent !== c.ko) koEl.textContent = c.ko;
       koEl.style.display = "";
     } else {
       koEl.textContent = "";
@@ -365,6 +453,7 @@
     }
   }
 
+  // ---------- controls ----------
   btnPlay.addEventListener("click", async () => {
     if (!playlist) return;
     if (audio.paused) await audio.play();
@@ -373,25 +462,62 @@
   audio.addEventListener("play", ()=> btnPlay.textContent = "Pause");
   audio.addEventListener("pause", ()=> btnPlay.textContent = "Play");
 
-  btnPrev.addEventListener("click", async () => { await loadTrack(idx - 1); await audio.play(); });
-  btnNext.addEventListener("click", async () => { await loadTrack(idx + 1); await audio.play(); });
+  btnPrev.addEventListener("click", async () => {
+    await loadTrack(idx - 1);
+    await audio.play();
+  });
+  btnNext.addEventListener("click", async () => {
+    await loadTrack(idx + 1);
+    await audio.play();
+  });
 
   btnOffM.addEventListener("click", ()=> setOffset(offsetSec - 0.5));
   btnOffP.addEventListener("click", ()=> setOffset(offsetSec + 0.5));
+
+  window.addEventListener("keydown", (e)=>{
+    if (e.key === "ArrowLeft") btnPrev.click();
+    if (e.key === "ArrowRight") btnNext.click();
+    if (e.key === "ArrowDown") setOffset(offsetSec - 0.5);
+    if (e.key === "ArrowUp") setOffset(offsetSec + 0.5);
+    if (e.key === " "){ e.preventDefault(); btnPlay.click(); }
+  });
 
   audio.addEventListener("timeupdate", render);
   audio.addEventListener("seeked", render);
 
   audio.addEventListener("ended", async () => {
     if (!playlist) return;
-    if (idx < playlist.tracks.length-1){
+
+    if (idx < playlist.tracks.length - 1){
       await loadTrack(idx + 1);
       await audio.play();
-    } else {
-      clearSubtitle();
+      return;
     }
+
+    // 마지막 트랙 끝: 무한 루프
+    reshufflePlaylist();
+    await loadTrack(0);
+    await audio.play();
   });
 
+  // ✅ autoplay 안정화: HUD 없어도 시작되게 play() 재시도
+  function startAutoplayRetry(){
+    const wantAutoplay = params.get("autoplay") === "1";
+    if (!wantAutoplay) return;
+
+    const startedAt = Date.now();
+    const tick = async () => {
+      const elapsed = (Date.now() - startedAt) / 1000;
+      if (elapsed > AUTOPLAY_RETRY_SEC) return;
+      if (!audio.src) { setTimeout(tick, 250); return; }
+      if (!audio.paused) return; // 이미 재생 중
+      try { await audio.play(); } catch (e) {}
+      setTimeout(tick, 400);
+    };
+    tick();
+  }
+
+  // ---------- boot ----------
   (async () => {
     playlist = await fetchJSON(playlistUrl);
 
@@ -399,11 +525,14 @@
       throw new Error("playlist.json invalid or empty");
     }
 
+    reshufflePlaylist();
+
     const startI = num(params.get("i"), 1);
     await loadTrack(startI - 1);
 
+    // autoplay=1이면 바로 시도
     if (params.get("autoplay") === "1"){
-      await audio.play();
+      try { await audio.play(); } catch (e) {}
     }
 
     updateTrackLabel();
