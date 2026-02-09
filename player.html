@@ -172,25 +172,29 @@
   const setId = params.get("set") || "default";
   const lang = (params.get("lang") || "both").toLowerCase(); // both|ja|ko
   const hud = params.get("hud"); // 0 => hide
-  const cacheBust = params.get("cb") || ""; // optional external cache buster
+  const cacheBust = params.get("cb") || "";
 
   // ✅ 기본 랜덤 재생
   const shuffleOn = (params.get("shuffle") ?? "1") !== "0";
 
-  // ✅ 자막 hold gap: 방송용 기본을 더 길게
+  // ✅ 자막 hold gap: 기본 더 길게
   const HOLD_GAP = (() => {
     const v = Number(params.get("holdGap"));
-    return Number.isFinite(v) ? v : 1.4; // default 1.4s
+    return Number.isFinite(v) ? v : 2.2; // default 2.2s (방송 안정)
   })();
 
-  // title show/hide
+  // ✅ autoplay 안정화 재시도 (HUD 없어도 시작되게)
+  const AUTOPLAY_RETRY_SEC = (() => {
+    const v = Number(params.get("autoRetry"));
+    return Number.isFinite(v) ? v : 8.0; // default 8s
+  })();
+
   const titleOn = (params.get("title") ?? "1") !== "0";
   if (!titleOn) document.body.classList.add("title-off");
   if (hud === "0") document.body.classList.add("hud-off");
 
   function num(v, d){ const n = Number(v); return Number.isFinite(n) ? n : d; }
 
-  // style params
   const cssVars = {
     "--posX": params.get("x") ? params.get("x") + "%" : null,
     "--posY": params.get("y") ? params.get("y") + "%" : null,
@@ -221,7 +225,6 @@
   const trackLabel = $("trackLabel");
   const offsetLabel = $("offsetLabel");
 
-  // offset per set
   const lsKey = `pt_offset_${setId}`;
   let offsetSec = num(localStorage.getItem(lsKey), 0.0);
   function setOffset(v){
@@ -244,42 +247,47 @@
   }
 
   // ---------- cue extraction ----------
-  // ✅ KO가 "첫 줄" 처리 후 빈값이 되어 사라지는 케이스를 막기 위해
-  //    (1) firstLine로 1차 정리
-  //    (2) 결과가 빈 문자열이면 원문에서 1번 더 salvage
+  // ✅ KO가 cues.ko에 없고 cues.text에 "JA\nKO"로 들어오는 케이스를 파싱해서 살린다.
   function extractCues(obj){
     const cues = [];
     const seen = new Set();
 
+    const norm = (s) => (s ?? "").toString().replace(/\r/g,"").trim();
+
     const firstLine = (s) => {
-      s = (s ?? "").toString().replace(/\r/g, "").trim();
+      s = norm(s);
       if (!s) return "";
       const byNL = s.split("\n").map(x=>x.trim()).filter(Boolean);
-      if (byNL.length) s = byNL[0];
-      const bySlash = s.split(" / ").map(x=>x.trim()).filter(Boolean);
-      if (bySlash.length) s = bySlash[0];
+      if (byNL.length) return byNL[0];
       return s;
     };
 
-    const salvage = (raw) => {
-      raw = (raw ?? "").toString().replace(/\r/g, "").trim();
-      if (!raw) return "";
-      // 개행이 있으면 첫 줄, 없으면 전체
-      const byNL = raw.split("\n").map(x=>x.trim()).filter(Boolean);
-      return byNL.length ? byNL[0] : raw;
-    };
+    function splitBilingualFromText(text){
+      text = norm(text);
+      if (!text) return {ja:"", ko:""};
+      const lines = text.split("\n").map(x=>x.trim()).filter(Boolean);
+      if (lines.length >= 2){
+        return {ja: lines[0], ko: lines[1]};
+      }
+      return {ja: lines[0] || "", ko: ""};
+    }
 
-    function pushCue(s,e,jaRaw,koRaw){
+    function pushCue(s,e,jaRaw,koRaw,textRaw){
       s = Number(s); e = Number(e);
       if (!Number.isFinite(s) || !Number.isFinite(e) || e <= s) return;
 
       let ja = firstLine(jaRaw);
       let ko = firstLine(koRaw);
 
-      // ✅ KO가 firstLine에서 빈값이 되면 salvage로 1번 더 살림
-      if (!ko && koRaw) ko = salvage(koRaw);
+      // ✅ KO가 비어있으면 text에서 "JA\nKO" 파싱
+      if (!ko){
+        const bi = splitBilingualFromText(textRaw);
+        if (!ja) ja = firstLine(bi.ja);
+        if (!ko) ko = firstLine(bi.ko);
+      }
 
       if (!ja) return;
+
       const key = `${s.toFixed(3)}|${e.toFixed(3)}|${ja}`;
       if (seen.has(key)) return;
       seen.add(key);
@@ -287,25 +295,19 @@
       cues.push({start:s, end:e, ja, ko});
     }
 
-    // cues 우선
     if (obj && typeof obj === "object" && Array.isArray(obj.cues) && obj.cues.length){
       for (const c of obj.cues){
         if (!c || typeof c !== "object") continue;
-        const jaRaw = c.ja ?? c.text ?? "";
-        const koRaw = c.ko ?? "";
-        pushCue(c.start, c.end, jaRaw, koRaw);
+        pushCue(c.start, c.end, c.ja ?? "", c.ko ?? "", c.text ?? "");
       }
       cues.sort((a,b)=>a.start-b.start);
       return cues;
     }
 
-    // fallback: lines
     if (obj && typeof obj === "object" && Array.isArray(obj.lines) && obj.lines.length){
       for (const ln of obj.lines){
         if (!ln || typeof ln !== "object") continue;
-        const jaRaw = ln.ja ?? ln.text ?? "";
-        const koRaw = ln.ko ?? "";
-        pushCue(ln.start, ln.end, jaRaw, koRaw);
+        pushCue(ln.start, ln.end, ln.ja ?? ln.text ?? "", ln.ko ?? "", ln.text ?? "");
       }
       cues.sort((a,b)=>a.start-b.start);
       return cues;
@@ -319,7 +321,6 @@
   function cueAt(cues, t){
     if (!cues || cues.length === 0) return null;
 
-    // forward from last
     for (let i = lastCueIdx; i < cues.length; i++){
       const c = cues[i];
       if (t < c.start) break;
@@ -328,7 +329,6 @@
         return c;
       }
     }
-    // backward (seek)
     for (let i = Math.min(lastCueIdx, cues.length - 1); i >= 0; i--){
       const c = cues[i];
       if (t >= c.start && t < (c.end + HOLD_GAP)){
@@ -345,7 +345,6 @@
     koEl.style.display = "none";
   }
 
-  // ---------- playlist handling ----------
   const base = `${location.origin}/set/${encodeURIComponent(setId)}/`;
   const playlistUrl = base + "playlist.json";
 
@@ -458,7 +457,6 @@
   audio.addEventListener("timeupdate", render);
   audio.addEventListener("seeked", render);
 
-  // ✅ 핵심: 마지막 트랙이면 "끝"이 아니라 "다시 셔플 → 1번부터 계속"
   audio.addEventListener("ended", async () => {
     if (!playlist) return;
 
@@ -474,6 +472,23 @@
     await audio.play();
   });
 
+  // ✅ autoplay 안정화: HUD 없어도 시작되게 play() 재시도
+  function startAutoplayRetry(){
+    const wantAutoplay = params.get("autoplay") === "1";
+    if (!wantAutoplay) return;
+
+    const startedAt = Date.now();
+    const tick = async () => {
+      const elapsed = (Date.now() - startedAt) / 1000;
+      if (elapsed > AUTOPLAY_RETRY_SEC) return;
+      if (!audio.src) { setTimeout(tick, 250); return; }
+      if (!audio.paused) return; // 이미 재생 중
+      try { await audio.play(); } catch (e) {}
+      setTimeout(tick, 400);
+    };
+    tick();
+  }
+
   // ---------- boot ----------
   (async () => {
     playlist = await fetchJSON(playlistUrl);
@@ -482,14 +497,15 @@
       throw new Error("playlist.json invalid or empty");
     }
 
-    // 기본 랜덤 재생: 로드 시 한 번 셔플
     reshufflePlaylist();
 
     const startI = num(params.get("i"), 1);
     await loadTrack(startI - 1);
 
+    // autoplay=1이면 바로 시도 + 재시도
     if (params.get("autoplay") === "1"){
-      await audio.play();
+      try { await audio.play(); } catch (e) {}
+      startAutoplayRetry();
     }
 
     updateTrackLabel();
