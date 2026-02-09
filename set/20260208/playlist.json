@@ -1,6 +1,6 @@
 {
   "set_id": "20260208",
-  "built_at": "2026-02-09T17:00:15+0000",
+  "built_at": "2026-02-09T17:50:08+0000",
   "tracks": [
     {
       "id": "001",
@@ -18,7 +18,7 @@
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=20.78 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=12.64s"
+        "[INFO] CORE_OK elapsed=11.51s"
       ],
       "timing_clamped": false
     },
@@ -32,13 +32,13 @@
       "ko_filled": 0,
       "align_info_count": 7,
       "align_info_head": [
-        "[INFO] SEGMENTS=303 SECTIONS_TOTAL=12",
-        "[INFO] SEG0 start=12.66 end=13.78 text_head='いつ'",
-        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=12.66s",
+        "[INFO] SEGMENTS=314 SECTIONS_TOTAL=12",
+        "[INFO] SEG0 start=12.64 end=13.80 text_head='いつ'",
+        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=12.64s",
         "[INFO] SECTIONS_TIMED=11 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=12.66 tag='Verse 1'",
+        "[INFO] FIRST_TIMED start=12.64 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=9.36s"
+        "[INFO] CORE_OK elapsed=7.58s"
       ],
       "timing_clamped": false
     },
@@ -52,13 +52,13 @@
       "ko_filled": 0,
       "align_info_count": 7,
       "align_info_head": [
-        "[INFO] SEGMENTS=62 SECTIONS_TOTAL=10",
+        "[INFO] SEGMENTS=67 SECTIONS_TOTAL=10",
         "[INFO] SEG0 start=7.18 end=7.34 text_head='作'",
         "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=7.18s",
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=7.18 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=7.26s"
+        "[INFO] CORE_OK elapsed=8.17s"
       ],
       "timing_clamped": false
     },
@@ -78,7 +78,7 @@
         "[INFO] SECTIONS_TIMED=16 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=12.58 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=8.74s"
+        "[INFO] CORE_OK elapsed=9.89s"
       ],
       "timing_clamped": false
     },
@@ -90,14 +90,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-09T05:43:23+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 7,
       "align_info_head": [
-        "[INFO] SEGMENTS=222 SECTIONS_TOTAL=10",
-        "[INFO] SEG0 start=0.54 end=1.24 text_head='Uh'",
+        "[INFO] SEGMENTS=205 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=21.72 end=22.50 text_head='す'",
+        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=21.72s",
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=0.54 tag='Verse 1'",
+        "[INFO] FIRST_TIMED start=21.72 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=15.80s"
+        "[INFO] CORE_OK elapsed=13.41s"
       ],
       "timing_clamped": false
     },
@@ -116,7 +117,7 @@
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=0.90 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=6.35s"
+        "[INFO] CORE_OK elapsed=5.05s"
       ],
       "timing_clamped": false
     },
@@ -135,7 +136,7 @@
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=0.84 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=6.85s"
+        "[INFO] CORE_OK elapsed=8.38s"
       ],
       "timing_clamped": false
     },
@@ -154,7 +155,7 @@
         "[INFO] SECTIONS_TIMED=15 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=0.74 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=7.15s"
+        "[INFO] CORE_OK elapsed=6.64s"
       ],
       "timing_clamped": false
     },
@@ -173,7 +174,7 @@
         "[INFO] SECTIONS_TIMED=16 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=0.86 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=5.55s"
+        "[INFO] CORE_OK elapsed=5.95s"
       ],
       "timing_clamped": false
     },
@@ -193,7 +194,7 @@
         "[INFO] SECTIONS_TIMED=17 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=19.30 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=11.39s"
+        "[INFO] CORE_OK elapsed=10.44s"
       ],
       "timing_clamped": false
     },
@@ -207,12 +208,12 @@
       "ko_filled": 0,
       "align_info_count": 6,
       "align_info_head": [
-        "[INFO] SEGMENTS=222 SECTIONS_TOTAL=10",
-        "[INFO] SEG0 start=0.45 end=1.00 text_head='W'",
+        "[INFO] SEGMENTS=228 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=1.00 end=1.62 text_head='oh'",
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=0.45 tag='Verse 1'",
+        "[INFO] FIRST_TIMED start=1.00 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=14.52s"
+        "[INFO] CORE_OK elapsed=13.85s"
       ],
       "timing_clamped": false
     },
@@ -226,12 +227,12 @@
       "ko_filled": 0,
       "align_info_count": 6,
       "align_info_head": [
-        "[INFO] SEGMENTS=232 SECTIONS_TOTAL=10",
+        "[INFO] SEGMENTS=236 SECTIONS_TOTAL=10",
         "[INFO] SEG0 start=4.12 end=5.12 text_head='静'",
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=4.12 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=8.30s"
+        "[INFO] CORE_OK elapsed=8.22s"
       ],
       "timing_clamped": false
     },
@@ -251,7 +252,7 @@
         "[INFO] SECTIONS_TIMED=11 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=10.48 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=8.95s"
+        "[INFO] CORE_OK elapsed=8.60s"
       ],
       "timing_clamped": false
     },
@@ -265,12 +266,12 @@
       "ko_filled": 0,
       "align_info_count": 6,
       "align_info_head": [
-        "[INFO] SEGMENTS=226 SECTIONS_TOTAL=10",
-        "[INFO] SEG0 start=0.62 end=1.08 text_head='oo'",
+        "[INFO] SEGMENTS=227 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=0.58 end=3.76 text_head='oo'",
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=0.62 tag='Verse 1'",
+        "[INFO] FIRST_TIMED start=0.58 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=10.18s"
+        "[INFO] CORE_OK elapsed=10.07s"
       ],
       "timing_clamped": false
     },
@@ -289,7 +290,7 @@
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=1.70 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=6.06s"
+        "[INFO] CORE_OK elapsed=7.39s"
       ],
       "timing_clamped": false
     },
@@ -308,7 +309,7 @@
         "[INFO] SECTIONS_TIMED=18 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=0.78 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=8.73s"
+        "[INFO] CORE_OK elapsed=9.86s"
       ],
       "timing_clamped": false
     },
@@ -322,12 +323,12 @@
       "ko_filled": 0,
       "align_info_count": 6,
       "align_info_head": [
-        "[INFO] SEGMENTS=358 SECTIONS_TOTAL=12",
+        "[INFO] SEGMENTS=357 SECTIONS_TOTAL=12",
         "[INFO] SEG0 start=0.72 end=1.40 text_head='残'",
         "[INFO] SECTIONS_TIMED=11 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=0.72 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=10.69s"
+        "[INFO] CORE_OK elapsed=14.80s"
       ],
       "timing_clamped": false
     },
@@ -347,7 +348,7 @@
         "[INFO] SECTIONS_TIMED=18 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=18.88 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=10.10s"
+        "[INFO] CORE_OK elapsed=10.09s"
       ],
       "timing_clamped": false
     },
@@ -366,7 +367,7 @@
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=1.24 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=6.11s"
+        "[INFO] CORE_OK elapsed=6.13s"
       ],
       "timing_clamped": false
     },
@@ -385,7 +386,7 @@
         "[INFO] SECTIONS_TIMED=16 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=1.62 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=8.19s"
+        "[INFO] CORE_OK elapsed=8.83s"
       ],
       "timing_clamped": false
     },
@@ -404,7 +405,7 @@
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=0.90 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=7.96s"
+        "[INFO] CORE_OK elapsed=7.58s"
       ],
       "timing_clamped": false
     },
@@ -424,7 +425,7 @@
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=12.96 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=10.58s"
+        "[INFO] CORE_OK elapsed=9.99s"
       ],
       "timing_clamped": false
     },
@@ -443,7 +444,7 @@
         "[INFO] SECTIONS_TIMED=16 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=1.00 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=10.91s"
+        "[INFO] CORE_OK elapsed=9.45s"
       ],
       "timing_clamped": false
     },
@@ -462,7 +463,7 @@
         "[INFO] SECTIONS_TIMED=12 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=0.74 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=8.90s"
+        "[INFO] CORE_OK elapsed=7.95s"
       ],
       "timing_clamped": false
     },
@@ -482,7 +483,7 @@
         "[INFO] SECTIONS_TIMED=27 SECTIONS_EMPTY=0",
         "[INFO] FIRST_TIMED start=0.00 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=10.33s"
+        "[INFO] CORE_OK elapsed=14.28s"
       ],
       "timing_clamped": false
     },
@@ -496,12 +497,12 @@
       "ko_filled": 0,
       "align_info_count": 6,
       "align_info_head": [
-        "[INFO] SEGMENTS=527 SECTIONS_TOTAL=27",
-        "[INFO] SEG0 start=0.90 end=1.56 text_head='た'",
+        "[INFO] SEGMENTS=537 SECTIONS_TOTAL=27",
+        "[INFO] SEG0 start=0.90 end=1.88 text_head='ラ'",
         "[INFO] SECTIONS_TIMED=27 SECTIONS_EMPTY=0",
         "[INFO] FIRST_TIMED start=0.90 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=10.66s"
+        "[INFO] CORE_OK elapsed=12.78s"
       ],
       "timing_clamped": false
     },
@@ -521,7 +522,7 @@
         "[INFO] SECTIONS_TIMED=29 SECTIONS_EMPTY=0",
         "[INFO] FIRST_TIMED start=0.00 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=11.53s"
+        "[INFO] CORE_OK elapsed=10.63s"
       ],
       "timing_clamped": false
     },
@@ -535,12 +536,12 @@
       "ko_filled": 0,
       "align_info_count": 6,
       "align_info_head": [
-        "[INFO] SEGMENTS=148 SECTIONS_TOTAL=9",
+        "[INFO] SEGMENTS=153 SECTIONS_TOTAL=9",
         "[INFO] SEG0 start=0.96 end=1.58 text_head='れ'",
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=0",
         "[INFO] FIRST_TIMED start=0.96 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=6.20s"
+        "[INFO] CORE_OK elapsed=6.24s"
       ],
       "timing_clamped": false
     },
@@ -560,7 +561,7 @@
         "[INFO] SECTIONS_TIMED=29 SECTIONS_EMPTY=0",
         "[INFO] FIRST_TIMED start=0.00 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=8.41s"
+        "[INFO] CORE_OK elapsed=11.14s"
       ],
       "timing_clamped": false
     },
@@ -579,7 +580,7 @@
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=0",
         "[INFO] FIRST_TIMED start=1.50 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=5.78s"
+        "[INFO] CORE_OK elapsed=7.48s"
       ],
       "timing_clamped": false
     },
@@ -598,7 +599,7 @@
         "[INFO] SECTIONS_TIMED=28 SECTIONS_EMPTY=0",
         "[INFO] FIRST_TIMED start=1.00 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=8.43s"
+        "[INFO] CORE_OK elapsed=7.80s"
       ],
       "timing_clamped": false
     },
@@ -617,7 +618,7 @@
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=0.84 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=9.31s"
+        "[INFO] CORE_OK elapsed=11.79s"
       ],
       "timing_clamped": false
     },
@@ -631,13 +632,13 @@
       "ko_filled": 9,
       "align_info_count": 7,
       "align_info_head": [
-        "[INFO] SEGMENTS=230 SECTIONS_TOTAL=10",
+        "[INFO] SEGMENTS=229 SECTIONS_TOTAL=10",
         "[INFO] SEG0 start=12.32 end=13.36 text_head='古'",
         "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=12.32s",
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=12.32 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=8.53s"
+        "[INFO] CORE_OK elapsed=9.10s"
       ],
       "timing_clamped": false
     },
@@ -656,7 +657,7 @@
         "[INFO] SECTIONS_TIMED=16 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=0.86 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=9.26s"
+        "[INFO] CORE_OK elapsed=7.34s"
       ],
       "timing_clamped": false
     },
@@ -670,13 +671,13 @@
       "ko_filled": 9,
       "align_info_count": 7,
       "align_info_head": [
-        "[INFO] SEGMENTS=245 SECTIONS_TOTAL=10",
+        "[INFO] SEGMENTS=248 SECTIONS_TOTAL=10",
         "[INFO] SEG0 start=10.70 end=11.58 text_head='目'",
         "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=10.70s",
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=10.70 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=7.46s"
+        "[INFO] CORE_OK elapsed=9.66s"
       ],
       "timing_clamped": false
     },
@@ -696,7 +697,7 @@
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=13.04 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=8.07s"
+        "[INFO] CORE_OK elapsed=8.06s"
       ],
       "timing_clamped": false
     },
@@ -715,7 +716,7 @@
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=0.98 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=8.85s"
+        "[INFO] CORE_OK elapsed=9.11s"
       ],
       "timing_clamped": false
     },
@@ -734,7 +735,7 @@
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=1.08 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=7.64s"
+        "[INFO] CORE_OK elapsed=4.90s"
       ],
       "timing_clamped": false
     },
@@ -767,13 +768,13 @@
       "ko_filled": 0,
       "align_info_count": 7,
       "align_info_head": [
-        "[INFO] SEGMENTS=194 SECTIONS_TOTAL=10",
+        "[INFO] SEGMENTS=196 SECTIONS_TOTAL=10",
         "[INFO] SEG0 start=22.60 end=23.40 text_head='作'",
         "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=22.60s",
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=22.60 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=6.09s"
+        "[INFO] CORE_OK elapsed=8.55s"
       ],
       "timing_clamped": false
     },
@@ -793,7 +794,7 @@
         "[INFO] SECTIONS_TIMED=16 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=20.66 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=9.91s"
+        "[INFO] CORE_OK elapsed=10.62s"
       ],
       "timing_clamped": false
     },
@@ -812,7 +813,7 @@
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=1.32 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=6.29s"
+        "[INFO] CORE_OK elapsed=7.54s"
       ],
       "timing_clamped": false
     },
@@ -831,7 +832,7 @@
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=1.16 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=8.88s"
+        "[INFO] CORE_OK elapsed=9.40s"
       ],
       "timing_clamped": false
     },
@@ -851,7 +852,7 @@
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=12.28 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=9.17s"
+        "[INFO] CORE_OK elapsed=6.58s"
       ],
       "timing_clamped": false
     },
@@ -871,7 +872,7 @@
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=10.84 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=7.38s"
+        "[INFO] CORE_OK elapsed=7.28s"
       ],
       "timing_clamped": false
     },
@@ -891,7 +892,7 @@
         "[INFO] SECTIONS_TIMED=16 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=12.50 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=8.88s"
+        "[INFO] CORE_OK elapsed=8.64s"
       ],
       "timing_clamped": false
     },
@@ -910,7 +911,7 @@
         "[INFO] SECTIONS_TIMED=17 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=3.72 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=7.52s"
+        "[INFO] CORE_OK elapsed=9.04s"
       ],
       "timing_clamped": false
     },
@@ -924,13 +925,13 @@
       "ko_filled": 0,
       "align_info_count": 7,
       "align_info_head": [
-        "[INFO] SEGMENTS=331 SECTIONS_TOTAL=10",
+        "[INFO] SEGMENTS=334 SECTIONS_TOTAL=10",
         "[INFO] SEG0 start=11.90 end=12.98 text_head='交'",
         "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=11.90s",
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=11.90 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=12.89s"
+        "[INFO] CORE_OK elapsed=9.90s"
       ],
       "timing_clamped": false
     },
@@ -950,7 +951,7 @@
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=12.62 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=9.88s"
+        "[INFO] CORE_OK elapsed=7.10s"
       ],
       "timing_clamped": false
     },
@@ -970,7 +971,7 @@
         "[INFO] SECTIONS_TIMED=11 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=7.10 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=13.56s"
+        "[INFO] CORE_OK elapsed=9.63s"
       ],
       "timing_clamped": false
     },
@@ -989,7 +990,7 @@
         "[INFO] SECTIONS_TIMED=16 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=4.88 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=9.26s"
+        "[INFO] CORE_OK elapsed=11.45s"
       ],
       "timing_clamped": false
     },
@@ -1008,7 +1009,7 @@
         "[INFO] SECTIONS_TIMED=28 SECTIONS_EMPTY=1",
         "[INFO] FIRST_TIMED start=0.76 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=9.72s"
+        "[INFO] CORE_OK elapsed=9.91s"
       ],
       "timing_clamped": false
     },
@@ -1022,13 +1023,13 @@
       "ko_filled": 0,
       "align_info_count": 7,
       "align_info_head": [
-        "[INFO] SEGMENTS=222 SECTIONS_TOTAL=10",
-        "[INFO] SEG0 start=6.60 end=7.36 text_head='🐯'",
-        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=6.60s",
+        "[INFO] SEGMENTS=223 SECTIONS_TOTAL=10",
+        "[INFO] SEG0 start=6.66 end=7.36 text_head='🐯'",
+        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=6.66s",
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=6.60 tag='Verse 1'",
+        "[INFO] FIRST_TIMED start=6.66 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=7.34s"
+        "[INFO] CORE_OK elapsed=8.58s"
       ],
       "timing_clamped": false
     },
@@ -1047,7 +1048,7 @@
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=0",
         "[INFO] FIRST_TIMED start=0.94 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=4.87s"
+        "[INFO] CORE_OK elapsed=5.42s"
       ],
       "timing_clamped": false
     },
@@ -1066,7 +1067,7 @@
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=0",
         "[INFO] FIRST_TIMED start=0.84 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=5.49s"
+        "[INFO] CORE_OK elapsed=5.64s"
       ],
       "timing_clamped": false
     },
@@ -1080,13 +1081,13 @@
       "ko_filled": 0,
       "align_info_count": 7,
       "align_info_head": [
-        "[INFO] SEGMENTS=211 SECTIONS_TOTAL=9",
-        "[INFO] SEG0 start=7.46 end=8.46 text_head='小'",
-        "[INFO] lead-shift applied: seg0.start was 7.46s → shifted by -7.46s",
+        "[INFO] SEGMENTS=210 SECTIONS_TOTAL=9",
+        "[INFO] SEG0 start=7.44 end=8.44 text_head='小'",
+        "[INFO] lead-shift applied: seg0.start was 7.44s → shifted by -7.44s",
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=0",
         "[INFO] FIRST_TIMED start=0.00 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=7.52s"
+        "[INFO] CORE_OK elapsed=8.05s"
       ],
       "timing_clamped": false
     },
@@ -1100,12 +1101,12 @@
       "ko_filled": 0,
       "align_info_count": 6,
       "align_info_head": [
-        "[INFO] SEGMENTS=263 SECTIONS_TOTAL=9",
-        "[INFO] SEG0 start=1.02 end=1.98 text_head='目'",
+        "[INFO] SEGMENTS=262 SECTIONS_TOTAL=9",
+        "[INFO] SEG0 start=1.00 end=1.98 text_head='目'",
         "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=0",
-        "[INFO] FIRST_TIMED start=1.02 tag='Verse 1'",
+        "[INFO] FIRST_TIMED start=1.00 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=6.08s"
+        "[INFO] CORE_OK elapsed=7.16s"
       ],
       "timing_clamped": false
     },
@@ -1124,7 +1125,7 @@
         "[INFO] SECTIONS_TIMED=11 SECTIONS_EMPTY=0",
         "[INFO] FIRST_TIMED start=0.80 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=9.05s"
+        "[INFO] CORE_OK elapsed=6.82s"
       ],
       "timing_clamped": false
     },
@@ -1143,7 +1144,7 @@
         "[INFO] SECTIONS_TIMED=29 SECTIONS_EMPTY=0",
         "[INFO] FIRST_TIMED start=0.90 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=10.02s"
+        "[INFO] CORE_OK elapsed=9.08s"
       ],
       "timing_clamped": false
     },
@@ -1162,7 +1163,7 @@
         "[INFO] SECTIONS_TIMED=23 SECTIONS_EMPTY=0",
         "[INFO] FIRST_TIMED start=0.86 tag='Verse 1'",
         "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=8.62s"
+        "[INFO] CORE_OK elapsed=9.64s"
       ],
       "timing_clamped": false
     }
