@@ -179,14 +179,28 @@
   // ✅ 끝까지 가도 계속(방송 중지 전까지)
   const loopOn = (params.get("loop") ?? "1") !== "0";
 
-  // ✅ 자막 유지(더 길게)
+  // ✅ 자막 유지(더 길게) - URL로 오버라이드 가능
   const HOLD_GAP = (() => {
     const v = Number(params.get("holdGap"));
-    return Number.isFinite(v) ? v : 1.6;   // 기본 1.6s
+    return Number.isFinite(v) ? v : 0.75;   // ✅ default: 0.75s
   })();
   const MIN_CUE_SEC = (() => {
     const v = Number(params.get("minCue"));
-    return Number.isFinite(v) ? v : 2.8;   // 기본 2.8s
+    return Number.isFinite(v) ? v : 1.25;   // ✅ default: 1.25s
+  })();
+
+  // ✅ "긴 문장"은 더 오래 보여야 읽힘 (체감 개선 핵심)
+  const MIN_SHOW_SEC = (() => {
+    const v = Number(params.get("minShow"));
+    return Number.isFinite(v) ? v : 1.4;    // ✅ default: 1.4s
+  })();
+  const EXTRA_PER_CHAR = (() => {
+    const v = Number(params.get("secPerChar"));
+    return Number.isFinite(v) ? v : 0.03;   // ✅ 30 chars => +0.9s
+  })();
+  const EXTRA_MAX = (() => {
+    const v = Number(params.get("maxExtra"));
+    return Number.isFinite(v) ? v : 2.2;    // ✅ cap extra
   })();
 
   const titleOn = (params.get("title") ?? "1") !== "0";
@@ -340,6 +354,19 @@
     return cues;
   }
 
+  // ✅ 표시 종료시간 계산(긴 문장일수록 더 오래 표시)
+  function calcShowUntil(c){
+    const s = Number(c?.start);
+    const e = Number(c?.end);
+    if (!Number.isFinite(s)) return -Infinity;
+    const end = Number.isFinite(e) ? e : s;
+
+    const txt = String((c?.ko || c?.ja || "")).replace(/\s+/g, " ").trim();
+    const extra = Math.min(EXTRA_MAX, Math.max(0, txt.length * EXTRA_PER_CHAR));
+
+    return Math.max(end + HOLD_GAP, s + MIN_SHOW_SEC, s + MIN_SHOW_SEC + extra);
+  }
+
   // cue pick
   let lastCueIdx = 0;
   function cueAt(cues, t){
@@ -348,14 +375,14 @@
     for (let i = lastCueIdx; i < cues.length; i++){
       const c = cues[i];
       if (t < c.start) break;
-      if (t >= c.start && t < (c.end + HOLD_GAP)){
+      if (t >= c.start && t < calcShowUntil(c)){
         lastCueIdx = i;
         return c;
       }
     }
     for (let i = Math.min(lastCueIdx, cues.length - 1); i >= 0; i--){
       const c = cues[i];
-      if (t >= c.start && t < (c.end + HOLD_GAP)){
+      if (t >= c.start && t < calcShowUntil(c)){
         lastCueIdx = i;
         return c;
       }
