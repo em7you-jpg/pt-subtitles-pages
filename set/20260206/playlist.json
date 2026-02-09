@@ -1,24 +1,353 @@
 {
-  "set_id": "20260206",
-  "built_at": "2026-02-09T02:59:43+0000",
+  "title": "20260206",
   "tracks": [
     {
       "id": "001",
       "title": "cues_set_test_1",
-      "audio_url": "https://cdn1.suno.ai/b608f2d7-be74-40d0-a243-ae59340f43d7.mp3",
-      "track_url": "tracks/001.json",
-      "duration": 180.0,
-      "created_at": "2026-02-07T06:03:38+09:00",
-      "ko_filled": 0,
-      "align_info_count": 6,
-      "align_info_head": [
-        "[INFO] SEGMENTS=470 SECTIONS_TOTAL=1",
-        "[INFO] SEG0 start=0.76 end=1.10 text_head='や'",
-        "[INFO] SECTIONS_TIMED=1 SECTIONS_EMPTY=0",
-        "[INFO] FIRST_TIMED start=0.76 tag='Line 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=10.05s"
-      ]
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "002",
+      "title": "Step by Step Parade",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "003",
+      "title": "Forward Loop Cinema",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "004",
+      "title": "Soft Steps Forward",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "005",
+      "title": "Personal Edit",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "006",
+      "title": "Back in Focus",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "007",
+      "title": "Restore and Go",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "008",
+      "title": "Step Out in My Color",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "009",
+      "title": "No Turning Back",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "010",
+      "title": "Quiet Traces in the Air",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "011",
+      "title": "Steady Like Candy",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "012",
+      "title": "At My Side, Quiet Parade",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "013",
+      "title": "Side by Side Light",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "014",
+      "title": "Everyday Steps Rewind",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "015",
+      "title": "Gentle Evenings",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "016",
+      "title": "Simple Things We Gather",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "017",
+      "title": "Hold Tight to the Center",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "018",
+      "title": "Softly Now, Someday",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "019",
+      "title": "Shining On The Small Side",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "020",
+      "title": "Shining Tiny Routine",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "021",
+      "title": "Small Rooms, Familiar Words",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "022",
+      "title": "歩幅合わせずに帰る日",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "023",
+      "title": "Gentle Rules for the Afternoon",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "024",
+      "title": "Morning Echoes on Concrete",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "025",
+      "title": "New Sheets, Clear Steps",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "026",
+      "title": "Private Rule Parade",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "027",
+      "title": "Turn the Key",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "028",
+      "title": "Safe and Slow Steps",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "029",
+      "title": "Step Out, Unafraid",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "030",
+      "title": "Finish Line Colors",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "031",
+      "title": "Fading Glow, Gentle Forward",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "032",
+      "title": "Small Steps, Sweet Parade",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "033",
+      "title": "Rebalancing Steps",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "034",
+      "title": "Leaving the Old Shoes Behind",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "035",
+      "title": "Refine the Horizon",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "036",
+      "title": "Back to the Rhythm of Days",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "037",
+      "title": "Quiet Reset",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "038",
+      "title": "Steady Tomorrow",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "039",
+      "title": "Keep Balance, Stay Here",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "040",
+      "title": "What I Keep Close",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "041",
+      "title": "Sunlight Shuffle",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "042",
+      "title": "Open Ended Logic",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "043",
+      "title": "My Own Pace Diary",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "044",
+      "title": "Before the Lights Fade",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "045",
+      "title": "Blurred Progress",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "046",
+      "title": "Homebound Glimmer",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "047",
+      "title": "ひとつのままで",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "048",
+      "title": "Five Minutes To Myself",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "049",
+      "title": "Fresh Palette",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "050",
+      "title": "Step by Step in the Sun",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "051",
+      "title": "Coffee Table Fragments",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "052",
+      "title": "Everyday Traces",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "053",
+      "title": "Slowly Turning Side Streets",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "054",
+      "title": "Where My Heart Settles",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "055",
+      "title": "Checklists in the Headlights",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "056",
+      "title": "Next Days On My Notebook",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "057",
+      "title": "Everyday Gentle Proof",
+      "audio_url": "",
+      "created_at": ""
+    },
+    {
+      "id": "058",
+      "title": "Shifting Equilibrium",
+      "audio_url": "",
+      "created_at": ""
     }
   ]
 }
