@@ -1,6 +1,6 @@
 {
   "set_id": "20260207",
-  "built_at": "2026-02-09T09:46:23+0000",
+  "built_at": "2026-02-09T13:24:13+0000",
   "tracks": [
     {
       "id": "001",
@@ -10,15 +10,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T06:03:35+09:00\"",
       "ko_filled": 16,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=261 SECTIONS_TOTAL=17",
-        "[INFO] SEG0 start=0.86 end=1.36 text_head='日'",
-        "[INFO] SECTIONS_TIMED=16 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=0.86 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=9.56s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=1.23 avg=8.49 max=10.98",
+        "[INFO] CUES_BUILT=16 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=9.34s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "002",
@@ -28,16 +28,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T05:58:29+09:00\"",
       "ko_filled": 9,
-      "align_info_count": 7,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=245 SECTIONS_TOTAL=10",
-        "[INFO] SEG0 start=10.70 end=11.58 text_head='目'",
-        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=10.70s",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=10.70 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=10.80s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.18 max=5.61",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=8.99s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "003",
@@ -47,16 +46,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T05:53:31+09:00\"",
       "ko_filled": 9,
-      "align_info_count": 7,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=180 SECTIONS_TOTAL=10",
-        "[INFO] SEG0 start=13.04 end=14.12 text_head='🐯'",
-        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=13.04s",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=13.04 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=7.88s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=1.91 avg=3.54 max=4.00",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=6.99s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "004",
@@ -66,15 +64,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T05:38:20+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=250 SECTIONS_TOTAL=10",
-        "[INFO] SEG0 start=0.98 end=1.12 text_head='覚'",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=0.98 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=7.65s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.15 max=5.35",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=8.23s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "005",
@@ -84,15 +82,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T05:33:31+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=210 SECTIONS_TOTAL=10",
-        "[INFO] SEG0 start=1.08 end=1.84 text_head='しい'",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=1.08 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=4.79s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.03 max=4.25",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=5.98s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "006",
@@ -102,15 +100,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T05:28:32+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=344 SECTIONS_TOTAL=10",
-        "[INFO] SEG0 start=0.80 end=0.94 text_head='レ'",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=0.80 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=9.27s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.33 max=6.97",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=11.69s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "007",
@@ -120,16 +118,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T05:23:22+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 7,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=190 SECTIONS_TOTAL=10",
-        "[INFO] SEG0 start=22.60 end=23.40 text_head='作'",
-        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=22.60s",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=22.60 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=7.49s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.02 max=4.17",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=6.68s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "008",
@@ -139,16 +136,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T05:18:37+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 7,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=361 SECTIONS_TOTAL=17",
-        "[INFO] SEG0 start=20.66 end=21.30 text_head='作'",
-        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=20.66s",
-        "[INFO] SECTIONS_TIMED=16 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=20.66 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=11.63s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=1.84 avg=3.93 max=11.84",
+        "[INFO] CUES_BUILT=16 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=10.64s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "009",
@@ -158,15 +154,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T05:13:32+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=231 SECTIONS_TOTAL=10",
-        "[INFO] SEG0 start=1.32 end=1.68 text_head='方'",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=1.32 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=5.31s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=1.20 avg=4.63 max=8.25",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=5.51s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "010",
@@ -176,15 +172,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T05:03:44+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=322 SECTIONS_TOTAL=10",
-        "[INFO] SEG0 start=1.16 end=1.46 text_head='さ'",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=1.16 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=8.15s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.22 max=5.95",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=10.66s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "011",
@@ -194,16 +190,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T04:58:27+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 7,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=189 SECTIONS_TOTAL=10",
-        "[INFO] SEG0 start=12.28 end=13.28 text_head='静'",
-        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=12.28s",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=12.28 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=8.55s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.00 max=4.00",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=11.13s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "012",
@@ -213,16 +208,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T04:53:31+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 7,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=279 SECTIONS_TOTAL=10",
-        "[INFO] SEG0 start=10.84 end=11.74 text_head='静'",
-        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=10.84s",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=10.84 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=6.11s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.63 max=8.92",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=6.07s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "013",
@@ -232,16 +226,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T04:43:25+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 7,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=258 SECTIONS_TOTAL=17",
-        "[INFO] SEG0 start=12.50 end=13.62 text_head='いつ'",
-        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=12.50s",
-        "[INFO] SECTIONS_TIMED=16 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=12.50 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=7.77s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=10.61 max=11.05",
+        "[INFO] CUES_BUILT=16 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=8.21s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "014",
@@ -251,15 +244,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T04:38:21+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=257 SECTIONS_TOTAL=18",
-        "[INFO] SEG0 start=3.72 end=4.36 text_head='乾'",
-        "[INFO] SECTIONS_TIMED=17 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=3.72 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=5.54s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=6.20 max=8.39",
+        "[INFO] CUES_BUILT=17 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=6.12s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "015",
@@ -269,16 +262,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T04:33:40+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 7,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=332 SECTIONS_TOTAL=10",
-        "[INFO] SEG0 start=11.90 end=12.98 text_head='交'",
-        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=11.90s",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=11.90 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=10.79s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.34 max=7.06",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=12.72s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "016",
@@ -288,16 +280,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T04:28:23+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 7,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=172 SECTIONS_TOTAL=10",
-        "[INFO] SEG0 start=12.62 end=13.80 text_head='目'",
-        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=12.62s",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=12.62 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=6.70s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.00 max=4.00",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=5.60s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "017",
@@ -307,16 +298,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T04:23:41+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 7,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=320 SECTIONS_TOTAL=12",
-        "[INFO] SEG0 start=7.10 end=8.02 text_head='🐯'",
-        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=7.10s",
-        "[INFO] SECTIONS_TIMED=11 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=7.10 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=11.78s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.18 max=5.44",
+        "[INFO] CUES_BUILT=11 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=10.84s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "018",
@@ -326,15 +316,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T04:18:35+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=329 SECTIONS_TOTAL=17",
-        "[INFO] SEG0 start=4.88 end=5.84 text_head='目'",
-        "[INFO] SECTIONS_TIMED=16 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=4.88 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=9.87s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=3.11 avg=4.05 max=5.69",
+        "[INFO] CUES_BUILT=16 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=9.69s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "019",
@@ -344,15 +334,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T04:13:34+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=464 SECTIONS_TOTAL=29",
-        "[INFO] SEG0 start=0.76 end=1.10 text_head='の'",
-        "[INFO] SECTIONS_TIMED=28 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=0.76 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=10.03s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=5.06 max=7.95",
+        "[INFO] CUES_BUILT=28 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=10.79s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "020",
@@ -362,16 +352,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T04:08:21+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 7,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=222 SECTIONS_TOTAL=10",
-        "[INFO] SEG0 start=6.60 end=7.36 text_head='🐯'",
-        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=6.60s",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=6.60 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=7.26s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=0.84 avg=4.11 max=6.06",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=7.64s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "021",
@@ -381,15 +370,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T04:03:19+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=151 SECTIONS_TOTAL=9",
-        "[INFO] SEG0 start=0.94 end=1.70 text_head='忘'",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=0",
-        "[INFO] FIRST_TIMED start=0.94 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=5.37s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.84 max=11.08",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=4.37s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "022",
@@ -399,15 +388,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T03:58:27+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=159 SECTIONS_TOTAL=9",
-        "[INFO] SEG0 start=0.84 end=1.96 text_head='しい'",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=0",
-        "[INFO] FIRST_TIMED start=0.84 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=5.91s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.00 max=4.00",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=7.88s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "023",
@@ -417,16 +406,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T03:53:32+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 7,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=210 SECTIONS_TOTAL=9",
-        "[INFO] SEG0 start=7.44 end=8.44 text_head='小'",
-        "[INFO] lead-shift applied: seg0.start was 7.44s → shifted by -7.44s",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=0",
-        "[INFO] FIRST_TIMED start=0.00 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=9.32s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.04 max=4.33",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=6.82s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "024",
@@ -436,15 +424,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T03:48:24+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=262 SECTIONS_TOTAL=9",
-        "[INFO] SEG0 start=1.00 end=1.98 text_head='目'",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=0",
-        "[INFO] FIRST_TIMED start=1.00 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=7.89s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.06 max=4.50",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=6.21s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "025",
@@ -454,15 +442,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T03:43:20+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=319 SECTIONS_TOTAL=11",
-        "[INFO] SEG0 start=0.80 end=1.52 text_head='ぁ'",
-        "[INFO] SECTIONS_TIMED=11 SECTIONS_EMPTY=0",
-        "[INFO] FIRST_TIMED start=0.80 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=8.84s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=1.72 avg=3.79 max=4.00",
+        "[INFO] CUES_BUILT=11 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=8.32s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "026",
@@ -472,15 +460,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T03:38:17+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=441 SECTIONS_TOTAL=29",
-        "[INFO] SEG0 start=0.90 end=1.22 text_head='も'",
-        "[INFO] SECTIONS_TIMED=29 SECTIONS_EMPTY=0",
-        "[INFO] FIRST_TIMED start=0.90 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=10.77s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=2.34 avg=3.98 max=8.41",
+        "[INFO] CUES_BUILT=29 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=10.15s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "027",
@@ -490,15 +478,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-08T03:33:48+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=430 SECTIONS_TOTAL=23",
-        "[INFO] SEG0 start=0.86 end=1.46 text_head='今日は'",
-        "[INFO] SECTIONS_TIMED=23 SECTIONS_EMPTY=0",
-        "[INFO] FIRST_TIMED start=0.86 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=11.94s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=7.10 max=7.27",
+        "[INFO] CUES_BUILT=23 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=9.90s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "028",
@@ -508,15 +496,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T06:03:38+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=470 SECTIONS_TOTAL=31",
-        "[INFO] SEG0 start=0.76 end=1.10 text_head='や'",
-        "[INFO] SECTIONS_TIMED=30 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=0.76 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=9.26s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=2.03 avg=6.11 max=7.76",
+        "[INFO] CUES_BUILT=30 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=11.55s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "029",
@@ -526,15 +514,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T05:58:29+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=264 SECTIONS_TOTAL=10",
-        "[INFO] SEG0 start=0.96 end=1.44 text_head='の'",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=0.96 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=7.35s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.18 max=5.61",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=9.92s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "030",
@@ -544,15 +532,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T05:53:32+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=287 SECTIONS_TOTAL=10",
-        "[INFO] SEG0 start=0.90 end=1.24 text_head='日'",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=0.90 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=8.37s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.30 max=6.71",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=6.08s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "031",
@@ -562,15 +550,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T05:48:39+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=253 SECTIONS_TOTAL=13",
-        "[INFO] SEG0 start=1.32 end=1.80 text_head='しい'",
-        "[INFO] SECTIONS_TIMED=12 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=1.32 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=5.84s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=7.41 max=11.44",
+        "[INFO] CUES_BUILT=12 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=7.73s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "032",
@@ -580,16 +568,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T05:43:37+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 7,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=341 SECTIONS_TOTAL=18",
-        "[INFO] SEG0 start=22.14 end=22.94 text_head='靴'",
-        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=22.14s",
-        "[INFO] SECTIONS_TIMED=17 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=22.14 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=10.17s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=8.81 max=10.98",
+        "[INFO] CUES_BUILT=17 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=9.62s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "033",
@@ -599,15 +586,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T05:38:37+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=301 SECTIONS_TOTAL=19",
-        "[INFO] SEG0 start=1.18 end=1.60 text_head='つ'",
-        "[INFO] SECTIONS_TIMED=18 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=1.18 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=8.19s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=2.65 avg=7.58 max=11.82",
+        "[INFO] CUES_BUILT=18 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=10.53s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "034",
@@ -617,15 +604,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T05:33:43+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=300 SECTIONS_TOTAL=12",
-        "[INFO] SEG0 start=0.76 end=1.52 text_head='毎'",
-        "[INFO] SECTIONS_TIMED=11 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=0.76 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=7.53s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.24 max=5.27",
+        "[INFO] CUES_BUILT=11 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=9.62s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "035",
@@ -635,15 +622,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T05:28:40+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=465 SECTIONS_TOTAL=27",
-        "[INFO] SEG0 start=0.74 end=1.04 text_head='の'",
-        "[INFO] SECTIONS_TIMED=26 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=0.74 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=10.73s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=5.97 max=8.20",
+        "[INFO] CUES_BUILT=26 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=10.63s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "036",
@@ -653,15 +640,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T05:23:47+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=417 SECTIONS_TOTAL=24",
-        "[INFO] SEG0 start=0.64 end=0.94 text_head='の'",
-        "[INFO] SECTIONS_TIMED=23 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=0.64 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=12.32s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=1.09 avg=6.51 max=11.03",
+        "[INFO] CUES_BUILT=23 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=9.99s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "037",
@@ -671,16 +658,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T05:18:36+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 7,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=278 SECTIONS_TOTAL=12",
-        "[INFO] SEG0 start=22.60 end=23.72 text_head='ヴ'",
-        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=22.60s",
-        "[INFO] SECTIONS_TIMED=11 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=22.60 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=10.81s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=5.32 max=11.62",
+        "[INFO] CUES_BUILT=11 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=9.82s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "038",
@@ -690,15 +676,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T05:13:33+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=299 SECTIONS_TOTAL=10",
-        "[INFO] SEG0 start=1.06 end=1.40 text_head='ラ'",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=1.06 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=14.88s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.49 max=8.13",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=12.28s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "039",
@@ -708,16 +694,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T05:08:37+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 7,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=265 SECTIONS_TOTAL=10",
-        "[INFO] SEG0 start=12.62 end=13.82 text_head='ゆ'",
-        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=12.62s",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=12.62 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=6.90s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.16 max=5.44",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=7.15s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "040",
@@ -727,16 +712,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T05:03:44+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 7,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=327 SECTIONS_TOTAL=10",
-        "[INFO] SEG0 start=15.60 end=16.62 text_head='ほ'",
-        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=15.60s",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=15.60 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=7.88s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=2.78 avg=4.32 max=6.38",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=7.37s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "041",
@@ -746,15 +730,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T04:58:39+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=285 SECTIONS_TOTAL=16",
-        "[INFO] SEG0 start=0.58 end=0.76 text_head='覚'",
-        "[INFO] SECTIONS_TIMED=15 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=0.58 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=6.19s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=8.79 max=9.14",
+        "[INFO] CUES_BUILT=15 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=10.03s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "042",
@@ -764,15 +748,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T04:53:38+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=361 SECTIONS_TOTAL=18",
-        "[INFO] SEG0 start=0.96 end=1.32 text_head='かな'",
-        "[INFO] SECTIONS_TIMED=17 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=0.96 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=8.27s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=1.84 avg=8.03 max=10.98",
+        "[INFO] CUES_BUILT=17 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=8.96s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "043",
@@ -782,15 +766,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T04:48:36+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=200 SECTIONS_TOTAL=10",
-        "[INFO] SEG0 start=1.14 end=1.72 text_head='人'",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=1.14 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=7.21s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.00 max=4.00",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=8.20s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "044",
@@ -800,15 +784,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T04:43:25+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=287 SECTIONS_TOTAL=19",
-        "[INFO] SEG0 start=0.92 end=1.02 text_head='ル'",
-        "[INFO] SECTIONS_TIMED=18 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=0.92 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=8.27s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=1.65 avg=7.08 max=9.19",
+        "[INFO] CUES_BUILT=18 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=9.48s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "045",
@@ -818,15 +802,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T04:38:30+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=286 SECTIONS_TOTAL=19",
-        "[INFO] SEG0 start=4.04 end=4.96 text_head='🐯'",
-        "[INFO] SECTIONS_TIMED=18 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=4.04 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=10.19s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=0.48 avg=3.95 max=9.90",
+        "[INFO] CUES_BUILT=18 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=7.90s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "046",
@@ -836,16 +820,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T04:33:40+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 7,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=294 SECTIONS_TOTAL=18",
-        "[INFO] SEG0 start=22.68 end=23.90 text_head='朝'",
-        "[INFO] lead-shift skipped: first tag looks like intro ('intro - instrumental') seg0=22.68s",
-        "[INFO] SECTIONS_TIMED=17 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=22.68 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=8.10s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=1.45 avg=7.99 max=11.35",
+        "[INFO] CUES_BUILT=17 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=7.60s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "047",
@@ -855,15 +838,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T04:28:35+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=300 SECTIONS_TOTAL=10",
-        "[INFO] SEG0 start=0.86 end=6.82 text_head='La'",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=0.86 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=14.49s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.05 max=4.42",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=14.31s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "048",
@@ -873,15 +856,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T04:23:29+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=209 SECTIONS_TOTAL=10",
-        "[INFO] SEG0 start=0.96 end=1.36 text_head='もの'",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=1",
-        "[INFO] FIRST_TIMED start=0.96 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=5.71s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.00 max=4.00",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=6.18s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "049",
@@ -891,16 +874,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T04:03:22+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 7,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=216 SECTIONS_TOTAL=9",
-        "[INFO] SEG0 start=12.84 end=13.86 text_head='小'",
-        "[INFO] lead-shift applied: seg0.start was 12.84s → shifted by -12.84s",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=0",
-        "[INFO] FIRST_TIMED start=0.00 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=5.11s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.00 max=4.00",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=7.38s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "050",
@@ -910,15 +892,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T03:58:55+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=433 SECTIONS_TOTAL=9",
-        "[INFO] SEG0 start=0.84 end=0.94 text_head='後'",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=0",
-        "[INFO] FIRST_TIMED start=0.84 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=8.60s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=5.12 max=6.12",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=10.97s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "051",
@@ -928,15 +910,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T03:53:43+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=271 SECTIONS_TOTAL=9",
-        "[INFO] SEG0 start=1.00 end=1.10 text_head='ル'",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=0",
-        "[INFO] FIRST_TIMED start=1.00 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=10.01s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.10 max=4.93",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=7.91s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "052",
@@ -946,15 +928,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T03:48:43+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=206 SECTIONS_TOTAL=9",
-        "[INFO] SEG0 start=0.96 end=1.44 text_head='しい'",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=0",
-        "[INFO] FIRST_TIMED start=0.96 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=307.86s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=5.39 max=10.28",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=5.17s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "053",
@@ -964,15 +946,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T03:43:35+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=405 SECTIONS_TOTAL=28",
-        "[INFO] SEG0 start=0.86 end=1.20 text_head='の'",
-        "[INFO] SECTIONS_TIMED=28 SECTIONS_EMPTY=0",
-        "[INFO] FIRST_TIMED start=0.86 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=6.77s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=0.67 avg=5.09 max=9.65",
+        "[INFO] CUES_BUILT=28 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=8.49s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "054",
@@ -982,15 +964,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T03:38:30+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 6,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=366 SECTIONS_TOTAL=28",
-        "[INFO] SEG0 start=0.94 end=1.44 text_head='しい'",
-        "[INFO] SECTIONS_TIMED=28 SECTIONS_EMPTY=0",
-        "[INFO] FIRST_TIMED start=0.94 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=8.50s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=0.24 avg=4.43 max=8.38",
+        "[INFO] CUES_BUILT=28 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=7.54s"
+      ],
+      "timing_clamped": false
     },
     {
       "id": "055",
@@ -1000,16 +982,15 @@
       "duration": 180.0,
       "created_at": "\"2026-02-07T03:33:48+09:00\"",
       "ko_filled": 0,
-      "align_info_count": 7,
+      "align_info_count": 5,
       "align_info_head": [
-        "[INFO] SEGMENTS=246 SECTIONS_TOTAL=9",
-        "[INFO] SEG0 start=10.62 end=11.66 text_head='眠'",
-        "[INFO] lead-shift applied: seg0.start was 10.62s → shifted by -10.62s",
-        "[INFO] SECTIONS_TIMED=9 SECTIONS_EMPTY=0",
-        "[INFO] FIRST_TIMED start=0.00 tag='Verse 1'",
-        "[INFO] LEAD_APPLIED=1.20s",
-        "[INFO] CORE_OK elapsed=8.33s"
-      ]
+        "[INFO] ALIGN_COLLISION_GUARD min_start_step=0.20s max_retry=8",
+        "[INFO] WORD_ALIGN_HOLD lead_start=0.70s sec_per_char=0.085 min_show=4.00 hold_gap=12.00 pad_end=0.12",
+        "[INFO] DUR_STATS_NONEMPTY min=4.00 avg=4.00 max=4.00",
+        "[INFO] CUES_BUILT=9 (from lines exact, placeholders skipped)",
+        "[INFO] CORE_OK elapsed=8.74s"
+      ],
+      "timing_clamped": false
     }
   ]
 }
