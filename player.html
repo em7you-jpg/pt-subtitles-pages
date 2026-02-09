@@ -8,11 +8,17 @@ GOAL (대표님 요구사항 반영):
 - 표시 텍스트는 sections_payload의 원문 JA/KO를 그대로 사용한다.
 - "너무 빨리 사라짐", "두 줄이 한 번에 나오고 이후 엇나감", "초반에 몰림"을 구조적으로 줄인다.
 
-핵심 변경:
-- segments → resample → n개 버킷 방식(드리프트 원인)을 기본 경로에서 배제.
-- word-timestamp 기반으로 섹션 start를 직접 매칭.
-- end는 다음 start + read-time 모델 + 짧은 gap 병합(깜빡임 방지)로 결정.
-- cues는 player가 우선 사용할 수 있으므로, lines에서 안정적으로 생성(ja/ko 필드 포함).
+⚠️ 이번 이슈의 확정 원인(대표님이 이미 jq로 증거 제공):
+- lines는 정상인데, cues가 "다음 라인 start(예: Intro placeholder 0.86)" 기준으로 잘려서
+  cues[0].end=0.81 같은 '초반 즉시 소멸'이 발생.
+- 즉, cues 생성에서 "빈 가사 placeholder(ja/ko 비어있음)"가 싱크를 망친다.
+
+FIX (반드시 반영):
+1) cues는 '재계산(next_start 컷)'하지 않고, 이미 계산된 lines의 (start,end)를 그대로 복사해서 만든다.
+2) cues 생성에서 ja/ko가 둘 다 빈 placeholder 라인은 제외한다.
+3) player 호환을 위해 cues에 start/end 뿐 아니라 t0/t1도 함께 넣는다.
+
+이 파일은 대표님이 붙여주신 "현재 최신 파일"을 기준으로 위 FIX를 정확히 반영한 통파일입니다.
 """
 
 import argparse
@@ -337,6 +343,10 @@ def build_end_and_merge_lines(
     - Apply small global lead on START only (avoid ending too early).
     - Compute END using next START and read-time.
     - If next start is too soon (causes 0.x sec cues), merge adjacent lines to avoid flicker.
+
+    IMPORTANT:
+    - Empty placeholders (ja/ko empty) are kept in lines output (for HUD/ordering),
+      BUT they must NOT influence cues shortening. (That fix is in build_cues_from_lines)
     """
     # Apply lead to starts (non-empty lyrics only)
     for l in lines:
@@ -380,7 +390,6 @@ def build_end_and_merge_lines(
         if next_st is not None:
             gap = next_st - st
             if gap < (min_show_sec + 0.25):
-                # merge with next non-empty if possible
                 l2 = dict(tmp[i + 1][1])
                 if _has_text_line(l) and _has_text_line(l2):
                     ja2 = (l2.get("ja") or "").strip()
@@ -432,18 +441,18 @@ def build_end_and_merge_lines(
         f"min_show={min_show_sec:.2f} full_gap={full_gap_sec:.2f} pad_end={pad_end:.2f}"
     )
 
-    # Debug: duration stats
+    # Debug: duration stats (non-empty only)
     try:
         durs = []
         for l in merged_out:
-            try:
-                d = float(l.get("end") or 0.0) - float(l.get("start") or 0.0)
-                if d > 0:
-                    durs.append(d)
-            except Exception:
-                pass
+            ja_txt = (l.get("ja") or "").strip()
+            if not ja_txt:
+                continue
+            d = float(l.get("end") or 0.0) - float(l.get("start") or 0.0)
+            if d > 0:
+                durs.append(d)
         if durs:
-            issues.append(f"[INFO] DUR_STATS min={min(durs):.2f} avg={(sum(durs)/len(durs)):.2f} max={max(durs):.2f}")
+            issues.append(f"[INFO] DUR_STATS_NONEMPTY min={min(durs):.2f} avg={(sum(durs)/len(durs)):.2f} max={max(durs):.2f}")
     except Exception:
         pass
 
@@ -452,40 +461,63 @@ def build_end_and_merge_lines(
 
 def build_cues_from_lines(lines: List[dict], issues: List[str]) -> List[dict]:
     """
-    Player가 cues를 우선 사용할 수 있으므로, lines로부터 안정적인 cues 생성.
-    - 절대 7.0 / 3.6 같은 하드캡을 두지 않는다.
-    - ja/ko 필드를 반드시 채운다.
+    Player가 cues를 우선 사용할 수 있으므로, lines로부터 "정확한" cues 생성.
+
+    ✅ FIX V3 (대표님 제공 증거 기반):
+    - cues의 end를 'next_start'로 다시 계산하지 않는다.
+      (그게 Intro placeholder start=0.86 때문에 cues[0].end=0.81로 잘리는 원인이었음)
+    - 대신 lines에서 이미 계산된 (start,end)를 그대로 복사한다.
+    - ja/ko 둘 다 빈 placeholder 라인은 cues에서 제외한다.
+    - player 호환을 위해 start/end 뿐 아니라 t0/t1도 동시에 제공한다.
     """
     cues: List[dict] = []
+
     for l in lines:
-        try:
-            st = float(l.get("start") or 0.0)
-            ed = float(l.get("end") or 0.0)
-        except Exception:
-            continue
-        if ed <= st:
+        if not isinstance(l, dict):
             continue
 
         ja = (l.get("ja") or "").strip()
         ko = (l.get("ko") or "").strip()
 
-        if not (ja or ko or (l.get("text") or "").strip()):
+        # ✅ placeholder 제거: 빈 Intro - instrumental 등
+        if not (ja or ko):
             continue
+
+        try:
+            st = float(l.get("start") or 0.0)
+            ed = float(l.get("end") or 0.0)
+        except Exception:
+            continue
+
+        # 방어: 혹시 end가 없거나 start==end면 최소 표시시간 보장
+        if ed <= st:
+            ed = st + 2.2
 
         if ja and ko:
             txt = ja + "\n" + ko
         else:
-            txt = ja or ko or (l.get("text") or "").strip()
+            txt = ja or ko
 
         cues.append({
+            # ✅ dual schema
+            "t0": round(st, 2),
+            "t1": round(ed, 2),
             "start": round(st, 2),
             "end": round(ed, 2),
+
             "text": txt,
             "ja": ja,
             "ko": ko,
         })
 
-    issues.append(f"[INFO] CUES_BUILT={len(cues)}")
+    issues.append(f"[INFO] CUES_BUILT={len(cues)} (from lines exact, placeholders skipped)")
+
+    # debug head
+    try:
+        dump_debug("cues_head", {"cues_len": len(cues), "head": cues[:10]})
+    except Exception:
+        pass
+
     return cues
 
 
@@ -535,7 +567,7 @@ def main():
         ],
         "cues": cues,
         "meta": {
-            "engine": "word_align_v3",
+            "engine": "word_align_v3_cues_exact",
             "generated_at": datetime.utcnow().isoformat() + "Z",
         }
     }
@@ -604,7 +636,7 @@ def generate_track_json(audio_path: str, sections_payload: dict, language: str =
         ],
         "cues": cues,
         "meta": {
-            "engine": "word_align_v3",
+            "engine": "word_align_v3_cues_exact",
             "generated_at": datetime.utcnow().isoformat() + "Z",
         }
     }
