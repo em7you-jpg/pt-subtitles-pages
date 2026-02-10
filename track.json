@@ -1,138 +1,84 @@
 {
-  "title": "Every Step Brighter",
+  "title": "Sunlight Across My Table",
   "lines": [
     {
-      "start": 0.21,
-      "end": 2.41,
-      "ja": "新しい朝",
+      "start": 7.63,
+      "end": 9.87,
+      "ja": "キッチンのタイルに朝の光がすべり込む",
       "ko_pron": "",
       "ko": "",
       "tag": "Verse 1",
       "_match": "asr_phrase_map"
     },
     {
-      "start": 43.16,
-      "end": 43.98,
-      "ja": "がはじま",
+      "start": 10.07,
+      "end": 11.83,
+      "ja": "静かな湯気が踊るパンの香りが広がる",
       "ko_pron": "",
       "ko": "",
       "tag": "Verse 1",
       "_match": "asr_phrase_map"
     },
     {
-      "start": 44.02,
-      "end": 46.24,
-      "ja": "る度に思",
+      "start": 13.55,
+      "end": 14.31,
+      "ja": "冷たい床に足を置きな",
       "ko_pron": "",
       "ko": "",
-      "tag": "Verse 1",
+      "tag": "Pre-Chorus",
       "_match": "asr_phrase_map"
     },
     {
-      "start": 46.26,
-      "end": 47.74,
-      "ja": "うんだ",
+      "start": 42.58,
+      "end": 43.5,
+      "ja": "がら眠気残し笑っている",
       "ko_pron": "",
       "ko": "",
-      "tag": "Verse 1",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 55.57,
-      "end": 57.35,
-      "ja": "昨日より",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Verse 1",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 93.94,
-      "end": 95.72,
-      "ja": "少し強く",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Verse 1",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 95.74,
-      "end": 97.58,
-      "ja": "なれるかな",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Verse 1",
+      "tag": "Pre-Chorus",
       "_match": "asr_phrase_map"
     }
   ],
   "cues": [
     {
-      "t0": 0.21,
-      "t1": 2.41,
-      "start": 0.21,
-      "end": 2.41,
-      "text": "新しい朝",
-      "ja": "新しい朝",
+      "t0": 7.63,
+      "t1": 9.87,
+      "start": 7.63,
+      "end": 9.87,
+      "text": "キッチンのタイルに朝の光がすべり込む",
+      "ja": "キッチンのタイルに朝の光がすべり込む",
       "ko": ""
     },
     {
-      "t0": 43.16,
-      "t1": 43.98,
-      "start": 43.16,
-      "end": 43.98,
-      "text": "がはじま",
-      "ja": "がはじま",
+      "t0": 10.07,
+      "t1": 11.83,
+      "start": 10.07,
+      "end": 11.83,
+      "text": "静かな湯気が踊るパンの香りが広がる",
+      "ja": "静かな湯気が踊るパンの香りが広がる",
       "ko": ""
     },
     {
-      "t0": 44.02,
-      "t1": 46.24,
-      "start": 44.02,
-      "end": 46.24,
-      "text": "る度に思",
-      "ja": "る度に思",
+      "t0": 13.55,
+      "t1": 14.31,
+      "start": 13.55,
+      "end": 14.31,
+      "text": "冷たい床に足を置きな",
+      "ja": "冷たい床に足を置きな",
       "ko": ""
     },
     {
-      "t0": 46.26,
-      "t1": 47.74,
-      "start": 46.26,
-      "end": 47.74,
-      "text": "うんだ",
-      "ja": "うんだ",
-      "ko": ""
-    },
-    {
-      "t0": 55.57,
-      "t1": 57.35,
-      "start": 55.57,
-      "end": 57.35,
-      "text": "昨日より",
-      "ja": "昨日より",
-      "ko": ""
-    },
-    {
-      "t0": 93.94,
-      "t1": 95.72,
-      "start": 93.94,
-      "end": 95.72,
-      "text": "少し強く",
-      "ja": "少し強く",
-      "ko": ""
-    },
-    {
-      "t0": 95.74,
-      "t1": 97.58,
-      "start": 95.74,
-      "end": 97.58,
-      "text": "なれるかな",
-      "ja": "なれるかな",
+      "t0": 42.58,
+      "t1": 43.5,
+      "start": 42.58,
+      "end": 43.5,
+      "text": "がら眠気残し笑っている",
+      "ja": "がら眠気残し笑っている",
       "ko": ""
     }
   ],
   "meta": {
     "engine": "word_align_tight_v6_asr_phrase_map",
-    "generated_at": "2026-02-10T12:34:35.689335Z",
+    "generated_at": "2026-02-10T12:35:46.654947Z",
     "leading_silence_sec": 0.0,
     "whisper_backend": "local_faster_whisper",
     "whisper_model": "small",
@@ -147,12 +93,12 @@
     "asr_min_phrase_sec": 0.35
   },
   "issues": [
-    "[INFO] WORDS=32 SPAN=97.19s CONCAT_LEN=36",
-    "[INFO] FIND_OK=0/9",
+    "[INFO] WORDS=14 SPAN=35.69s CONCAT_LEN=14",
+    "[INFO] FIND_OK=0/11",
     "[WARN] FIND_MATCH_RATE=0. Switching to ASR phrase mapping (timing from ASR, text from sections).",
-    "[INFO] ASR_PHRASES=7 gap=0.20 max=2.20s min=0.35s",
-    "[INFO] PHRASE_MAP lines=7 from phrases=7 sections=9",
+    "[INFO] ASR_PHRASES=4 gap=0.20 max=2.20s min=0.35s",
+    "[INFO] PHRASE_MAP lines=4 from phrases=4 sections=11",
     "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
-    "[INFO] CUES_BUILT=7 (min=0.25s, split_max=6.0s)"
+    "[INFO] CUES_BUILT=4 (min=0.25s, split_max=6.0s)"
   ]
 }
