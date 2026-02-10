@@ -1,535 +1,139 @@
 {
-  "title": "Yellow Cardigan Days",
+  "title": "Homebound in Soft Electric",
   "lines": [
     {
-      "start": 1.07,
-      "end": 3.11,
-      "ja": "ゆるや",
+      "start": 0.14,
+      "end": 2.28,
+      "ja": "柔らかな街灯がアスファルトに伸びてゆく",
       "ko_pron": "",
       "ko": "",
       "tag": "Verse 1",
       "_match": "asr_phrase_map"
     },
     {
-      "start": 3.13,
-      "end": 4.91,
-      "ja": "かな坂道",
+      "start": 2.3,
+      "end": 4.42,
+      "ja": "家路を急ぐ影と並んで歩く",
       "ko_pron": "",
       "ko": "",
       "tag": "Verse 1",
       "_match": "asr_phrase_map"
     },
     {
-      "start": 6.17,
-      "end": 8.17,
-      "ja": "を下りな",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Verse 1",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 8.19,
-      "end": 10.23,
-      "ja": "がら黄色",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Verse 1",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 10.25,
-      "end": 11.43,
-      "ja": "いカーデ",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Verse 1",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 13.49,
-      "end": 15.41,
-      "ja": "ィガンを",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Verse 1",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 15.43,
-      "end": 17.31,
-      "ja": "羽織って",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Verse 1",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 17.33,
-      "end": 19.05,
-      "ja": "ふいに",
+      "start": 4.44,
+      "end": 6.36,
+      "ja": "ポケットの中に昨",
       "ko_pron": "",
       "ko": "",
       "tag": "Pre-Chorus",
       "_match": "asr_phrase_map"
     },
     {
-      "start": 19.07,
-      "end": 21.17,
-      "ja": "思い出",
+      "start": 6.38,
+      "end": 7.78,
+      "ja": "日のメモだけひとつ",
       "ko_pron": "",
       "ko": "",
       "tag": "Pre-Chorus",
       "_match": "asr_phrase_map"
     },
     {
-      "start": 28.0,
-      "end": 29.76,
-      "ja": "した約",
+      "start": 7.8,
+      "end": 9.8,
+      "ja": "このまま進めば何",
       "ko_pron": "",
       "ko": "",
-      "tag": "Pre-Chorus",
+      "tag": "Line 4",
       "_match": "asr_phrase_map"
     },
     {
-      "start": 29.78,
-      "end": 30.72,
-      "ja": "束のメ",
+      "start": 9.82,
+      "end": 10.78,
+      "ja": "かが変わる気がして",
       "ko_pron": "",
       "ko": "",
-      "tag": "Pre-Chorus",
+      "tag": "Line 4",
       "_match": "asr_phrase_map"
     },
     {
-      "start": 31.02,
-      "end": 33.18,
-      "ja": "モ　ポ",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Pre-Chorus",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 33.2,
-      "end": 34.74,
-      "ja": "ストの",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Pre-Chorus",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 34.76,
-      "end": 36.5,
-      "ja": "隣に置",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Pre-Chorus",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 37.7,
-      "end": 38.74,
-      "ja": "いてきた",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Pre-Chorus",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 42.69,
-      "end": 44.37,
-      "ja": "歩幅を",
+      "start": 13.48,
+      "end": 14.74,
+      "ja": "静かな高架下　自転車の音が響く　足元を照らす淡いオレンジ色の灯り",
       "ko_pron": "",
       "ko": "",
       "tag": "Chorus",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 44.39,
-      "end": 46.39,
-      "ja": "そろえ",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Chorus",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 46.41,
-      "end": 47.93,
-      "ja": "て小さ",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Chorus",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 50.98,
-      "end": 52.9,
-      "ja": "な石を飛",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Chorus",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 52.92,
-      "end": 54.0,
-      "ja": "び越え",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Chorus",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 56.0,
-      "end": 57.94,
-      "ja": "ていく",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Chorus",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 57.96,
-      "end": 59.84,
-      "ja": "午後の光",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Chorus",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 59.86,
-      "end": 60.64,
-      "ja": "まっす",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Verse 2",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 64.77,
-      "end": 65.89,
-      "ja": "ぐじゃな",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Verse 2",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 80.56,
-      "end": 82.18,
-      "ja": "くてもい",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Verse 2",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 110.09,
-      "end": 112.07,
-      "ja": "いから",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Verse 2",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 112.09,
-      "end": 112.75,
-      "ja": "新しい靴",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Verse 2",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 114.81,
-      "end": 115.75,
-      "ja": "下を履き",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Verse 2",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 117.64,
-      "end": 118.82,
-      "ja": "替える朝",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Verse 2",
       "_match": "asr_phrase_map"
     }
   ],
   "cues": [
     {
-      "t0": 1.07,
-      "t1": 3.11,
-      "start": 1.07,
-      "end": 3.11,
-      "text": "ゆるや",
-      "ja": "ゆるや",
+      "t0": 0.14,
+      "t1": 2.28,
+      "start": 0.14,
+      "end": 2.28,
+      "text": "柔らかな街灯がアスファルトに伸びてゆく",
+      "ja": "柔らかな街灯がアスファルトに伸びてゆく",
       "ko": ""
     },
     {
-      "t0": 3.13,
-      "t1": 4.91,
-      "start": 3.13,
-      "end": 4.91,
-      "text": "かな坂道",
-      "ja": "かな坂道",
+      "t0": 2.3,
+      "t1": 4.42,
+      "start": 2.3,
+      "end": 4.42,
+      "text": "家路を急ぐ影と並んで歩く",
+      "ja": "家路を急ぐ影と並んで歩く",
       "ko": ""
     },
     {
-      "t0": 6.17,
-      "t1": 8.17,
-      "start": 6.17,
-      "end": 8.17,
-      "text": "を下りな",
-      "ja": "を下りな",
+      "t0": 4.44,
+      "t1": 6.36,
+      "start": 4.44,
+      "end": 6.36,
+      "text": "ポケットの中に昨",
+      "ja": "ポケットの中に昨",
       "ko": ""
     },
     {
-      "t0": 8.19,
-      "t1": 10.23,
-      "start": 8.19,
-      "end": 10.23,
-      "text": "がら黄色",
-      "ja": "がら黄色",
+      "t0": 6.38,
+      "t1": 7.78,
+      "start": 6.38,
+      "end": 7.78,
+      "text": "日のメモだけひとつ",
+      "ja": "日のメモだけひとつ",
       "ko": ""
     },
     {
-      "t0": 10.25,
-      "t1": 11.43,
-      "start": 10.25,
-      "end": 11.43,
-      "text": "いカーデ",
-      "ja": "いカーデ",
+      "t0": 7.8,
+      "t1": 9.8,
+      "start": 7.8,
+      "end": 9.8,
+      "text": "このまま進めば何",
+      "ja": "このまま進めば何",
       "ko": ""
     },
     {
-      "t0": 13.49,
-      "t1": 15.41,
-      "start": 13.49,
-      "end": 15.41,
-      "text": "ィガンを",
-      "ja": "ィガンを",
+      "t0": 9.82,
+      "t1": 10.78,
+      "start": 9.82,
+      "end": 10.78,
+      "text": "かが変わる気がして",
+      "ja": "かが変わる気がして",
       "ko": ""
     },
     {
-      "t0": 15.43,
-      "t1": 17.31,
-      "start": 15.43,
-      "end": 17.31,
-      "text": "羽織って",
-      "ja": "羽織って",
-      "ko": ""
-    },
-    {
-      "t0": 17.33,
-      "t1": 19.05,
-      "start": 17.33,
-      "end": 19.05,
-      "text": "ふいに",
-      "ja": "ふいに",
-      "ko": ""
-    },
-    {
-      "t0": 19.07,
-      "t1": 21.17,
-      "start": 19.07,
-      "end": 21.17,
-      "text": "思い出",
-      "ja": "思い出",
-      "ko": ""
-    },
-    {
-      "t0": 28.0,
-      "t1": 29.76,
-      "start": 28.0,
-      "end": 29.76,
-      "text": "した約",
-      "ja": "した約",
-      "ko": ""
-    },
-    {
-      "t0": 29.78,
-      "t1": 30.72,
-      "start": 29.78,
-      "end": 30.72,
-      "text": "束のメ",
-      "ja": "束のメ",
-      "ko": ""
-    },
-    {
-      "t0": 31.02,
-      "t1": 33.18,
-      "start": 31.02,
-      "end": 33.18,
-      "text": "モ　ポ",
-      "ja": "モ　ポ",
-      "ko": ""
-    },
-    {
-      "t0": 33.2,
-      "t1": 34.74,
-      "start": 33.2,
-      "end": 34.74,
-      "text": "ストの",
-      "ja": "ストの",
-      "ko": ""
-    },
-    {
-      "t0": 34.76,
-      "t1": 36.5,
-      "start": 34.76,
-      "end": 36.5,
-      "text": "隣に置",
-      "ja": "隣に置",
-      "ko": ""
-    },
-    {
-      "t0": 37.7,
-      "t1": 38.74,
-      "start": 37.7,
-      "end": 38.74,
-      "text": "いてきた",
-      "ja": "いてきた",
-      "ko": ""
-    },
-    {
-      "t0": 42.69,
-      "t1": 44.37,
-      "start": 42.69,
-      "end": 44.37,
-      "text": "歩幅を",
-      "ja": "歩幅を",
-      "ko": ""
-    },
-    {
-      "t0": 44.39,
-      "t1": 46.39,
-      "start": 44.39,
-      "end": 46.39,
-      "text": "そろえ",
-      "ja": "そろえ",
-      "ko": ""
-    },
-    {
-      "t0": 46.41,
-      "t1": 47.93,
-      "start": 46.41,
-      "end": 47.93,
-      "text": "て小さ",
-      "ja": "て小さ",
-      "ko": ""
-    },
-    {
-      "t0": 50.98,
-      "t1": 52.9,
-      "start": 50.98,
-      "end": 52.9,
-      "text": "な石を飛",
-      "ja": "な石を飛",
-      "ko": ""
-    },
-    {
-      "t0": 52.92,
-      "t1": 54.0,
-      "start": 52.92,
-      "end": 54.0,
-      "text": "び越え",
-      "ja": "び越え",
-      "ko": ""
-    },
-    {
-      "t0": 56.0,
-      "t1": 57.94,
-      "start": 56.0,
-      "end": 57.94,
-      "text": "ていく",
-      "ja": "ていく",
-      "ko": ""
-    },
-    {
-      "t0": 57.96,
-      "t1": 59.84,
-      "start": 57.96,
-      "end": 59.84,
-      "text": "午後の光",
-      "ja": "午後の光",
-      "ko": ""
-    },
-    {
-      "t0": 59.86,
-      "t1": 60.64,
-      "start": 59.86,
-      "end": 60.64,
-      "text": "まっす",
-      "ja": "まっす",
-      "ko": ""
-    },
-    {
-      "t0": 64.77,
-      "t1": 65.89,
-      "start": 64.77,
-      "end": 65.89,
-      "text": "ぐじゃな",
-      "ja": "ぐじゃな",
-      "ko": ""
-    },
-    {
-      "t0": 80.56,
-      "t1": 82.18,
-      "start": 80.56,
-      "end": 82.18,
-      "text": "くてもい",
-      "ja": "くてもい",
-      "ko": ""
-    },
-    {
-      "t0": 110.09,
-      "t1": 112.07,
-      "start": 110.09,
-      "end": 112.07,
-      "text": "いから",
-      "ja": "いから",
-      "ko": ""
-    },
-    {
-      "t0": 112.09,
-      "t1": 112.75,
-      "start": 112.09,
-      "end": 112.75,
-      "text": "新しい靴",
-      "ja": "新しい靴",
-      "ko": ""
-    },
-    {
-      "t0": 114.81,
-      "t1": 115.75,
-      "start": 114.81,
-      "end": 115.75,
-      "text": "下を履き",
-      "ja": "下を履き",
-      "ko": ""
-    },
-    {
-      "t0": 117.64,
-      "t1": 118.82,
-      "start": 117.64,
-      "end": 118.82,
-      "text": "替える朝",
-      "ja": "替える朝",
+      "t0": 13.48,
+      "t1": 14.74,
+      "start": 13.48,
+      "end": 14.74,
+      "text": "静かな高架下　自転車の音が響く　足元を照らす淡いオレンジ色の灯り",
+      "ja": "静かな高架下　自転車の音が響く　足元を照らす淡いオレンジ色の灯り",
       "ko": ""
     }
   ],
   "meta": {
     "engine": "word_align_tight_v6_asr_phrase_map",
-    "generated_at": "2026-02-10T12:32:10.722709Z",
-    "leading_silence_sec": 0.675,
+    "generated_at": "2026-02-10T12:33:01.752639Z",
+    "leading_silence_sec": 0.0,
     "whisper_backend": "local_faster_whisper",
     "whisper_model": "small",
     "whisper_device": "cpu",
@@ -543,12 +147,12 @@
     "asr_min_phrase_sec": 0.35
   },
   "issues": [
-    "[INFO] WORDS=107 SPAN=117.57s CONCAT_LEN=125",
-    "[INFO] FIND_OK=0/9",
+    "[INFO] WORDS=32 SPAN=14.42s CONCAT_LEN=34",
+    "[INFO] FIND_OK=0/12",
     "[WARN] FIND_MATCH_RATE=0. Switching to ASR phrase mapping (timing from ASR, text from sections).",
-    "[INFO] ASR_PHRASES=29 gap=0.20 max=2.20s min=0.35s",
-    "[INFO] PHRASE_MAP lines=29 from phrases=29 sections=9",
+    "[INFO] ASR_PHRASES=7 gap=0.20 max=2.20s min=0.35s",
+    "[INFO] PHRASE_MAP lines=7 from phrases=7 sections=12",
     "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
-    "[INFO] CUES_BUILT=29 (min=0.25s, split_max=6.0s)"
+    "[INFO] CUES_BUILT=7 (min=0.25s, split_max=6.0s)"
   ]
 }
