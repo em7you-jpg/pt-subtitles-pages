@@ -1,84 +1,30 @@
 {
-  "title": "Sunlight Across My Table",
+  "title": "Finish Line After School",
   "lines": [
     {
-      "start": 7.63,
-      "end": 9.87,
-      "ja": "キッチンのタイルに朝の光がすべり込む",
+      "start": 0.24,
+      "end": 1.12,
+      "ja": "今日は朝からリストに書いたやるべきことが頭に巡ってる",
       "ko_pron": "",
       "ko": "",
       "tag": "Verse 1",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 10.07,
-      "end": 11.83,
-      "ja": "静かな湯気が踊るパンの香りが広がる",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Verse 1",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 13.55,
-      "end": 14.31,
-      "ja": "冷たい床に足を置きな",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Pre-Chorus",
-      "_match": "asr_phrase_map"
-    },
-    {
-      "start": 42.58,
-      "end": 43.5,
-      "ja": "がら眠気残し笑っている",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Pre-Chorus",
       "_match": "asr_phrase_map"
     }
   ],
   "cues": [
     {
-      "t0": 7.63,
-      "t1": 9.87,
-      "start": 7.63,
-      "end": 9.87,
-      "text": "キッチンのタイルに朝の光がすべり込む",
-      "ja": "キッチンのタイルに朝の光がすべり込む",
-      "ko": ""
-    },
-    {
-      "t0": 10.07,
-      "t1": 11.83,
-      "start": 10.07,
-      "end": 11.83,
-      "text": "静かな湯気が踊るパンの香りが広がる",
-      "ja": "静かな湯気が踊るパンの香りが広がる",
-      "ko": ""
-    },
-    {
-      "t0": 13.55,
-      "t1": 14.31,
-      "start": 13.55,
-      "end": 14.31,
-      "text": "冷たい床に足を置きな",
-      "ja": "冷たい床に足を置きな",
-      "ko": ""
-    },
-    {
-      "t0": 42.58,
-      "t1": 43.5,
-      "start": 42.58,
-      "end": 43.5,
-      "text": "がら眠気残し笑っている",
-      "ja": "がら眠気残し笑っている",
+      "t0": 0.24,
+      "t1": 1.12,
+      "start": 0.24,
+      "end": 1.12,
+      "text": "今日は朝からリストに書いたやるべきことが頭に巡ってる",
+      "ja": "今日は朝からリストに書いたやるべきことが頭に巡ってる",
       "ko": ""
     }
   ],
   "meta": {
     "engine": "word_align_tight_v6_asr_phrase_map",
-    "generated_at": "2026-02-10T12:35:46.654947Z",
+    "generated_at": "2026-02-10T12:36:49.614248Z",
     "leading_silence_sec": 0.0,
     "whisper_backend": "local_faster_whisper",
     "whisper_model": "small",
@@ -93,12 +39,12 @@
     "asr_min_phrase_sec": 0.35
   },
   "issues": [
-    "[INFO] WORDS=14 SPAN=35.69s CONCAT_LEN=14",
-    "[INFO] FIND_OK=0/11",
+    "[INFO] WORDS=1 SPAN=0.70s CONCAT_LEN=3",
+    "[INFO] FIND_OK=0/23",
     "[WARN] FIND_MATCH_RATE=0. Switching to ASR phrase mapping (timing from ASR, text from sections).",
-    "[INFO] ASR_PHRASES=4 gap=0.20 max=2.20s min=0.35s",
-    "[INFO] PHRASE_MAP lines=4 from phrases=4 sections=11",
+    "[INFO] ASR_PHRASES=1 gap=0.20 max=2.20s min=0.35s",
+    "[INFO] PHRASE_MAP lines=1 from phrases=1 sections=23",
     "[INFO] TIGHT_POST lead=0.00 tail_pad=0.08 min_dur=0.06 pad_end=0.02",
-    "[INFO] CUES_BUILT=4 (min=0.25s, split_max=6.0s)"
+    "[INFO] CUES_BUILT=1 (min=0.25s, split_max=6.0s)"
   ]
 }
