@@ -1,1 +1,347 @@
-{"title": "Softly Moving Forward", "lines": [{"start": 0.0, "end": 18.071, "ja": "静かなカフェのソファに沈みながら君の横顔を見つめている午後", "tag": "Verse 1"}, {"start": 17.971, "end": 36.042, "ja": "小さなルールを胸ポケットにしまい明日への足音を数えてみた", "tag": "Chorus"}, {"start": 35.942, "end": 54.013, "ja": "迷いながら進む道 ふたりだけのリズムで軽やかに歩いていく", "tag": "Post-Chorus"}, {"start": 53.913, "end": 71.984, "ja": "水たまり越えてスニーカー濡らしつつも笑い合う季節を信じていた", "tag": "Verse 2"}, {"start": 71.884, "end": 89.956, "ja": "小さなルールを胸ポケットにしまい明日への足音を数えてみた", "tag": "Chorus"}, {"start": 89.856, "end": 107.927, "ja": "迷いながら進む道 ふたりだけのリズムで軽やかに歩いていく", "tag": "Post-Chorus"}, {"start": 107.827, "end": 125.898, "ja": "すれ違う人の波に背を押され肩並べて歩く午後の帰り道", "tag": "Bridge"}, {"start": 125.798, "end": 143.869, "ja": "小さなルールを胸ポケットにしまい明日への足音を数えてみた それでも", "tag": "Final Chorus"}, {"start": 143.769, "end": 161.87, "ja": "迷いながら進む道 ふたりだけのリズムで軽やかに歩いていく", "tag": "Post-Chorus Reprise"}], "cues": [{"start": 0.0, "end": 4.518, "ja": "静かなカフェの", "ko": "", "text": ""}, {"start": 4.518, "end": 9.036, "ja": "ソファに沈みな", "ko": "", "text": ""}, {"start": 9.036, "end": 13.553, "ja": "がら君の横顔を", "ko": "", "text": ""}, {"start": 13.553, "end": 18.071, "ja": "見つめている午後", "ko": "", "text": ""}, {"start": 17.971, "end": 22.489, "ja": "小さなルールを", "ko": "", "text": ""}, {"start": 22.489, "end": 27.007, "ja": "胸ポケットにし", "ko": "", "text": ""}, {"start": 27.007, "end": 31.524, "ja": "まい明日への足", "ko": "", "text": ""}, {"start": 31.524, "end": 36.042, "ja": "音を数えてみた", "ko": "", "text": ""}, {"start": 35.942, "end": 40.46, "ja": "迷いながら進む", "ko": "", "text": ""}, {"start": 40.46, "end": 44.977, "ja": "道 ふたりだけ", "ko": "", "text": ""}, {"start": 44.977, "end": 49.495, "ja": "のリズムで軽や", "ko": "", "text": ""}, {"start": 49.495, "end": 54.013, "ja": "かに歩いていく", "ko": "", "text": ""}, {"start": 53.913, "end": 58.431, "ja": "水たまり越えて", "ko": "", "text": ""}, {"start": 58.431, "end": 62.948, "ja": "スニーカー濡らし", "ko": "", "text": ""}, {"start": 62.948, "end": 67.466, "ja": "つつも笑い合う", "ko": "", "text": ""}, {"start": 67.466, "end": 71.984, "ja": "季節を信じていた", "ko": "", "text": ""}, {"start": 71.884, "end": 76.402, "ja": "小さなルールを", "ko": "", "text": ""}, {"start": 76.402, "end": 80.92, "ja": "胸ポケットにし", "ko": "", "text": ""}, {"start": 80.92, "end": 85.438, "ja": "まい明日への足", "ko": "", "text": ""}, {"start": 85.438, "end": 89.956, "ja": "音を数えてみた", "ko": "", "text": ""}, {"start": 89.856, "end": 94.374, "ja": "迷いながら進む", "ko": "", "text": ""}, {"start": 94.374, "end": 98.892, "ja": "道 ふたりだけ", "ko": "", "text": ""}, {"start": 98.892, "end": 103.409, "ja": "のリズムで軽や", "ko": "", "text": ""}, {"start": 103.409, "end": 107.927, "ja": "かに歩いていく", "ko": "", "text": ""}, {"start": 107.827, "end": 112.345, "ja": "すれ違う人の", "ko": "", "text": ""}, {"start": 112.345, "end": 116.862, "ja": "波に背を押さ", "ko": "", "text": ""}, {"start": 116.862, "end": 121.38, "ja": "れ肩並べて歩", "ko": "", "text": ""}, {"start": 121.38, "end": 125.898, "ja": "く午後の帰り道", "ko": "", "text": ""}, {"start": 125.798, "end": 130.316, "ja": "小さなルールを胸", "ko": "", "text": ""}, {"start": 130.316, "end": 134.834, "ja": "ポケットにしまい", "ko": "", "text": ""}, {"start": 134.834, "end": 139.351, "ja": "明日への足音を数", "ko": "", "text": ""}, {"start": 139.351, "end": 143.869, "ja": "えてみた それでも", "ko": "", "text": ""}, {"start": 143.769, "end": 148.294, "ja": "迷いながら進む", "ko": "", "text": ""}, {"start": 148.294, "end": 152.82, "ja": "道 ふたりだけ", "ko": "", "text": ""}, {"start": 152.82, "end": 157.345, "ja": "のリズムで軽や", "ko": "", "text": ""}, {"start": 157.345, "end": 161.87, "ja": "かに歩いていく", "ko": "", "text": ""}], "meta": {"generated_at": "2026-02-11T18:41:19Z", "audio_duration_sec": 161.784, "leading_silence_sec": 0.600542, "section_align_mode": "dp_anchor", "asr_match_min_score": 0.58, "set_id": "20260210", "track_id": "003", "ko_filled": 0, "ko_source": "none", "timing_clamp_enabled": false}, "issues": ["[INFO] AUDIO_DUR=161.784s from ffprobe", "[INFO] WORDS=241", "[WARN] DP failed (no monotonic candidate set).", "[WARN] section match all failed -> fallback lyrics-driven spans", "[INFO] SONGFORM_ALIGNED sections=9 lines=9 min_score=0.58", "[INFO] POSTPROC lines=9 -> 9 tail_pad=0.10 pad_end=0.03", "[INFO] CUES_BUILT=36 (min=0.25s, split_max=6.0s)", "[INFO] CUES_BUILT=36 (min=0.25s, split_max=6.0s)"]}
+{
+  "title": "Softly Moving Forward",
+  "lines": [
+    {
+      "start": 0.0,
+      "end": 18.071,
+      "ja": "静かなカフェのソファに沈みながら君の横顔を見つめている午後",
+      "ko": "",
+      "ko_pron": "",
+      "tag": "Verse 1"
+    },
+    {
+      "start": 17.971,
+      "end": 36.042,
+      "ja": "小さなルールを胸ポケットにしまい明日への足音を数えてみた",
+      "ko": "",
+      "ko_pron": "",
+      "tag": "Chorus"
+    },
+    {
+      "start": 35.942,
+      "end": 54.013,
+      "ja": "迷いながら進む道 ふたりだけのリズムで軽やかに歩いていく",
+      "ko": "",
+      "ko_pron": "",
+      "tag": "Post-Chorus"
+    },
+    {
+      "start": 53.913,
+      "end": 71.984,
+      "ja": "水たまり越えてスニーカー濡らしつつも笑い合う季節を信じていた",
+      "ko": "",
+      "ko_pron": "",
+      "tag": "Verse 2"
+    },
+    {
+      "start": 71.884,
+      "end": 89.956,
+      "ja": "小さなルールを胸ポケットにしまい明日への足音を数えてみた",
+      "ko": "",
+      "ko_pron": "",
+      "tag": "Chorus"
+    },
+    {
+      "start": 89.856,
+      "end": 107.927,
+      "ja": "迷いながら進む道 ふたりだけのリズムで軽やかに歩いていく",
+      "ko": "",
+      "ko_pron": "",
+      "tag": "Post-Chorus"
+    },
+    {
+      "start": 107.827,
+      "end": 125.898,
+      "ja": "すれ違う人の波に背を押され肩並べて歩く午後の帰り道",
+      "ko": "",
+      "ko_pron": "",
+      "tag": "Bridge"
+    },
+    {
+      "start": 125.798,
+      "end": 143.869,
+      "ja": "小さなルールを胸ポケットにしまい明日への足音を数えてみた それでも",
+      "ko": "",
+      "ko_pron": "",
+      "tag": "Final Chorus"
+    },
+    {
+      "start": 143.769,
+      "end": 161.87,
+      "ja": "迷いながら進む道 ふたりだけのリズムで軽やかに歩いていく",
+      "ko": "",
+      "ko_pron": "",
+      "tag": "Post-Chorus Reprise"
+    }
+  ],
+  "cues": [
+    {
+      "start": 0.0,
+      "end": 4.518,
+      "ja": "静かなカフェの",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 4.518,
+      "end": 9.036,
+      "ja": "ソファに沈みな",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 9.036,
+      "end": 13.553,
+      "ja": "がら君の横顔を",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 13.553,
+      "end": 18.071,
+      "ja": "見つめている午後",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 17.971,
+      "end": 22.489,
+      "ja": "小さなルールを",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 22.489,
+      "end": 27.007,
+      "ja": "胸ポケットにし",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 27.007,
+      "end": 31.524,
+      "ja": "まい明日への足",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 31.524,
+      "end": 36.042,
+      "ja": "音を数えてみた",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 35.942,
+      "end": 40.46,
+      "ja": "迷いながら進む",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 40.46,
+      "end": 44.977,
+      "ja": "道 ふたりだけ",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 44.977,
+      "end": 49.495,
+      "ja": "のリズムで軽や",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 49.495,
+      "end": 54.013,
+      "ja": "かに歩いていく",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 53.913,
+      "end": 58.431,
+      "ja": "水たまり越えて",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 58.431,
+      "end": 62.948,
+      "ja": "スニーカー濡らし",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 62.948,
+      "end": 67.466,
+      "ja": "つつも笑い合う",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 67.466,
+      "end": 71.984,
+      "ja": "季節を信じていた",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 71.884,
+      "end": 76.402,
+      "ja": "小さなルールを",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 76.402,
+      "end": 80.92,
+      "ja": "胸ポケットにし",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 80.92,
+      "end": 85.438,
+      "ja": "まい明日への足",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 85.438,
+      "end": 89.956,
+      "ja": "音を数えてみた",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 89.856,
+      "end": 94.374,
+      "ja": "迷いながら進む",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 94.374,
+      "end": 98.892,
+      "ja": "道 ふたりだけ",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 98.892,
+      "end": 103.409,
+      "ja": "のリズムで軽や",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 103.409,
+      "end": 107.927,
+      "ja": "かに歩いていく",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 107.827,
+      "end": 112.345,
+      "ja": "すれ違う人の",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 112.345,
+      "end": 116.862,
+      "ja": "波に背を押さ",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 116.862,
+      "end": 121.38,
+      "ja": "れ肩並べて歩",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 121.38,
+      "end": 125.898,
+      "ja": "く午後の帰り道",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 125.798,
+      "end": 130.316,
+      "ja": "小さなルールを胸",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 130.316,
+      "end": 134.834,
+      "ja": "ポケットにしまい",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 134.834,
+      "end": 139.351,
+      "ja": "明日への足音を数",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 139.351,
+      "end": 143.869,
+      "ja": "えてみた それでも",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 143.769,
+      "end": 148.294,
+      "ja": "迷いながら進む",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 148.294,
+      "end": 152.82,
+      "ja": "道 ふたりだけ",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 152.82,
+      "end": 157.345,
+      "ja": "のリズムで軽や",
+      "ko": "",
+      "text": ""
+    },
+    {
+      "start": 157.345,
+      "end": 161.87,
+      "ja": "かに歩いていく",
+      "ko": "",
+      "text": ""
+    }
+  ],
+  "meta": {
+    "generated_at": "2026-02-11T20:04:11Z",
+    "audio_duration_sec": 161.784,
+    "leading_silence_sec": 0.600542,
+    "section_align_mode": "dp_anchor",
+    "asr_match_min_score": 0.58
+  },
+  "issues": [
+    "[INFO] AUDIO_DUR=161.784s from ffprobe",
+    "[INFO] WORDS=241",
+    "[WARN] DP failed (no monotonic candidate set).",
+    "[WARN] section match all failed -> fallback lyrics-driven spans",
+    "[INFO] SONGFORM_ALIGNED sections=9 lines=9 min_score=0.58",
+    "[INFO] POSTPROC lines=9 -> 9 tail_pad=0.10 pad_end=0.03",
+    "[INFO] CUES_BUILT=36 (min=0.25s, split_max=6.0s)"
+  ]
+}
