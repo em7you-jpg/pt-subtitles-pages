@@ -1,7 +1,7 @@
 {
   "meta": {
     "engine": "pt-whisper",
-    "generated_at": "2026-02-11T21:42:20.618877Z",
+    "generated_at": "2026-02-11T21:44:10.158164Z",
     "audio_duration_sec": 161.784,
     "leading_silence_sec": 0.594812
   },
