@@ -46,7 +46,6 @@ body{
   position:fixed;
   left:50%;
   top:var(--titleTop);
-  transform:translateX(-50%);
   text-align:center;
   color:var(--fg);
   pointer-events:none;
@@ -84,9 +83,9 @@ body{
 /* ===== MINIMAL PLAY BUTTON ===== */
 #playDock{
   position:fixed;
-  left:50%;
-  bottom:var(--playBottom);
-  transform:translateX(-50%);
+  left:28px;          /* ← 중앙 대신 좌측 고정 */
+  top:28px;           /* ← 상단 고정 */
+  transform:none;     /* ← 중앙 정렬 제거 */
   z-index:9999;
   pointer-events:none;
 }
