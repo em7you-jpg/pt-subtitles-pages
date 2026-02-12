@@ -19,6 +19,7 @@
       --koSize: 30px;
       --lineGap: 14px;
 
+      /* ---------- subtitle panel styling (keep minimal) ---------- */
       --bg: rgba(0,0,0,0.0);
       --fg: rgba(255,255,255,0.95);
       --shadow: 0 2px 12px rgba(0,0,0,0.55);
@@ -31,9 +32,21 @@
 
       /* KO color */
       --koColor: #ffd54a;
+
+      /* ---------- minimal play button ---------- */
+      --playSize: 54px;                  /* button diameter */
+      --playStroke: 1.5px;               /* circle stroke */
+      --playOpacity: 0.55;               /* default */
+      --playOpacityHover: 0.78;          /* hover */
+      --playBottom: 28px;                /* from bottom */
+      --playRight: 0px;                  /* if you want corner layout later */
+      --playShadow: 0 6px 20px rgba(0,0,0,0.35);
     }
+
     body{
-      margin:0; background: transparent; overflow:hidden;
+      margin:0;
+      background: transparent;
+      overflow:hidden;
       font-family: var(--font);
     }
 
@@ -51,7 +64,7 @@
     }
     #title{
       font-size: var(--titleSize);
-      font-weight: 800;
+      font-weight: 500;                 /* ✅ thinner */
       line-height: 1.2;
       opacity: var(--titleOpacity);
       margin: 0 0 var(--titleGap) 0;
@@ -77,58 +90,83 @@
       padding: var(--pad);
       border-radius: var(--radius);
       filter: drop-shadow(var(--shadow));
-      pointer-events: auto; /* HUD 켰을 때만 클릭 */
+      pointer-events: none; /* ✅ 자막 영역은 클릭 완전 통과 */
     }
-    .hud-off #box{ pointer-events:none; } /* ✅ 방송용(hud=0)일 때 클릭 완전 통과 */
 
-    .ja{ font-size: var(--jaSize); font-weight: 700; line-height: 1.25; }
+    .ja{
+      font-size: var(--jaSize);
+      font-weight: 500;                 /* ✅ thinner */
+      line-height: 1.25;
+      letter-spacing: 0.1px;
+    }
     .ko{
       font-size: var(--koSize);
-      font-weight: 700;
+      font-weight: 500;                 /* ✅ thinner */
       line-height: 1.25;
       margin-top: var(--lineGap);
       color: var(--koColor);
       text-shadow: 0 2px 12px rgba(0,0,0,0.55);
+      letter-spacing: 0.1px;
     }
 
-    /* ---------- HUD ---------- */
-    #hud{
-      margin-top: 10px;
-      font-size: 13px;
-      opacity: 0.85;
-      user-select: none;
-    }
-    .hud-off #hud{ display:none; }
+    /* ---------- HUD (hidden in minimal mode) ---------- */
+    #hud{ display:none; }
 
-    #hudTop, #hudBottom{
-      display:flex;
-      gap:10px;
-      justify-content:center;
-      align-items:center;
-      flex-wrap: wrap;
-      margin-top: 6px;
+    /* ---------- MINIMAL PLAY BUTTON (always available by default) ---------- */
+    #playDock{
+      position: fixed;
+      left: 50%;
+      bottom: var(--playBottom);
+      transform: translateX(-50%);
+      pointer-events: none;             /* dock itself doesn't block */
+      z-index: 9999;
     }
-    #hud button, #hud input, #hud audio{
-      pointer-events: auto;
-      font-size: 13px;
+    #btnPlay{
+      pointer-events: auto;             /* ✅ only this is clickable */
+      width: var(--playSize);
+      height: var(--playSize);
+      border-radius: 999px;
+      background: rgba(0,0,0,0.00);
+      border: var(--playStroke) solid rgba(255,255,255,var(--playOpacity));
+      box-shadow: var(--playShadow);
+      display: inline-grid;
+      place-items: center;
+      cursor: pointer;
+      outline: none;
+      padding: 0;
+      transition: border-color 140ms ease, transform 140ms ease, opacity 140ms ease;
+      opacity: 0.95;
+      -webkit-tap-highlight-color: transparent;
     }
-    #hud button{
-      border: 0;
-      border-radius: 10px;
-      padding: 6px 10px;
-      background: rgba(255,255,255,0.12);
-      color: rgba(255,255,255,0.95);
-      cursor:pointer;
+    #btnPlay:hover{
+      border-color: rgba(255,255,255,var(--playOpacityHover));
+      transform: translateY(-1px);
     }
-    #hud button:hover{ background: rgba(255,255,255,0.18); }
-    #hud .pill{
-      background: rgba(255,255,255,0.10);
-      padding: 6px 10px;
-      border-radius: 10px;
+    #btnPlay:active{
+      transform: translateY(0px) scale(0.98);
     }
-    #audio{
-      width: min(720px, 86vw);
+
+    /* Triangle icon */
+    #btnPlay svg{
+      width: calc(var(--playSize) * 0.36);
+      height: calc(var(--playSize) * 0.36);
+      margin-left: 3px; /* optical centering */
+      filter: drop-shadow(0 2px 10px rgba(0,0,0,0.35));
     }
+    #btnPlay .tri{
+      fill: rgba(255,255,255,0.82);
+    }
+
+    /* subtle "playing" state: slightly stronger ring */
+    .is-playing #btnPlay{
+      border-color: rgba(255,255,255,0.82);
+    }
+
+    /* allow hiding play button with play=0 */
+    .play-off #playDock{ display:none; }
+
+    /* keep pointer events safe */
+    *{ box-sizing: border-box; }
   </style>
 </head>
 <body>
@@ -138,31 +176,28 @@
     <div id="title"></div>
   </div>
 
-  <!-- Subtitles + HUD -->
+  <!-- Subtitles -->
   <div id="wrap">
     <div id="box">
       <div id="ja" class="ja"></div>
       <div id="ko" class="ko" style="display:none;"></div>
 
-      <div id="hud">
-        <div id="hudTop">
-          <button id="btnPrev">Prev</button>
-          <button id="btnPlay">Play</button>
-          <button id="btnNext">Next</button>
-
-          <span class="pill">Track: <span id="trackLabel">-</span></span>
-          <span class="pill">Offset: <span id="offsetLabel">0.0</span>s</span>
-
-          <button id="btnOffM">-0.5s</button>
-          <button id="btnOffP">+0.5s</button>
-        </div>
-
-        <div id="hudBottom">
-          <audio id="audio" controls preload="auto" crossorigin="anonymous"></audio>
-        </div>
-      </div>
+      <!-- legacy HUD kept for keyboard/debug (hidden) -->
+      <div id="hud" aria-hidden="true"></div>
     </div>
   </div>
+
+  <!-- Minimal Play Button (only UI) -->
+  <div id="playDock">
+    <button id="btnPlay" type="button" aria-label="Play">
+      <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+        <path class="tri" d="M9 7.5v9l8-4.5-8-4.5z"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Audio element (hidden visually, used for playback) -->
+  <audio id="audio" preload="auto" crossorigin="anonymous" style="display:none"></audio>
 
 <script>
 (() => {
@@ -171,7 +206,7 @@
 
   const setId = params.get("set") || "default";
   const lang = (params.get("lang") || "both").toLowerCase(); // both|ja|ko
-  const hud = params.get("hud"); // 0 => hide
+  const hud = params.get("hud"); // 0 => hide (we still keep play button)
   const cacheBust = params.get("cb") || "";
 
   // ✅ 기본 랜덤 재생
@@ -191,7 +226,10 @@
 
   const titleOn = (params.get("title") ?? "1") !== "0";
   if (!titleOn) document.body.classList.add("title-off");
-  if (hud === "0") document.body.classList.add("hud-off");
+
+  // ✅ play button on/off (default ON)
+  const playOn = (params.get("play") ?? "1") !== "0";
+  if (!playOn) document.body.classList.add("play-off");
 
   function num(v, d){ const n = Number(v); return Number.isFinite(n) ? n : d; }
 
@@ -208,6 +246,10 @@
     "--titleOpacity": params.get("titleOpacity") ? params.get("titleOpacity") : null,
     "--titleTop": params.get("titleTop") ? params.get("titleTop") + "em" : null,
     "--koColor": params.get("koColor") ? params.get("koColor") : null,
+
+    "--playSize": params.get("playSize") ? params.get("playSize") + "px" : null,
+    "--playBottom": params.get("playBottom") ? params.get("playBottom") + "px" : null,
+    "--playOpacity": params.get("playOpacity") ? params.get("playOpacity") : null,
   };
   for (const [k,v] of Object.entries(cssVars)) if (v) document.documentElement.style.setProperty(k, v);
 
@@ -215,14 +257,7 @@
   const jaEl = $("ja");
   const koEl = $("ko");
   const audio = $("audio");
-
-  const btnPrev = $("btnPrev");
   const btnPlay = $("btnPlay");
-  const btnNext = $("btnNext");
-  const btnOffM = $("btnOffM");
-  const btnOffP = $("btnOffP");
-  const trackLabel = $("trackLabel");
-  const offsetLabel = $("offsetLabel");
 
   // offset per set
   const lsKey = `pt_offset_${setId}`;
@@ -230,7 +265,6 @@
   function setOffset(v){
     offsetSec = Math.round(v * 10) / 10;
     localStorage.setItem(lsKey, String(offsetSec));
-    offsetLabel.textContent = offsetSec.toFixed(1);
   }
   setOffset(offsetSec);
 
@@ -378,11 +412,6 @@
   let cues = [];
   let currentTrack = null;
 
-  function updateTrackLabel(){
-    if (!currentTrack){ trackLabel.textContent = "-"; return; }
-    trackLabel.textContent = `${currentTrack.id}${currentTrack.title ? " · " + currentTrack.title : ""}`;
-  }
-
   function setHeaderTitle(text){
     const t = (text ?? "").toString().trim();
     titleEl.textContent = t;
@@ -401,7 +430,6 @@
     if (!playlist) return;
     idx = Math.max(0, Math.min(i, playlist.tracks.length-1));
     currentTrack = playlist.tracks[idx];
-    updateTrackLabel();
 
     if (!currentTrack.audio_url) throw new Error("missing audio_url");
     audio.src = currentTrack.audio_url;
@@ -451,33 +479,25 @@
     }
   }
 
-  // controls
+  // minimal control: play/pause toggle (icon stays triangle intentionally)
   btnPlay.addEventListener("click", async () => {
     if (!playlist) return;
-    if (audio.paused) await audio.play();
-    else audio.pause();
-  });
-  audio.addEventListener("play", ()=> btnPlay.textContent = "Pause");
-  audio.addEventListener("pause", ()=> btnPlay.textContent = "Play");
-
-  btnPrev.addEventListener("click", async () => {
-    await loadTrack(idx - 1);
-    await audio.play();
-  });
-  btnNext.addEventListener("click", async () => {
-    await loadTrack(idx + 1);
-    await audio.play();
+    try{
+      if (audio.paused) await audio.play();
+      else audio.pause();
+    }catch(e){
+      console.error(e);
+    }
   });
 
-  btnOffM.addEventListener("click", ()=> setOffset(offsetSec - 0.5));
-  btnOffP.addEventListener("click", ()=> setOffset(offsetSec + 0.5));
+  audio.addEventListener("play", ()=> document.body.classList.add("is-playing"));
+  audio.addEventListener("pause", ()=> document.body.classList.remove("is-playing"));
 
+  // keep keyboard shortcuts (no UI exposure)
   window.addEventListener("keydown", (e)=>{
-    if (e.key === "ArrowLeft") btnPrev.click();
-    if (e.key === "ArrowRight") btnNext.click();
-    if (e.key === "ArrowDown") setOffset(offsetSec - 0.5);
-    if (e.key === "ArrowUp") setOffset(offsetSec + 0.5);
     if (e.key === " "){ e.preventDefault(); btnPlay.click(); }
+    if (e.key === "ArrowDown") { setOffset(offsetSec - 0.5); }
+    if (e.key === "ArrowUp") { setOffset(offsetSec + 0.5); }
   });
 
   audio.addEventListener("timeupdate", render);
@@ -516,12 +536,10 @@
     const startI = num(params.get("i"), 1);
     await loadTrack(startI - 1);
 
+    // autoplay if allowed
     if (params.get("autoplay") === "1"){
       await audio.play();
     }
-
-    updateTrackLabel();
-    offsetLabel.textContent = offsetSec.toFixed(1);
   })().catch(err => {
     jaEl.textContent = "PLAYER ERROR";
     koEl.style.display = "";
