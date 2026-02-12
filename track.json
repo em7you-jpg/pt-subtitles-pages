@@ -330,7 +330,7 @@
   ],
   "meta": {
     "engine": "word_align_lyrics_driven_v7_2_expand_duration",
-    "generated_at": "2026-02-12T14:48:30.721572Z",
+    "generated_at": "2026-02-12T15:17:02.632519Z",
     "leading_silence_sec": 0.593,
     "audio_duration_sec": 161.784,
     "audio_tail_margin_sec": 0.6,
@@ -355,6 +355,7 @@
     "[INFO] AUDIO_DUR=161.784s from ffprobe",
     "[INFO] WORDS=27",
     "[INFO] EXPAND sections=9 -> lines=12 mode=orig_paragraph max_chars=18 min_chars=6",
+    "[INFO] VOCAL_START_EST win=2.00s min_words=3 -> 15.250 (was 15.250)",
     "[INFO] SPAN_EXTEND by duration: asr_end=28.690 -> end=161.184 (dur=161.784 tail_margin=0.60)",
     "[INFO] LYRICS_DRIVEN span=145.934s lines=12 base_min=0.850s remaining=135.734s weight_mode=len_ja_ko",
     "[INFO] LINES_POST tail_pad=0.10 pad_end=0.03",
