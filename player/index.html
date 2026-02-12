@@ -9,12 +9,10 @@
 :root{
   --font: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", "Noto Sans JP", sans-serif;
 
-  /* Title */
   --titleSize: 30px;
   --titleTop: 4em;
   --titleOpacity: 0.92;
 
-  /* Subtitles */
   --jaSize: 36px;
   --koSize: 30px;
   --lineGap: 14px;
@@ -23,20 +21,13 @@
   --fg: rgba(255,255,255,0.95);
   --shadow: 0 2px 12px rgba(0,0,0,0.55);
 
-  /* Minimal Play Button */
-  --playSize: 54px;
-  --playStroke: 1.2px;
-
-  /* 더 은은하게 */
-  --playIdleOpacity: 0.22;
-  --playHoverOpacity: 0.45;
-  --playActiveOpacity: 0.65;
+  --playSize: 52px;
 }
 
 body{
   margin:0;
-  overflow:hidden;
   background:transparent;
+  overflow:hidden;
   font-family:var(--font);
 }
 
@@ -46,6 +37,7 @@ body{
   left:50%;
   top:var(--titleTop);
   transform:translateX(-50%);
+  width:min(92vw,980px);
   text-align:center;
   color:var(--fg);
   pointer-events:none;
@@ -54,8 +46,8 @@ body{
 #title{
   font-size:var(--titleSize);
   font-weight:500;
-  letter-spacing:0.2px;
   opacity:var(--titleOpacity);
+  letter-spacing:0.2px;
 }
 
 /* ===== SUBTITLE ===== */
@@ -80,47 +72,37 @@ body{
   color:var(--koColor);
 }
 
-/* ===== MINIMAL PLAY BUTTON (TOP-LEFT) ===== */
+/* ===== MINIMAL PLAY BUTTON (TOP LEFT) ===== */
 #playDock{
   position:fixed;
-  left:28px;          /* 좌상단 배치 */
+  left:28px;
   top:28px;
-  transform:none;
   z-index:9999;
   pointer-events:none;
 }
-
 #btnPlay{
   pointer-events:auto;
   width:var(--playSize);
   height:var(--playSize);
   border-radius:50%;
-  border:var(--playStroke) solid rgba(255,255,255,var(--playIdleOpacity));
-  background:rgba(0,0,0,0.0);
+  border:1.2px solid rgba(255,255,255,0.25);
+  background:transparent;
   display:grid;
   place-items:center;
   cursor:pointer;
-  transition:opacity 200ms ease, border-color 200ms ease, transform 160ms ease;
-  opacity:var(--playIdleOpacity);
-  -webkit-tap-highlight-color: transparent;
+  transition:opacity 200ms ease, border-color 200ms ease;
+  opacity:0.25;
 }
-
 #btnPlay:hover{
-  opacity:var(--playHoverOpacity);
-  border-color:rgba(255,255,255,var(--playHoverOpacity));
+  opacity:0.5;
+  border-color:rgba(255,255,255,0.5);
 }
-
-#btnPlay:active{
-  opacity:var(--playActiveOpacity);
-  transform:scale(0.95);
-}
-
 #btnPlay svg{
   width:calc(var(--playSize)*0.34);
   height:calc(var(--playSize)*0.34);
 }
 #btnPlay path{
-  fill:rgba(255,255,255,0.75);
+  fill:rgba(255,255,255,0.8);
 }
 </style>
 </head>
@@ -133,35 +115,120 @@ body{
 
 <div id="wrap">
   <div id="ja" class="ja"></div>
-  <div id="ko" class="ko"></div>
+  <div id="ko" class="ko" style="display:none;"></div>
 </div>
 
 <div id="playDock">
-  <button id="btnPlay" type="button" aria-label="Play/Pause">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
+  <button id="btnPlay" aria-label="Play/Pause">
+    <svg viewBox="0 0 24 24">
       <path d="M9 7.5v9l8-4.5-8-4.5z"/>
     </svg>
   </button>
 </div>
 
-<audio id="audio" preload="auto" style="display:none"></audio>
+<audio id="audio" preload="auto" crossorigin="anonymous" style="display:none"></audio>
 
 <script>
-const audio = document.getElementById("audio");
-const btnPlay = document.getElementById("btnPlay");
+(() => {
 
-/* ✅ 버튼은 항상 표시: 자동 숨김/마우스 감지 로직 제거 */
+const $ = id => document.getElementById(id);
+const params = new URLSearchParams(location.search);
+
+const setId = params.get("set") || "default";
+const lang = (params.get("lang") || "both").toLowerCase();
+const shuffleOn = (params.get("shuffle") ?? "1") !== "0";
+const loopOn = (params.get("loop") ?? "1") !== "0";
+
+const titleEl = $("title");
+const jaEl = $("ja");
+const koEl = $("ko");
+const audio = $("audio");
+const btnPlay = $("btnPlay");
+
+const base = `${location.origin}/set/${encodeURIComponent(setId)}/`;
+const playlistUrl = base + "playlist.json";
+
+let playlist = null;
+let idx = 0;
+let cues = [];
+let currentTrack = null;
+
+/* ===== FETCH ===== */
+async function fetchJSON(url){
+  const res = await fetch(url, {cache:"no-store"});
+  if(!res.ok) throw new Error(`fetch failed: ${res.status}`);
+  return await res.json();
+}
+
+/* ===== SHUFFLE ===== */
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+/* ===== LOAD TRACK ===== */
+async function loadTrack(i){
+  idx = Math.max(0, Math.min(i, playlist.tracks.length-1));
+  currentTrack = playlist.tracks[idx];
+
+  audio.src = currentTrack.audio_url;
+
+  const trackJson = await fetchJSON(base + currentTrack.track_url);
+  cues = trackJson.cues || [];
+
+  titleEl.textContent = currentTrack.title || "";
+}
+
+/* ===== RENDER ===== */
+function render(){
+  if(!cues.length){ jaEl.textContent=""; koEl.style.display="none"; return; }
+
+  const t = audio.currentTime;
+  const c = cues.find(c=>t>=c.start && t<c.end);
+
+  if(!c){ jaEl.textContent=""; koEl.style.display="none"; return; }
+
+  jaEl.textContent = c.ja || "";
+  if(lang!=="ja" && c.ko){
+    koEl.textContent = c.ko;
+    koEl.style.display="";
+  }else{
+    koEl.style.display="none";
+  }
+}
+
+/* ===== CONTROLS ===== */
 btnPlay.addEventListener("click", async ()=>{
-  try{
-    if(audio.paused){
-      await audio.play();
-    }else{
-      audio.pause();
-    }
-  }catch(e){
-    console.error(e);
+  if(audio.paused) await audio.play();
+  else audio.pause();
+});
+
+audio.addEventListener("timeupdate", render);
+
+audio.addEventListener("ended", async ()=>{
+  if(idx < playlist.tracks.length-1){
+    await loadTrack(idx+1);
+    await audio.play();
+    return;
+  }
+  if(loopOn){
+    if(shuffleOn) playlist.tracks = shuffleArray(playlist.tracks.slice());
+    await loadTrack(0);
+    await audio.play();
   }
 });
+
+/* ===== BOOT ===== */
+(async ()=>{
+  playlist = await fetchJSON(playlistUrl);
+  if(shuffleOn) playlist.tracks = shuffleArray(playlist.tracks.slice());
+  await loadTrack(0);
+})();
+
+})();
 </script>
 
 </body>
