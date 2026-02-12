@@ -172,7 +172,11 @@
   const setId = params.get("set") || "default";
   const lang = (params.get("lang") || "both").toLowerCase(); // both|ja|ko
   const hud = params.get("hud"); // 0 => hide
-  const cacheBust = params.get("cb") || "";
+
+  // ✅ cb를 "한 번만" 고정 (플레이어/playlist/tracks 모두 동일하게 사용)
+  // - URL에 cb가 있으면 그 값 사용
+  // - 없으면 Date.now()로 자동 생성
+  const PT_CB = params.get("cb") || String(Date.now());
 
   // ✅ 기본 랜덤 재생
   const shuffleOn = (params.get("shuffle") ?? "1") !== "0";
@@ -234,14 +238,14 @@
   }
   setOffset(offsetSec);
 
+  // ✅ 모든 요청에 동일 cb를 강제 부여 + no-store fetch
   function withCB(url){
     const u = new URL(url, location.origin);
-    u.searchParams.set("v", cacheBust || Date.now().toString());
+    u.searchParams.set("cb", PT_CB);
     return u.toString();
   }
-
   async function fetchJSON(url){
-    const res = await fetch(withCB(url), {cache:"no-store"});
+    const res = await fetch(withCB(url), { cache: "no-store" });
     if (!res.ok) throw new Error(`fetch failed: ${res.status} ${url}`);
     return await res.json();
   }
