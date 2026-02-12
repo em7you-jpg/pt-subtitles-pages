@@ -1,553 +1,209 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PT Player</title>
-  <style>
-    :root{
-      --font: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", "Noto Sans JP", sans-serif;
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>PT Player</title>
 
-      /* ---------- title (TOP) ---------- */
-      --titleSize: 30px;
-      --titleGap: 10px;
-      --titleOpacity: 0.92;
-      --titleTop: 4em;
+<style>
+:root{
+  --font: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", "Noto Sans JP", sans-serif;
 
-      /* ---------- subtitles ---------- */
-      --jaSize: 36px;
-      --koSize: 30px;
-      --lineGap: 14px;
+  /* Title */
+  --titleSize: 30px;
+  --titleTop: 4em;
+  --titleOpacity: 0.92;
 
-      /* ---------- subtitle panel styling (keep minimal) ---------- */
-      --bg: rgba(0,0,0,0.0);
-      --fg: rgba(255,255,255,0.95);
-      --shadow: 0 2px 12px rgba(0,0,0,0.55);
-      --pad: 14px;
-      --radius: 14px;
-      --posX: 50%;
-      --posY: 82%;
-      --align: center; /* left|center|right */
-      --maxW: 92vw;
+  /* Subtitles */
+  --jaSize: 36px;
+  --koSize: 30px;
+  --lineGap: 14px;
+  --koColor: #ffd54a;
 
-      /* KO color */
-      --koColor: #ffd54a;
+  --fg: rgba(255,255,255,0.95);
+  --shadow: 0 2px 12px rgba(0,0,0,0.55);
 
-      /* ---------- minimal play button ---------- */
-      --playSize: 54px;                  /* button diameter */
-      --playStroke: 1.5px;               /* circle stroke */
-      --playOpacity: 0.55;               /* default */
-      --playOpacityHover: 0.78;          /* hover */
-      --playBottom: 28px;                /* from bottom */
-      --playRight: 0px;                  /* if you want corner layout later */
-      --playShadow: 0 6px 20px rgba(0,0,0,0.35);
-    }
+  /* Minimal Play Button */
+  --playSize: 54px;
+  --playStroke: 1.2px;
+  --playBottom: 30px;
 
-    body{
-      margin:0;
-      background: transparent;
-      overflow:hidden;
-      font-family: var(--font);
-    }
+  /* 더 은은하게 */
+  --playIdleOpacity: 0.22;
+  --playHoverOpacity: 0.45;
+  --playActiveOpacity: 0.65;
+}
 
-    /* ---------- TOP TITLE WRAP ---------- */
-    #titleWrap{
-      position: fixed;
-      left: 50%;
-      top: var(--titleTop);
-      transform: translateX(-50%);
-      width: min(92vw, 980px);
-      color: var(--fg);
-      text-align: center;
-      pointer-events: none;
-      filter: drop-shadow(var(--shadow));
-    }
-    #title{
-      font-size: var(--titleSize);
-      font-weight: 500;                 /* ✅ thinner */
-      line-height: 1.2;
-      opacity: var(--titleOpacity);
-      margin: 0 0 var(--titleGap) 0;
-      letter-spacing: 0.2px;
-      word-break: keep-all;
-    }
-    .title-off #titleWrap{ display:none; }
+body{
+  margin:0;
+  overflow:hidden;
+  background:transparent;
+  font-family:var(--font);
+}
 
-    /* ---------- SUBTITLE WRAP (BOTTOM) ---------- */
-    #wrap{
-      position: fixed;
-      left: var(--posX);
-      top: var(--posY);
-      transform: translate(-50%,-50%);
-      width: var(--maxW);
-      color: var(--fg);
-      text-align: var(--align);
-      pointer-events: none; /* OBS에서 클릭 안 막기 */
-    }
-    #box{
-      display:inline-block;
-      background: var(--bg);
-      padding: var(--pad);
-      border-radius: var(--radius);
-      filter: drop-shadow(var(--shadow));
-      pointer-events: none; /* ✅ 자막 영역은 클릭 완전 통과 */
-    }
+/* ===== TITLE ===== */
+#titleWrap{
+  position:fixed;
+  left:50%;
+  top:var(--titleTop);
+  transform:translateX(-50%);
+  text-align:center;
+  color:var(--fg);
+  pointer-events:none;
+  filter:drop-shadow(var(--shadow));
+}
+#title{
+  font-size:var(--titleSize);
+  font-weight:500;
+  letter-spacing:0.2px;
+  opacity:var(--titleOpacity);
+}
 
-    .ja{
-      font-size: var(--jaSize);
-      font-weight: 500;                 /* ✅ thinner */
-      line-height: 1.25;
-      letter-spacing: 0.1px;
-    }
-    .ko{
-      font-size: var(--koSize);
-      font-weight: 500;                 /* ✅ thinner */
-      line-height: 1.25;
-      margin-top: var(--lineGap);
-      color: var(--koColor);
-      text-shadow: 0 2px 12px rgba(0,0,0,0.55);
-      letter-spacing: 0.1px;
-    }
+/* ===== SUBTITLE ===== */
+#wrap{
+  position:fixed;
+  left:50%;
+  top:82%;
+  transform:translate(-50%,-50%);
+  text-align:center;
+  pointer-events:none;
+  color:var(--fg);
+  filter:drop-shadow(var(--shadow));
+}
+.ja{
+  font-size:var(--jaSize);
+  font-weight:500;
+}
+.ko{
+  font-size:var(--koSize);
+  font-weight:500;
+  margin-top:var(--lineGap);
+  color:var(--koColor);
+}
 
-    /* ---------- HUD (hidden in minimal mode) ---------- */
-    #hud{ display:none; }
+/* ===== MINIMAL PLAY BUTTON ===== */
+#playDock{
+  position:fixed;
+  left:50%;
+  bottom:var(--playBottom);
+  transform:translateX(-50%);
+  z-index:9999;
+  pointer-events:none;
+}
 
-    /* ---------- MINIMAL PLAY BUTTON (always available by default) ---------- */
-    #playDock{
-      position: fixed;
-      left: 50%;
-      bottom: var(--playBottom);
-      transform: translateX(-50%);
-      pointer-events: none;             /* dock itself doesn't block */
-      z-index: 9999;
-    }
-    #btnPlay{
-      pointer-events: auto;             /* ✅ only this is clickable */
-      width: var(--playSize);
-      height: var(--playSize);
-      border-radius: 999px;
-      background: rgba(0,0,0,0.00);
-      border: var(--playStroke) solid rgba(255,255,255,var(--playOpacity));
-      box-shadow: var(--playShadow);
-      display: inline-grid;
-      place-items: center;
-      cursor: pointer;
-      outline: none;
-      padding: 0;
-      transition: border-color 140ms ease, transform 140ms ease, opacity 140ms ease;
-      opacity: 0.95;
-      -webkit-tap-highlight-color: transparent;
-    }
-    #btnPlay:hover{
-      border-color: rgba(255,255,255,var(--playOpacityHover));
-      transform: translateY(-1px);
-    }
-    #btnPlay:active{
-      transform: translateY(0px) scale(0.98);
-    }
+#btnPlay{
+  pointer-events:auto;
+  width:var(--playSize);
+  height:var(--playSize);
+  border-radius:50%;
+  border:var(--playStroke) solid rgba(255,255,255,var(--playIdleOpacity));
+  background:rgba(0,0,0,0.0);
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+  transition:opacity 280ms ease, border-color 280ms ease, transform 160ms ease;
+  opacity:var(--playIdleOpacity);
+}
 
-    /* Triangle icon */
-    #btnPlay svg{
-      width: calc(var(--playSize) * 0.36);
-      height: calc(var(--playSize) * 0.36);
-      margin-left: 3px; /* optical centering */
-      filter: drop-shadow(0 2px 10px rgba(0,0,0,0.35));
-    }
-    #btnPlay .tri{
-      fill: rgba(255,255,255,0.82);
-    }
+#btnPlay:hover{
+  opacity:var(--playHoverOpacity);
+  border-color:rgba(255,255,255,var(--playHoverOpacity));
+}
 
-    /* subtle "playing" state: slightly stronger ring */
-    .is-playing #btnPlay{
-      border-color: rgba(255,255,255,0.82);
-    }
+#btnPlay:active{
+  opacity:var(--playActiveOpacity);
+  transform:scale(0.95);
+}
 
-    /* allow hiding play button with play=0 */
-    .play-off #playDock{ display:none; }
+#btnPlay svg{
+  width:calc(var(--playSize)*0.34);
+  height:calc(var(--playSize)*0.34);
+}
+#btnPlay path{
+  fill:rgba(255,255,255,0.75);
+}
 
-    /* keep pointer events safe */
-    *{ box-sizing: border-box; }
-  </style>
+/* 재생 중일 때 기본적으로 숨김 */
+.play-hidden #btnPlay{
+  opacity:0 !important;
+  border-color:rgba(255,255,255,0);
+  pointer-events:none;
+}
+
+/* 일시정지 시 선명하게 */
+.paused #btnPlay{
+  opacity:var(--playHoverOpacity);
+  border-color:rgba(255,255,255,var(--playHoverOpacity));
+}
+</style>
 </head>
+
 <body>
 
-  <!-- Title fixed at TOP -->
-  <div id="titleWrap">
-    <div id="title"></div>
-  </div>
+<div id="titleWrap">
+  <div id="title"></div>
+</div>
 
-  <!-- Subtitles -->
-  <div id="wrap">
-    <div id="box">
-      <div id="ja" class="ja"></div>
-      <div id="ko" class="ko" style="display:none;"></div>
+<div id="wrap">
+  <div id="ja" class="ja"></div>
+  <div id="ko" class="ko"></div>
+</div>
 
-      <!-- legacy HUD kept for keyboard/debug (hidden) -->
-      <div id="hud" aria-hidden="true"></div>
-    </div>
-  </div>
+<div id="playDock">
+  <button id="btnPlay">
+    <svg viewBox="0 0 24 24">
+      <path d="M9 7.5v9l8-4.5-8-4.5z"/>
+    </svg>
+  </button>
+</div>
 
-  <!-- Minimal Play Button (only UI) -->
-  <div id="playDock">
-    <button id="btnPlay" type="button" aria-label="Play">
-      <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-        <path class="tri" d="M9 7.5v9l8-4.5-8-4.5z"></path>
-      </svg>
-    </button>
-  </div>
-
-  <!-- Audio element (hidden visually, used for playback) -->
-  <audio id="audio" preload="auto" crossorigin="anonymous" style="display:none"></audio>
+<audio id="audio" preload="auto" style="display:none"></audio>
 
 <script>
-(() => {
-  const $ = (id) => document.getElementById(id);
-  const params = new URLSearchParams(location.search);
+const audio = document.getElementById("audio");
+const btnPlay = document.getElementById("btnPlay");
 
-  const setId = params.get("set") || "default";
-  const lang = (params.get("lang") || "both").toLowerCase(); // both|ja|ko
-  const hud = params.get("hud"); // 0 => hide (we still keep play button)
-  const cacheBust = params.get("cb") || "";
+let hideTimer = null;
 
-  // ✅ 기본 랜덤 재생
-  const shuffleOn = (params.get("shuffle") ?? "1") !== "0";
-  // ✅ 끝까지 가도 계속(방송 중지 전까지)
-  const loopOn = (params.get("loop") ?? "1") !== "0";
+function showButtonTemporarily(){
+  document.body.classList.remove("play-hidden");
+  clearTimeout(hideTimer);
+  hideTimer = setTimeout(()=>{
+    if(!audio.paused){
+      document.body.classList.add("play-hidden");
+    }
+  }, 2000);
+}
 
-  // ✅ 자막 유지(더 길게)
-  const HOLD_GAP = (() => {
-    const v = Number(params.get("holdGap"));
-    return Number.isFinite(v) ? v : 1.6;   // 기본 1.6s
-  })();
-  const MIN_CUE_SEC = (() => {
-    const v = Number(params.get("minCue"));
-    return Number.isFinite(v) ? v : 2.8;   // 기본 2.8s
-  })();
-
-  const titleOn = (params.get("title") ?? "1") !== "0";
-  if (!titleOn) document.body.classList.add("title-off");
-
-  // ✅ play button on/off (default ON)
-  const playOn = (params.get("play") ?? "1") !== "0";
-  if (!playOn) document.body.classList.add("play-off");
-
-  function num(v, d){ const n = Number(v); return Number.isFinite(n) ? n : d; }
-
-  // style params
-  const cssVars = {
-    "--posX": params.get("x") ? params.get("x") + "%" : null,
-    "--posY": params.get("y") ? params.get("y") + "%" : null,
-    "--jaSize": params.get("jaSize") ? params.get("jaSize") + "px" : null,
-    "--koSize": params.get("koSize") ? params.get("koSize") + "px" : null,
-    "--align": params.get("align") || null,
-    "--maxW": params.get("maxW") ? params.get("maxW") + "vw" : null,
-    "--titleSize": params.get("titleSize") ? params.get("titleSize") + "px" : null,
-    "--titleGap": params.get("titleGap") ? params.get("titleGap") + "px" : null,
-    "--titleOpacity": params.get("titleOpacity") ? params.get("titleOpacity") : null,
-    "--titleTop": params.get("titleTop") ? params.get("titleTop") + "em" : null,
-    "--koColor": params.get("koColor") ? params.get("koColor") : null,
-
-    "--playSize": params.get("playSize") ? params.get("playSize") + "px" : null,
-    "--playBottom": params.get("playBottom") ? params.get("playBottom") + "px" : null,
-    "--playOpacity": params.get("playOpacity") ? params.get("playOpacity") : null,
-  };
-  for (const [k,v] of Object.entries(cssVars)) if (v) document.documentElement.style.setProperty(k, v);
-
-  const titleEl = $("title");
-  const jaEl = $("ja");
-  const koEl = $("ko");
-  const audio = $("audio");
-  const btnPlay = $("btnPlay");
-
-  // offset per set
-  const lsKey = `pt_offset_${setId}`;
-  let offsetSec = num(localStorage.getItem(lsKey), 0.0);
-  function setOffset(v){
-    offsetSec = Math.round(v * 10) / 10;
-    localStorage.setItem(lsKey, String(offsetSec));
+btnPlay.addEventListener("click", async ()=>{
+  if(audio.paused){
+    await audio.play();
+  }else{
+    audio.pause();
   }
-  setOffset(offsetSec);
+});
 
-  function withCB(url){
-    const u = new URL(url, location.origin);
-    u.searchParams.set("v", cacheBust || Date.now().toString());
-    return u.toString();
+audio.addEventListener("play", ()=>{
+  document.body.classList.remove("paused");
+  showButtonTemporarily();
+});
+
+audio.addEventListener("pause", ()=>{
+  document.body.classList.remove("play-hidden");
+  document.body.classList.add("paused");
+});
+
+document.addEventListener("mousemove", ()=>{
+  if(!audio.paused){
+    showButtonTemporarily();
   }
-
-  async function fetchJSON(url){
-    const res = await fetch(withCB(url), {cache:"no-store"});
-    if (!res.ok) throw new Error(`fetch failed: ${res.status} ${url}`);
-    return await res.json();
+});
+document.addEventListener("click", ()=>{
+  if(!audio.paused){
+    showButtonTemporarily();
   }
-
-  // ===== 핵심: lines 시간대에서 KO 찾기 (렌더링 타임 기반) =====
-  let timedLines = [];
-  function lineAtTime(t){
-    if (!timedLines.length) return null;
-    for (let i=0;i<timedLines.length;i++){
-      const ln = timedLines[i];
-      const st = Number(ln.start), ed = Number(ln.end);
-      if (!Number.isFinite(st) || !Number.isFinite(ed)) continue;
-      if (t >= st && t < ed) return ln;
-    }
-    return null;
-  }
-
-  // ===== cues 추출: JA/KO는 1줄만, KO는 보강 가능 =====
-  function extractCues(obj){
-    const cues = [];
-    const seen = new Set();
-
-    const norm = (s) => (s ?? "").toString().replace(/\r/g,"").trim();
-    const firstLine = (s) => {
-      s = norm(s);
-      if (!s) return "";
-      const byNL = s.split("\n").map(x=>x.trim()).filter(Boolean);
-      return byNL.length ? byNL[0] : s;
-    };
-    const secondLine = (s) => {
-      s = norm(s);
-      if (!s) return "";
-      const byNL = s.split("\n").map(x=>x.trim()).filter(Boolean);
-      return (byNL.length >= 2) ? byNL[1] : "";
-    };
-
-    function pushCue(s,e,ja,ko,text){
-      s = Number(s); e = Number(e);
-      if (!Number.isFinite(s) || !Number.isFinite(e) || e <= s) return;
-
-      // 최소 표시 시간 보장(표시만)
-      if ((e - s) < MIN_CUE_SEC) e = s + MIN_CUE_SEC;
-
-      const ja1 = firstLine(ja ?? text ?? "");
-      if (!ja1) return;
-
-      // ✅ KO 복구 루트 1: cues.ko
-      let ko1 = firstLine(ko ?? "");
-
-      // ✅ KO 복구 루트 2: cues.text가 JA\nKO면 2번째 줄 사용
-      if (!ko1){
-        const ko2 = secondLine(text ?? "");
-        if (ko2) ko1 = firstLine(ko2);
-      }
-
-      const key = `${s.toFixed(3)}|${e.toFixed(3)}|${ja1}`;
-      if (seen.has(key)) return;
-      seen.add(key);
-
-      cues.push({start:s, end:e, ja:ja1, ko:ko1});
-    }
-
-    // timedLines 저장(렌더링 타임에서 ko 보강)
-    timedLines = Array.isArray(obj?.lines) ? obj.lines.filter(x=>x && typeof x==="object") : [];
-
-    // cues 우선
-    if (obj && Array.isArray(obj.cues) && obj.cues.length){
-      for (const c of obj.cues){
-        if (!c || typeof c !== "object") continue;
-        pushCue(
-          c.start, c.end,
-          c.ja ?? c.text ?? "",
-          c.ko ?? "",
-          c.text ?? ""
-        );
-      }
-      cues.sort((a,b)=>a.start-b.start);
-      return cues;
-    }
-
-    // fallback: lines
-    if (obj && Array.isArray(obj.lines) && obj.lines.length){
-      for (const ln of obj.lines){
-        if (!ln || typeof ln !== "object") continue;
-        pushCue(
-          ln.start, ln.end,
-          ln.ja ?? ln.text ?? "",
-          ln.ko ?? "",
-          ln.text ?? ""
-        );
-      }
-      cues.sort((a,b)=>a.start-b.start);
-      return cues;
-    }
-
-    return cues;
-  }
-
-  // cue pick
-  let lastCueIdx = 0;
-  function cueAt(cues, t){
-    if (!cues || cues.length === 0) return null;
-
-    for (let i = lastCueIdx; i < cues.length; i++){
-      const c = cues[i];
-      if (t < c.start) break;
-      if (t >= c.start && t < (c.end + HOLD_GAP)){
-        lastCueIdx = i;
-        return c;
-      }
-    }
-    for (let i = Math.min(lastCueIdx, cues.length - 1); i >= 0; i--){
-      const c = cues[i];
-      if (t >= c.start && t < (c.end + HOLD_GAP)){
-        lastCueIdx = i;
-        return c;
-      }
-    }
-    return null;
-  }
-
-  function clearSubtitle(){
-    if (jaEl.textContent !== "") jaEl.textContent = "";
-    if (koEl.textContent !== "") koEl.textContent = "";
-    koEl.style.display = "none";
-  }
-
-  // playlist
-  const base = `${location.origin}/set/${encodeURIComponent(setId)}/`;
-  const playlistUrl = base + "playlist.json";
-
-  let playlist = null;
-  let idx = 0;
-  let cues = [];
-  let currentTrack = null;
-
-  function setHeaderTitle(text){
-    const t = (text ?? "").toString().trim();
-    titleEl.textContent = t;
-    if (t) document.title = `PT Player — ${t}`;
-  }
-
-  function shuffleArray(arr){
-    for (let i = arr.length - 1; i > 0; i--){
-      const j = Math.floor(Math.random() * (i + 1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-    return arr;
-  }
-
-  async function loadTrack(i){
-    if (!playlist) return;
-    idx = Math.max(0, Math.min(i, playlist.tracks.length-1));
-    currentTrack = playlist.tracks[idx];
-
-    if (!currentTrack.audio_url) throw new Error("missing audio_url");
-    audio.src = currentTrack.audio_url;
-
-    if (!currentTrack.track_url) throw new Error("missing track_url");
-    const trackJson = await fetchJSON(base + currentTrack.track_url);
-
-    const t = currentTrack.title || trackJson.title || "";
-    if (titleOn) setHeaderTitle(t);
-
-    cues = extractCues(trackJson);
-    lastCueIdx = 0;
-    clearSubtitle();
-  }
-
-  function render(){
-    if (!cues || cues.length === 0){
-      clearSubtitle();
-      return;
-    }
-
-    const t = audio.currentTime + offsetSec;
-    const c = cueAt(cues, t);
-    if (!c){
-      clearSubtitle();
-      return;
-    }
-
-    if (jaEl.textContent !== c.ja) jaEl.textContent = c.ja;
-
-    // ✅ KO 표시 로직(복구 핵심)
-    let koText = (c.ko ?? "").toString().trim();
-
-    // cues.ko가 비면, 현재 시간대의 lines.ko로 보강
-    if (!koText){
-      const ln = lineAtTime(t);
-      if (ln && ln.ko) koText = String(ln.ko).trim();
-    }
-
-    const hasKo = !!koText;
-    if ((lang === "both" || lang === "ko") && hasKo){
-      if (koEl.textContent !== koText) koEl.textContent = koText;
-      koEl.style.display = "";
-    } else {
-      koEl.textContent = "";
-      koEl.style.display = "none";
-    }
-  }
-
-  // minimal control: play/pause toggle (icon stays triangle intentionally)
-  btnPlay.addEventListener("click", async () => {
-    if (!playlist) return;
-    try{
-      if (audio.paused) await audio.play();
-      else audio.pause();
-    }catch(e){
-      console.error(e);
-    }
-  });
-
-  audio.addEventListener("play", ()=> document.body.classList.add("is-playing"));
-  audio.addEventListener("pause", ()=> document.body.classList.remove("is-playing"));
-
-  // keep keyboard shortcuts (no UI exposure)
-  window.addEventListener("keydown", (e)=>{
-    if (e.key === " "){ e.preventDefault(); btnPlay.click(); }
-    if (e.key === "ArrowDown") { setOffset(offsetSec - 0.5); }
-    if (e.key === "ArrowUp") { setOffset(offsetSec + 0.5); }
-  });
-
-  audio.addEventListener("timeupdate", render);
-  audio.addEventListener("seeked", render);
-
-  audio.addEventListener("ended", async () => {
-    if (!playlist) return;
-
-    if (idx < playlist.tracks.length-1){
-      await loadTrack(idx + 1);
-      await audio.play();
-      return;
-    }
-
-    // ✅ 끝까지 가면 계속 반복(기본 랜덤 유지)
-    if (loopOn){
-      if (shuffleOn) playlist.tracks = shuffleArray(playlist.tracks.slice());
-      await loadTrack(0);
-      await audio.play();
-    } else {
-      clearSubtitle();
-    }
-  });
-
-  // boot
-  (async () => {
-    playlist = await fetchJSON(playlistUrl);
-    if (!playlist || !Array.isArray(playlist.tracks) || playlist.tracks.length === 0){
-      throw new Error("playlist.json invalid or empty");
-    }
-
-    if (shuffleOn){
-      playlist.tracks = shuffleArray(playlist.tracks.slice());
-    }
-
-    const startI = num(params.get("i"), 1);
-    await loadTrack(startI - 1);
-
-    // autoplay if allowed
-    if (params.get("autoplay") === "1"){
-      await audio.play();
-    }
-  })().catch(err => {
-    jaEl.textContent = "PLAYER ERROR";
-    koEl.style.display = "";
-    koEl.textContent = String(err?.message || err);
-    console.error(err);
-  });
-
-})();
+});
 </script>
+
 </body>
 </html>
