@@ -1,12 +1,15 @@
 {
   "meta": {
     "engine": "pt-whisper",
-    "generated_at": "2026-02-12T12:11:35.826289Z",
+    "generated_at": "2026-02-12T12:32:51.381221Z",
     "audio_duration_sec": 161.784,
     "leading_silence_sec": 0.594812,
     "title": "Softly Moving Forward",
     "lyric_weight_mode": "len_ja_ko",
-    "lyric_expand_mode": "auto"
+    "lyric_expand_mode": "auto",
+    "lyric_coarsen": 1,
+    "lyric_coarsen_target_chars": 28,
+    "lyric_coarsen_max_lines": 2
   },
   "lines": [
     {
@@ -54,7 +57,7 @@
       "_w": 30
     },
     {
-      "tag": "Chorus#01",
+      "tag": "Chorus#02",
       "ja": "小さなルールを胸ポケットにしまい明日への足音を数えてみた",
       "ko": "",
       "ko_pron": "",
@@ -65,7 +68,7 @@
       "_w": 28
     },
     {
-      "tag": "Post-Chorus#01",
+      "tag": "Post-Chorus#02",
       "ja": "迷いながら進む道 ふたりだけのリズムで軽やかに歩いていく",
       "ko": "",
       "ko_pron": "",
@@ -336,6 +339,7 @@
     }
   ],
   "issues": [
+    "[INFO] COARSEN enabled=1 lines=9 -> 9 target_chars=28 max_lines=2",
     "[INFO] EXPAND sections=9 -> lines=9 mode=auto max_chars=18 min_chars=6 target=40 (no_retry)",
     "[INFO] LYRICS_DRIVEN span=145.934s lines=9 base_min=0.850s remaining=138.284s weight_mode=len_ja_ko",
     "[INFO] build_cues_from_lines cues=28"
