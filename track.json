@@ -1,428 +1,140 @@
 {
-  "title": "静かな選択とオレンジの午後",
+  "title": "daily",
   "lines": [
     {
-      "start": 0.43,
-      "end": 9.363,
-      "ja": "静かな午後テーブルに手を重ねて今日のこと考える",
+      "start": 0.37,
+      "end": 17.212,
+      "ja": "静かな部屋で 時計の針が 進む音だけ響く",
       "ko_pron": "",
       "ko": "",
-      "tag": "Verse 1#01",
+      "tag": "L1#01",
       "_match": "lyrics_driven"
     },
     {
-      "start": 9.393,
-      "end": 19.001,
-      "ja": "窓辺のカーテン揺れずに止まったまま優しい光を浴びて",
+      "start": 17.242,
+      "end": 38.299,
+      "ja": "期待よりゆっくりと 胸に染みてく 強さを感じている",
       "ko_pron": "",
       "ko": "",
-      "tag": "Line 2#01",
+      "tag": "L2#01",
       "_match": "lyrics_driven"
     },
     {
-      "start": 19.031,
-      "end": 27.626,
-      "ja": "ミルク色のマグカップで小さな約束心に浮かべる",
+      "start": 38.329,
+      "end": 56.857,
+      "ja": "待つことだけが私の 強さだと信じて歩き出す",
       "ko_pron": "",
       "ko": "",
-      "tag": "Line 3#01",
+      "tag": "L3#01",
       "_match": "lyrics_driven"
     },
     {
-      "start": 27.656,
-      "end": 36.25,
-      "ja": "穏やかなリズム時計の針は進みゆく迷いは預けて",
+      "start": 56.887,
+      "end": 77.945,
+      "ja": "宇宙明かりに浮かぶ教室の 磯が並ぶ景色じゃなくて",
       "ko_pron": "",
       "ko": "",
-      "tag": "Line 4#01",
+      "tag": "L4#01",
       "_match": "lyrics_driven"
     },
     {
-      "start": 36.28,
-      "end": 49.077,
-      "ja": "ゆっくりと息を吸い込むように選んでいく",
+      "start": 77.975,
+      "end": 102.406,
+      "ja": "忘れ物を一つずつ置いて 過去に背を向けてゆく Lalala...",
       "ko_pron": "",
       "ko": "",
-      "tag": "Chorus#01",
+      "tag": "L5#01",
       "_match": "lyrics_driven"
     },
     {
-      "start": 49.107,
-      "end": 62.502,
-      "ja": "今日の自分を大切にしたいから焦らず歩こう",
+      "start": 102.436,
+      "end": 120.964,
+      "ja": "それでも揺らがないこの気持ちが 明日を創る",
       "ko_pron": "",
       "ko": "",
-      "tag": "Line 6#01",
+      "tag": "L6#01",
       "_match": "lyrics_driven"
     },
     {
-      "start": 62.532,
-      "end": 75.329,
-      "ja": "何気ない瞬間ほど特別に思えるこの場所で",
+      "start": 120.994,
+      "end": 148.084,
+      "ja": "静寂の中で最後の音が 優しく消えてゆく Lalala... Lalala...",
       "ko_pron": "",
       "ko": "",
-      "tag": "Line 7#01",
-      "_match": "lyrics_driven"
-    },
-    {
-      "start": 75.359,
-      "end": 86.958,
-      "ja": "ほら静かな決意胸の奥に芽生えている",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Post-Chorus#01",
-      "_match": "lyrics_driven"
-    },
-    {
-      "start": 86.988,
-      "end": 98.587,
-      "ja": "曇りガラスに映る自分に微笑んでみる",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Verse 2#01",
-      "_match": "lyrics_driven"
-    },
-    {
-      "start": 98.617,
-      "end": 110.815,
-      "ja": "ありふれた日々繋ぐ言葉ひとつひとつ選ぶ",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Line 10#01",
-      "_match": "lyrics_driven"
-    },
-    {
-      "start": 110.845,
-      "end": 123.642,
-      "ja": "小さな幸せポケットにそっとしまいながら",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Line 11#01",
-      "_match": "lyrics_driven"
-    },
-    {
-      "start": 123.672,
-      "end": 135.87,
-      "ja": "新しいページを優しくめくるように進む",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Line 12#01",
-      "_match": "lyrics_driven"
-    },
-    {
-      "start": 135.9,
-      "end": 141.917,
-      "ja": "ゆっくりと息を吸い込むように選んでいく",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Chorus#01",
-      "_match": "lyrics_driven"
-    },
-    {
-      "start": 141.947,
-      "end": 148.224,
-      "ja": "今日の自分を大切にしたいから焦らず歩こう",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Line 14#01",
-      "_match": "lyrics_driven"
-    },
-    {
-      "start": 148.254,
-      "end": 154.272,
-      "ja": "何気ない瞬間ほど特別に思えるこの場所で",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Line 15#01",
-      "_match": "lyrics_driven"
-    },
-    {
-      "start": 154.302,
-      "end": 159.799,
-      "ja": "ほら静かな決意胸の奥に芽生えている",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Post-Chorus#01",
-      "_match": "lyrics_driven"
-    },
-    {
-      "start": 159.829,
-      "end": 166.366,
-      "ja": "立ち止まることも間違いじゃないと知った午後",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Bridge#01",
-      "_match": "lyrics_driven"
-    },
-    {
-      "start": 166.396,
-      "end": 173.193,
-      "ja": "遠回りでも自分のペースで描いていくストーリー",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Line 18#01",
-      "_match": "lyrics_driven"
-    },
-    {
-      "start": 173.223,
-      "end": 179.24,
-      "ja": "ゆっくりと息を吸い込むように選んでいく",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Final Chorus#01",
-      "_match": "lyrics_driven"
-    },
-    {
-      "start": 179.27,
-      "end": 185.548,
-      "ja": "今日の自分を大切にしたいから焦らず歩こう",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Line 20#01",
-      "_match": "lyrics_driven"
-    },
-    {
-      "start": 185.578,
-      "end": 191.595,
-      "ja": "何気ない瞬間ほど特別に思えるこの場所で",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Line 21#01",
-      "_match": "lyrics_driven"
-    },
-    {
-      "start": 191.625,
-      "end": 197.122,
-      "ja": "たしかな未来はここにあると信じてる",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Line 22#01",
-      "_match": "lyrics_driven"
-    },
-    {
-      "start": 197.152,
-      "end": 202.78,
-      "ja": "ほら静かな決意胸の奥に芽生えている",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Post-Chorus Reprise#01",
+      "tag": "L7#01",
       "_match": "lyrics_driven"
     }
   ],
   "cues": [
     {
-      "t0": 0.43,
-      "t1": 9.36,
-      "start": 0.43,
-      "end": 9.36,
-      "text": "静かな午後テーブルに手を重ねて今日のこと考える",
-      "ja": "静かな午後テーブルに手を重ねて今日のこと考える",
+      "t0": 0.37,
+      "t1": 17.21,
+      "start": 0.37,
+      "end": 17.21,
+      "text": "静かな部屋で 時計の針が 進む音だけ響く",
+      "ja": "静かな部屋で 時計の針が 進む音だけ響く",
       "ko": ""
     },
     {
-      "t0": 9.39,
-      "t1": 19.0,
-      "start": 9.39,
-      "end": 19.0,
-      "text": "窓辺のカーテン揺れずに止まったまま優しい光を浴びて",
-      "ja": "窓辺のカーテン揺れずに止まったまま優しい光を浴びて",
+      "t0": 17.24,
+      "t1": 38.3,
+      "start": 17.24,
+      "end": 38.3,
+      "text": "期待よりゆっくりと 胸に染みてく 強さを感じている",
+      "ja": "期待よりゆっくりと 胸に染みてく 強さを感じている",
       "ko": ""
     },
     {
-      "t0": 19.03,
-      "t1": 27.63,
-      "start": 19.03,
-      "end": 27.63,
-      "text": "ミルク色のマグカップで小さな約束心に浮かべる",
-      "ja": "ミルク色のマグカップで小さな約束心に浮かべる",
+      "t0": 38.33,
+      "t1": 56.86,
+      "start": 38.33,
+      "end": 56.86,
+      "text": "待つことだけが私の 強さだと信じて歩き出す",
+      "ja": "待つことだけが私の 強さだと信じて歩き出す",
       "ko": ""
     },
     {
-      "t0": 27.66,
-      "t1": 36.25,
-      "start": 27.66,
-      "end": 36.25,
-      "text": "穏やかなリズム時計の針は進みゆく迷いは預けて",
-      "ja": "穏やかなリズム時計の針は進みゆく迷いは預けて",
+      "t0": 56.89,
+      "t1": 77.94,
+      "start": 56.89,
+      "end": 77.94,
+      "text": "宇宙明かりに浮かぶ教室の 磯が並ぶ景色じゃなくて",
+      "ja": "宇宙明かりに浮かぶ教室の 磯が並ぶ景色じゃなくて",
       "ko": ""
     },
     {
-      "t0": 36.28,
-      "t1": 49.08,
-      "start": 36.28,
-      "end": 49.08,
-      "text": "ゆっくりと息を吸い込むように選んでいく",
-      "ja": "ゆっくりと息を吸い込むように選んでいく",
+      "t0": 77.97,
+      "t1": 102.41,
+      "start": 77.97,
+      "end": 102.41,
+      "text": "忘れ物を一つずつ置いて 過去に背を向けてゆく Lalala...",
+      "ja": "忘れ物を一つずつ置いて 過去に背を向けてゆく Lalala...",
       "ko": ""
     },
     {
-      "t0": 49.11,
-      "t1": 62.5,
-      "start": 49.11,
-      "end": 62.5,
-      "text": "今日の自分を大切にしたいから焦らず歩こう",
-      "ja": "今日の自分を大切にしたいから焦らず歩こう",
+      "t0": 102.44,
+      "t1": 120.96,
+      "start": 102.44,
+      "end": 120.96,
+      "text": "それでも揺らがないこの気持ちが 明日を創る",
+      "ja": "それでも揺らがないこの気持ちが 明日を創る",
       "ko": ""
     },
     {
-      "t0": 62.53,
-      "t1": 75.33,
-      "start": 62.53,
-      "end": 75.33,
-      "text": "何気ない瞬間ほど特別に思えるこの場所で",
-      "ja": "何気ない瞬間ほど特別に思えるこの場所で",
-      "ko": ""
-    },
-    {
-      "t0": 75.36,
-      "t1": 86.96,
-      "start": 75.36,
-      "end": 86.96,
-      "text": "ほら静かな決意胸の奥に芽生えている",
-      "ja": "ほら静かな決意胸の奥に芽生えている",
-      "ko": ""
-    },
-    {
-      "t0": 86.99,
-      "t1": 98.59,
-      "start": 86.99,
-      "end": 98.59,
-      "text": "曇りガラスに映る自分に微笑んでみる",
-      "ja": "曇りガラスに映る自分に微笑んでみる",
-      "ko": ""
-    },
-    {
-      "t0": 98.62,
-      "t1": 110.81,
-      "start": 98.62,
-      "end": 110.81,
-      "text": "ありふれた日々繋ぐ言葉ひとつひとつ選ぶ",
-      "ja": "ありふれた日々繋ぐ言葉ひとつひとつ選ぶ",
-      "ko": ""
-    },
-    {
-      "t0": 110.84,
-      "t1": 123.64,
-      "start": 110.84,
-      "end": 123.64,
-      "text": "小さな幸せポケットにそっとしまいながら",
-      "ja": "小さな幸せポケットにそっとしまいながら",
-      "ko": ""
-    },
-    {
-      "t0": 123.67,
-      "t1": 135.87,
-      "start": 123.67,
-      "end": 135.87,
-      "text": "新しいページを優しくめくるように進む",
-      "ja": "新しいページを優しくめくるように進む",
-      "ko": ""
-    },
-    {
-      "t0": 135.9,
-      "t1": 141.92,
-      "start": 135.9,
-      "end": 141.92,
-      "text": "ゆっくりと息を吸い込むように選んでいく",
-      "ja": "ゆっくりと息を吸い込むように選んでいく",
-      "ko": ""
-    },
-    {
-      "t0": 141.95,
-      "t1": 148.22,
-      "start": 141.95,
-      "end": 148.22,
-      "text": "今日の自分を大切にしたいから焦らず歩こう",
-      "ja": "今日の自分を大切にしたいから焦らず歩こう",
-      "ko": ""
-    },
-    {
-      "t0": 148.25,
-      "t1": 154.27,
-      "start": 148.25,
-      "end": 154.27,
-      "text": "何気ない瞬間ほど特別に思えるこの場所で",
-      "ja": "何気ない瞬間ほど特別に思えるこの場所で",
-      "ko": ""
-    },
-    {
-      "t0": 154.3,
-      "t1": 159.8,
-      "start": 154.3,
-      "end": 159.8,
-      "text": "ほら静かな決意胸の奥に芽生えている",
-      "ja": "ほら静かな決意胸の奥に芽生えている",
-      "ko": ""
-    },
-    {
-      "t0": 159.83,
-      "t1": 166.37,
-      "start": 159.83,
-      "end": 166.37,
-      "text": "立ち止まることも間違いじゃないと知った午後",
-      "ja": "立ち止まることも間違いじゃないと知った午後",
-      "ko": ""
-    },
-    {
-      "t0": 166.4,
-      "t1": 173.19,
-      "start": 166.4,
-      "end": 173.19,
-      "text": "遠回りでも自分のペースで描いていくストーリー",
-      "ja": "遠回りでも自分のペースで描いていくストーリー",
-      "ko": ""
-    },
-    {
-      "t0": 173.22,
-      "t1": 179.24,
-      "start": 173.22,
-      "end": 179.24,
-      "text": "ゆっくりと息を吸い込むように選んでいく",
-      "ja": "ゆっくりと息を吸い込むように選んでいく",
-      "ko": ""
-    },
-    {
-      "t0": 179.27,
-      "t1": 185.55,
-      "start": 179.27,
-      "end": 185.55,
-      "text": "今日の自分を大切にしたいから焦らず歩こう",
-      "ja": "今日の自分を大切にしたいから焦らず歩こう",
-      "ko": ""
-    },
-    {
-      "t0": 185.58,
-      "t1": 191.59,
-      "start": 185.58,
-      "end": 191.59,
-      "text": "何気ない瞬間ほど特別に思えるこの場所で",
-      "ja": "何気ない瞬間ほど特別に思えるこの場所で",
-      "ko": ""
-    },
-    {
-      "t0": 191.62,
-      "t1": 197.12,
-      "start": 191.62,
-      "end": 197.12,
-      "text": "たしかな未来はここにあると信じてる",
-      "ja": "たしかな未来はここにあると信じてる",
-      "ko": ""
-    },
-    {
-      "t0": 197.15,
-      "t1": 202.78,
-      "start": 197.15,
-      "end": 202.78,
-      "text": "ほら静かな決意胸の奥に芽生えている",
-      "ja": "ほら静かな決意胸の奥に芽生えている",
+      "t0": 120.99,
+      "t1": 148.08,
+      "start": 120.99,
+      "end": 148.08,
+      "text": "静寂の中で最後の音が 優しく消えてゆく Lalala... Lalala...",
+      "ja": "静寂の中で最後の音が 優しく消えてゆく Lalala... Lalala...",
       "ko": ""
     }
   ],
   "meta": {
     "engine": "word_align_lyrics_driven_v7_2_expand_duration_anchor",
-    "generated_at": "2026-02-13T21:56:38.908635Z",
+    "generated_at": "2026-02-13T22:00:35.138179Z",
     "leading_silence_sec": 0.0,
-    "audio_duration_sec": 203.28,
+    "audio_duration_sec": 148.584,
     "audio_tail_margin_sec": 0.6,
     "whisper_backend": "local_faster_whisper",
     "whisper_model": "small",
@@ -454,18 +166,19 @@
     "anchor_preroll_sec": 0.6
   },
   "issues": [
-    "[INFO] AUDIO_DUR=203.280s from ffprobe",
-    "[INFO] WORDS(vad1)=167 first=0.43",
-    "[INFO] WORDS(vad0)=378 first=0.00",
+    "[INFO] AUDIO_DUR=148.584s from ffprobe",
+    "[INFO] WORDS(vad1)=33 first=0.37",
+    "[INFO] WORDS(vad0)=198 first=0.00",
     "[INFO] TRANSCRIBE_KEEP(est) vad1 (vad0 suspicious: vad0_first=0.00 est2=0.00)",
-    "[INFO] WORDS=167",
-    "[INFO] WORDS_FIRST=0.43 WORDS_LAST=156.36",
-    "[INFO] EXPAND sections=23 -> lines=23 max_chars=60 max_parts=3",
-    "[INFO] VOCAL_START_FALLBACK(no_density_good) -> 0.430",
-    "[INFO] SPAN_EXTEND by duration: asr_end=156.360 -> end=202.680 (dur=203.280 tail_margin=0.60)",
-    "[INFO] LYRICS_DRIVEN span=202.250s lines=23 base_min=0.850s remaining=182.700s weight_mode=len_ja_ko anchor=1",
-    "[INFO] ANCHOR_APPLIED n_found=2 segments=3 preroll=0.60s",
+    "[INFO] WORDS=33",
+    "[INFO] WORDS_FIRST=0.37 WORDS_LAST=139.18",
+    "[INFO] EXPAND sections=7 -> lines=7 max_chars=60 max_parts=3",
+    "[INFO] VOCAL_START sparse_mode=1 total_words=33 win=3.00 lookahead=40.0",
+    "[INFO] VOCAL_START_FALLBACK(no_density_good) -> 0.370",
+    "[INFO] SPAN_EXTEND by duration: asr_end=139.180 -> end=147.984 (dur=148.584 tail_margin=0.60)",
+    "[INFO] LYRICS_DRIVEN span=147.614s lines=7 base_min=0.850s remaining=141.664s weight_mode=len_ja_ko anchor=1",
+    "[INFO] ANCHOR skip (no anchor tags)",
     "[INFO] LINES_POST tail_pad=0.10 pad_end=0.03 preroll=0.80s tags=chorus,pre,post,final min_show=1.40s",
-    "[INFO] CUES_BUILT=23 (min=0.25s, split_max=20.0s, split_policy=none)"
+    "[INFO] CUES_BUILT=7 (min=0.25s, split_max=20.0s, split_policy=none)"
   ]
 }
