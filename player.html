@@ -40,6 +40,11 @@
       --playActiveOpacity: 0.65;
       --playLeft: 28px;
       --playTop: 28px;
+
+      /* ---------- progress (under title) ---------- */
+      --progW: min(520px, 70vw);
+      --progLineOpacity: 0.18;
+      --progBarOpacity: 0.55;
     }
     body{
       margin:0; background: transparent; overflow:hidden;
@@ -68,6 +73,29 @@
       word-break: keep-all;
     }
     .title-off #titleWrap{ display:none; }
+
+    /* ✅ 추가: 제목 아래 감성 진행바(상호작용 가능) */
+    #progressLine{
+      position: relative;
+      width: var(--progW);
+      height: 1px;
+      margin: 12px auto 0;
+      background: rgba(255,255,255,var(--progLineOpacity));
+      overflow: visible;
+
+      pointer-events: auto;   /* ✅ titleWrap이 none이어도 얘만 클릭 가능 */
+      cursor: pointer;
+    }
+    #progressBar{
+      position: absolute;
+      top: -6px;
+      left: 0%;
+      width: 2px;
+      height: 14px;
+      background: rgba(255,255,255,var(--progBarOpacity));
+      box-shadow: 0 0 6px rgba(255,255,255,0.35);
+      transform: translateX(-1px);
+    }
 
     /* ---------- SUBTITLE WRAP (BOTTOM) ---------- */
     #wrap{
@@ -196,6 +224,11 @@
   <!-- Title fixed at TOP -->
   <div id="titleWrap">
     <div id="title"></div>
+
+    <!-- ✅ 추가: 상호작용 가능한 감성 진행바 -->
+    <div id="progressLine" role="slider" aria-label="Playback progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+      <div id="progressBar"></div>
+    </div>
   </div>
 
   <!-- Subtitles + HUD (HUD는 숨김, 구조/로직 유지) -->
@@ -288,6 +321,63 @@
   const btnPlayMini = $("btnPlayMini");
   if (btnPlayMini && btnPlay){
     btnPlayMini.addEventListener("click", () => btnPlay.click());
+  }
+
+  /* ✅ 추가: 제목 아래 진행바(상호작용) — 로직 변경 없음 */
+  const progressLine = $("progressLine");
+  const progressBar = $("progressBar");
+  let draggingProgress = false;
+  function clamp(n, a, b){ return Math.max(a, Math.min(b, n)); }
+
+  function updateProgressUI(){
+    if (!progressLine || !progressBar) return;
+    const d = audio.duration;
+    if (!Number.isFinite(d) || d <= 0) return;
+
+    const ratio = clamp(audio.currentTime / d, 0, 1);
+    const pct = ratio * 100;
+
+    progressBar.style.left = pct + "%";
+    progressLine.setAttribute("aria-valuenow", String(Math.round(pct)));
+  }
+
+  function seekByClientX(clientX){
+    const d = audio.duration;
+    if (!Number.isFinite(d) || d <= 0) return;
+    if (!progressLine) return;
+
+    const r = progressLine.getBoundingClientRect();
+    const x = clamp(clientX - r.left, 0, r.width);
+    const ratio = (r.width > 0) ? (x / r.width) : 0;
+
+    audio.currentTime = ratio * d;
+    updateProgressUI();
+  }
+
+  if (progressLine){
+    progressLine.addEventListener("pointerdown", (e) => {
+      draggingProgress = true;
+      progressLine.setPointerCapture(e.pointerId);
+      seekByClientX(e.clientX);
+    });
+
+    progressLine.addEventListener("pointermove", (e) => {
+      if (!draggingProgress) return;
+      seekByClientX(e.clientX);
+    });
+
+    progressLine.addEventListener("pointerup", (e) => {
+      draggingProgress = false;
+      try { progressLine.releasePointerCapture(e.pointerId); } catch(_) {}
+    });
+
+    // 키보드(선택): 좌/우 5초 시킹
+    progressLine.addEventListener("keydown", (e) => {
+      const d = audio.duration;
+      if (!Number.isFinite(d) || d <= 0) return;
+      if (e.key === "ArrowLeft") { audio.currentTime = Math.max(0, audio.currentTime - 5); updateProgressUI(); }
+      if (e.key === "ArrowRight"){ audio.currentTime = Math.min(d, audio.currentTime + 5); updateProgressUI(); }
+    });
   }
 
   // offset per set
@@ -481,6 +571,7 @@
     cues = extractCues(trackJson);
     lastCueIdx = 0;
     clearSubtitle();
+    updateProgressUI(); /* ✅ 추가 */
   }
 
   function render(){
@@ -549,6 +640,11 @@
   audio.addEventListener("timeupdate", render);
   audio.addEventListener("seeked", render);
 
+  /* ✅ 추가: 진행바 UI 업데이트(기존 로직 영향 없음) */
+  audio.addEventListener("timeupdate", updateProgressUI);
+  audio.addEventListener("loadedmetadata", updateProgressUI);
+  audio.addEventListener("seeked", updateProgressUI);
+
   audio.addEventListener("ended", async () => {
     if (!playlist) return;
 
@@ -588,6 +684,8 @@
 
     updateTrackLabel();
     offsetLabel.textContent = offsetSec.toFixed(1);
+
+    updateProgressUI(); /* ✅ 추가 */
   })().catch(err => {
     jaEl.textContent = "PLAYER ERROR";
     koEl.style.display = "";
