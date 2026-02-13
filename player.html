@@ -42,9 +42,11 @@
       --playTop: 28px;
 
       /* ---------- progress (under title) ---------- */
-      --progW: min(520px, 70vw);
-      --progLineOpacity: 0.18;
-      --progBarOpacity: 0.55;
+      --progW: min(300px, 52vw);      /* ✅ 더 짧게 */
+      --progH: 2px;                   /* ✅ 더 굵게 */
+      --progLineOpacity: 0.26;        /* 살짝 더 보이게 */
+      --heartOpacity: 0.70;           /* 하트 선명도 */
+      --heartSize: 14px;              /* 하트 크기 */
     }
     body{
       margin:0; background: transparent; overflow:hidden;
@@ -65,7 +67,7 @@
     }
     #title{
       font-size: var(--titleSize);
-      font-weight: 500; /* ✅ 800 -> 500 (얇게) */
+      font-weight: 500;
       line-height: 1.2;
       opacity: var(--titleOpacity);
       margin: 0 0 var(--titleGap) 0;
@@ -74,27 +76,33 @@
     }
     .title-off #titleWrap{ display:none; }
 
-    /* ✅ 추가: 제목 아래 감성 진행바(상호작용 가능) */
+    /* ✅ 진행바(상호작용) */
     #progressLine{
       position: relative;
       width: var(--progW);
-      height: 1px;
+      height: var(--progH); /* ✅ 두께 */
       margin: 12px auto 0;
+      border-radius: 999px;
       background: rgba(255,255,255,var(--progLineOpacity));
       overflow: visible;
 
-      pointer-events: auto;   /* ✅ titleWrap이 none이어도 얘만 클릭 가능 */
+      pointer-events: auto;
       cursor: pointer;
     }
-    #progressBar{
+
+    /* ✅ 하트 마커 */
+    #progressHeart{
       position: absolute;
-      top: -6px;
+      top: 50%;
       left: 0%;
-      width: 2px;
-      height: 14px;
-      background: rgba(255,255,255,var(--progBarOpacity));
-      box-shadow: 0 0 6px rgba(255,255,255,0.35);
-      transform: translateX(-1px);
+      width: var(--heartSize);
+      height: var(--heartSize);
+      transform: translate(-50%, -50%);
+      opacity: var(--heartOpacity);
+      filter: drop-shadow(0 0 6px rgba(255,255,255,0.28));
+    }
+    #progressHeart path{
+      fill: rgba(255,255,255,0.85);
     }
 
     /* ---------- SUBTITLE WRAP (BOTTOM) ---------- */
@@ -106,7 +114,7 @@
       width: var(--maxW);
       color: var(--fg);
       text-align: var(--align);
-      pointer-events: none; /* OBS에서 클릭 안 막기 */
+      pointer-events: none;
     }
     #box{
       display:inline-block;
@@ -114,14 +122,14 @@
       padding: var(--pad);
       border-radius: var(--radius);
       filter: drop-shadow(var(--shadow));
-      pointer-events: auto; /* 원본 유지 */
+      pointer-events: auto;
     }
-    .hud-off #box{ pointer-events:none; } /* 원본 유지 */
+    .hud-off #box{ pointer-events:none; }
 
-    .ja{ font-size: var(--jaSize); font-weight: 500; line-height: 1.25; } /* ✅ 700 -> 500 */
+    .ja{ font-size: var(--jaSize); font-weight: 500; line-height: 1.25; }
     .ko{
       font-size: var(--koSize);
-      font-weight: 500; /* ✅ 700 -> 500 */
+      font-weight: 500;
       font-style: italic;
       line-height: 1.25;
       margin-top: var(--lineGap);
@@ -130,46 +138,22 @@
     }
 
     /* ---------- HUD ---------- */
-    #hud{
-      margin-top: 10px;
-      font-size: 13px;
-      opacity: 0.85;
-      user-select: none;
-    }
+    #hud{ margin-top: 10px; font-size: 13px; opacity: 0.85; user-select: none; }
     .hud-off #hud{ display:none; }
-
-    /* ✅ 대표님 요청: UI는 플레이 버튼만 남김 (HUD는 보이기만 숨김, 로직/DOM 유지) */
     #hud{ display:none !important; }
 
     #hudTop, #hudBottom{
-      display:flex;
-      gap:10px;
-      justify-content:center;
-      align-items:center;
-      flex-wrap: wrap;
-      margin-top: 6px;
+      display:flex; gap:10px; justify-content:center; align-items:center; flex-wrap: wrap; margin-top: 6px;
     }
-    #hud button, #hud input, #hud audio{
-      pointer-events: auto;
-      font-size: 13px;
-    }
+    #hud button, #hud input, #hud audio{ pointer-events: auto; font-size: 13px; }
     #hud button{
-      border: 0;
-      border-radius: 10px;
-      padding: 6px 10px;
-      background: rgba(255,255,255,0.12);
-      color: rgba(255,255,255,0.95);
+      border: 0; border-radius: 10px; padding: 6px 10px;
+      background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.95);
       cursor:pointer;
     }
     #hud button:hover{ background: rgba(255,255,255,0.18); }
-    #hud .pill{
-      background: rgba(255,255,255,0.10);
-      padding: 6px 10px;
-      border-radius: 10px;
-    }
-    #audio{
-      width: min(720px, 86vw);
-    }
+    #hud .pill{ background: rgba(255,255,255,0.10); padding: 6px 10px; border-radius: 10px; }
+    #audio{ width: min(720px, 86vw); }
 
     /* ---------- MINIMAL PLAY BUTTON (ONLY VISIBLE CONTROL) ---------- */
     #miniPlayDock{
@@ -212,7 +196,7 @@
 </head>
 <body>
 
-  <!-- ✅ 추가: 좌상단 미니멀 플레이 버튼 -->
+  <!-- ✅ 좌상단 미니멀 플레이 버튼 -->
   <div id="miniPlayDock">
     <button id="btnPlayMini" type="button" aria-label="Play">
       <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -225,9 +209,11 @@
   <div id="titleWrap">
     <div id="title"></div>
 
-    <!-- ✅ 추가: 상호작용 가능한 감성 진행바 -->
+    <!-- ✅ 짧고 조금 더 굵은 진행바 + 하트 마커(상호작용 가능) -->
     <div id="progressLine" role="slider" aria-label="Playback progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
-      <div id="progressBar"></div>
+      <svg id="progressHeart" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 21s-6.716-4.35-9.33-7.98C.66 10.23 2.06 6.93 5.3 5.97c1.86-.55 3.76.05 4.95 1.36C11.44 6.02 13.34 5.42 15.2 5.97c3.24.96 4.64 4.26 2.63 7.05C18.716 16.65 12 21 12 21z"/>
+      </svg>
     </div>
   </div>
 
@@ -301,6 +287,13 @@
     "--titleOpacity": params.get("titleOpacity") ? params.get("titleOpacity") : null,
     "--titleTop": params.get("titleTop") ? params.get("titleTop") + "em" : null,
     "--koColor": params.get("koColor") ? params.get("koColor") : null,
+
+    /* 진행바 감성 튜닝(옵션) */
+    "--progW": params.get("progW") ? params.get("progW") + "px" : null,
+    "--progH": params.get("progH") ? params.get("progH") + "px" : null,
+    "--progLineOpacity": params.get("progOp") ? params.get("progOp") : null,
+    "--heartOpacity": params.get("heartOp") ? params.get("heartOp") : null,
+    "--heartSize": params.get("heartSize") ? params.get("heartSize") + "px" : null,
   };
   for (const [k,v] of Object.entries(cssVars)) if (v) document.documentElement.style.setProperty(k, v);
 
@@ -317,27 +310,27 @@
   const trackLabel = $("trackLabel");
   const offsetLabel = $("offsetLabel");
 
-  /* ✅ 추가: 미니 플레이 버튼은 기존 btnPlay를 그대로 트리거 (로직 변경 없음) */
+  /* ✅ 미니 플레이 버튼은 기존 btnPlay를 그대로 트리거 (로직 변경 없음) */
   const btnPlayMini = $("btnPlayMini");
   if (btnPlayMini && btnPlay){
     btnPlayMini.addEventListener("click", () => btnPlay.click());
   }
 
-  /* ✅ 추가: 제목 아래 진행바(상호작용) — 로직 변경 없음 */
+  /* ✅ 진행바(하트) 상호작용 */
   const progressLine = $("progressLine");
-  const progressBar = $("progressBar");
+  const progressHeart = $("progressHeart");
   let draggingProgress = false;
   function clamp(n, a, b){ return Math.max(a, Math.min(b, n)); }
 
   function updateProgressUI(){
-    if (!progressLine || !progressBar) return;
+    if (!progressLine || !progressHeart) return;
     const d = audio.duration;
     if (!Number.isFinite(d) || d <= 0) return;
 
     const ratio = clamp(audio.currentTime / d, 0, 1);
     const pct = ratio * 100;
 
-    progressBar.style.left = pct + "%";
+    progressHeart.style.left = pct + "%";
     progressLine.setAttribute("aria-valuenow", String(Math.round(pct)));
   }
 
@@ -371,7 +364,6 @@
       try { progressLine.releasePointerCapture(e.pointerId); } catch(_) {}
     });
 
-    // 키보드(선택): 좌/우 5초 시킹
     progressLine.addEventListener("keydown", (e) => {
       const d = audio.duration;
       if (!Number.isFinite(d) || d <= 0) return;
@@ -571,7 +563,7 @@
     cues = extractCues(trackJson);
     lastCueIdx = 0;
     clearSubtitle();
-    updateProgressUI(); /* ✅ 추가 */
+    updateProgressUI();
   }
 
   function render(){
@@ -640,7 +632,6 @@
   audio.addEventListener("timeupdate", render);
   audio.addEventListener("seeked", render);
 
-  /* ✅ 추가: 진행바 UI 업데이트(기존 로직 영향 없음) */
   audio.addEventListener("timeupdate", updateProgressUI);
   audio.addEventListener("loadedmetadata", updateProgressUI);
   audio.addEventListener("seeked", updateProgressUI);
@@ -654,7 +645,6 @@
       return;
     }
 
-    // ✅ 끝까지 가면 계속 반복(기본 랜덤 유지)
     if (loopOn){
       if (shuffleOn) playlist.tracks = shuffleArray(playlist.tracks.slice());
       await loadTrack(0);
@@ -685,7 +675,7 @@
     updateTrackLabel();
     offsetLabel.textContent = offsetSec.toFixed(1);
 
-    updateProgressUI(); /* ✅ 추가 */
+    updateProgressUI();
   })().catch(err => {
     jaEl.textContent = "PLAYER ERROR";
     koEl.style.display = "";
