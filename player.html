@@ -42,11 +42,11 @@
       --playTop: 28px;
 
       /* ---------- progress (under title) ---------- */
-      --progW: min(300px, 52vw);      /* ✅ 더 짧게 */
-      --progH: 2px;                   /* ✅ 더 굵게 */
-      --progLineOpacity: 0.26;        /* 살짝 더 보이게 */
-      --heartOpacity: 0.70;           /* 하트 선명도 */
-      --heartSize: 14px;              /* 하트 크기 */
+      --progW: min(320px, 55vw);      /* ✅ 더 짧게 */
+      --progH: 4px;                   /* ✅ 더 굵게 */
+      --progLineOpacity: 0.38;        /* 살짝 더 보이게 */
+      --heartOpacity: 0.85;           /* 하트 선명도 */
+      --heartSize: 20px;              /* 하트 크기 */
     }
     body{
       margin:0; background: transparent; overflow:hidden;
@@ -80,11 +80,18 @@
     #progressLine{
       position: relative;
       width: var(--progW);
-      height: var(--progH); /* ✅ 두께 */
-      margin: 12px auto 0;
+      height: var(--progH);
+      margin: 14px auto 0;
       border-radius: 999px;
-      background: rgba(255,255,255,var(--progLineOpacity));
-      overflow: visible;
+
+      /* ✅ 도트 스타일 */
+      background-image: radial-gradient(
+        rgba(255,255,255,var(--progLineOpacity)) 1px,
+        transparent 1px
+      );
+      background-size: 8px 4px;
+      background-repeat: repeat-x;
+      background-position: center;
 
       pointer-events: auto;
       cursor: pointer;
@@ -99,10 +106,10 @@
       height: var(--heartSize);
       transform: translate(-50%, -50%);
       opacity: var(--heartOpacity);
-      filter: drop-shadow(0 0 6px rgba(255,255,255,0.28));
+      filter: drop-shadow(0 0 8px rgba(255,255,255,0.45));
     }
     #progressHeart path{
-      fill: rgba(255,255,255,0.85);
+      fill: rgba(255,255,255,0.95);
     }
 
     /* ---------- SUBTITLE WRAP (BOTTOM) ---------- */
