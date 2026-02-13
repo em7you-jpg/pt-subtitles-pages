@@ -1,1 +1,363 @@
-{"title": "daily", "lines": [{"start": 0.37, "end": 17.212, "ja": "静かな部屋で 時計の針が 進む音だけ響く", "ko_pron": "", "ko": "조용한 방에서 시계 바늘이 가는 소리만 울려 퍼진다.", "tag": "L1#01", "_match": "lyrics_driven"}, {"start": 17.242, "end": 38.299, "ja": "期待よりゆっくりと 胸に染みてく 強さを感じている", "ko_pron": "", "ko": "기대보다 천천히 가슴에 스며드는 힘을 느끼고 있다.", "tag": "L2#01", "_match": "lyrics_driven"}, {"start": 38.329, "end": 56.857, "ja": "待つことだけが私の 強さだと信じて歩き出す", "ko_pron": "", "ko": "기다리는 것만이 나의 힘이라고 믿고 걸어갑니다.", "tag": "L3#01", "_match": "lyrics_driven"}, {"start": 56.887, "end": 77.945, "ja": "宇宙明かりに浮かぶ教室の 磯が並ぶ景色じゃなくて", "ko_pron": "", "ko": "우주 빛에 떠 있는 교실의 바닷가가 늘어선 풍경이 아니라", "tag": "L4#01", "_match": "lyrics_driven"}, {"start": 77.975, "end": 102.406, "ja": "忘れ物を一つずつ置いて 過去に背を向けてゆく Lalala...", "ko_pron": "", "ko": "잊어버린 물건을 하나하나 놓아두고 과거로 돌아가는 랄랄라...", "tag": "L5#01", "_match": "lyrics_driven"}, {"start": 102.436, "end": 120.964, "ja": "それでも揺らがないこの気持ちが 明日を創る", "ko_pron": "", "ko": "그래도 흔들리지 않는 이 마음이 내일을 만든다", "tag": "L6#01", "_match": "lyrics_driven"}, {"start": 120.994, "end": 148.084, "ja": "静寂の中で最後の音が 優しく消えてゆく Lalala... Lalala...", "ko_pron": "", "ko": "고요함 속에서 마지막 소리가 부드럽게 사라지는 Lalala... Lalala...", "tag": "L7#01", "_match": "lyrics_driven"}], "cues": [{"t0": 0.37, "t1": 17.21, "start": 0.37, "end": 17.21, "text": "静かな部屋で 時計の針が 進む音だけ響く", "ja": "静かな部屋で 時計の針が 進む音だけ響く", "ko": "조용한 방에서 시계 바늘이 가는 소리만 울려 퍼진다.", "ko_pron": ""}, {"t0": 17.24, "t1": 38.3, "start": 17.24, "end": 38.3, "text": "期待よりゆっくりと 胸に染みてく 強さを感じている", "ja": "期待よりゆっくりと 胸に染みてく 強さを感じている", "ko": "기대보다 천천히 가슴에 스며드는 힘을 느끼고 있다.", "ko_pron": ""}, {"t0": 38.33, "t1": 56.86, "start": 38.33, "end": 56.86, "text": "待つことだけが私の 強さだと信じて歩き出す", "ja": "待つことだけが私の 強さだと信じて歩き出す", "ko": "기다리는 것만이 나의 힘이라고 믿고 걸어갑니다.", "ko_pron": ""}, {"t0": 56.89, "t1": 77.94, "start": 56.89, "end": 77.94, "text": "宇宙明かりに浮かぶ教室の 磯が並ぶ景色じゃなくて", "ja": "宇宙明かりに浮かぶ教室の 磯が並ぶ景色じゃなくて", "ko": "우주 빛에 떠 있는 교실의 바닷가가 늘어선 풍경이 아니라", "ko_pron": ""}, {"t0": 77.97, "t1": 102.41, "start": 77.97, "end": 102.41, "text": "忘れ物を一つずつ置いて 過去に背を向けてゆく Lalala...", "ja": "忘れ物を一つずつ置いて 過去に背を向けてゆく Lalala...", "ko": "잊어버린 물건을 하나하나 놓아두고 과거로 돌아가는 랄랄라...", "ko_pron": ""}, {"t0": 102.44, "t1": 120.96, "start": 102.44, "end": 120.96, "text": "それでも揺らがないこの気持ちが 明日を創る", "ja": "それでも揺らがないこの気持ちが 明日を創る", "ko": "그래도 흔들리지 않는 이 마음이 내일을 만든다", "ko_pron": ""}, {"t0": 120.99, "t1": 148.08, "start": 120.99, "end": 148.08, "text": "静寂の中で最後の音が 優しく消えてゆく Lalala... Lalala...", "ja": "静寂の中で最後の音が 優しく消えてゆく Lalala... Lalala...", "ko": "고요함 속에서 마지막 소리가 부드럽게 사라지는 Lalala... Lalala...", "ko_pron": ""}], "meta": {"engine": "word_align_lyrics_driven_v7_2_expand_duration_anchor", "generated_at": "2026-02-13T06:12:37.917331Z", "leading_silence_sec": 0.0, "audio_duration_sec": 148.584, "audio_tail_margin_sec": 0.6, "whisper_backend": "local_faster_whisper", "whisper_model": "small", "whisper_device": "cpu", "whisper_compute": "int8", "cue_min_sec": 0.25, "cue_split_max_sec": 20.0, "cue_split_min_seg_sec": 2.0, "lyric_min_line_sec": 0.85, "lyric_pad_end_sec": 0.03, "lyric_tail_pad_sec": 0.1, "lyric_weight_mode": "len_ja_ko", "lyric_expand": 1, "lyric_expand_mode": "auto", "lyric_expand_max_chars": 60, "lyric_expand_min_chars": 6, "lyric_expand_target": 40, "lyric_expand_max_parts": 3, "line_preroll_sec": 0.8, "line_preroll_tags": "chorus,pre,post,final", "line_min_show_sec": 1.4, "good_word_min_norm": 2, "vocal_start_min_good_words": 3, "transcribe_pick_by_est": 1, "anchor_mode": 1, "anchor_tags": "chorus,pre-chorus,pre,post,final", "anchor_keylen": 6, "anchor_min_target_norm": 14, "anchor_preroll_sec": 0.6}, "issues": ["[INFO] AUDIO_DUR=148.584s from ffprobe", "[INFO] WORDS(vad1)=33 first=0.37", "[INFO] WORDS(vad0)=198 first=0.00", "[INFO] TRANSCRIBE_KEEP(est) vad1 (vad0 suspicious: vad0_first=0.00 est2=0.00)", "[INFO] WORDS=33", "[INFO] WORDS_FIRST=0.37 WORDS_LAST=139.18", "[INFO] EXPAND sections=7 -> lines=7 max_chars=60 max_parts=3", "[INFO] VOCAL_START sparse_mode=1 total_words=33 win=3.00 lookahead=40.0", "[INFO] VOCAL_START_FALLBACK(no_density_good) -> 0.370", "[INFO] SPAN_EXTEND by duration: asr_end=139.180 -> end=147.984 (dur=148.584 tail_margin=0.60)", "[INFO] LYRICS_DRIVEN span=147.614s lines=7 base_min=0.850s remaining=141.664s weight_mode=len_ja_ko anchor=1", "[INFO] ANCHOR skip (no anchor tags)", "[INFO] LINES_POST tail_pad=0.10 pad_end=0.03 preroll=0.80s tags=chorus,pre,post,final min_show=1.40s", "[INFO] CUES_BUILT=7 (min=0.25s, split_max=20.0s, split_policy=none)"]}
+{
+  "title": "Easy Afternoon Parade",
+  "lines": [
+    {
+      "start": 10.16,
+      "end": 19.31,
+      "ja": "太陽が照らす校庭の端で小さな夢数えてみる",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Verse 1#01",
+      "_match": "lyrics_driven"
+    },
+    {
+      "start": 19.34,
+      "end": 24.236,
+      "ja": "明日の自分はどんなふうに笑っているかな",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Pre-Chorus#01",
+      "_match": "lyrics_driven"
+    },
+    {
+      "start": 24.266,
+      "end": 28.55,
+      "ja": "きっと新しいページめくる風の中で",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Line 4#01",
+      "_match": "lyrics_driven"
+    },
+    {
+      "start": 28.58,
+      "end": 36.384,
+      "ja": "軽やかな気持ちで進む道に迷いはもういらない",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Chorus#01",
+      "_match": "lyrics_driven"
+    },
+    {
+      "start": 36.414,
+      "end": 43.9,
+      "ja": "どこまでも続く午後のパレードを思い出して",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Line 6#01",
+      "_match": "lyrics_driven"
+    },
+    {
+      "start": 43.93,
+      "end": 52.051,
+      "ja": "スケッチブックに描いた線が少し揺れている午後",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Verse 2#01",
+      "_match": "lyrics_driven"
+    },
+    {
+      "start": 52.081,
+      "end": 59.25,
+      "ja": "机の上の消しゴム転がしながら考える時間",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Line 8#01",
+      "_match": "lyrics_driven"
+    },
+    {
+      "start": 59.28,
+      "end": 64.035,
+      "ja": "明日の自分はどんなふうに笑っているかな",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Pre-Chorus#01",
+      "_match": "lyrics_driven"
+    },
+    {
+      "start": 64.065,
+      "end": 68.23,
+      "ja": "きっと新しいページめくる風の中で",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Line 10#01",
+      "_match": "lyrics_driven"
+    },
+    {
+      "start": 68.26,
+      "end": 77.47,
+      "ja": "軽やかな気持ちで進む道に迷いはもういらない",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Chorus#01",
+      "_match": "lyrics_driven"
+    },
+    {
+      "start": 77.5,
+      "end": 86.329,
+      "ja": "どこまでも続く午後のパレードを思い出して",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Line 12#01",
+      "_match": "lyrics_driven"
+    },
+    {
+      "start": 86.359,
+      "end": 96.331,
+      "ja": "ふとした拍子にリュックの重さが消えていくようで",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Bridge#01",
+      "_match": "lyrics_driven"
+    },
+    {
+      "start": 96.361,
+      "end": 105.19,
+      "ja": "置き去りにした昨日の悩みも遠ざかってゆく",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Line 14#01",
+      "_match": "lyrics_driven"
+    },
+    {
+      "start": 105.22,
+      "end": 121.989,
+      "ja": "軽やかな気持ちで進む道に迷いはもういらない",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Final Chorus#01",
+      "_match": "lyrics_driven"
+    },
+    {
+      "start": 122.019,
+      "end": 138.063,
+      "ja": "どこまでも続く午後のパレードを思い出して",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Line 16#01",
+      "_match": "lyrics_driven"
+    },
+    {
+      "start": 138.093,
+      "end": 152.688,
+      "ja": "新しい始まりを胸に抱えて歩き出すんだ",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Line 17#01",
+      "_match": "lyrics_driven"
+    },
+    {
+      "start": 152.718,
+      "end": 168.892,
+      "ja": "駆け抜ける風と一緒に最後のベルが響き渡る",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Outro#01",
+      "_match": "lyrics_driven"
+    }
+  ],
+  "cues": [
+    {
+      "t0": 10.16,
+      "t1": 19.31,
+      "start": 10.16,
+      "end": 19.31,
+      "text": "太陽が照らす校庭の端で小さな夢数えてみる",
+      "ja": "太陽が照らす校庭の端で小さな夢数えてみる",
+      "ko": ""
+    },
+    {
+      "t0": 19.34,
+      "t1": 24.24,
+      "start": 19.34,
+      "end": 24.24,
+      "text": "明日の自分はどんなふうに笑っているかな",
+      "ja": "明日の自分はどんなふうに笑っているかな",
+      "ko": ""
+    },
+    {
+      "t0": 24.27,
+      "t1": 28.55,
+      "start": 24.27,
+      "end": 28.55,
+      "text": "きっと新しいページめくる風の中で",
+      "ja": "きっと新しいページめくる風の中で",
+      "ko": ""
+    },
+    {
+      "t0": 28.58,
+      "t1": 36.38,
+      "start": 28.58,
+      "end": 36.38,
+      "text": "軽やかな気持ちで進む道に迷いはもういらない",
+      "ja": "軽やかな気持ちで進む道に迷いはもういらない",
+      "ko": ""
+    },
+    {
+      "t0": 36.41,
+      "t1": 43.9,
+      "start": 36.41,
+      "end": 43.9,
+      "text": "どこまでも続く午後のパレードを思い出して",
+      "ja": "どこまでも続く午後のパレードを思い出して",
+      "ko": ""
+    },
+    {
+      "t0": 43.93,
+      "t1": 52.05,
+      "start": 43.93,
+      "end": 52.05,
+      "text": "スケッチブックに描いた線が少し揺れている午後",
+      "ja": "スケッチブックに描いた線が少し揺れている午後",
+      "ko": ""
+    },
+    {
+      "t0": 52.08,
+      "t1": 59.25,
+      "start": 52.08,
+      "end": 59.25,
+      "text": "机の上の消しゴム転がしながら考える時間",
+      "ja": "机の上の消しゴム転がしながら考える時間",
+      "ko": ""
+    },
+    {
+      "t0": 59.28,
+      "t1": 64.03,
+      "start": 59.28,
+      "end": 64.03,
+      "text": "明日の自分はどんなふうに笑っているかな",
+      "ja": "明日の自分はどんなふうに笑っているかな",
+      "ko": ""
+    },
+    {
+      "t0": 64.06,
+      "t1": 68.23,
+      "start": 64.06,
+      "end": 68.23,
+      "text": "きっと新しいページめくる風の中で",
+      "ja": "きっと新しいページめくる風の中で",
+      "ko": ""
+    },
+    {
+      "t0": 68.26,
+      "t1": 77.47,
+      "start": 68.26,
+      "end": 77.47,
+      "text": "軽やかな気持ちで進む道に迷いはもういらない",
+      "ja": "軽やかな気持ちで進む道に迷いはもういらない",
+      "ko": ""
+    },
+    {
+      "t0": 77.5,
+      "t1": 86.33,
+      "start": 77.5,
+      "end": 86.33,
+      "text": "どこまでも続く午後のパレードを思い出して",
+      "ja": "どこまでも続く午後のパレードを思い出して",
+      "ko": ""
+    },
+    {
+      "t0": 86.36,
+      "t1": 96.33,
+      "start": 86.36,
+      "end": 96.33,
+      "text": "ふとした拍子にリュックの重さが消えていくようで",
+      "ja": "ふとした拍子にリュックの重さが消えていくようで",
+      "ko": ""
+    },
+    {
+      "t0": 96.36,
+      "t1": 105.19,
+      "start": 96.36,
+      "end": 105.19,
+      "text": "置き去りにした昨日の悩みも遠ざかってゆく",
+      "ja": "置き去りにした昨日の悩みも遠ざかってゆく",
+      "ko": ""
+    },
+    {
+      "t0": 105.22,
+      "t1": 121.99,
+      "start": 105.22,
+      "end": 121.99,
+      "text": "軽やかな気持ちで進む道に迷いはもういらない",
+      "ja": "軽やかな気持ちで進む道に迷いはもういらない",
+      "ko": ""
+    },
+    {
+      "t0": 122.02,
+      "t1": 138.06,
+      "start": 122.02,
+      "end": 138.06,
+      "text": "どこまでも続く午後のパレードを思い出して",
+      "ja": "どこまでも続く午後のパレードを思い出して",
+      "ko": ""
+    },
+    {
+      "t0": 138.09,
+      "t1": 152.69,
+      "start": 138.09,
+      "end": 152.69,
+      "text": "新しい始まりを胸に抱えて歩き出すんだ",
+      "ja": "新しい始まりを胸に抱えて歩き出すんだ",
+      "ko": ""
+    },
+    {
+      "t0": 152.72,
+      "t1": 168.89,
+      "start": 152.72,
+      "end": 168.89,
+      "text": "駆け抜ける風と一緒に最後のベルが響き渡る",
+      "ja": "駆け抜ける風と一緒に最後のベルが響き渡る",
+      "ko": ""
+    }
+  ],
+  "meta": {
+    "engine": "word_align_lyrics_driven_v7_2_expand_duration_anchor",
+    "generated_at": "2026-02-13T06:28:44.138910Z",
+    "leading_silence_sec": 0.0,
+    "audio_duration_sec": 169.392,
+    "audio_tail_margin_sec": 0.6,
+    "whisper_backend": "local_faster_whisper",
+    "whisper_model": "small",
+    "whisper_device": "cpu",
+    "whisper_compute": "int8",
+    "cue_min_sec": 0.25,
+    "cue_split_max_sec": 20.0,
+    "cue_split_min_seg_sec": 2.0,
+    "lyric_min_line_sec": 0.85,
+    "lyric_pad_end_sec": 0.03,
+    "lyric_tail_pad_sec": 0.1,
+    "lyric_weight_mode": "len_ja_ko",
+    "lyric_expand": 1,
+    "lyric_expand_mode": "auto",
+    "lyric_expand_max_chars": 60,
+    "lyric_expand_min_chars": 6,
+    "lyric_expand_target": 40,
+    "lyric_expand_max_parts": 3,
+    "line_preroll_sec": 0.8,
+    "line_preroll_tags": "chorus,pre,post,final",
+    "line_min_show_sec": 1.4,
+    "good_word_min_norm": 2,
+    "vocal_start_min_good_words": 3,
+    "transcribe_pick_by_est": 1,
+    "anchor_mode": 1,
+    "anchor_tags": "chorus,pre-chorus,pre,post,final",
+    "anchor_keylen": 6,
+    "anchor_min_target_norm": 14,
+    "anchor_preroll_sec": 0.6
+  },
+  "issues": [
+    "[INFO] AUDIO_DUR=169.392s from ffprobe",
+    "[INFO] WORDS(vad1)=40 first=15.06",
+    "[INFO] WORDS(vad0)=281 first=10.16",
+    "[INFO] TRANSCRIBE_PICK(est) vad0 est2=10.16 < est1=15.06",
+    "[INFO] WORDS=281",
+    "[INFO] WORDS_FIRST=10.16 WORDS_LAST=145.02",
+    "[INFO] EXPAND sections=18 -> lines=17 max_chars=60 max_parts=3",
+    "[INFO] VOCAL_START_LATE_FALLBACK est=21.800 early_min=10.160 late_th=8.0 -> 10.160",
+    "[INFO] SPAN_EXTEND by duration: asr_end=145.020 -> end=168.792 (dur=169.392 tail_margin=0.60)",
+    "[INFO] LYRICS_DRIVEN span=158.632s lines=17 base_min=0.850s remaining=144.182s weight_mode=len_ja_ko anchor=1",
+    "[INFO] ANCHOR_APPLIED n_found=5 segments=6 preroll=0.60s",
+    "[INFO] LINES_POST tail_pad=0.10 pad_end=0.03 preroll=0.80s tags=chorus,pre,post,final min_show=1.40s",
+    "[INFO] CUES_BUILT=17 (min=0.25s, split_max=20.0s, split_policy=none)"
+  ]
+}
