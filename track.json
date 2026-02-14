@@ -1,410 +1,194 @@
 {
-  "title": "リセットボタンの朝に",
+  "title": "Playlist of Quiet Resolve",
   "lines": [
     {
-      "start": 0.03,
-      "end": 8.373,
-      "ja": "目覚ましが跳ねてベッドの端で伸びをする",
+      "start": 0.18,
+      "end": 15.252,
+      "ja": "目覚めた部屋の隅で昨日のため息がまだ残っている",
       "ko_pron": "",
       "ko": "",
       "tag": "Verse 1#01",
-      "_match": "lyrics_driven_equal_fallback"
+      "_match": "broadcast_safe_equal"
     },
     {
-      "start": 8.403,
-      "end": 16.777,
-      "ja": "スニーカー揃えて玄関でひとつ息を吐く",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Line 3#01",
-      "_match": "lyrics_driven_equal_fallback"
-    },
-    {
-      "start": 16.807,
-      "end": 25.18,
-      "ja": "新しい靴下今日の選択肢に加えて",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Line 4#01",
-      "_match": "lyrics_driven_equal_fallback"
-    },
-    {
-      "start": 25.21,
-      "end": 33.583,
-      "ja": "洗いたてのシャツに袖を通した瞬間",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Line 5#01",
-      "_match": "lyrics_driven_equal_fallback"
-    },
-    {
-      "start": 33.613,
-      "end": 41.986,
-      "ja": "ミルクの泡がカップの縁で踊っている",
+      "start": 15.282,
+      "end": 30.354,
+      "ja": "繰り返す朝の音に背を押されながらシャツの袖を伸ばす",
       "ko_pron": "",
       "ko": "",
       "tag": "Pre-Chorus#01",
-      "_match": "lyrics_driven_equal_fallback"
+      "_match": "broadcast_safe_equal"
     },
     {
-      "start": 42.016,
-      "end": 50.39,
-      "ja": "歩き出す朝が静かに色を変えてく",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Line 7#01",
-      "_match": "lyrics_driven_equal_fallback"
-    },
-    {
-      "start": 50.42,
-      "end": 58.793,
-      "ja": "背筋を伸ばして始まるリセットボタンの朝",
+      "start": 30.384,
+      "end": 45.456,
+      "ja": "慌ただしいリズムの中に君の静かな勇気を重ねていく",
       "ko_pron": "",
       "ko": "",
       "tag": "Chorus#01",
-      "_match": "lyrics_driven_equal_fallback"
+      "_match": "broadcast_safe_equal"
     },
     {
-      "start": 58.823,
-      "end": 67.196,
-      "ja": "迷いを脱ぎ捨ててカレンダーをめくるように",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Line 9#01",
-      "_match": "lyrics_driven_equal_fallback"
-    },
-    {
-      "start": 67.226,
-      "end": 75.599,
-      "ja": "ポケットに入れた小銭の重さが妙に心地いい",
+      "start": 45.486,
+      "end": 60.558,
+      "ja": "曇った床に映る小さな影が今日の始まりを告げている",
       "ko_pron": "",
       "ko": "",
       "tag": "Verse 2#01",
-      "_match": "lyrics_driven_equal_fallback"
+      "_match": "broadcast_safe_equal"
     },
     {
-      "start": 75.629,
-      "end": 84.003,
-      "ja": "鉄橋の下で電車の音が遠くに響く",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Line 11#01",
-      "_match": "lyrics_driven_equal_fallback"
-    },
-    {
-      "start": 84.033,
-      "end": 92.406,
-      "ja": "くしゃくしゃのレシート丸めてポストに投げた",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Line 12#01",
-      "_match": "lyrics_driven_equal_fallback"
-    },
-    {
-      "start": 92.436,
-      "end": 100.809,
-      "ja": "ほこり舞う廊下を走り抜けていく",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Line 13#01",
-      "_match": "lyrics_driven_equal_fallback"
-    },
-    {
-      "start": 100.839,
-      "end": 109.213,
-      "ja": "ミルクの泡がカップの縁で踊っている",
+      "start": 60.588,
+      "end": 75.66,
+      "ja": "何度も転びながら選んだ道を自分の足で歩いていく",
       "ko_pron": "",
       "ko": "",
       "tag": "Pre-Chorus#01",
-      "_match": "lyrics_driven_equal_fallback"
+      "_match": "broadcast_safe_equal"
     },
     {
-      "start": 109.243,
-      "end": 117.616,
-      "ja": "歩き出す朝が静かに色を変えてく",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Line 15#01",
-      "_match": "lyrics_driven_equal_fallback"
-    },
-    {
-      "start": 117.646,
-      "end": 126.019,
-      "ja": "背筋を伸ばして始まるリセットボタンの朝",
+      "start": 75.69,
+      "end": 90.762,
+      "ja": "慌ただしいリズムの中に君の静かな勇気を重ねていく",
       "ko_pron": "",
       "ko": "",
       "tag": "Chorus#01",
-      "_match": "lyrics_driven_equal_fallback"
+      "_match": "broadcast_safe_equal"
     },
     {
-      "start": 126.049,
-      "end": 134.422,
-      "ja": "迷いを脱ぎ捨ててカレンダーをめくるように",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Line 17#01",
-      "_match": "lyrics_driven_equal_fallback"
-    },
-    {
-      "start": 134.452,
-      "end": 142.826,
-      "ja": "目印のない交差点を選ぶたび心が晴れる",
+      "start": 90.792,
+      "end": 105.864,
+      "ja": "不器用な言葉だけど譲れないものが胸の奥にあるから",
       "ko_pron": "",
       "ko": "",
       "tag": "Bridge#01",
-      "_match": "lyrics_driven_equal_fallback"
+      "_match": "broadcast_safe_equal"
     },
     {
-      "start": 142.856,
-      "end": 151.229,
-      "ja": "うたた寝の記憶が背後で優しく手を振る",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Line 19#01",
-      "_match": "lyrics_driven_equal_fallback"
-    },
-    {
-      "start": 151.259,
-      "end": 159.632,
-      "ja": "背筋を伸ばして始まるリセットボタンの朝",
+      "start": 105.894,
+      "end": 120.966,
+      "ja": "慌ただしいリズムの中に君の静かな勇気を重ねていく",
       "ko_pron": "",
       "ko": "",
       "tag": "Final Chorus#01",
-      "_match": "lyrics_driven_equal_fallback"
+      "_match": "broadcast_safe_equal"
     },
     {
-      "start": 159.662,
-      "end": 168.035,
-      "ja": "迷いを脱ぎ捨ててカレンダーをめくるように",
+      "start": 120.996,
+      "end": 136.068,
+      "ja": "静寂の先へと一歩ずつ確かめながら進んでいく",
       "ko_pron": "",
       "ko": "",
-      "tag": "Line 21#01",
-      "_match": "lyrics_driven_equal_fallback"
+      "tag": "Line 10#01",
+      "_match": "broadcast_safe_equal"
     },
     {
-      "start": 168.065,
-      "end": 176.439,
-      "ja": "新しい一歩が今日の主役だと気づいた",
-      "ko_pron": "",
-      "ko": "",
-      "tag": "Line 22#01",
-      "_match": "lyrics_driven_equal_fallback"
-    },
-    {
-      "start": 176.469,
-      "end": 184.972,
-      "ja": "靴裏に残る昨日の跡も愛しく思えたまま",
+      "start": 136.098,
+      "end": 151.3,
+      "ja": "すべての音が溶けて夜明け色のグルーヴが続いてく",
       "ko_pron": "",
       "ko": "",
       "tag": "Outro#01",
-      "_match": "lyrics_driven_equal_fallback"
+      "_match": "broadcast_safe_equal"
     }
   ],
   "cues": [
     {
-      "t0": 0.03,
-      "t1": 8.37,
-      "start": 0.03,
-      "end": 8.37,
-      "text": "目覚ましが跳ねてベッドの端で伸びをする",
-      "ja": "目覚ましが跳ねてベッドの端で伸びをする",
+      "t0": 0.18,
+      "t1": 15.25,
+      "start": 0.18,
+      "end": 15.25,
+      "text": "目覚めた部屋の隅で昨日のため息がまだ残っている",
+      "ja": "目覚めた部屋の隅で昨日のため息がまだ残っている",
       "ko": ""
     },
     {
-      "t0": 8.4,
-      "t1": 16.78,
-      "start": 8.4,
-      "end": 16.78,
-      "text": "スニーカー揃えて玄関でひとつ息を吐く",
-      "ja": "スニーカー揃えて玄関でひとつ息を吐く",
+      "t0": 15.28,
+      "t1": 30.35,
+      "start": 15.28,
+      "end": 30.35,
+      "text": "繰り返す朝の音に背を押されながらシャツの袖を伸ばす",
+      "ja": "繰り返す朝の音に背を押されながらシャツの袖を伸ばす",
       "ko": ""
     },
     {
-      "t0": 16.81,
-      "t1": 25.18,
-      "start": 16.81,
-      "end": 25.18,
-      "text": "新しい靴下今日の選択肢に加えて",
-      "ja": "新しい靴下今日の選択肢に加えて",
+      "t0": 30.38,
+      "t1": 45.46,
+      "start": 30.38,
+      "end": 45.46,
+      "text": "慌ただしいリズムの中に君の静かな勇気を重ねていく",
+      "ja": "慌ただしいリズムの中に君の静かな勇気を重ねていく",
       "ko": ""
     },
     {
-      "t0": 25.21,
-      "t1": 33.58,
-      "start": 25.21,
-      "end": 33.58,
-      "text": "洗いたてのシャツに袖を通した瞬間",
-      "ja": "洗いたてのシャツに袖を通した瞬間",
+      "t0": 45.49,
+      "t1": 60.56,
+      "start": 45.49,
+      "end": 60.56,
+      "text": "曇った床に映る小さな影が今日の始まりを告げている",
+      "ja": "曇った床に映る小さな影が今日の始まりを告げている",
       "ko": ""
     },
     {
-      "t0": 33.61,
-      "t1": 41.99,
-      "start": 33.61,
-      "end": 41.99,
-      "text": "ミルクの泡がカップの縁で踊っている",
-      "ja": "ミルクの泡がカップの縁で踊っている",
+      "t0": 60.59,
+      "t1": 75.66,
+      "start": 60.59,
+      "end": 75.66,
+      "text": "何度も転びながら選んだ道を自分の足で歩いていく",
+      "ja": "何度も転びながら選んだ道を自分の足で歩いていく",
       "ko": ""
     },
     {
-      "t0": 42.02,
-      "t1": 50.39,
-      "start": 42.02,
-      "end": 50.39,
-      "text": "歩き出す朝が静かに色を変えてく",
-      "ja": "歩き出す朝が静かに色を変えてく",
+      "t0": 75.69,
+      "t1": 90.76,
+      "start": 75.69,
+      "end": 90.76,
+      "text": "慌ただしいリズムの中に君の静かな勇気を重ねていく",
+      "ja": "慌ただしいリズムの中に君の静かな勇気を重ねていく",
       "ko": ""
     },
     {
-      "t0": 50.42,
-      "t1": 58.79,
-      "start": 50.42,
-      "end": 58.79,
-      "text": "背筋を伸ばして始まるリセットボタンの朝",
-      "ja": "背筋を伸ばして始まるリセットボタンの朝",
+      "t0": 90.79,
+      "t1": 105.86,
+      "start": 90.79,
+      "end": 105.86,
+      "text": "不器用な言葉だけど譲れないものが胸の奥にあるから",
+      "ja": "不器用な言葉だけど譲れないものが胸の奥にあるから",
       "ko": ""
     },
     {
-      "t0": 58.82,
-      "t1": 67.2,
-      "start": 58.82,
-      "end": 67.2,
-      "text": "迷いを脱ぎ捨ててカレンダーをめくるように",
-      "ja": "迷いを脱ぎ捨ててカレンダーをめくるように",
+      "t0": 105.89,
+      "t1": 120.97,
+      "start": 105.89,
+      "end": 120.97,
+      "text": "慌ただしいリズムの中に君の静かな勇気を重ねていく",
+      "ja": "慌ただしいリズムの中に君の静かな勇気を重ねていく",
       "ko": ""
     },
     {
-      "t0": 67.23,
-      "t1": 75.6,
-      "start": 67.23,
-      "end": 75.6,
-      "text": "ポケットに入れた小銭の重さが妙に心地いい",
-      "ja": "ポケットに入れた小銭の重さが妙に心地いい",
+      "t0": 121.0,
+      "t1": 136.07,
+      "start": 121.0,
+      "end": 136.07,
+      "text": "静寂の先へと一歩ずつ確かめながら進んでいく",
+      "ja": "静寂の先へと一歩ずつ確かめながら進んでいく",
       "ko": ""
     },
     {
-      "t0": 75.63,
-      "t1": 84.0,
-      "start": 75.63,
-      "end": 84.0,
-      "text": "鉄橋の下で電車の音が遠くに響く",
-      "ja": "鉄橋の下で電車の音が遠くに響く",
-      "ko": ""
-    },
-    {
-      "t0": 84.03,
-      "t1": 92.41,
-      "start": 84.03,
-      "end": 92.41,
-      "text": "くしゃくしゃのレシート丸めてポストに投げた",
-      "ja": "くしゃくしゃのレシート丸めてポストに投げた",
-      "ko": ""
-    },
-    {
-      "t0": 92.44,
-      "t1": 100.81,
-      "start": 92.44,
-      "end": 100.81,
-      "text": "ほこり舞う廊下を走り抜けていく",
-      "ja": "ほこり舞う廊下を走り抜けていく",
-      "ko": ""
-    },
-    {
-      "t0": 100.84,
-      "t1": 109.21,
-      "start": 100.84,
-      "end": 109.21,
-      "text": "ミルクの泡がカップの縁で踊っている",
-      "ja": "ミルクの泡がカップの縁で踊っている",
-      "ko": ""
-    },
-    {
-      "t0": 109.24,
-      "t1": 117.62,
-      "start": 109.24,
-      "end": 117.62,
-      "text": "歩き出す朝が静かに色を変えてく",
-      "ja": "歩き出す朝が静かに色を変えてく",
-      "ko": ""
-    },
-    {
-      "t0": 117.65,
-      "t1": 126.02,
-      "start": 117.65,
-      "end": 126.02,
-      "text": "背筋を伸ばして始まるリセットボタンの朝",
-      "ja": "背筋を伸ばして始まるリセットボタンの朝",
-      "ko": ""
-    },
-    {
-      "t0": 126.05,
-      "t1": 134.42,
-      "start": 126.05,
-      "end": 134.42,
-      "text": "迷いを脱ぎ捨ててカレンダーをめくるように",
-      "ja": "迷いを脱ぎ捨ててカレンダーをめくるように",
-      "ko": ""
-    },
-    {
-      "t0": 134.45,
-      "t1": 142.83,
-      "start": 134.45,
-      "end": 142.83,
-      "text": "目印のない交差点を選ぶたび心が晴れる",
-      "ja": "目印のない交差点を選ぶたび心が晴れる",
-      "ko": ""
-    },
-    {
-      "t0": 142.86,
-      "t1": 151.23,
-      "start": 142.86,
-      "end": 151.23,
-      "text": "うたた寝の記憶が背後で優しく手を振る",
-      "ja": "うたた寝の記憶が背後で優しく手を振る",
-      "ko": ""
-    },
-    {
-      "t0": 151.26,
-      "t1": 159.63,
-      "start": 151.26,
-      "end": 159.63,
-      "text": "背筋を伸ばして始まるリセットボタンの朝",
-      "ja": "背筋を伸ばして始まるリセットボタンの朝",
-      "ko": ""
-    },
-    {
-      "t0": 159.66,
-      "t1": 168.03,
-      "start": 159.66,
-      "end": 168.03,
-      "text": "迷いを脱ぎ捨ててカレンダーをめくるように",
-      "ja": "迷いを脱ぎ捨ててカレンダーをめくるように",
-      "ko": ""
-    },
-    {
-      "t0": 168.06,
-      "t1": 176.44,
-      "start": 168.06,
-      "end": 176.44,
-      "text": "新しい一歩が今日の主役だと気づいた",
-      "ja": "新しい一歩が今日の主役だと気づいた",
-      "ko": ""
-    },
-    {
-      "t0": 176.47,
-      "t1": 184.97,
-      "start": 176.47,
-      "end": 184.97,
-      "text": "靴裏に残る昨日の跡も愛しく思えたまま",
-      "ja": "靴裏に残る昨日の跡も愛しく思えたまま",
+      "t0": 136.1,
+      "t1": 151.3,
+      "start": 136.1,
+      "end": 151.3,
+      "text": "すべての音が溶けて夜明け色のグルーヴが続いてく",
+      "ja": "すべての音が溶けて夜明け色のグルーヴが続いてく",
       "ko": ""
     }
   ],
   "meta": {
     "engine": "word_align_lyrics_driven_v7_2_expand_duration_anchor",
-    "generated_at": "2026-02-14T06:43:48.158458Z",
+    "generated_at": "2026-02-14T06:56:58.833026Z",
     "leading_silence_sec": 0.0,
-    "audio_duration_sec": 185.472,
+    "audio_duration_sec": 151.8,
     "audio_tail_margin_sec": 0.6,
     "whisper_backend": "local_faster_whisper",
     "whisper_model": "small",
@@ -436,23 +220,24 @@
     "anchor_preroll_sec": 0.6
   },
   "issues": [
-    "[INFO] AUDIO_DUR=185.472s from ffprobe",
-    "[INFO] WORDS(vad1)=22 first=0.00",
-    "[INFO] WORDS(vad0)=361 first=0.00",
+    "[INFO] AUDIO_DUR=151.800s from ffprobe",
+    "[INFO] WORDS(vad1)=8 first=0.18",
+    "[INFO] WORDS(vad0)=209 first=0.00",
     "[INFO] TRANSCRIBE_KEEP(est) vad1 (vad0 suspicious: vad0_first=0.00 est2=0.00)",
-    "[INFO] WORDS=22",
-    "[INFO] WORDS_FIRST=0.00 WORDS_LAST=11.09",
-    "[INFO] EXPAND sections=23 -> lines=22 max_chars=60 max_parts=3",
-    "[INFO] VOCAL_START sparse_mode=1 total_words=22 win=3.00 lookahead=40.0",
-    "[INFO] VOCAL_START_FALLBACK(low_good) good=2 < 3 -> 0.000",
-    "[INFO] VOCAL_END sparse_mode=1 total_words=22 win=4.00 lookback=55.0",
-    "[INFO] VOCAL_END_FALLBACK(low_good) good=2 < 3 -> asr_end=11.090",
-    "[INFO] LOW_ASR_SPAN asr_span=11.09s -> duration span candidate 184.87s (low_sec=18.0, low_ratio=0.18)",
-    "[INFO] SPAN_EXTEND forced(low_asr): end=11.090 -> 184.872",
-    "[INFO] LYRICS_DRIVEN span=184.872s lines=22 base_min=0.850s remaining=166.172s weight_mode=len_ja_ko anchor=1",
+    "[INFO] WORDS=8",
+    "[INFO] WORDS_FIRST=0.18 WORDS_LAST=3.70",
+    "[INFO] EXPAND sections=11 -> lines=10 max_chars=60 max_parts=3",
+    "[INFO] VOCAL_START sparse_mode=1 total_words=8 win=3.00 lookahead=40.0",
+    "[INFO] VOCAL_START_RELAX good=0 at norm>=2 -> retry norm>=1 good=8",
+    "[INFO] VOCAL_START_EST(good) win=3.00s min_good=3 -> 0.180 (early_min=0.180)",
+    "[INFO] VOCAL_END sparse_mode=1 total_words=8 win=4.00 lookback=55.0",
+    "[INFO] VOCAL_END_RELAX good=0 at norm>=2 -> retry norm>=1 good=8",
+    "[INFO] VOCAL_END_KEEP asr_end=3.700 (shrink=0.00s < 0.80s)",
+    "[INFO] CATASTROPHIC_ASR force duration span: words=8 asr_span=3.52s audio_dur=151.80s end 3.700->151.200",
+    "[INFO] LYRICS_DRIVEN span=151.020s lines=10 base_min=0.850s remaining=142.520s weight_mode=len_ja_ko anchor=1",
     "[INFO] ANCHOR not found in ASR (no hits)",
-    "[INFO] FALLBACK_EQUAL_WEIGHTS (anchor_no_hits)",
+    "[INFO] BROADCAST_SAFE_EQUAL_DISTRIBUTION",
     "[INFO] LINES_POST tail_pad=0.10 pad_end=0.03 preroll=0.80s tags=chorus,pre,post,final min_show=1.40s",
-    "[INFO] CUES_BUILT=22 (min=0.25s, split_max=20.0s, split_policy=none)"
+    "[INFO] CUES_BUILT=10 (min=0.25s, split_max=20.0s, split_policy=none)"
   ]
 }
