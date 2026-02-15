@@ -2,8 +2,8 @@
   "title": "Soft Signal",
   "lines": [
     {
-      "start": 23.84,
-      "end": 34.11,
+      "start": 23.8,
+      "end": 34.074,
       "ja": "静かな午後の教室にカラフルなノートを並べている",
       "ko_pron": "",
       "ko": "",
@@ -11,7 +11,7 @@
       "_match": "lyrics_driven_post"
     },
     {
-      "start": 34.14,
+      "start": 34.104,
       "end": 47.37,
       "ja": "小さな勇気をポケットにしまって心配を押し出して",
       "ko_pron": "",
@@ -85,18 +85,18 @@
   ],
   "cues": [
     {
-      "t0": 23.84,
-      "t1": 34.11,
-      "start": 23.84,
-      "end": 34.11,
+      "t0": 23.8,
+      "t1": 34.07,
+      "start": 23.8,
+      "end": 34.07,
       "text": "静かな午後の教室にカラフルなノートを並べている",
       "ja": "静かな午後の教室にカラフルなノートを並べている",
       "ko": ""
     },
     {
-      "t0": 34.14,
+      "t0": 34.1,
       "t1": 47.37,
-      "start": 34.14,
+      "start": 34.1,
       "end": 47.37,
       "text": "小さな勇気をポケットにしまって心配を押し出して",
       "ja": "小さな勇気をポケットにしまって心配を押し出して",
@@ -168,7 +168,7 @@
   ],
   "meta": {
     "engine": "word_align_lyrics_driven_v7_2_expand_duration_anchor",
-    "generated_at": "2026-02-15T17:41:39.503785Z",
+    "generated_at": "2026-02-15T18:01:57.701688Z",
     "leading_silence_sec": 0.0,
     "audio_duration_sec": 127.752,
     "audio_tail_margin_sec": 0.6,
@@ -204,20 +204,20 @@
   "issues": [
     "[INFO] AUDIO_DUR=127.752s from ffprobe",
     "[INFO] WORDS(vad1)=2 first=25.39",
-    "[INFO] WORDS(vad0)=206 first=0.00",
+    "[INFO] WORDS(vad0)=200 first=0.00",
     "[INFO] TRANSCRIBE_PICK(tail_cover) vad0 last1=25.89s(0.20) last2=125.50s(0.98) dur=127.75",
-    "[INFO] WORDS=206",
+    "[INFO] WORDS=200",
     "[INFO] WORDS_FIRST=0.00 WORDS_LAST=125.50",
     "[INFO] EXPAND sections=10 -> lines=9 max_chars=60 max_parts=3",
-    "[INFO] VOCAL_START_FALLBACK(no_density_good_best_window): best_cnt=2 win=2.00s min_good=3 -> 23.840 (early_min=0.000)",
+    "[INFO] VOCAL_START_FALLBACK(no_density_good_best_window): best_cnt=2 win=2.00s min_good=3 -> 23.800 (early_min=0.000)",
     "[INFO] VOCAL_END_EST(good) win=3.00s min_good=3 -> 91.060 (asr_end=125.500 shrink=34.44s)",
     "[INFO] VOCAL_END_GUARD(shrink_large): est=91.060 asr=125.500 shrink=34.44s -> use_asr",
     "[INFO] SPAN_EXTEND partial(low_asr_no_dense_end): want=127.152 diff=1.65s good_n=1 < min_good=3 win=3.00s -> skip",
-    "[INFO] ANCHOR_PICK weak: tag=Pre-Chorus#01 exp=34.140 best_t=33.560 best_score=1 < min_good=2 -> keep_exp",
-    "[INFO] ANCHOR_PICK ok: tag=Chorus#01 exp=44.441 -> 47.400 score=2 win=2.00s",
-    "[INFO] ANCHOR_PICK ok: tag=Pre-Chorus#01 exp=65.489 -> 68.780 score=2 win=2.00s",
-    "[INFO] ANCHOR_PICK ok: tag=Chorus#01 exp=75.790 -> 69.800 score=2 win=2.00s",
-    "[INFO] ANCHOR_PICK ok: tag=Final Chorus#01 exp=95.495 -> 89.720 score=2 win=2.00s",
+    "[INFO] ANCHOR_PICK weak: tag=Pre-Chorus#01 exp=34.104 best_t=33.560 best_score=1 < min_good=2 -> keep_exp",
+    "[INFO] ANCHOR_PICK ok: tag=Chorus#01 exp=44.409 -> 47.400 score=2 win=2.00s",
+    "[INFO] ANCHOR_PICK ok: tag=Pre-Chorus#01 exp=65.466 -> 68.780 score=2 win=2.00s",
+    "[INFO] ANCHOR_PICK ok: tag=Chorus#01 exp=75.770 -> 69.800 score=2 win=2.00s",
+    "[INFO] ANCHOR_PICK ok: tag=Final Chorus#01 exp=95.483 -> 89.720 score=2 win=2.00s",
     "[INFO] ANCHOR_MODE ok anchors=5 snapped=5 win=±6.0s dens_win=2.00s min_good=2",
     "[INFO] LINES_POST tail_pad=0.10 pad_end=0.03 preroll=0.80s tags=chorus,pre,post,final min_show=1.40s",
     "[INFO] CUES_BUILT=9 (min=0.25s, split_max=20.0s, split_policy=none)"
