@@ -3,7 +3,7 @@
   "lines": [
     {
       "start": 1.2,
-      "end": 12.113,
+      "end": 12.35,
       "ja": "ゆっくり靴音重ねて歩道の隅を選ぶ朝",
       "ko_pron": "",
       "ko": "",
@@ -11,8 +11,8 @@
       "_match": "lyrics_driven_post"
     },
     {
-      "start": 12.143,
-      "end": 25.16,
+      "start": 12.38,
+      "end": 24.39,
       "ja": "交差点のガラス壁に映る背中が小さく揺れてる",
       "ko_pron": "",
       "ko": "",
@@ -20,8 +20,8 @@
       "_match": "lyrics_driven_post"
     },
     {
-      "start": 25.19,
-      "end": 38.207,
+      "start": 24.42,
+      "end": 37.186,
       "ja": "迷いながらでも昨日よりは遠くに進んでるから",
       "ko_pron": "",
       "ko": "",
@@ -29,8 +29,8 @@
       "_match": "lyrics_driven_post"
     },
     {
-      "start": 38.237,
-      "end": 51.781,
+      "start": 37.216,
+      "end": 50.55,
       "ja": "ひんやりとした金属フェンス指でなぞった帰り道",
       "ko_pron": "",
       "ko": "",
@@ -38,8 +38,8 @@
       "_match": "lyrics_driven_post"
     },
     {
-      "start": 51.811,
-      "end": 64.828,
+      "start": 50.58,
+      "end": 62.75,
       "ja": "交差点のガラス壁に映る背中が小さく揺れてる",
       "ko_pron": "",
       "ko": "",
@@ -47,8 +47,8 @@
       "_match": "lyrics_driven_post"
     },
     {
-      "start": 64.858,
-      "end": 77.875,
+      "start": 62.78,
+      "end": 71.969,
       "ja": "迷いながらでも昨日よりは遠くに進んでるから",
       "ko_pron": "",
       "ko": "",
@@ -56,8 +56,8 @@
       "_match": "lyrics_driven_post"
     },
     {
-      "start": 77.905,
-      "end": 90.396,
+      "start": 71.999,
+      "end": 80.79,
       "ja": "鞄の中にしまい込んだメモはもう見返さない",
       "ko_pron": "",
       "ko": "",
@@ -65,8 +65,8 @@
       "_match": "lyrics_driven_post"
     },
     {
-      "start": 90.426,
-      "end": 115.017,
+      "start": 80.82,
+      "end": 112.137,
       "ja": "迷いながらでも昨日よりは遠くに進んでるから新しい靴ひも結ぶように自分だけのリズムで進む",
       "ko_pron": "",
       "ko": "",
@@ -74,7 +74,7 @@
       "_match": "lyrics_driven_post"
     },
     {
-      "start": 115.047,
+      "start": 112.167,
       "end": 128.72,
       "ja": "ビルの影越えて小さな光を探しながら歩き続ける",
       "ko_pron": "",
@@ -86,80 +86,80 @@
   "cues": [
     {
       "t0": 1.2,
-      "t1": 12.11,
+      "t1": 12.35,
       "start": 1.2,
-      "end": 12.11,
+      "end": 12.35,
       "text": "ゆっくり靴音重ねて歩道の隅を選ぶ朝",
       "ja": "ゆっくり靴音重ねて歩道の隅を選ぶ朝",
       "ko": ""
     },
     {
-      "t0": 12.14,
-      "t1": 25.16,
-      "start": 12.14,
-      "end": 25.16,
+      "t0": 12.38,
+      "t1": 24.39,
+      "start": 12.38,
+      "end": 24.39,
       "text": "交差点のガラス壁に映る背中が小さく揺れてる",
       "ja": "交差点のガラス壁に映る背中が小さく揺れてる",
       "ko": ""
     },
     {
-      "t0": 25.19,
-      "t1": 38.21,
-      "start": 25.19,
-      "end": 38.21,
+      "t0": 24.42,
+      "t1": 37.19,
+      "start": 24.42,
+      "end": 37.19,
       "text": "迷いながらでも昨日よりは遠くに進んでるから",
       "ja": "迷いながらでも昨日よりは遠くに進んでるから",
       "ko": ""
     },
     {
-      "t0": 38.24,
-      "t1": 51.78,
-      "start": 38.24,
-      "end": 51.78,
+      "t0": 37.22,
+      "t1": 50.55,
+      "start": 37.22,
+      "end": 50.55,
       "text": "ひんやりとした金属フェンス指でなぞった帰り道",
       "ja": "ひんやりとした金属フェンス指でなぞった帰り道",
       "ko": ""
     },
     {
-      "t0": 51.81,
-      "t1": 64.83,
-      "start": 51.81,
-      "end": 64.83,
+      "t0": 50.58,
+      "t1": 62.75,
+      "start": 50.58,
+      "end": 62.75,
       "text": "交差点のガラス壁に映る背中が小さく揺れてる",
       "ja": "交差点のガラス壁に映る背中が小さく揺れてる",
       "ko": ""
     },
     {
-      "t0": 64.86,
-      "t1": 77.88,
-      "start": 64.86,
-      "end": 77.88,
+      "t0": 62.78,
+      "t1": 71.97,
+      "start": 62.78,
+      "end": 71.97,
       "text": "迷いながらでも昨日よりは遠くに進んでるから",
       "ja": "迷いながらでも昨日よりは遠くに進んでるから",
       "ko": ""
     },
     {
-      "t0": 77.91,
-      "t1": 90.4,
-      "start": 77.91,
-      "end": 90.4,
+      "t0": 72.0,
+      "t1": 80.79,
+      "start": 72.0,
+      "end": 80.79,
       "text": "鞄の中にしまい込んだメモはもう見返さない",
       "ja": "鞄の中にしまい込んだメモはもう見返さない",
       "ko": ""
     },
     {
-      "t0": 90.43,
-      "t1": 115.02,
-      "start": 90.43,
-      "end": 115.02,
+      "t0": 80.82,
+      "t1": 112.14,
+      "start": 80.82,
+      "end": 112.14,
       "text": "迷いながらでも昨日よりは遠くに進んでるから新しい靴ひも結ぶように自分だけのリズムで進む",
       "ja": "迷いながらでも昨日よりは遠くに進んでるから新しい靴ひも結ぶように自分だけのリズムで進む",
       "ko": ""
     },
     {
-      "t0": 115.05,
+      "t0": 112.17,
       "t1": 128.72,
-      "start": 115.05,
+      "start": 112.17,
       "end": 128.72,
       "text": "ビルの影越えて小さな光を探しながら歩き続ける",
       "ja": "ビルの影越えて小さな光を探しながら歩き続ける",
@@ -168,7 +168,7 @@
   ],
   "meta": {
     "engine": "word_align_lyrics_driven_v7_2_expand_duration_anchor",
-    "generated_at": "2026-02-15T13:14:31.735448Z",
+    "generated_at": "2026-02-15T13:22:49.170122Z",
     "leading_silence_sec": 0.596,
     "audio_duration_sec": 132.792,
     "audio_tail_margin_sec": 0.6,
@@ -197,8 +197,8 @@
     "transcribe_pick_by_est": 1,
     "anchor_mode": 1,
     "anchor_tags": "chorus,pre-chorus,pre,post,final",
-    "anchor_keylen": 10,
-    "anchor_min_target_norm": 24,
+    "anchor_keylen": 6,
+    "anchor_min_target_norm": 14,
     "anchor_preroll_sec": 0.6
   },
   "issues": [
@@ -212,7 +212,14 @@
     "[INFO] VOCAL_START_FALLBACK(no_density_good) -> 1.200",
     "[INFO] VOCAL_END_FALLBACK(no_dense_good) -> asr_end=128.620",
     "[INFO] SPAN_EXTEND skipped(cap): want=132.192 diff=3.57s cap=2.00s",
-    "[INFO] ANCHOR not found in ASR (no hits)",
+    "[INFO] ANCHOR_HIT tag=Pre-Chorus#01#02 pos=18 t=12.98 exp=12.143 win=6.0",
+    "[INFO] ANCHOR_HIT tag=Chorus#01#03 pos=39 t=25.02 exp=25.19 win=6.0",
+    "[INFO] ANCHOR_HIT tag=Pre-Chorus#01#05 pos=82 t=51.18 exp=51.811 win=6.0",
+    "[INFO] ANCHOR_HIT tag=Chorus#01#06 pos=103 t=63.38 exp=64.858 win=6.0",
+    "[INFO] ANCHOR_FUZZY tag=Final Chorus#01#08 pos=137 t=81.42 exp=90.426 win=6.0 ov=30",
+    "[INFO] ANCHOR_HIT tag=Final Chorus#01#08 pos=137 t=81.42 exp=90.426 win=6.0",
+    "[INFO] ANCHOR_APPLIED n_found=5 segments=6 preroll=0.60s",
+    "[INFO] ANCHOR_FOUND=[[1, 12.38], [2, 24.419999999999995], [4, 50.58], [5, 62.78], [7, 80.82000000000001]]",
     "[INFO] LINES_POST tail_pad=0.10 pad_end=0.03 preroll=0.80s tags=chorus,pre,post,final min_show=1.40s",
     "[INFO] CUES_BUILT=9 (min=0.25s, split_max=20.0s, split_policy=none)"
   ]
