@@ -168,7 +168,7 @@
   ],
   "meta": {
     "engine": "word_align_lyrics_driven_v7_2_expand_duration_anchor",
-    "generated_at": "2026-02-15T11:36:12.969410Z",
+    "generated_at": "2026-02-15T11:51:22.071577Z",
     "leading_silence_sec": 0.596,
     "audio_duration_sec": 132.792,
     "audio_tail_margin_sec": 0.6,
@@ -197,8 +197,8 @@
     "transcribe_pick_by_est": 1,
     "anchor_mode": 1,
     "anchor_tags": "chorus,pre-chorus,pre,post,final",
-    "anchor_keylen": 6,
-    "anchor_min_target_norm": 14,
+    "anchor_keylen": 10,
+    "anchor_min_target_norm": 18,
     "anchor_preroll_sec": 0.6
   },
   "issues": [
