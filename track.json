@@ -2,8 +2,8 @@
   "title": "Soft Signal",
   "lines": [
     {
-      "start": 23.82,
-      "end": 29.37,
+      "start": 18.39,
+      "end": 29.11,
       "ja": "静かな午後の教室にカラフルなノートを並べている",
       "ko_pron": "",
       "ko": "",
@@ -11,8 +11,8 @@
       "_match": "lyrics_driven_post"
     },
     {
-      "start": 29.4,
-      "end": 47.37,
+      "start": 29.14,
+      "end": 40.15,
       "ja": "小さな勇気をポケットにしまって心配を押し出して",
       "ko_pron": "",
       "ko": "",
@@ -20,8 +20,8 @@
       "_match": "lyrics_driven_post"
     },
     {
-      "start": 47.4,
-      "end": 58.298,
+      "start": 40.18,
+      "end": 49.239,
       "ja": "そっと耳元で流れるメロディーが背中を押してくれる",
       "ko_pron": "",
       "ko": "",
@@ -29,8 +29,8 @@
       "_match": "lyrics_driven_post"
     },
     {
-      "start": 58.328,
-      "end": 68.77,
+      "start": 49.269,
+      "end": 57.95,
       "ja": "鉛筆の芯が少し短くなったら新しい自分を探したい",
       "ko_pron": "",
       "ko": "",
@@ -38,7 +38,7 @@
       "_match": "lyrics_driven_post"
     },
     {
-      "start": 68.8,
+      "start": 57.98,
       "end": 69.79,
       "ja": "小さな勇気をポケットにしまって心配を押し出して",
       "ko_pron": "",
@@ -85,45 +85,45 @@
   ],
   "cues": [
     {
-      "t0": 23.82,
-      "t1": 29.37,
-      "start": 23.82,
-      "end": 29.37,
+      "t0": 18.39,
+      "t1": 29.11,
+      "start": 18.39,
+      "end": 29.11,
       "text": "静かな午後の教室にカラフルなノートを並べている",
       "ja": "静かな午後の教室にカラフルなノートを並べている",
       "ko": ""
     },
     {
-      "t0": 29.4,
-      "t1": 47.37,
-      "start": 29.4,
-      "end": 47.37,
+      "t0": 29.14,
+      "t1": 40.15,
+      "start": 29.14,
+      "end": 40.15,
       "text": "小さな勇気をポケットにしまって心配を押し出して",
       "ja": "小さな勇気をポケットにしまって心配を押し出して",
       "ko": ""
     },
     {
-      "t0": 47.4,
-      "t1": 58.3,
-      "start": 47.4,
-      "end": 58.3,
+      "t0": 40.18,
+      "t1": 49.24,
+      "start": 40.18,
+      "end": 49.24,
       "text": "そっと耳元で流れるメロディーが背中を押してくれる",
       "ja": "そっと耳元で流れるメロディーが背中を押してくれる",
       "ko": ""
     },
     {
-      "t0": 58.33,
-      "t1": 68.77,
-      "start": 58.33,
-      "end": 68.77,
+      "t0": 49.27,
+      "t1": 57.95,
+      "start": 49.27,
+      "end": 57.95,
       "text": "鉛筆の芯が少し短くなったら新しい自分を探したい",
       "ja": "鉛筆の芯が少し短くなったら新しい自分を探したい",
       "ko": ""
     },
     {
-      "t0": 68.8,
+      "t0": 57.98,
       "t1": 69.79,
-      "start": 68.8,
+      "start": 57.98,
       "end": 69.79,
       "text": "小さな勇気をポケットにしまって心配を押し出して",
       "ja": "小さな勇気をポケットにしまって心配を押し出して",
@@ -168,7 +168,7 @@
   ],
   "meta": {
     "engine": "word_align_lyrics_driven_v7_2_expand_duration_anchor",
-    "generated_at": "2026-02-15T18:16:37.383053Z",
+    "generated_at": "2026-02-15T19:13:44.370863Z",
     "leading_silence_sec": 0.0,
     "audio_duration_sec": 127.752,
     "audio_tail_margin_sec": 0.6,
@@ -204,20 +204,20 @@
   "issues": [
     "[INFO] AUDIO_DUR=127.752s from ffprobe",
     "[INFO] WORDS(vad1)=2 first=25.39",
-    "[INFO] WORDS(vad0)=213 first=0.00",
+    "[INFO] WORDS(vad0)=211 first=0.00",
     "[INFO] TRANSCRIBE_PICK(tail_cover) vad0 last1=25.89s(0.20) last2=125.52s(0.98) dur=127.75",
-    "[INFO] WORDS=213",
+    "[INFO] WORDS=211",
     "[INFO] WORDS_FIRST=0.00 WORDS_LAST=125.52",
     "[INFO] EXPAND sections=10 -> lines=9 max_chars=60 max_parts=3",
-    "[INFO] VOCAL_START_FALLBACK(no_density_good_best_window): best_cnt=2 win=2.00s min_good=3 -> 23.820 (early_min=0.000)",
+    "[INFO] VOCAL_START_FALLBACK(no_density_good_vad1_preroll): vad1_first=25.390 preroll=7.0s best_cnt=2 win=2.00s min_good=3 best_t=23.820 -> 18.390 (early_min=0.000)",
     "[INFO] VOCAL_END_EST(good) win=3.00s min_good=3 -> 91.060 (asr_end=125.520 shrink=34.46s)",
     "[INFO] VOCAL_END_GUARD(shrink_large): est=91.060 asr=125.520 shrink=34.46s -> use_asr",
     "[INFO] SPAN_EXTEND partial(low_asr_no_dense_end): want=127.152 diff=1.63s good_n=1 < min_good=3 win=3.00s -> skip",
-    "[INFO] ANCHOR_PICK ok: tag=Pre-Chorus#01 exp=34.124 -> 29.400 score=3 win=2.00s",
-    "[INFO] ANCHOR_PICK ok: tag=Chorus#01 exp=44.429 -> 47.400 score=2 win=2.00s",
-    "[INFO] ANCHOR_PICK ok: tag=Pre-Chorus#01 exp=65.486 -> 68.800 score=2 win=2.00s",
-    "[INFO] ANCHOR_PICK ok: tag=Chorus#01 exp=75.790 -> 69.820 score=2 win=2.00s",
-    "[INFO] ANCHOR_PICK ok: tag=Final Chorus#01 exp=95.503 -> 89.780 score=2 win=2.00s",
+    "[INFO] ANCHOR_PICK ok: tag=Pre-Chorus#01 exp=29.245 -> 29.140 score=3 win=2.00s",
+    "[INFO] ANCHOR_PICK ok: tag=Chorus#01 exp=40.099 -> 40.180 score=2 win=2.00s",
+    "[INFO] ANCHOR_PICK ok: tag=Pre-Chorus#01 exp=62.280 -> 57.980 score=3 win=2.00s",
+    "[INFO] ANCHOR_PICK ok: tag=Chorus#01 exp=73.135 -> 69.820 score=2 win=2.00s",
+    "[INFO] ANCHOR_PICK ok: tag=Final Chorus#01 exp=93.900 -> 89.780 score=2 win=2.00s",
     "[INFO] ANCHOR_MODE ok anchors=5 snapped=5 win=±6.0s dens_win=2.00s min_good=2",
     "[INFO] LINES_POST tail_pad=0.10 pad_end=0.03 preroll=0.80s tags=chorus,pre,post,final min_show=1.40s",
     "[INFO] CUES_BUILT=9 (min=0.25s, split_max=20.0s, split_policy=none)"
