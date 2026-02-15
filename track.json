@@ -3,7 +3,7 @@
   "lines": [
     {
       "start": 18.39,
-      "end": 29.215,
+      "end": 29.37,
       "ja": "静かな午後の教室にカラフルなノートを並べている",
       "ko_pron": "",
       "ko": "",
@@ -11,8 +11,8 @@
       "_match": "lyrics_driven_post"
     },
     {
-      "start": 29.245,
-      "end": 40.069,
+      "start": 29.4,
+      "end": 41.15,
       "ja": "小さな勇気をポケットにしまって心配を押し出して",
       "ko_pron": "",
       "ko": "",
@@ -20,8 +20,8 @@
       "_match": "lyrics_driven_post"
     },
     {
-      "start": 40.099,
-      "end": 51.396,
+      "start": 41.18,
+      "end": 42.58,
       "ja": "そっと耳元で流れるメロディーが背中を押してくれる",
       "ko_pron": "",
       "ko": "",
@@ -29,8 +29,8 @@
       "_match": "lyrics_driven_post"
     },
     {
-      "start": 51.426,
-      "end": 62.25,
+      "start": 42.61,
+      "end": 68.77,
       "ja": "鉛筆の芯が少し短くなったら新しい自分を探したい",
       "ko_pron": "",
       "ko": "",
@@ -38,8 +38,8 @@
       "_match": "lyrics_driven_post"
     },
     {
-      "start": 62.28,
-      "end": 73.105,
+      "start": 68.8,
+      "end": 77.877,
       "ja": "小さな勇気をポケットにしまって心配を押し出して",
       "ko_pron": "",
       "ko": "",
@@ -47,8 +47,8 @@
       "_match": "lyrics_driven_post"
     },
     {
-      "start": 73.135,
-      "end": 84.431,
+      "start": 77.907,
+      "end": 87.35,
       "ja": "そっと耳元で流れるメロディーが背中を押してくれる",
       "ko_pron": "",
       "ko": "",
@@ -56,8 +56,8 @@
       "_match": "lyrics_driven_post"
     },
     {
-      "start": 84.461,
-      "end": 93.87,
+      "start": 87.38,
+      "end": 101.683,
       "ja": "誰にも見えないサインを机の端に隠したまま",
       "ko_pron": "",
       "ko": "",
@@ -65,8 +65,8 @@
       "_match": "lyrics_driven_post"
     },
     {
-      "start": 93.9,
-      "end": 114.635,
+      "start": 101.713,
+      "end": 103.113,
       "ja": "そっと耳元で流れるメロディーが背中を押してくれる 今日はあの日より少し強くなれた気がする",
       "ko_pron": "",
       "ko": "",
@@ -74,7 +74,7 @@
       "_match": "lyrics_driven_post"
     },
     {
-      "start": 114.665,
+      "start": 103.143,
       "end": 125.62,
       "ja": "帰り道の制服の袖にそっと小さな希望を閉じ込めて",
       "ko_pron": "",
@@ -86,80 +86,80 @@
   "cues": [
     {
       "t0": 18.39,
-      "t1": 29.21,
+      "t1": 29.37,
       "start": 18.39,
-      "end": 29.21,
+      "end": 29.37,
       "text": "静かな午後の教室にカラフルなノートを並べている",
       "ja": "静かな午後の教室にカラフルなノートを並べている",
       "ko": ""
     },
     {
-      "t0": 29.25,
-      "t1": 40.07,
-      "start": 29.25,
-      "end": 40.07,
+      "t0": 29.4,
+      "t1": 41.15,
+      "start": 29.4,
+      "end": 41.15,
       "text": "小さな勇気をポケットにしまって心配を押し出して",
       "ja": "小さな勇気をポケットにしまって心配を押し出して",
       "ko": ""
     },
     {
-      "t0": 40.1,
-      "t1": 51.4,
-      "start": 40.1,
-      "end": 51.4,
+      "t0": 41.18,
+      "t1": 42.58,
+      "start": 41.18,
+      "end": 42.58,
       "text": "そっと耳元で流れるメロディーが背中を押してくれる",
       "ja": "そっと耳元で流れるメロディーが背中を押してくれる",
       "ko": ""
     },
     {
-      "t0": 51.43,
-      "t1": 62.25,
-      "start": 51.43,
-      "end": 62.25,
+      "t0": 42.61,
+      "t1": 68.77,
+      "start": 42.61,
+      "end": 68.77,
       "text": "鉛筆の芯が少し短くなったら新しい自分を探したい",
       "ja": "鉛筆の芯が少し短くなったら新しい自分を探したい",
       "ko": ""
     },
     {
-      "t0": 62.28,
-      "t1": 73.11,
-      "start": 62.28,
-      "end": 73.11,
+      "t0": 68.8,
+      "t1": 77.88,
+      "start": 68.8,
+      "end": 77.88,
       "text": "小さな勇気をポケットにしまって心配を押し出して",
       "ja": "小さな勇気をポケットにしまって心配を押し出して",
       "ko": ""
     },
     {
-      "t0": 73.14,
-      "t1": 84.43,
-      "start": 73.14,
-      "end": 84.43,
+      "t0": 77.91,
+      "t1": 87.35,
+      "start": 77.91,
+      "end": 87.35,
       "text": "そっと耳元で流れるメロディーが背中を押してくれる",
       "ja": "そっと耳元で流れるメロディーが背中を押してくれる",
       "ko": ""
     },
     {
-      "t0": 84.46,
-      "t1": 93.87,
-      "start": 84.46,
-      "end": 93.87,
+      "t0": 87.38,
+      "t1": 101.68,
+      "start": 87.38,
+      "end": 101.68,
       "text": "誰にも見えないサインを机の端に隠したまま",
       "ja": "誰にも見えないサインを机の端に隠したまま",
       "ko": ""
     },
     {
-      "t0": 93.9,
-      "t1": 114.64,
-      "start": 93.9,
-      "end": 114.64,
+      "t0": 101.71,
+      "t1": 103.11,
+      "start": 101.71,
+      "end": 103.11,
       "text": "そっと耳元で流れるメロディーが背中を押してくれる 今日はあの日より少し強くなれた気がする",
       "ja": "そっと耳元で流れるメロディーが背中を押してくれる 今日はあの日より少し強くなれた気がする",
       "ko": ""
     },
     {
-      "t0": 114.67,
+      "t0": 103.14,
       "t1": 125.62,
-      "start": 114.67,
+      "start": 103.14,
       "end": 125.62,
       "text": "帰り道の制服の袖にそっと小さな希望を閉じ込めて",
       "ja": "帰り道の制服の袖にそっと小さな希望を閉じ込めて",
@@ -168,7 +168,7 @@
   ],
   "meta": {
     "engine": "word_align_lyrics_driven_v7_2_expand_duration_anchor",
-    "generated_at": "2026-02-15T20:04:35.066522Z",
+    "generated_at": "2026-02-15T20:12:40.855294Z",
     "leading_silence_sec": 0.0,
     "audio_duration_sec": 127.752,
     "audio_tail_margin_sec": 0.6,
@@ -204,16 +204,22 @@
   "issues": [
     "[INFO] AUDIO_DUR=127.752s from ffprobe",
     "[INFO] WORDS(vad1)=2 first=25.39",
-    "[INFO] WORDS(vad0)=219 first=0.00",
+    "[INFO] WORDS(vad0)=192 first=0.00",
     "[INFO] TRANSCRIBE_PICK(tail_cover) vad0 last1=25.89s(0.20) last2=125.52s(0.98) dur=127.75",
-    "[INFO] WORDS=219",
+    "[INFO] WORDS=192",
     "[INFO] WORDS_FIRST=0.00 WORDS_LAST=125.52",
     "[INFO] EXPAND sections=10 -> lines=9 max_chars=60 max_parts=3",
     "[INFO] VOCAL_START_FALLBACK(no_density_good_vad1_preroll): vad1_first=25.390 preroll=7.0s best_cnt=2 win=2.00s min_good=3 best_t=23.820 -> 18.390 (early_min=0.000)",
     "[INFO] VOCAL_END_EST(good) win=3.00s min_good=3 -> 91.060 (asr_end=125.520 shrink=34.46s)",
     "[INFO] VOCAL_END_GUARD(shrink_large): est=91.060 asr=125.520 shrink=34.46s -> use_asr",
     "[INFO] SPAN_EXTEND partial(low_asr_no_dense_end): want=127.152 diff=1.63s good_n=1 < min_good=3 win=3.00s -> skip",
-    "[WARN] ANCHOR_MODE failed: TypeError: _apply_anchor_partition() got an unexpected keyword argument 'anchors'",
+    "[INFO] ANCHOR_PICK ok: tag=Pre-Chorus#01 exp=30.293 -> 29.400 score=3 pre=0 onset=3 win=2.00s",
+    "[INFO] ANCHOR_PICK ok: tag=Chorus#01 exp=42.197 -> 41.180 score=2 pre=0 onset=2 win=2.00s",
+    "[INFO] ANCHOR_PICK ok: tag=Pre-Chorus#01 exp=66.003 -> 68.800 score=2 pre=0 onset=2 win=2.00s",
+    "[INFO] ANCHOR_PICK weak: tag=Chorus#01 exp=77.907 best_t=77.520 best_score=1 < min_good=2 -> keep_exp",
+    "[INFO] ANCHOR_PICK ok: tag=Bridge#01 exp=89.810 -> 87.380 score=2 pre=0 onset=2 win=2.00s",
+    "[INFO] ANCHOR_PICK weak: tag=Final Chorus#01 exp=101.713 best_t=96.600 best_score=1 < min_good=2 -> keep_exp",
+    "[INFO] ANCHOR_MODE ok anchors=6 snapped=6 win=±6.0s dens_win=2.00s min_good=2",
     "[INFO] LINES_POST tail_pad=0.10 pad_end=0.03 preroll=0.80s tags=chorus,pre,post,final min_show=1.40s",
     "[INFO] CUES_BUILT=9 (min=0.25s, split_max=20.0s, split_policy=none)"
   ]
