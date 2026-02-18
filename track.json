@@ -276,7 +276,7 @@
   ],
   "meta": {
     "engine": "word_align_lyrics_driven_v7_2_expand_duration_anchor",
-    "generated_at": "2026-02-18T18:08:46.556998Z",
+    "generated_at": "2026-02-18T19:04:51.417834Z",
     "leading_silence_sec": 0.0,
     "audio_duration_sec": 217.272,
     "audio_tail_margin_sec": 0.6,
