@@ -134,7 +134,18 @@
     }
     .hud-off #box{ pointer-events:none; }
 
-    .ja{ font-size: var(--jaSize); font-weight: 500; line-height: 1.25; }
+    .ja{
+      font-size: var(--jaSize);
+      font-weight: 500;
+      line-height: 1.25;
+
+      /* 추가 */
+      text-shadow:
+        0 0 4px rgba(0,0,0,0.95),
+        0 0 10px rgba(0,0,0,0.85),
+        0 2px 16px rgba(0,0,0,0.95);
+    }
+
     .ko{
       font-size: var(--koSize);
       font-weight: 500;
@@ -142,7 +153,12 @@
       line-height: 1.25;
       margin-top: var(--lineGap);
       color: var(--koColor);
-      text-shadow: 0 2px 12px rgba(0,0,0,0.55);
+
+      /* 기존보다 훨씬 강하게 변경 */
+      text-shadow:
+        0 0 4px rgba(0,0,0,0.95),
+        0 0 10px rgba(0,0,0,0.85),
+        0 2px 16px rgba(0,0,0,0.95);
     }
 
     /* ---------- HUD ---------- */
