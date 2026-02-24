@@ -1,1 +1,445 @@
-{"title": "daily", "lines": [{"start": 0.99, "end": 16.146, "ja": "静かな部屋で 時計の針が 進む音だけ響く", "ko_pron": "", "ko": "조용한 방에서 시계 바늘이 가는 소리만 울려 퍼진다.", "tag": "L1#01", "_match": "lyrics_driven_post"}, {"start": 16.176, "end": 35.128, "ja": "期待よりゆっくりと 胸に染みてく 強さを感じている", "ko_pron": "", "ko": "기대보다 천천히 가슴에 스며드는 힘을 느끼고 있다.", "tag": "L2#01", "_match": "lyrics_driven_post"}, {"start": 35.158, "end": 51.073, "ja": "待つことだけが私の 強さだと信じて歩き出す", "ko_pron": "", "ko": "기다리는 것만이 나의 힘이라고 믿고 걸어갑니다.", "tag": "L3#01", "_match": "lyrics_driven_post"}, {"start": 51.103, "end": 69.296, "ja": "宇宙明かりに浮かぶ教室の 磯が並ぶ景色じゃなくて", "ko_pron": "", "ko": "우주 빛에 떠 있는 교실의 바닷가가 늘어선 풍경이 아니라", "tag": "L4#01", "_match": "lyrics_driven_post"}, {"start": 69.326, "end": 93.593, "ja": "忘れ物を一つずつ置いて 過去に背を向けてゆく Lalala...", "ko_pron": "", "ko": "잊어버린 물건을 하나하나 놓아두고 과거로 돌아가는 랄랄라...", "tag": "L5#01", "_match": "lyrics_driven_post"}, {"start": 93.623, "end": 109.538, "ja": "それでも揺らがないこの気持ちが 明日を創る", "ko_pron": "", "ko": "그래도 흔들리지 않는 이 마음이 내일을 만든다", "tag": "L6#01", "_match": "lyrics_driven_post"}, {"start": 109.568, "end": 139.28, "ja": "静寂の中で最後の音が 優しく消えてゆく Lalala... Lalala...", "ko_pron": "", "ko": "고요함 속에서 마지막 소리가 부드럽게 사라지는 Lalala... Lalala...", "tag": "L7#01", "_match": "lyrics_driven_post"}], "cues": [{"tag": "L1#01", "t0": 0.99, "t1": 16.15, "start": 0.99, "end": 16.15, "text": "静かな部屋で 時計の針が 進む音だけ響く", "ja": "静かな部屋で 時計の針が 進む音だけ響く", "ko": "조용한 방에서 시계 바늘이 가는 소리만 울려 퍼진다.", "ko_pron": ""}, {"tag": "L2#01", "t0": 16.18, "t1": 35.13, "start": 16.18, "end": 35.13, "text": "期待よりゆっくりと 胸に染みてく 強さを感じている", "ja": "期待よりゆっくりと 胸に染みてく 強さを感じている", "ko": "기대보다 천천히 가슴에 스며드는 힘을 느끼고 있다.", "ko_pron": ""}, {"tag": "L3#01", "t0": 35.16, "t1": 51.07, "start": 35.16, "end": 51.07, "text": "待つことだけが私の 強さだと信じて歩き出す", "ja": "待つことだけが私の 強さだと信じて歩き出す", "ko": "기다리는 것만이 나의 힘이라고 믿고 걸어갑니다.", "ko_pron": ""}, {"tag": "L4#01", "t0": 51.1, "t1": 69.3, "start": 51.1, "end": 69.3, "text": "宇宙明かりに浮かぶ教室の 磯が並ぶ景色じゃなくて", "ja": "宇宙明かりに浮かぶ教室の 磯が並ぶ景色じゃなくて", "ko": "우주 빛에 떠 있는 교실의 바닷가가 늘어선 풍경이 아니라", "ko_pron": ""}, {"tag": "L5#01", "t0": 69.33, "t1": 93.59, "start": 69.33, "end": 93.59, "text": "忘れ物を一つずつ置いて 過去に背を向けてゆく Lalala...", "ja": "忘れ物を一つずつ置いて 過去に背を向けてゆく Lalala...", "ko": "잊어버린 물건을 하나하나 놓아두고 과거로 돌아가는 랄랄라...", "ko_pron": ""}, {"tag": "L6#01", "t0": 93.62, "t1": 109.54, "start": 93.62, "end": 109.54, "text": "それでも揺らがないこの気持ちが 明日を創る", "ja": "それでも揺らがないこの気持ちが 明日を創る", "ko": "그래도 흔들리지 않는 이 마음이 내일을 만든다", "ko_pron": ""}, {"tag": "L7#01", "t0": 109.57, "t1": 139.28, "start": 109.57, "end": 139.28, "text": "静寂の中で最後の音が 優しく消えてゆく Lalala... Lalala...", "ja": "静寂の中で最後の音が 優しく消えてゆく Lalala... Lalala...", "ko": "고요함 속에서 마지막 소리가 부드럽게 사라지는 Lalala... Lalala...", "ko_pron": ""}], "meta": {"engine": "word_align_lyrics_driven_v7_2_expand_duration_anchor", "generated_at": "2026-02-24T06:12:40.102218Z", "leading_silence_sec": 0.0, "audio_duration_sec": 148.584, "audio_tail_margin_sec": 0.6, "whisper_backend": "local_faster_whisper", "whisper_model": "small", "whisper_device": "cpu", "whisper_compute": "int8", "cue_min_sec": 0.25, "cue_split_max_sec": 20.0, "cue_split_min_seg_sec": 2.0, "lyric_min_line_sec": 0.85, "lyric_pad_end_sec": 0.03, "lyric_tail_pad_sec": 0.1, "lyric_weight_mode": "len_ja_ko", "lyric_expand": 1, "lyric_expand_mode": "auto", "lyric_expand_max_chars": 60, "lyric_expand_min_chars": 6, "lyric_expand_target": 40, "lyric_expand_max_parts": 3, "line_preroll_sec": 0.8, "line_preroll_tags": "chorus,pre,post,final", "line_min_show_sec": 1.4, "good_word_min_norm": 2, "vocal_start_min_good_words": 2, "transcribe_pick_by_est": 1, "anchor_mode": 1, "anchor_tags": "chorus,final,pre,pre-chorus,post,hook,refrain,프리 코러스,코러스,브릿지", "anchor_keylen": 10, "anchor_min_target_norm": 18, "anchor_preroll_sec": 0.6}, "issues": ["[INFO] AUDIO_DUR=148.584s from ffprobe", "[INFO] WORDS(vad1)=33 first=0.37", "[INFO] WORDS(vad0)=198 first=0.00", "[INFO] TRANSCRIBE_KEEP(est) vad1 (vad0 suspicious: vad0_first=0.00 est2=0.00)", "[INFO] WORDS=33", "[INFO] WORDS_FIRST=0.37 WORDS_LAST=139.18", "[INFO] EXPAND sections=7 -> lines=7 max_chars=60 max_parts=3", "[INFO] VOCAL_START sparse_mode=1 total_words=33 win=3.00 lookahead=40.0", "[INFO] VOCAL_START_FALLBACK(no_density_good_best_window): best_cnt=1 win=3.00s min_good=2 -> 0.990 (early_min=0.370)", "[INFO] VOCAL_END sparse_mode=1 total_words=33 win=4.00 lookback=55.0", "[INFO] VOCAL_END_FALLBACK(no_dense_good) -> asr_end=139.180", "[INFO] SPAN_EXTEND skipped(cap): want=147.984 diff=8.80s cap=2.00s", "[INFO] ANCHOR_MODE no_anchor_tags -> skip", "[INFO] ANCHOR skip (no anchor tags)", "[INFO] LINES_POST tail_pad=0.10 pad_end=0.03 preroll=0.80s tags=chorus,pre,post,final min_show=1.40s", "[INFO] V2_GAP_PROBE no_verse2_lines", "[INFO] V2_GAP_APPLY skip(no_verse2_line)", "[INFO] CUES_BUILT=7 (min=0.25s, split_max=20.0s, split_policy=none)"]}
+{
+  "title": "Folding Quietly Under Neon Light",
+  "lines": [
+    {
+      "start": 7.51,
+      "end": 12.637,
+      "ja": "洗いたての靴下を畳む手元が静かに震えている今日も",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Verse 1#01",
+      "_match": "lyrics_driven_post"
+    },
+    {
+      "start": 12.667,
+      "end": 17.58,
+      "ja": "わざと揃えずに重ねるクセ 何度も確かめた手順で",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Verse 1#01",
+      "_match": "lyrics_driven_post"
+    },
+    {
+      "start": 17.61,
+      "end": 26.845,
+      "ja": "乾いたタオルの隣でそっと一足だけ折り返す",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Pre-Chorus#01",
+      "_match": "lyrics_driven_post"
+    },
+    {
+      "start": 26.875,
+      "end": 32.048,
+      "ja": "伝えられない後悔を布のシワに忍ばせて",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Pre-Chorus#01",
+      "_match": "lyrics_driven_post"
+    },
+    {
+      "start": 32.078,
+      "end": 38.985,
+      "ja": "何も言わずに並べていく昨日と今日の小さな積み重ね",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Chorus#01",
+      "_match": "lyrics_driven_post"
+    },
+    {
+      "start": 39.015,
+      "end": 45.738,
+      "ja": "ただ受け止めてほしい気持ちを二重に巻き込むだけ",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Chorus#01",
+      "_match": "lyrics_driven_post"
+    },
+    {
+      "start": 45.768,
+      "end": 53.077,
+      "ja": "部屋の隅 光るフローリング冷たさまだ足裏に残ってる",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Verse 2#01",
+      "_match": "lyrics_driven_post"
+    },
+    {
+      "start": 53.107,
+      "end": 59.83,
+      "ja": "余った片方が落ちている朝から気づかず踏み越えた",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Verse 2#01",
+      "_match": "lyrics_driven_post"
+    },
+    {
+      "start": 59.86,
+      "end": 60.13,
+      "ja": "乾いたタオルの隣でそっと一足だけ折り返す",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Pre-Chorus#01",
+      "_match": "lyrics_driven_post"
+    },
+    {
+      "start": 60.16,
+      "end": 70.49,
+      "ja": "伝えられない後悔を布のシワに忍ばせて",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Pre-Chorus#01",
+      "_match": "lyrics_driven_post"
+    },
+    {
+      "start": 70.52,
+      "end": 77.427,
+      "ja": "何も言わずに並べていく昨日と今日の小さな積み重ね",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Chorus#01",
+      "_match": "lyrics_driven_post"
+    },
+    {
+      "start": 77.457,
+      "end": 84.075,
+      "ja": "ただ受け止めてほしい気持ちを二重に巻き込むだけ",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Chorus#01",
+      "_match": "lyrics_driven_post"
+    },
+    {
+      "start": 84.105,
+      "end": 89.566,
+      "ja": "ごめんねの代わりにそっと角を揃えながら",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Bridge#01",
+      "_match": "lyrics_driven_post"
+    },
+    {
+      "start": 89.596,
+      "end": 94.769,
+      "ja": "洗濯カゴの底から見つけ出す自分の弱さ",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Bridge#01",
+      "_match": "lyrics_driven_post"
+    },
+    {
+      "start": 94.799,
+      "end": 101.706,
+      "ja": "何も言わずに並べていく昨日と今日の小さな積み重ね",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Final Chorus#01",
+      "_match": "lyrics_driven_post"
+    },
+    {
+      "start": 101.736,
+      "end": 108.354,
+      "ja": "ただ受け止めてほしい気持ちを二重に巻き込むだけ",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Final Chorus#01",
+      "_match": "lyrics_driven_post"
+    },
+    {
+      "start": 108.384,
+      "end": 114.712,
+      "ja": "失くしたくない思い出も見えないまま畳み込んで",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Final Chorus#01",
+      "_match": "lyrics_driven_post"
+    },
+    {
+      "start": 114.742,
+      "end": 120.493,
+      "ja": "そっと目を閉じて置き去りにする優しさだけ",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Final Chorus#01",
+      "_match": "lyrics_driven_post"
+    },
+    {
+      "start": 120.523,
+      "end": 127.56,
+      "ja": "夕焼けの線がフローリングに伸びて消える音の中まで",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "Outro#01",
+      "_match": "lyrics_driven_post"
+    }
+  ],
+  "cues": [
+    {
+      "tag": "Verse 1#01",
+      "t0": 7.51,
+      "t1": 12.64,
+      "start": 7.51,
+      "end": 12.64,
+      "text": "洗いたての靴下を畳む手元が静かに震えている今日も",
+      "ja": "洗いたての靴下を畳む手元が静かに震えている今日も",
+      "ko": ""
+    },
+    {
+      "tag": "Verse 1#01",
+      "t0": 12.67,
+      "t1": 17.58,
+      "start": 12.67,
+      "end": 17.58,
+      "text": "わざと揃えずに重ねるクセ 何度も確かめた手順で",
+      "ja": "わざと揃えずに重ねるクセ 何度も確かめた手順で",
+      "ko": ""
+    },
+    {
+      "tag": "Pre-Chorus#01",
+      "t0": 17.61,
+      "t1": 26.84,
+      "start": 17.61,
+      "end": 26.84,
+      "text": "乾いたタオルの隣でそっと一足だけ折り返す",
+      "ja": "乾いたタオルの隣でそっと一足だけ折り返す",
+      "ko": ""
+    },
+    {
+      "tag": "Pre-Chorus#01",
+      "t0": 26.88,
+      "t1": 32.05,
+      "start": 26.88,
+      "end": 32.05,
+      "text": "伝えられない後悔を布のシワに忍ばせて",
+      "ja": "伝えられない後悔を布のシワに忍ばせて",
+      "ko": ""
+    },
+    {
+      "tag": "Chorus#01",
+      "t0": 32.08,
+      "t1": 38.98,
+      "start": 32.08,
+      "end": 38.98,
+      "text": "何も言わずに並べていく昨日と今日の小さな積み重ね",
+      "ja": "何も言わずに並べていく昨日と今日の小さな積み重ね",
+      "ko": ""
+    },
+    {
+      "tag": "Chorus#01",
+      "t0": 39.02,
+      "t1": 45.74,
+      "start": 39.02,
+      "end": 45.74,
+      "text": "ただ受け止めてほしい気持ちを二重に巻き込むだけ",
+      "ja": "ただ受け止めてほしい気持ちを二重に巻き込むだけ",
+      "ko": ""
+    },
+    {
+      "tag": "Verse 2#01",
+      "t0": 45.77,
+      "t1": 53.08,
+      "start": 45.77,
+      "end": 53.08,
+      "text": "部屋の隅 光るフローリング冷たさまだ足裏に残ってる",
+      "ja": "部屋の隅 光るフローリング冷たさまだ足裏に残ってる",
+      "ko": ""
+    },
+    {
+      "tag": "Verse 2#01",
+      "t0": 53.11,
+      "t1": 59.83,
+      "start": 53.11,
+      "end": 59.83,
+      "text": "余った片方が落ちている朝から気づかず踏み越えた",
+      "ja": "余った片方が落ちている朝から気づかず踏み越えた",
+      "ko": ""
+    },
+    {
+      "tag": "Pre-Chorus#01",
+      "t0": 59.86,
+      "t1": 60.13,
+      "start": 59.86,
+      "end": 60.13,
+      "text": "乾いたタオルの隣でそっと一足だけ折り返す",
+      "ja": "乾いたタオルの隣でそっと一足だけ折り返す",
+      "ko": ""
+    },
+    {
+      "tag": "Pre-Chorus#01",
+      "t0": 60.16,
+      "t1": 70.49,
+      "start": 60.16,
+      "end": 70.49,
+      "text": "伝えられない後悔を布のシワに忍ばせて",
+      "ja": "伝えられない後悔を布のシワに忍ばせて",
+      "ko": ""
+    },
+    {
+      "tag": "Chorus#01",
+      "t0": 70.52,
+      "t1": 77.43,
+      "start": 70.52,
+      "end": 77.43,
+      "text": "何も言わずに並べていく昨日と今日の小さな積み重ね",
+      "ja": "何も言わずに並べていく昨日と今日の小さな積み重ね",
+      "ko": ""
+    },
+    {
+      "tag": "Chorus#01",
+      "t0": 77.46,
+      "t1": 84.08,
+      "start": 77.46,
+      "end": 84.08,
+      "text": "ただ受け止めてほしい気持ちを二重に巻き込むだけ",
+      "ja": "ただ受け止めてほしい気持ちを二重に巻き込むだけ",
+      "ko": ""
+    },
+    {
+      "tag": "Bridge#01",
+      "t0": 84.11,
+      "t1": 89.57,
+      "start": 84.11,
+      "end": 89.57,
+      "text": "ごめんねの代わりにそっと角を揃えながら",
+      "ja": "ごめんねの代わりにそっと角を揃えながら",
+      "ko": ""
+    },
+    {
+      "tag": "Bridge#01",
+      "t0": 89.6,
+      "t1": 94.77,
+      "start": 89.6,
+      "end": 94.77,
+      "text": "洗濯カゴの底から見つけ出す自分の弱さ",
+      "ja": "洗濯カゴの底から見つけ出す自分の弱さ",
+      "ko": ""
+    },
+    {
+      "tag": "Final Chorus#01",
+      "t0": 94.8,
+      "t1": 101.71,
+      "start": 94.8,
+      "end": 101.71,
+      "text": "何も言わずに並べていく昨日と今日の小さな積み重ね",
+      "ja": "何も言わずに並べていく昨日と今日の小さな積み重ね",
+      "ko": ""
+    },
+    {
+      "tag": "Final Chorus#01",
+      "t0": 101.74,
+      "t1": 108.35,
+      "start": 101.74,
+      "end": 108.35,
+      "text": "ただ受け止めてほしい気持ちを二重に巻き込むだけ",
+      "ja": "ただ受け止めてほしい気持ちを二重に巻き込むだけ",
+      "ko": ""
+    },
+    {
+      "tag": "Final Chorus#01",
+      "t0": 108.38,
+      "t1": 114.71,
+      "start": 108.38,
+      "end": 114.71,
+      "text": "失くしたくない思い出も見えないまま畳み込んで",
+      "ja": "失くしたくない思い出も見えないまま畳み込んで",
+      "ko": ""
+    },
+    {
+      "tag": "Final Chorus#01",
+      "t0": 114.74,
+      "t1": 120.49,
+      "start": 114.74,
+      "end": 120.49,
+      "text": "そっと目を閉じて置き去りにする優しさだけ",
+      "ja": "そっと目を閉じて置き去りにする優しさだけ",
+      "ko": ""
+    },
+    {
+      "tag": "Outro#01",
+      "t0": 120.52,
+      "t1": 127.56,
+      "start": 120.52,
+      "end": 127.56,
+      "text": "夕焼けの線がフローリングに伸びて消える音の中まで",
+      "ja": "夕焼けの線がフローリングに伸びて消える音の中まで",
+      "ko": ""
+    }
+  ],
+  "meta": {
+    "engine": "word_align_lyrics_driven_v7_2_expand_duration_anchor",
+    "generated_at": "2026-02-24T21:31:34.186300Z",
+    "leading_silence_sec": 0.0,
+    "audio_duration_sec": 164.904,
+    "audio_tail_margin_sec": 0.6,
+    "whisper_backend": "local_faster_whisper",
+    "whisper_model": "small",
+    "whisper_device": "cpu",
+    "whisper_compute": "int8",
+    "cue_min_sec": 0.25,
+    "cue_split_max_sec": 20.0,
+    "cue_split_min_seg_sec": 2.0,
+    "lyric_min_line_sec": 0.85,
+    "lyric_pad_end_sec": 0.03,
+    "lyric_tail_pad_sec": 0.1,
+    "lyric_weight_mode": "len_ja_ko",
+    "lyric_expand": 1,
+    "lyric_expand_mode": "auto",
+    "lyric_expand_max_chars": 60,
+    "lyric_expand_min_chars": 6,
+    "lyric_expand_target": 40,
+    "lyric_expand_max_parts": 3,
+    "line_preroll_sec": 0.8,
+    "line_preroll_tags": "chorus,pre,post,final",
+    "line_min_show_sec": 1.4,
+    "good_word_min_norm": 2,
+    "vocal_start_min_good_words": 2,
+    "transcribe_pick_by_est": 1,
+    "anchor_mode": 1,
+    "anchor_tags": "chorus,final,pre,pre-chorus,post,hook,refrain,프리 코러스,코러스,브릿지",
+    "anchor_keylen": 10,
+    "anchor_min_target_norm": 18,
+    "anchor_preroll_sec": 0.6
+  },
+  "issues": [
+    "[INFO] AUDIO_DUR=164.904s from ffprobe",
+    "[INFO] WORDS(vad1)=76 first=0.37",
+    "[INFO] WORDS(vad0)=333 first=0.00",
+    "[INFO] TRANSCRIBE_KEEP(est) vad1 est1=7.51 <= est2=7.52",
+    "[INFO] WORDS=76",
+    "[INFO] WORDS_FIRST=0.37 WORDS_LAST=127.46",
+    "[INFO] EXPAND sections=20 -> lines=19 max_chars=60 max_parts=3",
+    "[INFO] VOCAL_START_EST(good) win=2.00s min_good=2 -> 7.510 (early_min=0.370)",
+    "[INFO] VOCAL_END_FALLBACK(no_dense_good) -> asr_end=127.460",
+    "[INFO] SPAN_EXTEND skipped(cap): want=164.304 diff=36.84s cap=2.00s",
+    "[INFO] ANCHOR_PICK ok: tag=Pre-Chorus#01 exp=21.095 -> 17.610 score=2 win=2.00s",
+    "[INFO] ANCHOR_PICK none: tag=Pre-Chorus#01 exp=26.875 win=±6.0s -> keep_exp",
+    "[INFO] ANCHOR_PICK none: tag=Chorus#01 exp=32.078 win=±6.0s -> keep_exp",
+    "[INFO] ANCHOR_PICK none: tag=Chorus#01 exp=39.015 win=±6.0s -> keep_exp",
+    "[INFO] ANCHOR_PICK ok: tag=Pre-Chorus#01 exp=59.537 -> 59.860 score=2 win=2.00s",
+    "[INFO] ANCHOR_PICK ok: tag=Pre-Chorus#01 exp=65.317 -> 59.860 score=2 win=2.00s",
+    "[INFO] ANCHOR_PICK weak: tag=Chorus#01 exp=70.520 best_t=67.940 best_score=1 < min_good=2 -> keep_exp",
+    "[INFO] ANCHOR_PICK weak: tag=Chorus#01 exp=77.457 best_t=79.240 best_score=1 < min_good=2 -> keep_exp",
+    "[INFO] ANCHOR_PICK none: tag=Final Chorus#01 exp=94.799 win=±6.0s -> keep_exp",
+    "[INFO] ANCHOR_PICK none: tag=Final Chorus#01 exp=101.736 win=±6.0s -> keep_exp",
+    "[INFO] ANCHOR_PICK none: tag=Final Chorus#01 exp=108.384 win=±6.0s -> keep_exp",
+    "[INFO] ANCHOR_PICK none: tag=Final Chorus#01 exp=114.742 win=±6.0s -> keep_exp",
+    "[INFO] ANCHOR_MODE ok anchors=12 snapped=12 win=±6.0s dens_win=2.00s min_good=2",
+    "[INFO] ANCHOR not found in ASR (no hits)",
+    "[INFO] LINES_POST tail_pad=0.10 pad_end=0.03 preroll=0.80s tags=chorus,pre,post,final min_show=1.40s",
+    "[INFO] V2_GAP_PROBE v2st=45.77 last_end=18.91 first_st=59.86 gap=40.95",
+    "[INFO] V2_GAP_DETAIL v2_line idx=6 tag=Verse 2#01 start=45.77 end=53.08 jaLen=25",
+    "[INFO] V2_GAP_DETAIL v2_window st=45.77 ed=53.08",
+    "[INFO] V2_GAP_DETAIL good_pre=6 good_post=5",
+    "[INFO] V2_GAP_DETAIL pre_last end=18.91 start=18.29 txt=10",
+    "[INFO] V2_GAP_DETAIL post_first start=59.86 end=60.40 txt=まだ",
+    "[INFO] V2_GAP_DETAIL post_near start=59.86 end=60.40 txt=まだ",
+    "[INFO] V2_GAP_DETAIL post_near start=61.62 end=62.40 txt=ってる",
+    "[INFO] V2_GAP_DETAIL post_near start=67.94 end=68.34 txt=から",
+    "[INFO] V2_GAP_DETAIL post_near start=79.90 end=80.28 txt=だけ",
+    "[INFO] V2_GAP_DETAIL post_near start=123.34 end=123.60 txt=あの",
+    "[INFO] V2_GAP_APPLY anchor_gate ok=3 weak=2 none=7 trust=0",
+    "[INFO] V2_GAP_APPLY cand v2st=45.77 pre_end=18.91 next_st=59.86 gap=40.95 delta=14.09",
+    "[INFO] V2_GAP_APPLY skip(anchor_trust=0) DRYRUN delta=14.09s gap=40.95s",
+    "[INFO] CUES_BUILT=19 (min=0.25s, split_max=20.0s, split_policy=none)"
+  ]
+}
