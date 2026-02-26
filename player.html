@@ -292,7 +292,7 @@
   (() => {
     if (!/^\d{8}$/.test(setId)) return;
 
-    const bgUrl = `/bgi${setId}.jpg`;   // Pages 루트에 미리 올려둔 파일
+    const bgUrl = `/images/bgi${setId}.jpg`;   // Pages 루트에 미리 올려둔 파일
     const img = new Image();
 
     img.onload = () => {
