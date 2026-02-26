@@ -53,6 +53,7 @@
     }
     body{
       margin:0;
+      background: #000; /* JS가 bgiYYYYMMDD.jpg를 덮어씀 */
       overflow:visible;
       font-family: var(--font);
       cursor: none;
@@ -280,8 +281,29 @@
 (() => {
   const $ = (id) => document.getElementById(id);
   const params = new URLSearchParams(location.search);
-
   const setId = params.get("set") || "default";
+
+  // ===== BG AUTO: setId(YYYYMMDD) -> /bgiYYYYMMDD.jpg =====
+  (() => {
+    if (!/^\d{8}$/.test(setId)) return;
+
+    const bgUrl = `/bgi${setId}.jpg`;   // Pages 루트에 미리 올려둔 파일
+    const img = new Image();
+
+    img.onload = () => {
+      document.body.style.backgroundImage = `url("${bgUrl}")`;
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundPosition = "center center";
+      document.body.style.backgroundRepeat = "no-repeat";
+    };
+
+    img.onerror = () => {
+      // 파일 없으면 그냥 기본 배경(#000) 유지
+    };
+
+    img.src = bgUrl;
+  })();
+
   const lang = (params.get("lang") || "both").toLowerCase(); // both|ja|ko
   const hud = params.get("hud"); // 0 => hide
   const cacheBust = params.get("cb") || "";
