@@ -729,7 +729,10 @@
     await loadTrack(startI - 1);
 
     if (params.get("autoplay") === "1"){
-      await audio.play();
+      const delaySec = Number(params.get("delay") || 7);   // 기본 7초
+      setTimeout(() => {
+        audio.play().catch(()=>{});
+      }, delaySec * 1000);
     }
 
     updateTrackLabel();
