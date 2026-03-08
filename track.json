@@ -446,7 +446,7 @@
   ],
   "meta": {
     "engine": "word_align_lyrics_driven_v7_2_expand_duration_anchor",
-    "generated_at": "2026-03-08T19:09:20.670475Z",
+    "generated_at": "2026-03-08T19:16:07.330293Z",
     "leading_silence_sec": 0.0,
     "audio_duration_sec": 233.16,
     "audio_tail_margin_sec": 0.6,
@@ -476,7 +476,7 @@
     "anchor_mode": 1,
     "anchor_tags": "chorus,final,pre,pre-chorus,post,hook,refrain,프리 코러스,코러스,브릿지",
     "anchor_keylen": 10,
-    "anchor_min_target_norm": 18,
+    "anchor_min_target_norm": 6,
     "anchor_preroll_sec": 0.6
   },
   "issues": [
