@@ -446,7 +446,7 @@
   ],
   "meta": {
     "engine": "word_align_lyrics_driven_v7_2_expand_duration_anchor",
-    "generated_at": "2026-03-08T18:19:53.469268Z",
+    "generated_at": "2026-03-08T18:53:43.624091Z",
     "leading_silence_sec": 0.0,
     "audio_duration_sec": 233.16,
     "audio_tail_margin_sec": 0.6,
@@ -460,7 +460,7 @@
     "lyric_min_line_sec": 0.85,
     "lyric_pad_end_sec": 0.03,
     "lyric_tail_pad_sec": 0.1,
-    "lyric_weight_mode": "len_ja_ko",
+    "lyric_weight_mode": "len_ja",
     "lyric_expand": 1,
     "lyric_expand_mode": "auto",
     "lyric_expand_max_chars": 60,
