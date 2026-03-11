@@ -135,7 +135,7 @@
     #wrap{      
       position: fixed;
       right: var(--subRight);
-      top: 15vh;
+      top: calc(var(--titleTop) - 0.5em);
       transform: none;
 
       color: var(--fg);
@@ -147,21 +147,15 @@
     #box{
       display: flex;
       flex-direction: row-reverse;
-
       align-items: flex-start;
       gap: 6px;
 
       background: var(--bg);
-      padding: var(--padY) var(--padX);
+      padding: 0 6px 0 0;
       border-radius: var(--radius);
       filter: drop-shadow(var(--shadow));
       pointer-events: auto;
-      background: var(--bg);
-      padding: var(--padY) var(--padX);
-      border-radius: var(--radius);
-      filter: drop-shadow(var(--shadow));
-      pointer-events: auto;
-    }
+}
 
     .hud-off #box{ pointer-events:none; }
 
@@ -205,7 +199,7 @@
       margin-top: 0;
 
       color: var(--koColor);
-      opacity: 0.68;
+      opacity: 0.55;
       filter: drop-shadow(0 0 6px rgba(0,0,0,0.45));
 
       text-shadow:
@@ -289,11 +283,7 @@
       line-height: 1;
       letter-spacing: 0.02em;
 
-      color: rgba(255,255,255,0.42);
-      text-shadow:
-        0 0 3px rgba(0,0,0,0.75),
-        0 1px 6px rgba(0,0,0,0.9);
-
+      color: rgba(255,255,255,0.42); 
       user-select: none;
       font-variant-numeric: tabular-nums;
     }
