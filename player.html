@@ -19,7 +19,7 @@
 
       /* ---------- subtitles ---------- */
       --jaSize: 34px;
-      --koSize: 22px;
+      --koSize: 27px;
       --lineGap: 6px;
 
       --bg: rgba(0,0,0,0.0);
@@ -135,11 +135,11 @@
     #wrap{      
       position: fixed;
       right: var(--subRight);
-      top: calc(var(--titleTop) - 0.5em);
+      top: calc(var(--titleTop) - 0.1em);
       transform: none;
 
       color: var(--fg);
-      text-align: center;
+      text-align: start;
       pointer-events: none;
       z-index: 50;
     }
@@ -171,6 +171,8 @@
       writing-mode: vertical-rl;
       text-orientation: upright;
       white-space: pre-wrap;
+      text-align: start;
+      text-align-last: start;
 
       max-height: var(--maxH);
       overflow: hidden;
@@ -192,6 +194,8 @@
       writing-mode: vertical-rl;
       text-orientation: upright;
       white-space: pre-wrap;
+      text-align: start;
+      text-align-last: start;
 
       max-height: var(--maxH);
       overflow: hidden;
@@ -199,7 +203,7 @@
       margin-top: 0;
 
       color: var(--koColor);
-      opacity: 0.55;
+      opacity: 0.75;
       filter: drop-shadow(0 0 6px rgba(0,0,0,0.45));
 
       text-shadow:
