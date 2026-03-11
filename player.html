@@ -18,22 +18,25 @@
       --titleTop: 4em;
 
       /* ---------- subtitles ---------- */
-      --jaSize: 40px;
-      --koSize: 36px;
-      --lineGap: 12px;
+      --jaSize: 34px;
+      --koSize: 22px;
+      --lineGap: 10px;
 
       --bg: rgba(0,0,0,0.0);
       --fg: rgba(255,255,255,0.95);
       --shadow: 0 2px 12px rgba(0,0,0,0.55);
-      --pad: 12px;
+      --padX: 10px;
+      --padY: 16px;
       --radius: 12px;
-      --posX: 50%;
-      --posY: 80%;
-      --align: center; /* left|center|right */
-      --maxW: 92vw;
+
+      /* 우측 세로 자막 위치 */
+      --subRight: 2.2vw;
+      --subTop: 51%;
+      --align: center;
+      --maxH: 66vh;
 
       /* KO color */
-      --koColor: #ffd54a;
+      --koColor: rgba(255, 223, 138, 0.62);
 
       /* ---------- minimal play button (top-left) ---------- */
       --playSize: 54px;
@@ -45,20 +48,22 @@
       --playTop: 28px;
 
       /* ---------- progress (under title) ---------- */
-      --progW: min(360px, 60vw);      /* ✅ 더 짧게 */
-      --progH: 4px;                   /* ✅ 더 굵게 */
-      --progLineOpacity: 0.38;        /* 살짝 더 보이게 */
-      --heartOpacity: 0.85;           /* 하트 선명도 */
-      --heartSize: 22px;              /* 하트 크기 */
+      --progW: min(360px, 60vw);
+      --progH: 4px;
+      --progLineOpacity: 0.38;
+      --heartOpacity: 0.85;
+      --heartSize: 22px;
     }
+
     html, body{
       width:100%;
       height:100%;
       min-height:100vh;
     }
+
     body{
       margin:0;
-      background: #000; /* JS가 bgiYYYYMMDD.jpg를 덮어씀 */
+      background: #000;
       overflow:visible;
       font-family: var(--font);
       cursor: none;
@@ -76,6 +81,7 @@
       pointer-events: none;
       filter: drop-shadow(var(--shadow));
     }
+
     #title{
       font-size: var(--titleSize);
       font-weight: 500;
@@ -85,13 +91,14 @@
       letter-spacing: 0.2px;
       word-break: keep-all;
     }
+
     .title-off #titleWrap{ display:none; }
 
-    /* ✅ 진행바(상호작용) */
+    /* ---------- progress ---------- */
     #progressLine{
       position: relative;
       width: var(--progW);
-      height: 6px;                     /* 두께 증가 */
+      height: 6px;
       margin: 16px auto 0;
       border-radius: 999px;
 
@@ -101,7 +108,7 @@
           transparent 2px
         );
 
-      background-size: 14px 6px;       /* 점 간격 */
+      background-size: 14px 6px;
       background-repeat: repeat-x;
       background-position: center;
 
@@ -109,7 +116,6 @@
       cursor: pointer;
     }
 
-    /* ✅ 하트 마커 */
     #progressHeart{
       position: absolute;
       top: 50%;
@@ -120,40 +126,51 @@
       opacity: var(--heartOpacity);
       filter: drop-shadow(0 0 10px rgba(255,255,255,0.6));
     }
+
     #progressHeart path{
       fill: rgba(255,255,255,0.95);
     }
 
-    /* ---------- SUBTITLE WRAP (BOTTOM) ---------- */
+    /* ---------- SUBTITLE WRAP (RIGHT / VERTICAL) ---------- */
     #wrap{
       position: fixed;
-      left: var(--posX);
-      top: var(--posY);
-      transform: translate(-50%,-50%);
-      width: var(--maxW);
+      right: var(--subRight);
+      top: var(--subTop);
+      transform: translateY(-50%);
       color: var(--fg);
-      text-align: var(--align);
+      text-align: center;
       pointer-events: none;
+      z-index: 50;
     }
+
     #box{
-      display:inline-block;
+      display: flex;
+      flex-direction: row-reverse; /* 오른쪽부터 JA, 그 왼쪽에 KO */
+      align-items: center;
+      gap: var(--lineGap);
       background: var(--bg);
-      padding: var(--pad);
+      padding: var(--padY) var(--padX);
       border-radius: var(--radius);
       filter: drop-shadow(var(--shadow));
       pointer-events: auto;
     }
+
     .hud-off #box{ pointer-events:none; }
 
     .ja{
       font-family: "Yomogi", "Noto Sans JP", sans-serif;
       font-size: var(--jaSize);
       font-weight: 500;
-      line-height: 1.25;
-      letter-spacing: 0.02em;
-      transform: translateY(0.01em);
+      line-height: 1.55;
+      letter-spacing: 0.08em;
 
-      /* 추가 */
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      white-space: pre-wrap;
+
+      max-height: var(--maxH);
+      overflow: hidden;
+
       text-shadow:
         0 0 4px rgba(0,0,0,0.95),
         0 0 10px rgba(0,0,0,0.85),
@@ -163,17 +180,28 @@
     .ko{
       font-family: "Noto Sans CJK KR", "Noto Sans KR", system-ui, sans-serif;
       font-size: var(--koSize);
-      font-weight: 500;
+      font-weight: 400;
       font-style: italic;
-      line-height: 1.25;
-      margin-top: var(--lineGap);
-      color: var(--koColor);
+      line-height: 1.42;
+      letter-spacing: -0.01em;
 
-      /* 기존보다 훨씬 강하게 변경 */
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      white-space: pre-wrap;
+
+      max-height: var(--maxH);
+      overflow: hidden;
+
+      margin-top: 0;
+
+      color: var(--koColor);
+      opacity: 0.68;
+      filter: drop-shadow(0 0 6px rgba(0,0,0,0.45));
+
       text-shadow:
-        0 0 4px rgba(0,0,0,0.95),
-        0 0 10px rgba(0,0,0,0.85),
-        0 2px 16px rgba(0,0,0,0.95);
+        0 0 2px rgba(0,0,0,0.75),
+        0 0 6px rgba(0,0,0,0.55),
+        0 1px 8px rgba(0,0,0,0.75);
     }
 
     /* ---------- HUD ---------- */
@@ -194,7 +222,7 @@
     #hud .pill{ background: rgba(255,255,255,0.10); padding: 6px 10px; border-radius: 10px; }
     #audio{ width: min(720px, 86vw); }
 
-    /* ---------- MINIMAL PLAY BUTTON (ONLY VISIBLE CONTROL) ---------- */
+    /* ---------- MINIMAL PLAY BUTTON ---------- */
     #miniPlayDock{
       position: fixed;
       left: var(--playLeft);
@@ -202,6 +230,7 @@
       z-index: 9999;
       pointer-events: none;
     }
+
     #btnPlayMini{
       pointer-events: auto;
       width: var(--playSize);
@@ -216,26 +245,52 @@
       opacity: var(--playIdleOpacity);
       -webkit-tap-highlight-color: transparent;
     }
+
     #btnPlayMini:hover{
       opacity: var(--playHoverOpacity);
       border-color: rgba(255,255,255,var(--playHoverOpacity));
     }
+
     #btnPlayMini:active{
       opacity: var(--playActiveOpacity);
       transform: scale(0.95);
     }
+
     #btnPlayMini svg{
       width: calc(var(--playSize) * 0.34);
       height: calc(var(--playSize) * 0.34);
     }
+
     #btnPlayMini path{
       fill: rgba(255,255,255,0.75);
+    }
+
+    /* ---------- tiny current time (bottom-right) ---------- */
+    #timeSec{
+      position: fixed;
+      right: 18px;
+      bottom: 14px;
+      z-index: 9998;
+      pointer-events: none;
+
+      font-family: "Noto Sans KR", "Noto Sans JP", system-ui, sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: 0.02em;
+
+      color: rgba(255,255,255,0.42);
+      text-shadow:
+        0 0 3px rgba(0,0,0,0.75),
+        0 1px 6px rgba(0,0,0,0.9);
+
+      user-select: none;
+      font-variant-numeric: tabular-nums;
     }
   </style>
 </head>
 <body>
 
-  <!-- ✅ 좌상단 미니멀 플레이 버튼 -->
   <div id="miniPlayDock">
     <button id="btnPlayMini" type="button" aria-label="Play">
       <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -244,11 +299,9 @@
     </button>
   </div>
 
-  <!-- Title fixed at TOP -->
   <div id="titleWrap">
     <div id="title"></div>
 
-    <!-- ✅ 짧고 조금 더 굵은 진행바 + 하트 마커(상호작용 가능) -->
     <div id="progressLine" role="slider" aria-label="Playback progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
       <svg id="progressHeart" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12 21s-6.716-4.35-9.33-7.98C.66 10.23 2.06 6.93 5.3 5.97c1.86-.55 3.76.05 4.95 1.36C11.44 6.02 13.34 5.42 15.2 5.97c3.24.96 4.64 4.26 2.63 7.05C18.716 16.65 12 21 12 21z"/>
@@ -256,7 +309,6 @@
     </div>
   </div>
 
-  <!-- Subtitles + HUD (HUD는 숨김, 구조/로직 유지) -->
   <div id="wrap">
     <div id="box">
       <div id="ja" class="ja"></div>
@@ -282,17 +334,18 @@
     </div>
   </div>
 
+  <div id="timeSec">0</div>
+
 <script>
 (() => {
   const $ = (id) => document.getElementById(id);
   const params = new URLSearchParams(location.search);
   const setId = params.get("set") || "default";
 
-  // ===== BG AUTO: setId(YYYYMMDD) -> /bgiYYYYMMDD.jpg =====
   (() => {
     if (!/^\d{8}$/.test(setId)) return;
 
-    const bgUrl = `/images/bgi${setId}.jpg`;   // Pages 루트에 미리 올려둔 파일
+    const bgUrl = `/images/bgi${setId}.jpg`;
     const img = new Image();
 
     img.onload = () => {
@@ -302,64 +355,65 @@
       document.body.style.backgroundRepeat = "no-repeat";
     };
 
-    img.onerror = () => {
-      // 파일 없으면 그냥 기본 배경(#000) 유지
-    };
+    img.onerror = () => {};
 
     img.src = bgUrl;
   })();
 
-  const lang = (params.get("lang") || "both").toLowerCase(); // both|ja|ko
-  const hud = params.get("hud"); // 0 => hide
+  const lang = (params.get("lang") || "both").toLowerCase();
+  const hud = params.get("hud");
   const cacheBust = params.get("cb") || "";
 
-  // ✅ 기본 랜덤 재생
   const shuffleOn = (params.get("shuffle") ?? "1") !== "0";
-  // ✅ 끝까지 가도 계속(방송 중지 전까지)
   const loopOn = (params.get("loop") ?? "1") !== "0";
 
-  // ✅ 자막 유지(더 길게)
   const HOLD_GAP = (() => {
     const v = Number(params.get("holdGap"));
-    return Number.isFinite(v) ? v : 1.6;   // 기본 1.6s
+    return Number.isFinite(v) ? v : 1.6;
   })();
+
   const MIN_CUE_SEC = (() => {
     const v = Number(params.get("minCue"));
-    return Number.isFinite(v) ? v : 2.8;   // 기본 2.8s
+    return Number.isFinite(v) ? v : 2.8;
   })();
 
   const titleOn = (params.get("title") ?? "1") !== "0";
   if (!titleOn) document.body.classList.add("title-off");
   if (hud === "0") document.body.classList.add("hud-off");
 
-  function num(v, d){ const n = Number(v); return Number.isFinite(n) ? n : d; }
+  function num(v, d){
+    const n = Number(v);
+    return Number.isFinite(n) ? n : d;
+  }
 
-  // style params
   const cssVars = {
-    "--posX": params.get("x") ? params.get("x") + "%" : null,
-    "--posY": params.get("y") ? params.get("y") + "%" : null,
+    "--subRight": params.get("right") ? params.get("right") + "vw" : null,
+    "--subTop": params.get("y") ? params.get("y") + "%" : null,
     "--jaSize": params.get("jaSize") ? params.get("jaSize") + "px" : null,
     "--koSize": params.get("koSize") ? params.get("koSize") + "px" : null,
     "--align": params.get("align") || null,
-    "--maxW": params.get("maxW") ? params.get("maxW") + "vw" : null,
+    "--maxH": params.get("maxH") ? params.get("maxH") + "vh" : null,
     "--titleSize": params.get("titleSize") ? params.get("titleSize") + "px" : null,
     "--titleGap": params.get("titleGap") ? params.get("titleGap") + "px" : null,
     "--titleOpacity": params.get("titleOpacity") ? params.get("titleOpacity") : null,
     "--titleTop": params.get("titleTop") ? params.get("titleTop") + "em" : null,
     "--koColor": params.get("koColor") ? params.get("koColor") : null,
 
-    /* 진행바 감성 튜닝(옵션) */
     "--progW": params.get("progW") ? params.get("progW") + "px" : null,
     "--progH": params.get("progH") ? params.get("progH") + "px" : null,
     "--progLineOpacity": params.get("progOp") ? params.get("progOp") : null,
     "--heartOpacity": params.get("heartOp") ? params.get("heartOp") : null,
     "--heartSize": params.get("heartSize") ? params.get("heartSize") + "px" : null,
   };
-  for (const [k,v] of Object.entries(cssVars)) if (v) document.documentElement.style.setProperty(k, v);
+
+  for (const [k, v] of Object.entries(cssVars)) {
+    if (v) document.documentElement.style.setProperty(k, v);
+  }
 
   const titleEl = $("title");
   const jaEl = $("ja");
   const koEl = $("ko");
+  const timeSecEl = $("timeSec");
   const audio = $("audio");
 
   const btnPrev = $("btnPrev");
@@ -370,17 +424,18 @@
   const trackLabel = $("trackLabel");
   const offsetLabel = $("offsetLabel");
 
-  /* ✅ 미니 플레이 버튼은 기존 btnPlay를 그대로 트리거 (로직 변경 없음) */
   const btnPlayMini = $("btnPlayMini");
   if (btnPlayMini && btnPlay){
     btnPlayMini.addEventListener("click", () => btnPlay.click());
   }
 
-  /* ✅ 진행바(하트) 상호작용 */
   const progressLine = $("progressLine");
   const progressHeart = $("progressHeart");
   let draggingProgress = false;
-  function clamp(n, a, b){ return Math.max(a, Math.min(b, n)); }
+
+  function clamp(n, a, b){
+    return Math.max(a, Math.min(b, n));
+  }
 
   function updateProgressUI(){
     if (!progressLine || !progressHeart) return;
@@ -392,6 +447,12 @@
 
     progressHeart.style.left = pct + "%";
     progressLine.setAttribute("aria-valuenow", String(Math.round(pct)));
+  }
+
+  function updateTimeSecUI(){
+    if (!timeSecEl) return;
+    const t = Math.max(0, Math.floor(audio.currentTime || 0));
+    timeSecEl.textContent = String(t);
   }
 
   function seekByClientX(clientX){
@@ -421,25 +482,32 @@
 
     progressLine.addEventListener("pointerup", (e) => {
       draggingProgress = false;
-      try { progressLine.releasePointerCapture(e.pointerId); } catch(_) {}
+      try { progressLine.releasePointerCapture(e.pointerId); } catch (_) {}
     });
 
     progressLine.addEventListener("keydown", (e) => {
       const d = audio.duration;
       if (!Number.isFinite(d) || d <= 0) return;
-      if (e.key === "ArrowLeft") { audio.currentTime = Math.max(0, audio.currentTime - 5); updateProgressUI(); }
-      if (e.key === "ArrowRight"){ audio.currentTime = Math.min(d, audio.currentTime + 5); updateProgressUI(); }
+      if (e.key === "ArrowLeft") {
+        audio.currentTime = Math.max(0, audio.currentTime - 5);
+        updateProgressUI();
+      }
+      if (e.key === "ArrowRight") {
+        audio.currentTime = Math.min(d, audio.currentTime + 5);
+        updateProgressUI();
+      }
     });
   }
 
-  // offset per set
   const lsKey = `pt_offset_${setId}`;
   let offsetSec = num(localStorage.getItem(lsKey), 0.0);
+
   function setOffset(v){
     offsetSec = Math.round(v * 10) / 10;
     localStorage.setItem(lsKey, String(offsetSec));
     offsetLabel.textContent = offsetSec.toFixed(1);
   }
+
   setOffset(offsetSec);
 
   function withCB(url){
@@ -449,16 +517,16 @@
   }
 
   async function fetchJSON(url){
-    const res = await fetch(withCB(url), {cache:"no-store"});
+    const res = await fetch(withCB(url), { cache: "no-store" });
     if (!res.ok) throw new Error(`fetch failed: ${res.status} ${url}`);
     return await res.json();
   }
 
-  // ===== 핵심: lines 시간대에서 KO 찾기 (렌더링 타임 기반) =====
   let timedLines = [];
+
   function lineAtTime(t){
     if (!timedLines.length) return null;
-    for (let i=0;i<timedLines.length;i++){
+    for (let i = 0; i < timedLines.length; i++){
       const ln = timedLines[i];
       const st = Number(ln.start), ed = Number(ln.end);
       if (!Number.isFinite(st) || !Number.isFinite(ed)) continue;
@@ -467,39 +535,36 @@
     return null;
   }
 
-  // ===== cues 추출: JA/KO는 1줄만, KO는 보강 가능 =====
   function extractCues(obj){
     const cues = [];
     const seen = new Set();
 
-    const norm = (s) => (s ?? "").toString().replace(/\r/g,"").trim();
+    const norm = (s) => (s ?? "").toString().replace(/\r/g, "").trim();
     const firstLine = (s) => {
       s = norm(s);
       if (!s) return "";
-      const byNL = s.split("\n").map(x=>x.trim()).filter(Boolean);
+      const byNL = s.split("\n").map(x => x.trim()).filter(Boolean);
       return byNL.length ? byNL[0] : s;
     };
     const secondLine = (s) => {
       s = norm(s);
       if (!s) return "";
-      const byNL = s.split("\n").map(x=>x.trim()).filter(Boolean);
+      const byNL = s.split("\n").map(x => x.trim()).filter(Boolean);
       return (byNL.length >= 2) ? byNL[1] : "";
     };
 
-    function pushCue(s,e,ja,ko,text){
-      s = Number(s); e = Number(e);
+    function pushCue(s, e, ja, ko, text){
+      s = Number(s);
+      e = Number(e);
       if (!Number.isFinite(s) || !Number.isFinite(e) || e <= s) return;
 
-      // 최소 표시 시간 보장(표시만)
       if ((e - s) < MIN_CUE_SEC) e = s + MIN_CUE_SEC;
 
       const ja1 = firstLine(ja ?? text ?? "");
       if (!ja1) return;
 
-      // ✅ KO 복구 루트 1: cues.ko
       let ko1 = firstLine(ko ?? "");
 
-      // ✅ KO 복구 루트 2: cues.text가 JA\nKO면 2번째 줄 사용
       if (!ko1){
         const ko2 = secondLine(text ?? "");
         if (ko2) ko1 = firstLine(ko2);
@@ -509,13 +574,11 @@
       if (seen.has(key)) return;
       seen.add(key);
 
-      cues.push({start:s, end:e, ja:ja1, ko:ko1});
+      cues.push({ start: s, end: e, ja: ja1, ko: ko1 });
     }
 
-    // timedLines 저장(렌더링 타임에서 ko 보강)
-    timedLines = Array.isArray(obj?.lines) ? obj.lines.filter(x=>x && typeof x==="object") : [];
+    timedLines = Array.isArray(obj?.lines) ? obj.lines.filter(x => x && typeof x === "object") : [];
 
-    // cues 우선
     if (obj && Array.isArray(obj.cues) && obj.cues.length){
       for (const c of obj.cues){
         if (!c || typeof c !== "object") continue;
@@ -526,11 +589,10 @@
           c.text ?? ""
         );
       }
-      cues.sort((a,b)=>a.start-b.start);
+      cues.sort((a, b) => a.start - b.start);
       return cues;
     }
 
-    // fallback: lines
     if (obj && Array.isArray(obj.lines) && obj.lines.length){
       for (const ln of obj.lines){
         if (!ln || typeof ln !== "object") continue;
@@ -541,15 +603,15 @@
           ln.text ?? ""
         );
       }
-      cues.sort((a,b)=>a.start-b.start);
+      cues.sort((a, b) => a.start - b.start);
       return cues;
     }
 
     return cues;
   }
 
-  // cue pick
   let lastCueIdx = 0;
+
   function cueAt(cues, t){
     if (!cues || cues.length === 0) return null;
 
@@ -561,6 +623,7 @@
         return c;
       }
     }
+
     for (let i = Math.min(lastCueIdx, cues.length - 1); i >= 0; i--){
       const c = cues[i];
       if (t >= c.start && t < (c.end + HOLD_GAP)){
@@ -568,6 +631,7 @@
         return c;
       }
     }
+
     return null;
   }
 
@@ -577,7 +641,6 @@
     koEl.style.display = "none";
   }
 
-  // playlist
   const base = `${location.origin}/set/${encodeURIComponent(setId)}/`;
   const playlistUrl = base + "playlist.json";
 
@@ -587,7 +650,10 @@
   let currentTrack = null;
 
   function updateTrackLabel(){
-    if (!currentTrack){ trackLabel.textContent = "-"; return; }
+    if (!currentTrack){
+      trackLabel.textContent = "-";
+      return;
+    }
     trackLabel.textContent = `${currentTrack.id}${currentTrack.title ? " · " + currentTrack.title : ""}`;
   }
 
@@ -607,7 +673,7 @@
 
   async function loadTrack(i){
     if (!playlist) return;
-    idx = Math.max(0, Math.min(i, playlist.tracks.length-1));
+    idx = Math.max(0, Math.min(i, playlist.tracks.length - 1));
     currentTrack = playlist.tracks[idx];
     updateTrackLabel();
 
@@ -624,6 +690,7 @@
     lastCueIdx = 0;
     clearSubtitle();
     updateProgressUI();
+    updateTimeSecUI();
   }
 
   function render(){
@@ -641,10 +708,8 @@
 
     if (jaEl.textContent !== c.ja) jaEl.textContent = c.ja;
 
-    // ✅ KO 표시 로직(복구 핵심)
     let koText = (c.ko ?? "").toString().trim();
 
-    // cues.ko가 비면, 현재 시간대의 lines.ko로 보강
     if (!koText){
       const ln = lineAtTime(t);
       if (ln && ln.ko) koText = String(ln.ko).trim();
@@ -660,33 +725,37 @@
     }
   }
 
-  // controls
   btnPlay.addEventListener("click", async () => {
     if (!playlist) return;
     if (audio.paused) await audio.play();
     else audio.pause();
   });
-  audio.addEventListener("play", ()=> btnPlay.textContent = "Pause");
-  audio.addEventListener("pause", ()=> btnPlay.textContent = "Play");
+
+  audio.addEventListener("play", () => btnPlay.textContent = "Pause");
+  audio.addEventListener("pause", () => btnPlay.textContent = "Play");
 
   btnPrev.addEventListener("click", async () => {
     await loadTrack(idx - 1);
     await audio.play();
   });
+
   btnNext.addEventListener("click", async () => {
     await loadTrack(idx + 1);
     await audio.play();
   });
 
-  btnOffM.addEventListener("click", ()=> setOffset(offsetSec - 0.5));
-  btnOffP.addEventListener("click", ()=> setOffset(offsetSec + 0.5));
+  btnOffM.addEventListener("click", () => setOffset(offsetSec - 0.5));
+  btnOffP.addEventListener("click", () => setOffset(offsetSec + 0.5));
 
-  window.addEventListener("keydown", (e)=>{
+  window.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft") btnPrev.click();
     if (e.key === "ArrowRight") btnNext.click();
     if (e.key === "ArrowDown") setOffset(offsetSec - 0.5);
     if (e.key === "ArrowUp") setOffset(offsetSec + 0.5);
-    if (e.key === " "){ e.preventDefault(); btnPlay.click(); }
+    if (e.key === " "){
+      e.preventDefault();
+      btnPlay.click();
+    }
   });
 
   audio.addEventListener("timeupdate", render);
@@ -696,10 +765,16 @@
   audio.addEventListener("loadedmetadata", updateProgressUI);
   audio.addEventListener("seeked", updateProgressUI);
 
+  audio.addEventListener("timeupdate", updateTimeSecUI);
+  audio.addEventListener("loadedmetadata", updateTimeSecUI);
+  audio.addEventListener("seeked", updateTimeSecUI);
+  audio.addEventListener("emptied", updateTimeSecUI);
+  audio.addEventListener("ended", updateTimeSecUI);
+
   audio.addEventListener("ended", async () => {
     if (!playlist) return;
 
-    if (idx < playlist.tracks.length-1){
+    if (idx < playlist.tracks.length - 1){
       await loadTrack(idx + 1);
       await audio.play();
       return;
@@ -714,7 +789,6 @@
     }
   });
 
-  // boot
   (async () => {
     playlist = await fetchJSON(playlistUrl);
     if (!playlist || !Array.isArray(playlist.tracks) || playlist.tracks.length === 0){
@@ -729,23 +803,22 @@
     await loadTrack(startI - 1);
 
     if (params.get("autoplay") === "1"){
-      const delaySec = Number(params.get("delay") || 7);   // 기본 7초
+      const delaySec = Number(params.get("delay") || 7);
       setTimeout(() => {
-        audio.play().catch(()=>{});
+        audio.play().catch(() => {});
       }, delaySec * 1000);
     }
 
     updateTrackLabel();
     offsetLabel.textContent = offsetSec.toFixed(1);
-
     updateProgressUI();
+    updateTimeSecUI();
   })().catch(err => {
     jaEl.textContent = "PLAYER ERROR";
     koEl.style.display = "";
     koEl.textContent = String(err?.message || err);
     console.error(err);
   });
-
 })();
 </script>
 </body>
