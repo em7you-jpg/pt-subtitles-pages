@@ -20,7 +20,7 @@
       /* ---------- subtitles ---------- */
       --jaSize: 34px;
       --koSize: 22px;
-      --lineGap: 10px;
+      --lineGap: 6px;
 
       --bg: rgba(0,0,0,0.0);
       --fg: rgba(255,255,255,0.95);
@@ -30,10 +30,10 @@
       --radius: 12px;
 
       /* 우측 세로 자막 위치 */
-      --subRight: 2.2vw;
+      --subRight: 2.8vw;
       --subTop: 51%;
       --align: center;
-      --maxH: 66vh;
+      --maxH: 78vh;
 
       /* KO color */
       --koColor: rgba(255, 223, 138, 0.62);
@@ -132,11 +132,12 @@
     }
 
     /* ---------- SUBTITLE WRAP (RIGHT / VERTICAL) ---------- */
-    #wrap{
+    #wrap{      
       position: fixed;
       right: var(--subRight);
-      top: var(--subTop);
-      transform: translateY(-50%);
+      top: 15vh;
+      transform: none;
+
       color: var(--fg);
       text-align: center;
       pointer-events: none;
@@ -145,9 +146,16 @@
 
     #box{
       display: flex;
-      flex-direction: row-reverse; /* 오른쪽부터 JA, 그 왼쪽에 KO */
-      align-items: center;
-      gap: var(--lineGap);
+      flex-direction: row-reverse;
+
+      align-items: flex-start;
+      gap: 6px;
+
+      background: var(--bg);
+      padding: var(--padY) var(--padX);
+      border-radius: var(--radius);
+      filter: drop-shadow(var(--shadow));
+      pointer-events: auto;
       background: var(--bg);
       padding: var(--padY) var(--padX);
       border-radius: var(--radius);
@@ -158,6 +166,8 @@
     .hud-off #box{ pointer-events:none; }
 
     .ja{
+      display: block;
+
       font-family: "Yomogi", "Noto Sans JP", sans-serif;
       font-size: var(--jaSize);
       font-weight: 500;
