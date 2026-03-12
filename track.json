@@ -1,35 +1,35 @@
 {
-  "title": "街灯の下で待つ夜",
+  "title": "テンポが回る部屋の角",
   "lines": [
     {
       "id": "Intro - instrumental@01#01",
       "tag": "Intro - instrumental",
       "ja": "",
       "ko": "",
-      "start": 0.0,
-      "end": 1.1,
+      "start": 0.11,
+      "end": 0.59,
       "align": {
         "mode": "line_candidate_window",
-        "confidence": 0.62,
-        "evidence": "section_span_only",
+        "confidence": 0.7,
+        "evidence": "active_island + anchor_hint",
         "tail_policy_applied": false
       },
       "align_mode": "line_candidate_window",
-      "confidence": 0.62,
-      "evidence": "section_span_only",
+      "confidence": 0.7,
+      "evidence": "active_island + anchor_hint",
       "tail_policy_applied": false,
       "source_window": [
-        0.0,
-        1.1
+        0.11,
+        0.59
       ]
     },
     {
       "id": "Verse 1@01#01",
       "tag": "Verse 1",
-      "ja": "街の端 午後七時半の風",
+      "ja": "この部屋の角に朝の光が跳ねる",
       "ko": "",
-      "start": 16.55,
-      "end": 17.65,
+      "start": 7.79,
+      "end": 8.89,
       "align": {
         "mode": "line_candidate_window",
         "confidence": 0.7,
@@ -41,17 +41,17 @@
       "evidence": "active_island + anchor_hint",
       "tail_policy_applied": false,
       "source_window": [
-        16.55,
-        29.1
+        7.79,
+        9.75
       ]
     },
     {
       "id": "Verse 1@01#02",
       "tag": "Verse 1",
-      "ja": "冷たいアスファルトに立つ靴音",
+      "ja": "靴下のまま踊る私",
       "ko": "",
-      "start": 17.65,
-      "end": 19.139,
+      "start": 8.89,
+      "end": 9.75,
       "align": {
         "mode": "line_candidate_window",
         "confidence": 0.7,
@@ -63,17 +63,17 @@
       "evidence": "active_island + anchor_hint",
       "tail_policy_applied": false,
       "source_window": [
-        16.55,
-        29.1
+        7.79,
+        9.75
       ]
     },
     {
-      "id": "Verse 1@01#03",
-      "tag": "Verse 1",
-      "ja": "君からの通知をまだ開けずに",
+      "id": "Final Chorus@01#01",
+      "tag": "Final Chorus",
+      "ja": "カードを抜く",
       "ko": "",
-      "start": 19.139,
-      "end": 20.522,
+      "start": 57.79,
+      "end": 58.89,
       "align": {
         "mode": "line_candidate_window",
         "confidence": 0.7,
@@ -85,17 +85,17 @@
       "evidence": "active_island + anchor_hint",
       "tail_policy_applied": false,
       "source_window": [
-        16.55,
-        29.1
+        57.79,
+        59.39
       ]
     },
     {
-      "id": "Verse 1@01#04",
-      "tag": "Verse 1",
-      "ja": "肩をすくめて待つ約束の影",
+      "id": "Final Chorus@01#02",
+      "tag": "Final Chorus",
+      "ja": "もう一度強くカードを抜く",
       "ko": "",
-      "start": 20.522,
-      "end": 21.798,
+      "start": 58.89,
+      "end": 59.39,
       "align": {
         "mode": "line_candidate_window",
         "confidence": 0.7,
@@ -107,17 +107,17 @@
       "evidence": "active_island + anchor_hint",
       "tail_policy_applied": false,
       "source_window": [
-        16.55,
-        29.1
+        57.79,
+        59.39
       ]
     },
     {
-      "id": "Verse 1@01#05",
-      "tag": "Verse 1",
-      "ja": "指先がポケットの奥で震える",
+      "id": "Outro@01#01",
+      "tag": "Outro",
+      "ja": "角に差す光の中",
       "ko": "",
-      "start": 21.798,
-      "end": 23.181,
+      "start": 69.925,
+      "end": 71.025,
       "align": {
         "mode": "line_candidate_window",
         "confidence": 0.7,
@@ -129,17 +129,17 @@
       "evidence": "active_island + anchor_hint",
       "tail_policy_applied": false,
       "source_window": [
-        16.55,
-        29.1
+        69.925,
+        71.92
       ]
     },
     {
-      "id": "Verse 1@01#06",
-      "tag": "Verse 1",
-      "ja": "街灯の光で影が長くなる",
+      "id": "Outro@01#02",
+      "tag": "Outro",
+      "ja": "靴下のまま踊る音",
       "ko": "",
-      "start": 23.181,
-      "end": 24.35,
+      "start": 71.025,
+      "end": 71.92,
       "align": {
         "mode": "line_candidate_window",
         "confidence": 0.7,
@@ -151,294 +151,30 @@
       "evidence": "active_island + anchor_hint",
       "tail_policy_applied": false,
       "source_window": [
-        16.55,
-        29.1
+        69.925,
+        71.92
       ]
     },
     {
-      "id": "Verse 1@01#07",
-      "tag": "Verse 1",
-      "ja": "何度もスマホを握り直す",
+      "id": "Outro@01#03",
+      "tag": "Outro",
+      "ja": "終わらないテンポが回る",
       "ko": "",
-      "start": 24.35,
-      "end": 25.52,
+      "start": 71.92,
+      "end": 72.72,
       "align": {
         "mode": "line_candidate_window",
         "confidence": 0.7,
-        "evidence": "active_island + anchor_hint",
-        "tail_policy_applied": false
+        "evidence": "active_island + anchor_hint + tail_policy",
+        "tail_policy_applied": true
       },
       "align_mode": "line_candidate_window",
       "confidence": 0.7,
-      "evidence": "active_island + anchor_hint",
-      "tail_policy_applied": false,
+      "evidence": "active_island + anchor_hint + tail_policy",
+      "tail_policy_applied": true,
       "source_window": [
-        16.55,
-        29.1
-      ]
-    },
-    {
-      "id": "Verse 1@01#08",
-      "tag": "Verse 1",
-      "ja": "未来の形を確かめたくて",
-      "ko": "",
-      "start": 25.52,
-      "end": 26.69,
-      "align": {
-        "mode": "line_candidate_window",
-        "confidence": 0.7,
-        "evidence": "active_island + anchor_hint",
-        "tail_policy_applied": false
-      },
-      "align_mode": "line_candidate_window",
-      "confidence": 0.7,
-      "evidence": "active_island + anchor_hint",
-      "tail_policy_applied": false,
-      "source_window": [
-        16.55,
-        29.1
-      ]
-    },
-    {
-      "id": "Verse 1@01#09",
-      "tag": "Verse 1",
-      "ja": "見上げた空に夜が降りる",
-      "ko": "",
-      "start": 26.69,
-      "end": 27.86,
-      "align": {
-        "mode": "line_candidate_window",
-        "confidence": 0.7,
-        "evidence": "active_island + anchor_hint",
-        "tail_policy_applied": false
-      },
-      "align_mode": "line_candidate_window",
-      "confidence": 0.7,
-      "evidence": "active_island + anchor_hint",
-      "tail_policy_applied": false,
-      "source_window": [
-        16.55,
-        29.1
-      ]
-    },
-    {
-      "id": "Verse 1@01#10",
-      "tag": "Verse 1",
-      "ja": "君の返事だけを探していた",
-      "ko": "",
-      "start": 27.86,
-      "end": 29.1,
-      "align": {
-        "mode": "line_candidate_window",
-        "confidence": 0.7,
-        "evidence": "active_island + anchor_hint",
-        "tail_policy_applied": false
-      },
-      "align_mode": "line_candidate_window",
-      "confidence": 0.7,
-      "evidence": "active_island + anchor_hint",
-      "tail_policy_applied": false,
-      "source_window": [
-        16.55,
-        29.1
-      ]
-    },
-    {
-      "id": "Chorus@01#01",
-      "tag": "Chorus",
-      "ja": "君の通知を待つ",
-      "ko": "",
-      "start": 30.332,
-      "end": 31.43,
-      "align": {
-        "mode": "line_candidate_window",
-        "confidence": 0.7,
-        "evidence": "active_island + anchor_hint",
-        "tail_policy_applied": false
-      },
-      "align_mode": "line_candidate_window",
-      "confidence": 0.7,
-      "evidence": "active_island + anchor_hint",
-      "tail_policy_applied": false,
-      "source_window": [
-        30.332,
-        31.43
-      ]
-    },
-    {
-      "id": "Chorus@02#01",
-      "tag": "Chorus",
-      "ja": "君の通知を待つ",
-      "ko": "",
-      "start": 79.26,
-      "end": 80.38,
-      "align": {
-        "mode": "line_candidate_window",
-        "confidence": 0.7,
-        "evidence": "active_island + anchor_hint",
-        "tail_policy_applied": false
-      },
-      "align_mode": "line_candidate_window",
-      "confidence": 0.7,
-      "evidence": "active_island + anchor_hint",
-      "tail_policy_applied": false,
-      "source_window": [
-        79.26,
-        84.54
-      ]
-    },
-    {
-      "id": "Chorus@02#02",
-      "tag": "Chorus",
-      "ja": "君の通知を待つ",
-      "ko": "",
-      "start": 80.38,
-      "end": 81.5,
-      "align": {
-        "mode": "line_candidate_window",
-        "confidence": 0.7,
-        "evidence": "active_island + anchor_hint",
-        "tail_policy_applied": false
-      },
-      "align_mode": "line_candidate_window",
-      "confidence": 0.7,
-      "evidence": "active_island + anchor_hint",
-      "tail_policy_applied": false,
-      "source_window": [
-        79.26,
-        84.54
-      ]
-    },
-    {
-      "id": "Chorus@02#03",
-      "tag": "Chorus",
-      "ja": "いつか届かない返事",
-      "ko": "",
-      "start": 81.5,
-      "end": 82.94,
-      "align": {
-        "mode": "line_candidate_window",
-        "confidence": 0.7,
-        "evidence": "active_island + anchor_hint",
-        "tail_policy_applied": false
-      },
-      "align_mode": "line_candidate_window",
-      "confidence": 0.7,
-      "evidence": "active_island + anchor_hint",
-      "tail_policy_applied": false,
-      "source_window": [
-        79.26,
-        84.54
-      ]
-    },
-    {
-      "id": "Chorus@02#04",
-      "tag": "Chorus",
-      "ja": "この街の時間をずらす",
-      "ko": "",
-      "start": 82.94,
-      "end": 84.54,
-      "align": {
-        "mode": "line_candidate_window",
-        "confidence": 0.7,
-        "evidence": "active_island + anchor_hint",
-        "tail_policy_applied": false
-      },
-      "align_mode": "line_candidate_window",
-      "confidence": 0.7,
-      "evidence": "active_island + anchor_hint",
-      "tail_policy_applied": false,
-      "source_window": [
-        79.26,
-        84.54
-      ]
-    },
-    {
-      "id": "Post-Chorus@02#01",
-      "tag": "Post-Chorus",
-      "ja": "君の通知を待つ 君の通知を待つ",
-      "ko": "",
-      "start": 86.56,
-      "end": 87.94,
-      "align": {
-        "mode": "line_candidate_window",
-        "confidence": 0.7,
-        "evidence": "active_island + anchor_hint",
-        "tail_policy_applied": false
-      },
-      "align_mode": "line_candidate_window",
-      "confidence": 0.7,
-      "evidence": "active_island + anchor_hint",
-      "tail_policy_applied": false,
-      "source_window": [
-        86.56,
-        87.94
-      ]
-    },
-    {
-      "id": "Bridge@01#01",
-      "tag": "Bridge",
-      "ja": "もしあの時違う言葉を選んでいたら",
-      "ko": "",
-      "start": 93.6,
-      "end": 94.12,
-      "align": {
-        "mode": "line_candidate_window",
-        "confidence": 0.7,
-        "evidence": "active_island + anchor_hint",
-        "tail_policy_applied": false
-      },
-      "align_mode": "line_candidate_window",
-      "confidence": 0.7,
-      "evidence": "active_island + anchor_hint",
-      "tail_policy_applied": false,
-      "source_window": [
-        93.6,
-        94.12
-      ]
-    },
-    {
-      "id": "Post-Chorus Reprise@01#01",
-      "tag": "Post-Chorus Reprise",
-      "ja": "君の通知を消す",
-      "ko": "",
-      "start": 141.732,
-      "end": 142.52,
-      "align": {
-        "mode": "line_candidate_window",
-        "confidence": 0.7,
-        "evidence": "active_island + anchor_hint + interlude_policy_strong",
-        "tail_policy_applied": false
-      },
-      "align_mode": "line_candidate_window",
-      "confidence": 0.7,
-      "evidence": "active_island + anchor_hint + interlude_policy_strong",
-      "tail_policy_applied": false,
-      "source_window": [
-        141.732,
-        180.14
-      ]
-    },
-    {
-      "id": "Post-Chorus Reprise@01#02",
-      "tag": "Post-Chorus Reprise",
-      "ja": "君の通知を消す",
-      "ko": "",
-      "start": 172.44,
-      "end": 180.14,
-      "align": {
-        "mode": "line_candidate_window",
-        "confidence": 0.7,
-        "evidence": "active_island + anchor_hint + interlude_policy_strong",
-        "tail_policy_applied": false
-      },
-      "align_mode": "line_candidate_window",
-      "confidence": 0.7,
-      "evidence": "active_island + anchor_hint + interlude_policy_strong",
-      "tail_policy_applied": false,
-      "source_window": [
-        141.732,
-        180.14
+        69.925,
+        71.92
       ]
     }
   ],
@@ -448,8 +184,8 @@
       "source_line_id": "Intro - instrumental@01#01",
       "split_index": 1,
       "split_count": 1,
-      "start": 0.0,
-      "end": 1.28,
+      "start": 0.11,
+      "end": 0.59,
       "tag": "Intro - instrumental",
       "ja": "",
       "ko": ""
@@ -459,10 +195,10 @@
       "source_line_id": "Verse 1@01#01",
       "split_index": 1,
       "split_count": 1,
-      "start": 16.55,
-      "end": 17.65,
+      "start": 7.79,
+      "end": 8.89,
       "tag": "Verse 1",
-      "ja": "街の端 午後七時半の風",
+      "ja": "この部屋の角に朝の光が跳ねる",
       "ko": ""
     },
     {
@@ -470,221 +206,89 @@
       "source_line_id": "Verse 1@01#02",
       "split_index": 1,
       "split_count": 1,
-      "start": 17.73,
-      "end": 19.139,
+      "start": 8.97,
+      "end": 9.75,
       "tag": "Verse 1",
-      "ja": "冷たいアスファルトに立つ靴音",
+      "ja": "靴下のまま踊る私",
       "ko": ""
     },
     {
-      "id": "Verse 1@01#03",
-      "source_line_id": "Verse 1@01#03",
+      "id": "Final Chorus@01#01",
+      "source_line_id": "Final Chorus@01#01",
       "split_index": 1,
       "split_count": 1,
-      "start": 19.219,
-      "end": 20.522,
-      "tag": "Verse 1",
-      "ja": "君からの通知をまだ開けずに",
+      "start": 57.79,
+      "end": 58.89,
+      "tag": "Final Chorus",
+      "ja": "カードを抜く",
       "ko": ""
     },
     {
-      "id": "Verse 1@01#04",
-      "source_line_id": "Verse 1@01#04",
+      "id": "Final Chorus@01#02",
+      "source_line_id": "Final Chorus@01#02",
       "split_index": 1,
       "split_count": 1,
-      "start": 20.602,
-      "end": 21.798,
-      "tag": "Verse 1",
-      "ja": "肩をすくめて待つ約束の影",
+      "start": 58.97,
+      "end": 59.39,
+      "tag": "Final Chorus",
+      "ja": "もう一度強くカードを抜く",
       "ko": ""
     },
     {
-      "id": "Verse 1@01#05",
-      "source_line_id": "Verse 1@01#05",
+      "id": "Outro@01#01",
+      "source_line_id": "Outro@01#01",
       "split_index": 1,
       "split_count": 1,
-      "start": 21.878,
-      "end": 23.181,
-      "tag": "Verse 1",
-      "ja": "指先がポケットの奥で震える",
+      "start": 69.925,
+      "end": 71.025,
+      "tag": "Outro",
+      "ja": "角に差す光の中",
       "ko": ""
     },
     {
-      "id": "Verse 1@01#06",
-      "source_line_id": "Verse 1@01#06",
+      "id": "Outro@01#02",
+      "source_line_id": "Outro@01#02",
       "split_index": 1,
       "split_count": 1,
-      "start": 23.261,
-      "end": 24.35,
-      "tag": "Verse 1",
-      "ja": "街灯の光で影が長くなる",
+      "start": 71.105,
+      "end": 71.92,
+      "tag": "Outro",
+      "ja": "靴下のまま踊る音",
       "ko": ""
     },
     {
-      "id": "Verse 1@01#07",
-      "source_line_id": "Verse 1@01#07",
+      "id": "Outro@01#03",
+      "source_line_id": "Outro@01#03",
       "split_index": 1,
       "split_count": 1,
-      "start": 24.43,
-      "end": 25.52,
-      "tag": "Verse 1",
-      "ja": "何度もスマホを握り直す",
-      "ko": ""
-    },
-    {
-      "id": "Verse 1@01#08",
-      "source_line_id": "Verse 1@01#08",
-      "split_index": 1,
-      "split_count": 1,
-      "start": 25.6,
-      "end": 26.69,
-      "tag": "Verse 1",
-      "ja": "未来の形を確かめたくて",
-      "ko": ""
-    },
-    {
-      "id": "Verse 1@01#09",
-      "source_line_id": "Verse 1@01#09",
-      "split_index": 1,
-      "split_count": 1,
-      "start": 26.77,
-      "end": 27.86,
-      "tag": "Verse 1",
-      "ja": "見上げた空に夜が降りる",
-      "ko": ""
-    },
-    {
-      "id": "Verse 1@01#10",
-      "source_line_id": "Verse 1@01#10",
-      "split_index": 1,
-      "split_count": 1,
-      "start": 27.94,
-      "end": 29.28,
-      "tag": "Verse 1",
-      "ja": "君の返事だけを探していた",
-      "ko": ""
-    },
-    {
-      "id": "Chorus@01#01",
-      "source_line_id": "Chorus@01#01",
-      "split_index": 1,
-      "split_count": 1,
-      "start": 30.332,
-      "end": 31.43,
-      "tag": "Chorus",
-      "ja": "君の通知を待つ",
-      "ko": ""
-    },
-    {
-      "id": "Chorus@02#01",
-      "source_line_id": "Chorus@02#01",
-      "split_index": 1,
-      "split_count": 1,
-      "start": 79.26,
-      "end": 80.38,
-      "tag": "Chorus",
-      "ja": "君の通知を待つ",
-      "ko": ""
-    },
-    {
-      "id": "Chorus@02#02",
-      "source_line_id": "Chorus@02#02",
-      "split_index": 1,
-      "split_count": 1,
-      "start": 80.46,
-      "end": 81.5,
-      "tag": "Chorus",
-      "ja": "君の通知を待つ",
-      "ko": ""
-    },
-    {
-      "id": "Chorus@02#03",
-      "source_line_id": "Chorus@02#03",
-      "split_index": 1,
-      "split_count": 1,
-      "start": 81.58,
-      "end": 82.94,
-      "tag": "Chorus",
-      "ja": "いつか届かない返事",
-      "ko": ""
-    },
-    {
-      "id": "Chorus@02#04",
-      "source_line_id": "Chorus@02#04",
-      "split_index": 1,
-      "split_count": 1,
-      "start": 83.02,
-      "end": 84.72,
-      "tag": "Chorus",
-      "ja": "この街の時間をずらす",
-      "ko": ""
-    },
-    {
-      "id": "Post-Chorus@02#01",
-      "source_line_id": "Post-Chorus@02#01",
-      "split_index": 1,
-      "split_count": 1,
-      "start": 86.56,
-      "end": 87.94,
-      "tag": "Post-Chorus",
-      "ja": "君の通知を待つ 君の通知を待つ",
-      "ko": ""
-    },
-    {
-      "id": "Bridge@01#01",
-      "source_line_id": "Bridge@01#01",
-      "split_index": 1,
-      "split_count": 1,
-      "start": 93.6,
-      "end": 94.12,
-      "tag": "Bridge",
-      "ja": "もしあの時違う言葉を選んでいたら",
-      "ko": ""
-    },
-    {
-      "id": "Post-Chorus Reprise@01#01",
-      "source_line_id": "Post-Chorus Reprise@01#01",
-      "split_index": 1,
-      "split_count": 1,
-      "start": 141.732,
-      "end": 142.52,
-      "tag": "Post-Chorus Reprise",
-      "ja": "君の通知を消す",
-      "ko": ""
-    },
-    {
-      "id": "Post-Chorus Reprise@01#02",
-      "source_line_id": "Post-Chorus Reprise@01#02",
-      "split_index": 1,
-      "split_count": 1,
-      "start": 172.44,
-      "end": 180.32,
-      "tag": "Post-Chorus Reprise",
-      "ja": "君の通知を消す",
+      "start": 72.0,
+      "end": 72.9,
+      "tag": "Outro",
+      "ja": "終わらないテンポが回る",
       "ko": ""
     }
   ],
   "meta": {
     "engine": "align_track_json_vnext_fixed",
-    "generated_at": "2026-03-12T19:39:00.354516Z",
-    "song_form": "TYPE_B",
-    "audio_duration_sec": 233.16,
-    "leading_silence_sec": 233.12,
-    "words_first_sec": 0.0,
-    "words_last_sec": 180.14,
-    "voice_start_est_sec": 16.55,
-    "lyric_start_est_sec": 0.0,
-    "vocal_start_est_sec": 16.55,
-    "vocal_end_est_sec": 180.14,
-    "coverage_ratio": 0.7726025047177904,
+    "generated_at": "2026-03-12T19:40:00.645601Z",
+    "song_form": "TYPE_A",
+    "audio_duration_sec": 181.992,
+    "leading_silence_sec": 181.96,
+    "words_first_sec": 0.11,
+    "words_last_sec": 72.94,
+    "voice_start_est_sec": 0.11,
+    "lyric_start_est_sec": 0.11,
+    "vocal_start_est_sec": 0.11,
+    "vocal_end_est_sec": 71.92,
+    "coverage_ratio": 0.4007868477735285,
     "tail_mode": "humming_outro",
     "fallback_applied": false,
     "tail_policy": {
       "state": "TAIL_CLAMPED_FOR_OUTRO",
-      "target_end": 180.94,
-      "words_last": 180.14,
-      "vocal_end_est": 180.14,
-      "clamped_lines": 0,
+      "target_end": 72.72,
+      "words_last": 72.94,
+      "vocal_end_est": 71.92,
+      "clamped_lines": 1,
       "reason": "strong_tail_zone",
       "mode": "humming_outro",
       "applied": true
@@ -692,7 +296,7 @@
     "zone_summary": {
       "intro": false,
       "vocal_intro": false,
-      "interludes": 6,
+      "interludes": 3,
       "tail": true
     }
   },
@@ -702,13 +306,13 @@
         "id": "Intro - instrumental@01#01",
         "tag": "Intro - instrumental",
         "match_window": [
-          0.0,
-          1.1
+          0.11,
+          0.59
         ],
-        "picked_start": 0.0,
-        "picked_end": 1.1,
-        "confidence": 0.62,
-        "reason": "section_span_only",
+        "picked_start": 0.11,
+        "picked_end": 0.59,
+        "confidence": 0.7,
+        "reason": "active_island + anchor_hint",
         "align_mode": "line_candidate_window",
         "tail_policy_applied": false
       },
@@ -716,11 +320,11 @@
         "id": "Verse 1@01#01",
         "tag": "Verse 1",
         "match_window": [
-          16.55,
-          29.1
+          7.79,
+          9.75
         ],
-        "picked_start": 16.55,
-        "picked_end": 17.65,
+        "picked_start": 7.79,
+        "picked_end": 8.89,
         "confidence": 0.7,
         "reason": "active_island + anchor_hint",
         "align_mode": "line_candidate_window",
@@ -730,253 +334,85 @@
         "id": "Verse 1@01#02",
         "tag": "Verse 1",
         "match_window": [
-          16.55,
-          29.1
+          7.79,
+          9.75
         ],
-        "picked_start": 17.65,
-        "picked_end": 19.139,
+        "picked_start": 8.89,
+        "picked_end": 9.75,
         "confidence": 0.7,
         "reason": "active_island + anchor_hint",
         "align_mode": "line_candidate_window",
         "tail_policy_applied": false
       },
       {
-        "id": "Verse 1@01#03",
-        "tag": "Verse 1",
+        "id": "Final Chorus@01#01",
+        "tag": "Final Chorus",
         "match_window": [
-          16.55,
-          29.1
+          57.79,
+          59.39
         ],
-        "picked_start": 19.139,
-        "picked_end": 20.522,
+        "picked_start": 57.79,
+        "picked_end": 58.89,
         "confidence": 0.7,
         "reason": "active_island + anchor_hint",
         "align_mode": "line_candidate_window",
         "tail_policy_applied": false
       },
       {
-        "id": "Verse 1@01#04",
-        "tag": "Verse 1",
+        "id": "Final Chorus@01#02",
+        "tag": "Final Chorus",
         "match_window": [
-          16.55,
-          29.1
+          57.79,
+          59.39
         ],
-        "picked_start": 20.522,
-        "picked_end": 21.798,
+        "picked_start": 58.89,
+        "picked_end": 59.39,
         "confidence": 0.7,
         "reason": "active_island + anchor_hint",
         "align_mode": "line_candidate_window",
         "tail_policy_applied": false
       },
       {
-        "id": "Verse 1@01#05",
-        "tag": "Verse 1",
+        "id": "Outro@01#01",
+        "tag": "Outro",
         "match_window": [
-          16.55,
-          29.1
+          69.925,
+          71.92
         ],
-        "picked_start": 21.798,
-        "picked_end": 23.181,
+        "picked_start": 69.925,
+        "picked_end": 71.025,
         "confidence": 0.7,
         "reason": "active_island + anchor_hint",
         "align_mode": "line_candidate_window",
         "tail_policy_applied": false
       },
       {
-        "id": "Verse 1@01#06",
-        "tag": "Verse 1",
+        "id": "Outro@01#02",
+        "tag": "Outro",
         "match_window": [
-          16.55,
-          29.1
+          69.925,
+          71.92
         ],
-        "picked_start": 23.181,
-        "picked_end": 24.35,
+        "picked_start": 71.025,
+        "picked_end": 71.92,
         "confidence": 0.7,
         "reason": "active_island + anchor_hint",
         "align_mode": "line_candidate_window",
         "tail_policy_applied": false
       },
       {
-        "id": "Verse 1@01#07",
-        "tag": "Verse 1",
+        "id": "Outro@01#03",
+        "tag": "Outro",
         "match_window": [
-          16.55,
-          29.1
+          69.925,
+          71.92
         ],
-        "picked_start": 24.35,
-        "picked_end": 25.52,
+        "picked_start": 71.92,
+        "picked_end": 72.72,
         "confidence": 0.7,
-        "reason": "active_island + anchor_hint",
+        "reason": "active_island + anchor_hint + tail_policy",
         "align_mode": "line_candidate_window",
-        "tail_policy_applied": false
-      },
-      {
-        "id": "Verse 1@01#08",
-        "tag": "Verse 1",
-        "match_window": [
-          16.55,
-          29.1
-        ],
-        "picked_start": 25.52,
-        "picked_end": 26.69,
-        "confidence": 0.7,
-        "reason": "active_island + anchor_hint",
-        "align_mode": "line_candidate_window",
-        "tail_policy_applied": false
-      },
-      {
-        "id": "Verse 1@01#09",
-        "tag": "Verse 1",
-        "match_window": [
-          16.55,
-          29.1
-        ],
-        "picked_start": 26.69,
-        "picked_end": 27.86,
-        "confidence": 0.7,
-        "reason": "active_island + anchor_hint",
-        "align_mode": "line_candidate_window",
-        "tail_policy_applied": false
-      },
-      {
-        "id": "Verse 1@01#10",
-        "tag": "Verse 1",
-        "match_window": [
-          16.55,
-          29.1
-        ],
-        "picked_start": 27.86,
-        "picked_end": 29.1,
-        "confidence": 0.7,
-        "reason": "active_island + anchor_hint",
-        "align_mode": "line_candidate_window",
-        "tail_policy_applied": false
-      },
-      {
-        "id": "Chorus@01#01",
-        "tag": "Chorus",
-        "match_window": [
-          30.332,
-          31.43
-        ],
-        "picked_start": 30.332,
-        "picked_end": 31.43,
-        "confidence": 0.7,
-        "reason": "active_island + anchor_hint",
-        "align_mode": "line_candidate_window",
-        "tail_policy_applied": false
-      },
-      {
-        "id": "Chorus@02#01",
-        "tag": "Chorus",
-        "match_window": [
-          79.26,
-          84.54
-        ],
-        "picked_start": 79.26,
-        "picked_end": 80.38,
-        "confidence": 0.7,
-        "reason": "active_island + anchor_hint",
-        "align_mode": "line_candidate_window",
-        "tail_policy_applied": false
-      },
-      {
-        "id": "Chorus@02#02",
-        "tag": "Chorus",
-        "match_window": [
-          79.26,
-          84.54
-        ],
-        "picked_start": 80.38,
-        "picked_end": 81.5,
-        "confidence": 0.7,
-        "reason": "active_island + anchor_hint",
-        "align_mode": "line_candidate_window",
-        "tail_policy_applied": false
-      },
-      {
-        "id": "Chorus@02#03",
-        "tag": "Chorus",
-        "match_window": [
-          79.26,
-          84.54
-        ],
-        "picked_start": 81.5,
-        "picked_end": 82.94,
-        "confidence": 0.7,
-        "reason": "active_island + anchor_hint",
-        "align_mode": "line_candidate_window",
-        "tail_policy_applied": false
-      },
-      {
-        "id": "Chorus@02#04",
-        "tag": "Chorus",
-        "match_window": [
-          79.26,
-          84.54
-        ],
-        "picked_start": 82.94,
-        "picked_end": 84.54,
-        "confidence": 0.7,
-        "reason": "active_island + anchor_hint",
-        "align_mode": "line_candidate_window",
-        "tail_policy_applied": false
-      },
-      {
-        "id": "Post-Chorus@02#01",
-        "tag": "Post-Chorus",
-        "match_window": [
-          86.56,
-          87.94
-        ],
-        "picked_start": 86.56,
-        "picked_end": 87.94,
-        "confidence": 0.7,
-        "reason": "active_island + anchor_hint",
-        "align_mode": "line_candidate_window",
-        "tail_policy_applied": false
-      },
-      {
-        "id": "Bridge@01#01",
-        "tag": "Bridge",
-        "match_window": [
-          93.6,
-          94.12
-        ],
-        "picked_start": 93.6,
-        "picked_end": 94.12,
-        "confidence": 0.7,
-        "reason": "active_island + anchor_hint",
-        "align_mode": "line_candidate_window",
-        "tail_policy_applied": false
-      },
-      {
-        "id": "Post-Chorus Reprise@01#01",
-        "tag": "Post-Chorus Reprise",
-        "match_window": [
-          141.732,
-          180.14
-        ],
-        "picked_start": 141.732,
-        "picked_end": 142.52,
-        "confidence": 0.7,
-        "reason": "active_island + anchor_hint + interlude_policy_strong",
-        "align_mode": "line_candidate_window",
-        "tail_policy_applied": false
-      },
-      {
-        "id": "Post-Chorus Reprise@01#02",
-        "tag": "Post-Chorus Reprise",
-        "match_window": [
-          141.732,
-          180.14
-        ],
-        "picked_start": 172.44,
-        "picked_end": 180.14,
-        "confidence": 0.7,
-        "reason": "active_island + anchor_hint + interlude_policy_strong",
-        "align_mode": "line_candidate_window",
-        "tail_policy_applied": false
+        "tail_policy_applied": true
       }
     ],
     "fallback_line_ids": [],
@@ -989,65 +425,69 @@
       "clamp_audio_end_count": 0
     },
     "cue_clamp_stats": {
-      "cue_clamp_source_line_count": 4,
-      "cue_clamp_interlude_count": 4,
+      "cue_clamp_source_line_count": 3,
+      "cue_clamp_interlude_count": 3,
       "cue_missing_source_line_count": 0
     },
     "cue_source_line_drop_total": 0,
     "cue_source_line_drops": []
   },
   "issues": [
-    "[INFO] STRUCTURE lines=51 sections=10",
-    "[INFO] SONG_FORM=TYPE_B",
-    "[INFO] ASR_PASS name=vad1 words=169 coverage=0.773",
-    "[INFO] ASR_WORDS count=169 coverage=0.773",
-    "[WARN] LEADING_SILENCE_IGNORED huge_detected=233.12s duration=233.16s",
-    "[INFO] AUDIO_OBS duration=233.16 words_first=0.00 words_last=180.14 lyric_start=0.00 vocal_end=180.14 coverage=0.77",
+    "[INFO] STRUCTURE lines=42 sections=10",
+    "[INFO] SONG_FORM=TYPE_A",
+    "[INFO] ASR_PASS name=vad1 words=75 coverage=0.401",
+    "[INFO] ASR_WORDS count=75 coverage=0.401",
+    "[WARN] LEADING_SILENCE_IGNORED huge_detected=181.96s duration=181.99s",
+    "[INFO] AUDIO_OBS duration=181.99 words_first=0.11 words_last=72.94 lyric_start=0.11 vocal_end=71.92 coverage=0.40",
     "[INFO] SECTION_SPANS count=10",
     "[INFO] ANCHORS_VALIDATED count=3",
     "[INFO] ANCHOR_HINTS_READY count=5",
-    "[INFO] LINES_DISTRIBUTED count=51",
+    "[INFO] LINES_DISTRIBUTED count=42",
     "[INFO] FALLBACK_SKIP insufficient_trailing_lines",
+    "[WARN] INTERLUDE_DROP_STRONG id=Verse 1@01#03",
+    "[WARN] INTERLUDE_DROP_STRONG id=Pre-Chorus@01#01",
+    "[WARN] INTERLUDE_DROP_STRONG id=Pre-Chorus@01#02",
+    "[WARN] INTERLUDE_DROP_STRONG id=Verse 1@01#04",
+    "[WARN] INTERLUDE_DROP_STRONG id=Verse 1@01#05",
+    "[WARN] INTERLUDE_DROP_STRONG id=Chorus@01#01",
     "[WARN] INTERLUDE_DROP_STRONG id=Chorus@01#02",
     "[WARN] INTERLUDE_DROP_STRONG id=Chorus@01#03",
     "[WARN] INTERLUDE_DROP_STRONG id=Chorus@01#04",
-    "[WARN] INTERLUDE_DROP_STRONG id=Post-Chorus@01#01",
+    "[WARN] INTERLUDE_DROP_STRONG id=Chorus@01#05",
     "[WARN] INTERLUDE_DROP_STRONG id=Verse 2@01#01",
     "[WARN] INTERLUDE_DROP_STRONG id=Verse 2@01#02",
     "[WARN] INTERLUDE_DROP_STRONG id=Verse 2@01#03",
     "[WARN] INTERLUDE_DROP_STRONG id=Verse 2@01#04",
     "[WARN] INTERLUDE_DROP_STRONG id=Verse 2@01#05",
     "[WARN] INTERLUDE_DROP_STRONG id=Verse 2@01#06",
-    "[WARN] INTERLUDE_DROP_STRONG id=Verse 2@01#07",
-    "[WARN] INTERLUDE_DROP_STRONG id=Verse 2@01#08",
-    "[WARN] INTERLUDE_DROP_STRONG id=Verse 2@01#09",
-    "[WARN] INTERLUDE_DROP_STRONG id=Verse 2@01#10",
-    "[WARN] INTERLUDE_DROP_STRONG id=Verse 2@01#11",
-    "[WARN] INTERLUDE_DROP_STRONG id=Verse 2@01#12",
+    "[WARN] INTERLUDE_DROP_STRONG id=Pre-Chorus@02#01",
+    "[WARN] INTERLUDE_DROP_STRONG id=Pre-Chorus@02#02",
+    "[WARN] INTERLUDE_DROP_STRONG id=Chorus@02#01",
+    "[WARN] INTERLUDE_DROP_STRONG id=Chorus@02#02",
+    "[WARN] INTERLUDE_DROP_STRONG id=Chorus@02#03",
+    "[WARN] INTERLUDE_DROP_STRONG id=Chorus@02#04",
+    "[WARN] INTERLUDE_DROP_STRONG id=Chorus@02#05",
+    "[WARN] INTERLUDE_DROP_STRONG id=Bridge@01#01",
     "[WARN] INTERLUDE_DROP_STRONG id=Bridge@01#02",
     "[WARN] INTERLUDE_DROP_STRONG id=Bridge@01#03",
     "[WARN] INTERLUDE_DROP_STRONG id=Bridge@01#04",
     "[WARN] INTERLUDE_DROP_STRONG id=Bridge@01#05",
-    "[WARN] INTERLUDE_DROP_STRONG id=Bridge@01#06",
-    "[WARN] INTERLUDE_DROP_STRONG id=Bridge@01#07",
-    "[WARN] INTERLUDE_DROP_STRONG id=Final Chorus@01#01",
-    "[WARN] INTERLUDE_DROP_STRONG id=Final Chorus@01#02",
     "[WARN] INTERLUDE_DROP_STRONG id=Final Chorus@01#03",
     "[WARN] INTERLUDE_DROP_STRONG id=Final Chorus@01#04",
     "[WARN] INTERLUDE_DROP_STRONG id=Final Chorus@01#05",
     "[WARN] INTERLUDE_DROP_STRONG id=Final Chorus@01#06",
     "[WARN] INTERLUDE_DROP_STRONG id=Final Chorus@01#07",
     "[WARN] INTERLUDE_DROP_STRONG id=Final Chorus@01#08",
-    "[WARN] INTERLUDE_DROP_STRONG id=Final Chorus@01#09",
-    "[INFO] TAIL_POLICY mode=humming_outro target_end=180.94 clamped=0",
+    "[INFO] TAIL_CLAMP id=Outro@01#03 73.02->72.72",
+    "[INFO] TAIL_POLICY mode=humming_outro target_end=72.72 clamped=1",
     "[INFO] LINE_REPAIR_SUMMARY shift=0 duration=0 clamp_audio_end=0",
-    "[INFO] DISPLAY_LINES_FINALIZED count=20",
-    "[INFO] CUE_STABILIZE count=20",
-    "[INFO] CUE_GAPS_FIXED count=20",
-    "[INFO] CUE_HOLD_APPLIED count=20",
-    "[INFO] CUE_SANITY_OK count=20",
-    "[INFO] CUES_BUILT count=20",
-    "[INFO] CUE_CLAMP_SOURCE_LINE count=4 interlude=4 missing_source=0",
+    "[INFO] DISPLAY_LINES_FINALIZED count=8",
+    "[INFO] CUE_STABILIZE count=8",
+    "[INFO] CUE_GAPS_FIXED count=8",
+    "[INFO] CUE_HOLD_APPLIED count=8",
+    "[INFO] CUE_SANITY_OK count=8",
+    "[INFO] CUES_BUILT count=8",
+    "[INFO] CUE_CLAMP_SOURCE_LINE count=3 interlude=3 missing_source=0",
     "[INFO] CUE_PIPELINE single_stage_from_final_lines"
   ]
 }
