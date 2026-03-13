@@ -231,11 +231,11 @@
     }
 
     .sub-mask.reveal-in{
-      animation: subRevealIn 1200ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation: subRevealIn 280ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
 
     .sub-mask.reveal-out{
-      animation: subRevealOut 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation: subRevealOut 220ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
 
     @keyframes subRevealIn{
@@ -398,9 +398,9 @@
   const $ = (id) => document.getElementById(id);
   const params = new URLSearchParams(location.search);
   const setId = params.get("set") || "default";
-  const SUBTITLE_GAP = 90;
-  const SUB_IN_MS = 1200;
-  const SUB_OUT_MS = 900;
+  const SUBTITLE_GAP = 20;
+  const SUB_IN_MS = 280;
+  const SUB_OUT_MS = 220;
 
   (() => {
     if (!/^\d{8}$/.test(setId)) return;
@@ -708,17 +708,17 @@
   let koToken = 0;
 
   function playRevealIn(mask){
-    mask.classList.remove("reveal-out");
+    mask.classList.remove("reveal-in", "reveal-out");
     void mask.offsetWidth;
     mask.classList.add("reveal-in");
   }
 
   function playRevealOut(mask){
-    mask.classList.remove("reveal-in");
+    mask.classList.remove("reveal-in", "reveal-out");
     void mask.offsetWidth;
     mask.classList.add("reveal-out");
   }
-
+  
   function swapSubtitle(maskEl, textEl, nextText, kind){
     const token = kind === "ja" ? ++jaToken : ++koToken;
     const next = (nextText ?? "").toString();
