@@ -696,6 +696,13 @@
 
     return null;
   }
+
+  function compactKoVerticalText(s){
+    return (s ?? "")
+      .toString()
+      .replace(/\r/g, "")
+      .replace(/[ ]+/g, "\u2009");
+  }
   
   let jaToken = 0;
   let koToken = 0;
@@ -724,7 +731,7 @@
     if (!hasCurrent){
       textEl.textContent = next;
       if (hasNext){
-        maskEl.style.display = "";
+        maskEl.style.display = "block";
         playRevealIn(maskEl);
       } else {
         maskEl.style.display = "none";
@@ -746,7 +753,7 @@
 
       setTimeout(() => {
         if ((kind === "ja" ? jaToken : koToken) !== token) return;
-        maskEl.style.display = "";
+        maskEl.style.display = "block";
         playRevealIn(maskEl);
       }, SUBTITLE_GAP);
 
@@ -856,7 +863,7 @@
     const hasKo = !!koDisplay;
 
     if ((lang === "both" || lang === "ko") && hasKo){
-      koMask.style.display = "";
+      koMask.style.display = "block";
       swapSubtitle(koMask, koEl, koDisplay, "ko");
     } else {
       swapSubtitle(koMask, koEl, "", "ko");
@@ -953,7 +960,7 @@
     updateTimeSecUI();
   })().catch(err => {
     jaEl.textContent = "PLAYER ERROR";
-    koMask.style.display = "";
+    koMask.style.display = "block";
     koEl.textContent = String(err?.message || err);
     console.error(err);
   });
