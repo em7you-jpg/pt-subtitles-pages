@@ -234,7 +234,7 @@
     .subtitle-hidden{
       opacity: 0;
       transform: translateX(14px);
-      filter: blur(0.8px);
+      filter: blur(1.5px);
     }
 
     .subtitle-visible{
@@ -680,6 +680,13 @@
     el.classList.add("subtitle-hidden");
   }
 
+  function compactKoVerticalText(s){
+    return (s ?? "")
+      .toString()
+      .replace(/\r/g, "")
+      .replace(/[ ]+/g, "\u2006"); // 일반 공백 -> thin space
+  }
+
   function setSubtitleText(el, text){
     const next = (text ?? "").toString();
 
@@ -783,10 +790,12 @@
       if (ln && ln.ko) koText = String(ln.ko).trim();
     }
 
-    const hasKo = !!koText;
+    const koDisplay = compactKoVerticalText(koText);
+    const hasKo = !!koDisplay;
+
     if ((lang === "both" || lang === "ko") && hasKo){
       koEl.style.display = "";
-      setSubtitleText(koEl, koText);
+      setSubtitleText(koEl, koDisplay);
     } else {
       hideEl(koEl);
       setTimeout(() => {
@@ -794,7 +803,6 @@
         koEl.style.display = "none";
       }, 220);
     }
-
   }
 
   btnPlay.addEventListener("click", async () => {
