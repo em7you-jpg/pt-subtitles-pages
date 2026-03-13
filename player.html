@@ -5,9 +5,19 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="google" content="notranslate" />
   <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
+  <link rel="preload" href="/fonts/SeoulNamsanvert.woff2" as="font" type="font/woff2" crossorigin>
 
   <title>PT Player</title>
   <style>
+
+    @font-face {
+      font-family: "SeoulNamsanVert";
+      src: url("/fonts/SeoulNamsanvert.woff2") format("woff2");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
     :root{
       --font: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", "Noto Sans JP", sans-serif;
 
@@ -20,7 +30,7 @@
       /* ---------- subtitles ---------- */
       --jaSize: 34px;
       --koSize: 27px;
-      --lineGap: 6px;
+      --lineGap: 2px;
 
       --bg: rgba(0,0,0,0.0);
       --fg: rgba(255,255,255,0.95);
@@ -36,7 +46,7 @@
       --maxH: 78vh;
 
       /* KO color */
-      --koColor: rgba(255, 223, 138, 0.62);
+      --koColor: rgba(255, 223, 138, 0.92);
 
       /* ---------- minimal play button (top-left) ---------- */
       --playSize: 54px;
@@ -184,16 +194,17 @@
     }
 
     .ko{
-      font-family: "Noto Sans CJK KR", "Noto Sans KR", system-ui, sans-serif;
+      font-family: "SeoulNamsanVert","Noto Sans KR",system-ui,sans-serif;
       font-size: var(--koSize);
-      font-weight: 400;
-      font-style: italic;
-      line-height: 1.42;
-      letter-spacing: -0.01em;
+      font-weight: 600;
+      font-style: normal;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
 
       writing-mode: vertical-rl;
       text-orientation: upright;
-      white-space: pre-wrap;
+      white-space: normal;
+      word-break: keep-all;
       text-align: start;
       text-align-last: start;
 
@@ -203,14 +214,13 @@
       margin-top: 0;
 
       color: var(--koColor);
-      opacity: 0.75;
-      filter: drop-shadow(0 0 6px rgba(0,0,0,0.45));
+      opacity: 1;
 
+      filter: none;
+      -webkit-text-stroke: 0.6px rgba(0,0,0,0.35);
       text-shadow:
-        0 0 2px rgba(0,0,0,0.75),
-        0 0 6px rgba(0,0,0,0.55),
-        0 1px 8px rgba(0,0,0,0.75);
-    }
+        0 1px 2px rgba(0,0,0,0.40);
+}
 
     /* ---------- HUD ---------- */
     #hud{ margin-top: 10px; font-size: 13px; opacity: 0.85; user-select: none; }
