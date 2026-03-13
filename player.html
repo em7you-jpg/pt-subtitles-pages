@@ -222,6 +222,27 @@
         0 1px 2px rgba(0,0,0,0.40);
 }
 
+    /* ---------- subtitle transition ---------- */
+    .ja, .ko{
+      transition:
+        opacity 520ms ease,
+        transform 480ms ease,
+        filter 480ms ease;
+      will-change: opacity, transform, filter;
+    }
+
+    .subtitle-hidden{
+      opacity: 0;
+      transform: translateX(14px);
+      filter: blur(0.8px);
+    }
+
+    .subtitle-visible{
+      opacity: 1;
+      transform: translateX(0);
+      filter: blur(0);
+    }
+
     /* ---------- HUD ---------- */
     #hud{ margin-top: 10px; font-size: 13px; opacity: 0.85; user-select: none; }
     .hud-off #hud{ display:none; }
@@ -325,8 +346,8 @@
 
   <div id="wrap">
     <div id="box">
-      <div id="ja" class="ja"></div>
-      <div id="ko" class="ko" style="display:none;"></div>
+      <div id="ja" class="ja subtitle-hidden"></div>
+      <div id="ko" class="ko subtitle-hidden" style="display:none;"></div>
 
       <div id="hud">
         <div id="hudTop">
@@ -648,11 +669,44 @@
 
     return null;
   }
+  
+  function showEl(el){
+    el.classList.remove("subtitle-hidden");
+    el.classList.add("subtitle-visible");
+  }
+
+  function hideEl(el){
+    el.classList.remove("subtitle-visible");
+    el.classList.add("subtitle-hidden");
+  }
+
+  function setSubtitleText(el, text){
+    const next = (text ?? "").toString();
+
+    if (el.textContent === next){
+      showEl(el);
+      return;
+    }
+
+    hideEl(el);
+
+    setTimeout(() => {
+      el.textContent = next;
+      if (next.trim()){
+        showEl(el);
+      }
+    }, 180);
+  }
 
   function clearSubtitle(){
-    if (jaEl.textContent !== "") jaEl.textContent = "";
-    if (koEl.textContent !== "") koEl.textContent = "";
-    koEl.style.display = "none";
+    hideEl(jaEl);
+    hideEl(koEl);
+
+    setTimeout(() => {
+      if (jaEl.textContent !== "") jaEl.textContent = "";
+      if (koEl.textContent !== "") koEl.textContent = "";
+      koEl.style.display = "none";
+    }, 220);
   }
 
   const base = `${location.origin}/set/${encodeURIComponent(setId)}/`;
@@ -720,7 +774,7 @@
       return;
     }
 
-    if (jaEl.textContent !== c.ja) jaEl.textContent = c.ja;
+    setSubtitleText(jaEl, c.ja);
 
     let koText = (c.ko ?? "").toString().trim();
 
@@ -731,12 +785,16 @@
 
     const hasKo = !!koText;
     if ((lang === "both" || lang === "ko") && hasKo){
-      if (koEl.textContent !== koText) koEl.textContent = koText;
       koEl.style.display = "";
+      setSubtitleText(koEl, koText);
     } else {
-      koEl.textContent = "";
-      koEl.style.display = "none";
+      hideEl(koEl);
+      setTimeout(() => {
+        koEl.textContent = "";
+        koEl.style.display = "none";
+      }, 220);
     }
+
   }
 
   btnPlay.addEventListener("click", async () => {
