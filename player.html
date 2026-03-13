@@ -226,7 +226,7 @@
     .sub-mask{
       display: block;
       overflow: hidden;
-      will-change: clip-path, opacity;
+      will-change: clip-path, opacity, filter;
       backface-visibility: hidden;
     }
 
@@ -242,10 +242,12 @@
       from{
         clip-path: inset(0 0 0 100%);
         opacity: 0;
+        filter: blur(3px);
       }
       to{
         clip-path: inset(0 0 0 0);
         opacity: 1;
+        filter: blur(0);
       }
     }
 
@@ -253,10 +255,12 @@
       from{
         clip-path: inset(0 0 0 0);
         opacity: 1;
+        filter: blur(0);
       }
       to{
         clip-path: inset(0 100% 0 0);
         opacity: 0;
+        filter: blur(3px);
       }
     }
 
