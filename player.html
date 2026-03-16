@@ -708,16 +708,20 @@
       .replace(/[ ]+/g, "\u2009");
   }
 
-  function stripEmbeddedSongformTagsForSubtitle(s){
+  function stripSongformTagsAnywhere(s){
     return (s ?? "")
       .toString()
       .replace(/\r/g, "")
       .replace(
-        /\s*\|\s*\[(?:Intro(?:\s*-\s*instrumental)?|Verse(?:\s+\d+)?|Pre-Chorus|Chorus|Post-Chorus(?:\s+Reprise)?|Bridge|Final Chorus|Outro)\]\s*/gi,
+        /\[(?:Intro(?:\s*-\s*instrumental)?|Verse(?:\s+\d+)?|Pre-Chorus|Chorus|Post-Chorus(?:\s+Reprise)?|Bridge|Final Chorus|Outro)\]/gi,
         " "
       )
       .replace(/\s+/g, " ")
       .trim();
+  }
+
+  function stripEmbeddedSongformTagsForSubtitle(s){
+    return stripSongformTagsAnywhere(s);
   }
 
   let jaToken = 0;
