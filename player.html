@@ -707,7 +707,19 @@
       .replace(/\r/g, "")
       .replace(/[ ]+/g, "\u2009");
   }
-  
+
+  function stripEmbeddedSongformTagsForSubtitle(s){
+    return (s ?? "")
+      .toString()
+      .replace(/\r/g, "")
+      .replace(
+        /\s*\|\s*\[(?:Intro(?:\s*-\s*instrumental)?|Verse(?:\s+\d+)?|Pre-Chorus|Chorus|Post-Chorus(?:\s+Reprise)?|Bridge|Final Chorus|Outro)\]\s*/gi,
+        " "
+      )
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
   let jaToken = 0;
   let koToken = 0;
 
@@ -854,7 +866,8 @@
       return;
     }
 
-    swapSubtitle(jaMask, jaEl, c.ja, "ja");
+    const jaDisplay = stripEmbeddedSongformTagsForSubtitle(c.ja);
+    swapSubtitle(jaMask, jaEl, jaDisplay, "ja");
 
     let koText = (c.ko ?? "").toString().trim();
 
@@ -863,7 +876,9 @@
       if (ln && ln.ko) koText = String(ln.ko).trim();
     }
 
-    const koDisplay = compactKoVerticalText(koText);
+    const koDisplay = compactKoVerticalText(
+      stripEmbeddedSongformTagsForSubtitle(koText)
+    );
     const hasKo = !!koDisplay;
 
     if ((lang === "both" || lang === "ko") && hasKo){
