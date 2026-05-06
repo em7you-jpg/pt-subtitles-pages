@@ -805,8 +805,65 @@
     }
   }
 
+  const playlistParam = params.get("playlist") || "";
+  const isLive247 = !!playlistParam;
+
   const base = `${location.origin}/set/${encodeURIComponent(setId)}/`;
-  const playlistUrl = base + "playlist.json";
+  const playlistUrl = playlistParam
+    ? new URL(playlistParam, location.origin).toString()
+    : base + "playlist.json";
+
+  let bgTimer = null;
+
+  function resolveUrl(u){
+    return new URL(String(u || ""), location.origin).toString();
+  }
+
+  function applyBackgroundUrl(bgUrl){
+    if (!bgUrl) return;
+
+    const img = new Image();
+
+    img.onload = () => {
+      document.body.style.backgroundImage = `url("${bgUrl}")`;
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundPosition = "center center";
+      document.body.style.backgroundRepeat = "no-repeat";
+    };
+
+    img.onerror = () => {};
+    img.src = bgUrl;
+  }
+
+  function setupLive247Backgrounds(){
+    if (!playlist || !Array.isArray(playlist.backgrounds) || playlist.backgrounds.length === 0){
+      return;
+    }
+
+    const backgrounds = playlist.backgrounds
+      .map(b => b && b.url ? resolveUrl(b.url) : "")
+      .filter(Boolean);
+
+    if (backgrounds.length === 0) return;
+
+    let bgIdx = Math.floor(Math.random() * backgrounds.length);
+
+    const apply = () => {
+      applyBackgroundUrl(backgrounds[bgIdx % backgrounds.length]);
+      bgIdx++;
+    };
+
+    apply();
+
+    const minutes =
+      playlist.background_rotation &&
+      Number(playlist.background_rotation.interval_minutes)
+        ? Number(playlist.background_rotation.interval_minutes)
+        : 180;
+
+    if (bgTimer) clearInterval(bgTimer);
+    bgTimer = setInterval(apply, Math.max(1, minutes) * 60 * 1000);
+  }
 
   let playlist = null;
   let idx = 0;
@@ -845,7 +902,12 @@
     audio.src = currentTrack.audio_url;
 
     if (!currentTrack.track_url) throw new Error("missing track_url");
-    const trackJson = await fetchJSON(base + currentTrack.track_url);
+
+    const trackJsonUrl = String(currentTrack.track_url).startsWith("/")
+      ? resolveUrl(currentTrack.track_url)
+      : base + currentTrack.track_url;
+
+    const trackJson = await fetchJSON(trackJsonUrl);
 
     const t = currentTrack.title || trackJson.title || "";
     if (titleOn) setHeaderTitle(t);
@@ -965,6 +1027,10 @@
 
     if (shuffleOn){
       playlist.tracks = shuffleArray(playlist.tracks.slice());
+    }
+
+    if (isLive247){
+      setupLive247Backgrounds();
     }
 
     const startI = num(params.get("i"), 1);
