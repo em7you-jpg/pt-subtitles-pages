@@ -1,1 +1,253 @@
-{"title": "daily", "lines": [{"start": 0.99, "end": 16.146, "ja": "静かな部屋で 時計の針が 進む音だけ響く", "ko_pron": "", "ko": "조용한 방에서 시계 바늘이 가는 소리만 울려 퍼진다.", "tag": "L1#01", "_match": "lyrics_driven_post", "_ja_group_size": 1}, {"start": 16.176, "end": 35.128, "ja": "期待よりゆっくりと 胸に染みてく 強さを感じている", "ko_pron": "", "ko": "기대보다 천천히 가슴에 스며드는 힘을 느끼고 있다.", "tag": "L2#01", "_match": "lyrics_driven_post", "_ja_group_size": 1}, {"start": 35.158, "end": 51.073, "ja": "待つことだけが私の 強さだと信じて歩き出す", "ko_pron": "", "ko": "기다리는 것만이 나의 힘이라고 믿고 걸어갑니다.", "tag": "L3#01", "_match": "lyrics_driven_post", "_ja_group_size": 1}, {"start": 51.103, "end": 69.296, "ja": "宇宙明かりに浮かぶ教室の 磯が並ぶ景色じゃなくて", "ko_pron": "", "ko": "우주 빛에 떠 있는 교실의 바닷가가 늘어선 풍경이 아니라", "tag": "L4#01", "_match": "lyrics_driven_post", "_ja_group_size": 1}, {"start": 69.326, "end": 93.593, "ja": "忘れ物を一つずつ置いて 過去に背を向けてゆく Lalala...", "ko_pron": "", "ko": "잊어버린 물건을 하나하나 놓아두고 과거로 돌아가는 랄랄라...", "tag": "L5#01", "_match": "lyrics_driven_post", "_ja_group_size": 1}, {"start": 93.623, "end": 109.538, "ja": "それでも揺らがないこの気持ちが 明日を創る", "ko_pron": "", "ko": "그래도 흔들리지 않는 이 마음이 내일을 만든다", "tag": "L6#01", "_match": "lyrics_driven_post", "_ja_group_size": 1}, {"start": 109.568, "end": 139.28, "ja": "静寂の中で最後の音が 優しく消えてゆく Lalala... Lalala...", "ko_pron": "", "ko": "고요함 속에서 마지막 소리가 부드럽게 사라지는 Lalala... Lalala...", "tag": "L7#01", "_match": "lyrics_driven_post", "_ja_group_size": 1}], "cues": [{"tag": "L1#01", "t0": 0.99, "t1": 16.15, "start": 0.99, "end": 16.15, "text": "静かな部屋で 時計の針が 進む音だけ響く", "ja": "静かな部屋で 時計の針が 進む音だけ響く", "ko": "조용한 방에서 시계 바늘이 움직이는 소리만 울려 퍼진다.", "ko_pron": ""}, {"tag": "L2#01", "t0": 16.18, "t1": 35.13, "start": 16.18, "end": 35.13, "text": "期待よりゆっくりと 胸に染みてく 強さを感じている", "ja": "期待よりゆっくりと 胸に染みてく 強さを感じている", "ko": "기대보다 천천히 가슴에 스며드는 힘을 느끼고 있다.", "ko_pron": ""}, {"tag": "L3#01", "t0": 35.16, "t1": 51.07, "start": 35.16, "end": 51.07, "text": "待つことだけが私の 強さだと信じて歩き出す", "ja": "待つことだけが私の 強さだと信じて歩き出す", "ko": "기다리는 것만이 나의 힘이라고 믿고 걸어갑니다.", "ko_pron": ""}, {"tag": "L4#01", "t0": 51.1, "t1": 69.3, "start": 51.1, "end": 69.3, "text": "宇宙明かりに浮かぶ教室の 磯が並ぶ景色じゃなくて", "ja": "宇宙明かりに浮かぶ教室の 磯が並ぶ景色じゃなくて", "ko": "우주 빛에 떠 있는 교실의 바닷가가 늘어선 풍경이 아니라", "ko_pron": ""}, {"tag": "L5#01", "t0": 69.33, "t1": 78.22, "start": 69.33, "end": 78.22, "text": "忘れ物を一つずつ置いて", "ja": "忘れ物を一つずつ置いて", "ko": "잊어버린 물건을 하나하나 놓아두고", "ko_pron": ""}, {"tag": "L5#01", "t0": 78.22, "t1": 86.31, "start": 78.22, "end": 86.31, "text": "過去に背を向けてゆく", "ja": "過去に背を向けてゆく", "ko": "과거를 등지고 나아간다", "ko_pron": ""}, {"tag": "L5#01", "t0": 86.31, "t1": 93.59, "start": 86.31, "end": 93.59, "text": "Lalala...", "ja": "Lalala...", "ko": "Lalala...", "ko_pron": ""}, {"tag": "L6#01", "t0": 93.62, "t1": 109.54, "start": 93.62, "end": 109.54, "text": "それでも揺らがないこの気持ちが 明日を創る", "ja": "それでも揺らがないこの気持ちが 明日を創る", "ko": "그래도 흔들리지 않는 이 마음이 내일을 만든다", "ko_pron": ""}, {"tag": "L7#01", "t0": 109.57, "t1": 117.82, "start": 109.57, "end": 117.82, "text": "静寂の中で最後の音が", "ja": "静寂の中で最後の音が", "ko": "고요함 속 마지막 소리", "ko_pron": ""}, {"tag": "L7#01", "t0": 117.82, "t1": 124.42, "start": 117.82, "end": 124.42, "text": "優しく消えてゆく", "ja": "優しく消えてゆく", "ko": "부드럽게 사라지는", "ko_pron": ""}, {"tag": "L7#01", "t0": 124.42, "t1": 131.85, "start": 124.42, "end": 131.85, "text": "Lalala...", "ja": "Lalala...", "ko": "Lalala...", "ko_pron": ""}, {"tag": "L7#01", "t0": 131.85, "t1": 139.28, "start": 131.85, "end": 139.28, "text": "Lalala...", "ja": "Lalala...", "ko": "Lalala...", "ko_pron": ""}], "meta": {"engine": "word_align_lyrics_driven_v7_2_expand_duration_anchor", "generated_at": "2026-05-21T06:13:44.419739Z", "leading_silence_sec": 0.0, "audio_duration_sec": 148.584, "audio_tail_margin_sec": 0.6, "whisper_backend": "local_faster_whisper", "whisper_model": "small", "whisper_device": "cpu", "whisper_compute": "int8", "cue_min_sec": 0.25, "cue_split_max_sec": 20.0, "cue_split_min_seg_sec": 2.0, "lyric_min_line_sec": 0.85, "lyric_pad_end_sec": 0.03, "lyric_tail_pad_sec": 0.1, "lyric_weight_mode": "len_ja_ko", "lyric_expand": 1, "lyric_expand_mode": "auto", "lyric_expand_max_chars": 60, "lyric_expand_min_chars": 6, "lyric_expand_target": 40, "lyric_expand_max_parts": 3, "line_preroll_sec": 1.1, "line_preroll_tags": "pre-chorus,chorus,post-chorus,final chorus", "line_min_show_sec": 1.4, "good_word_min_norm": 2, "vocal_start_min_good_words": 1, "transcribe_pick_by_est": 1, "anchor_mode": 1, "anchor_tags": "pre-chorus,chorus,post-chorus,final chorus,bridge,outro", "anchor_keylen": 6, "anchor_min_target_norm": 10, "anchor_preroll_sec": 1.0}, "issues": ["[INFO] AUDIO_DUR=148.584s from ffprobe", "[INFO] WORDS(vad1)=33 first=0.37", "[INFO] TRANSCRIBE_CONDITIONAL_VAD0 trigger (few_words=33<70)", "[INFO] WORDS(vad0)=198 first=0.00", "[INFO] TRANSCRIBE_KEEP(est) vad1 (vad0 suspicious: vad0_first=0.00 est2=0.98)", "[INFO] WORDS=33", "[INFO] WORDS_FIRST=0.37 WORDS_LAST=139.18", "[INFO] EXPAND sections=7 -> lines=7 max_chars=60 max_parts=3", "[INFO] VOCAL_START sparse_mode=1 total_words=33 win=3.00 lookahead=40.0", "[INFO] VOCAL_START_EST(good) win=3.00s min_good=1 -> 0.990 (early_min=0.370)", "[INFO] VOCAL_END sparse_mode=1 total_words=33 win=4.00 lookback=55.0", "[INFO] VOCAL_END_KEEP asr_end=139.180 (shrink=0.00s < 0.80s)", "[INFO] SPAN_EXTEND skipped(cap): want=147.984 diff=8.80s cap=2.00s", "[INFO] ANCHOR_MODE no_anchor_tags -> skip", "[INFO] ANCHOR skip (no anchor tags)", "[INFO] LINES_POST tail_pad=0.10 pad_end=0.03 preroll=1.10s tags=pre-chorus,chorus,post-chorus,final chorus min_show=1.40s", "[INFO] V2_GAP_PROBE no_verse2_lines", "[INFO] V2_GAP_APPLY skip(no_verse2_line)", "[INFO] CUES_BUILT=12 (min=0.25s, split_max=20.0s, split_policy=time_by_text)"]}
+{
+  "title": "daily",
+  "lines": [
+    {
+      "start": 0.99,
+      "end": 16.146,
+      "ja": "静かな部屋で 時計の針が 進む音だけ響く",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "L1#01",
+      "_match": "lyrics_driven_post",
+      "_ja_group_size": 1
+    },
+    {
+      "start": 16.176,
+      "end": 35.128,
+      "ja": "期待よりゆっくりと 胸に染みてく 強さを感じている",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "L2#01",
+      "_match": "lyrics_driven_post",
+      "_ja_group_size": 1
+    },
+    {
+      "start": 35.158,
+      "end": 51.073,
+      "ja": "待つことだけが私の 強さだと信じて歩き出す",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "L3#01",
+      "_match": "lyrics_driven_post",
+      "_ja_group_size": 1
+    },
+    {
+      "start": 51.103,
+      "end": 69.296,
+      "ja": "宇宙明かりに浮かぶ教室の 磯が並ぶ景色じゃなくて",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "L4#01",
+      "_match": "lyrics_driven_post",
+      "_ja_group_size": 1
+    },
+    {
+      "start": 69.326,
+      "end": 93.593,
+      "ja": "忘れ物を一つずつ置いて 過去に背を向けてゆく Lalala...",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "L5#01",
+      "_match": "lyrics_driven_post",
+      "_ja_group_size": 1
+    },
+    {
+      "start": 93.623,
+      "end": 109.538,
+      "ja": "それでも揺らがないこの気持ちが 明日を創る",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "L6#01",
+      "_match": "lyrics_driven_post",
+      "_ja_group_size": 1
+    },
+    {
+      "start": 109.568,
+      "end": 139.28,
+      "ja": "静寂の中で最後の音が 優しく消えてゆく Lalala... Lalala...",
+      "ko_pron": "",
+      "ko": "",
+      "tag": "L7#01",
+      "_match": "lyrics_driven_post",
+      "_ja_group_size": 1
+    }
+  ],
+  "cues": [
+    {
+      "tag": "L1#01",
+      "t0": 0.99,
+      "t1": 16.15,
+      "start": 0.99,
+      "end": 16.15,
+      "text": "静かな部屋で 時計の針が 進む音だけ響く",
+      "ja": "静かな部屋で 時計の針が 進む音だけ響く",
+      "ko": ""
+    },
+    {
+      "tag": "L2#01",
+      "t0": 16.18,
+      "t1": 35.13,
+      "start": 16.18,
+      "end": 35.13,
+      "text": "期待よりゆっくりと 胸に染みてく 強さを感じている",
+      "ja": "期待よりゆっくりと 胸に染みてく 強さを感じている",
+      "ko": ""
+    },
+    {
+      "tag": "L3#01",
+      "t0": 35.16,
+      "t1": 51.07,
+      "start": 35.16,
+      "end": 51.07,
+      "text": "待つことだけが私の 強さだと信じて歩き出す",
+      "ja": "待つことだけが私の 強さだと信じて歩き出す",
+      "ko": ""
+    },
+    {
+      "tag": "L4#01",
+      "t0": 51.1,
+      "t1": 69.3,
+      "start": 51.1,
+      "end": 69.3,
+      "text": "宇宙明かりに浮かぶ教室の 磯が並ぶ景色じゃなくて",
+      "ja": "宇宙明かりに浮かぶ教室の 磯が並ぶ景色じゃなくて",
+      "ko": ""
+    },
+    {
+      "tag": "L5#01",
+      "t0": 69.33,
+      "t1": 78.22,
+      "start": 69.33,
+      "end": 78.22,
+      "text": "忘れ物を一つずつ置いて",
+      "ja": "忘れ物を一つずつ置いて",
+      "ko": ""
+    },
+    {
+      "tag": "L5#01",
+      "t0": 78.22,
+      "t1": 86.31,
+      "start": 78.22,
+      "end": 86.31,
+      "text": "過去に背を向けてゆく",
+      "ja": "過去に背を向けてゆく",
+      "ko": ""
+    },
+    {
+      "tag": "L5#01",
+      "t0": 86.31,
+      "t1": 93.59,
+      "start": 86.31,
+      "end": 93.59,
+      "text": "Lalala...",
+      "ja": "Lalala...",
+      "ko": ""
+    },
+    {
+      "tag": "L6#01",
+      "t0": 93.62,
+      "t1": 109.54,
+      "start": 93.62,
+      "end": 109.54,
+      "text": "それでも揺らがないこの気持ちが 明日を創る",
+      "ja": "それでも揺らがないこの気持ちが 明日を創る",
+      "ko": ""
+    },
+    {
+      "tag": "L7#01",
+      "t0": 109.57,
+      "t1": 117.82,
+      "start": 109.57,
+      "end": 117.82,
+      "text": "静寂の中で最後の音が",
+      "ja": "静寂の中で最後の音が",
+      "ko": ""
+    },
+    {
+      "tag": "L7#01",
+      "t0": 117.82,
+      "t1": 124.42,
+      "start": 117.82,
+      "end": 124.42,
+      "text": "優しく消えてゆく",
+      "ja": "優しく消えてゆく",
+      "ko": ""
+    },
+    {
+      "tag": "L7#01",
+      "t0": 124.42,
+      "t1": 131.85,
+      "start": 124.42,
+      "end": 131.85,
+      "text": "Lalala...",
+      "ja": "Lalala...",
+      "ko": ""
+    },
+    {
+      "tag": "L7#01",
+      "t0": 131.85,
+      "t1": 139.28,
+      "start": 131.85,
+      "end": 139.28,
+      "text": "Lalala...",
+      "ja": "Lalala...",
+      "ko": ""
+    }
+  ],
+  "meta": {
+    "engine": "word_align_lyrics_driven_v7_2_expand_duration_anchor",
+    "generated_at": "2026-05-21T22:01:18.655584Z",
+    "leading_silence_sec": 0.0,
+    "audio_duration_sec": 148.584,
+    "audio_tail_margin_sec": 0.6,
+    "whisper_backend": "local_faster_whisper",
+    "whisper_model": "small",
+    "whisper_device": "cpu",
+    "whisper_compute": "int8",
+    "cue_min_sec": 0.25,
+    "cue_split_max_sec": 20.0,
+    "cue_split_min_seg_sec": 2.0,
+    "lyric_min_line_sec": 0.85,
+    "lyric_pad_end_sec": 0.03,
+    "lyric_tail_pad_sec": 0.1,
+    "lyric_weight_mode": "len_ja_ko",
+    "lyric_expand": 1,
+    "lyric_expand_mode": "auto",
+    "lyric_expand_max_chars": 60,
+    "lyric_expand_min_chars": 6,
+    "lyric_expand_target": 40,
+    "lyric_expand_max_parts": 3,
+    "line_preroll_sec": 1.1,
+    "line_preroll_tags": "pre-chorus,chorus,post-chorus,final chorus",
+    "line_min_show_sec": 1.4,
+    "good_word_min_norm": 2,
+    "vocal_start_min_good_words": 1,
+    "transcribe_pick_by_est": 1,
+    "anchor_mode": 1,
+    "anchor_tags": "pre-chorus,chorus,post-chorus,final chorus,bridge,outro",
+    "anchor_keylen": 6,
+    "anchor_min_target_norm": 10,
+    "anchor_preroll_sec": 1.0
+  },
+  "issues": [
+    "[INFO] AUDIO_DUR=148.584s from ffprobe",
+    "[INFO] WORDS(vad1)=33 first=0.37",
+    "[INFO] TRANSCRIBE_CONDITIONAL_VAD0 trigger (few_words=33<70)",
+    "[INFO] WORDS(vad0)=198 first=0.00",
+    "[INFO] TRANSCRIBE_KEEP(est) vad1 (vad0 suspicious: vad0_first=0.00 est2=0.98)",
+    "[INFO] WORDS=33",
+    "[INFO] WORDS_FIRST=0.37 WORDS_LAST=139.18",
+    "[INFO] EXPAND sections=7 -> lines=7 max_chars=60 max_parts=3",
+    "[INFO] VOCAL_START sparse_mode=1 total_words=33 win=3.00 lookahead=40.0",
+    "[INFO] VOCAL_START_EST(good) win=3.00s min_good=1 -> 0.990 (early_min=0.370)",
+    "[INFO] VOCAL_END sparse_mode=1 total_words=33 win=4.00 lookback=55.0",
+    "[INFO] VOCAL_END_KEEP asr_end=139.180 (shrink=0.00s < 0.80s)",
+    "[INFO] SPAN_EXTEND skipped(cap): want=147.984 diff=8.80s cap=2.00s",
+    "[INFO] ANCHOR_MODE no_anchor_tags -> skip",
+    "[INFO] ANCHOR skip (no anchor tags)",
+    "[INFO] LINES_POST tail_pad=0.10 pad_end=0.03 preroll=1.10s tags=pre-chorus,chorus,post-chorus,final chorus min_show=1.40s",
+    "[INFO] V2_GAP_PROBE no_verse2_lines",
+    "[INFO] V2_GAP_APPLY skip(no_verse2_line)",
+    "[INFO] CUES_BUILT=12 (min=0.25s, split_max=20.0s, split_policy=time_by_text)"
+  ]
+}
